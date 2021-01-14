@@ -14,6 +14,9 @@
 		<li class="chapter">
 			Ch03.
 			<a href="<%=application.getContextPath()%>/ch03/content">Request Parameter Mapping</a></li>
+		<li class="chapter">
+			Ch05.
+			<a href="<%=application.getContextPath()%>/ch03/content">Header / Cookie</a></li>
 		
 	</ul>			
 </div>

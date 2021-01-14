@@ -14,7 +14,23 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring/root/*.xml</param-value>
 	</context-param>
-
+	
+	<!-- POST 방식의 문자셋 인코딩 설정 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<!-- POST 방식의 문자셋 인코딩 URL 설정 -->
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
 		<!-- WebApplicationContext 여러개 생성-->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
