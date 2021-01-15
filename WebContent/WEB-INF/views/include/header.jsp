@@ -14,15 +14,17 @@
 				<ul class="navbar-nav flex-direction:column">
 					<c:if test="${loginStatus == null}">
 						<li class="nav-item logOff"><a class="nav-link"
-							href="join.html">회원가입</a></li>
+							href="<%=application.getContextPath()%>/users/sign_up">회원가입</a></li>
 						<li class="nav-item logOff"><a class="nav-link"
-							href="login.html">로그인</a></li>
+							href="<%=application.getContextPath()%>/users/sign_in">로그인</a></li>
 					</c:if>
 					<c:if test="${loginStatus != null}">
-						<li class="nav-item logOn"><a class="nav-link" href="#">로그아웃</a></li>
-						<li class="nav-item logOn"><a class="nav-link" href="#">내정보</a></li>
 						<li class="nav-item logOn"><a class="nav-link"
-							href="register.html">상품등록</a></li>
+						href="<%=application.getContextPath()%>/">로그아웃</a></li>
+						<li class="nav-item logOn"><a class="nav-link" 
+						href="<%=application.getContextPath()%>/">내정보</a></li>
+						<li class="nav-item logOn"><a class="nav-link"
+							href="<%=application.getContextPath()%>/register">상품등록</a></li>
 					</c:if>
 				</ul>
 			</div>
