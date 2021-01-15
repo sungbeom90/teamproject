@@ -14,8 +14,8 @@ img { border:0;}
 .mainHeader .loginBox {text-align: right; margin-right: 10px;}
 
 /* menu */
-.mainCenter {display:flex; flex-direction:column; height:100%; width:100%;}
-.menu {width:100%; height:100%; background-color:rgba(0,0,0,0.0); }
+.mainCenter {display:flex; flex-direction:column; width:100%;}
+.menu {width:100%; background-color:rgba(0,0,0,0.0); }
 .menu li{display:inline}
 .chapter { margin:5px; padding:5px; color:greenyellow; font-weight: bold; }
 
