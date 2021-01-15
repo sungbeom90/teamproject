@@ -48,7 +48,7 @@
 					<div class="sector">
 						<h5>디폴트 값</h5>
 						<div>
-							<form method="post" action="method3">
+							<form method="post" action="join/method3">
 								<input type="text" name="param1" value="snowman"/><br/>
 								<input type="number" name="param2" value="5"/><br/>
 								<input type="number" name="param3" value="3.14"/><br/>
