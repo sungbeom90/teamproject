@@ -1,8 +1,8 @@
-package com.mycompany.webapp.dto;
+package com.mycompany.teamproject.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class Ch09User {
+public class User {
 	private String uid;
 	private String uname;
 	private String upassword;

@@ -1,4 +1,4 @@
-package com.mycompany.webapp.controller;
+package com.mycompany.teamproject.controller;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mycompany.webapp.dto.Ch03Dto;
+import com.mycompany.teamproject.dto.Ch03Dto;
 
 @Controller
 @RequestMapping("/ch03")

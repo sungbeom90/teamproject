@@ -1,4 +1,4 @@
-package com.mycompany.webapp.dto;
+package com.mycompany.teamproject.dto;
 
 import java.util.Date;
 

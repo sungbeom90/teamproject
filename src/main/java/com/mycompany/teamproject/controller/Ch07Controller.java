@@ -1,4 +1,4 @@
-package com.mycompany.webapp.controller;
+package com.mycompany.teamproject.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.webapp.dto.Ch07Board;
+import com.mycompany.teamproject.dto.Ch07Board;
 
 @Controller
 @RequestMapping("/ch07")

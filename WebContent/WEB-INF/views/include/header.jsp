@@ -24,7 +24,7 @@
 					</a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="<%=application.getContextPath()%>/users/logout">로그아웃</a>
-						<a class="dropdown-item" href="<%=application.getContextPath()%>/register">상품등록</a>
+						<a class="dropdown-item" href="<%=application.getContextPath()%>/register/content">상품등록</a>
 					</div>
 				</li>
 			</c:if>

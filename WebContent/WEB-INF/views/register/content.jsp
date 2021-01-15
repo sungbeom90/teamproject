@@ -21,7 +21,7 @@
 <link rel="stylesheet"
 	href="<%=application.getContextPath()%>/resources/css/main.css">
 <script
-	src="<%=application.getContextPath()%>/resources/javascript/users.js"></script>
+	src="<%=application.getContextPath()%>/resources/javascript/register.js"></script>
 </head>
 
 <body>
@@ -35,13 +35,12 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-						<h1>users 필드</h1>
-						<h2>sign_up 필드</h2>
-						<h2>ch07 또는 ch08을 이용하여 회원가입 구현</h2>
-						<h2>객체를 이용해서 데이터를 받아보자</h2>
-						<h2>이전에 작성했던 회원가입 방식을 적용해보자(비밀번호 확인, 빈란 알려주기)</h2>
-						<h2>가입 이후에는 ch06 리다이렉트를 적용해보자</h2>
-						
+						<h1>register 필드</h1>
+						<h2>ch03, ch06, ch09를 참고하여 파일 등록 구현하자</h2>
+						<h2>제목,본문 내용은 필수로 받자</h2>
+						<h2>글쓴이와 날짜는 자동으로 저장되도록 구현해보자</h2>
+						<h2>사진은 ch09를 적용해보자</h2>
+						<h2>등록 완료 이후에는 ch06 리다이렉트를 적용하여 상품페이지로 돌아가보자</h2>
 						
 				</div>
 			</div>

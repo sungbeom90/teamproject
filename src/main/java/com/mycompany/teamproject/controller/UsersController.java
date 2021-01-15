@@ -1,4 +1,4 @@
-package com.mycompany.webapp.controller;
+package com.mycompany.teamproject.controller;
 
 import javax.servlet.http.HttpSession;
 

@@ -1,4 +1,4 @@
-package com.mycompany.webapp.controller;
+package com.mycompany.teamproject.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,18 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/countries")
-public class CountriesController {
+@RequestMapping("/ch01")
+public class Ch01Controller {
 		private static final Logger logger=
-				LoggerFactory.getLogger(CountriesController.class);
+				LoggerFactory.getLogger(Ch01Controller.class);
 
 
-		// http://.../teamproject/countries 생략됨
+		//http:// ... /webapp1/ch01/content
 		@RequestMapping("/content")
 		public String content() {
 			logger.info("실행");
-			return "countries/content";
+			return "ch01/content";
 		}
-		
+
 
 }

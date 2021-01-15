@@ -11,6 +11,8 @@
 		<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/main.css">
+		<script
+	src="<%=application.getContextPath()%>/resources/javascript/ch09.js"></script>
 	</head>
 	
 	<body>
@@ -41,7 +43,7 @@
 					<div class="sector">
 						<h5>파일 리스트</h5>
 						<div>
-							<script type="text/javascript">
+							<!-- <script type="text/javascript">
 								$(function(){
 									$.ajax({
 										url: "photolist",
@@ -51,7 +53,7 @@
 										}
 									});
 								});
-							</script>
+							</script> -->
 							<div id="photoList"></div>
 						</div>
 					</div>					

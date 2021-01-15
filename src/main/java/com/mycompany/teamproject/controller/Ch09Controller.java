@@ -1,4 +1,4 @@
-package com.mycompany.webapp.controller;
+package com.mycompany.teamproject.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mycompany.webapp.dto.Ch09User;
+import com.mycompany.teamproject.dto.Ch09User;
 
 @Controller
 @RequestMapping("/ch09")
