@@ -23,7 +23,7 @@
 				<%-- 공통 메뉴 --%>
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				
-				<div class="content">
+				<div class="content container">
 									
 								
 				</div>

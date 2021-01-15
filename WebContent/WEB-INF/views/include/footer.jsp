@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<footer class="container-md">
+<footer class="container">
 		<div class="container-md">
 			<div id="service">ddd</div>
 			<hr />

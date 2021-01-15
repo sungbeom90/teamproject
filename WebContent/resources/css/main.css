@@ -12,7 +12,6 @@ img { border:0;}
 .mainCenter {display:flex; flex-direction:column; width:100%;}
 .menu li{display:inline-block;}
 
-
 /* content */
 .content {flex-grow:1; height:100%; color:white; padding:10px;}
 .content .sector {margin-bottom:20px; border: 1px solid gray; padding:5px; background-color:rgba(0,0,0,0.5);}

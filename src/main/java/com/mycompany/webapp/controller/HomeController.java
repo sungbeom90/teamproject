@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	private static final Logger logger=LoggerFactory.getLogger(HomeController.class);
 	
-	// http://.../webapp1 생략됨
+	// http://.../teamproject 생략됨
 	@RequestMapping("/")
 	public String home() {
 		logger.info("실행");

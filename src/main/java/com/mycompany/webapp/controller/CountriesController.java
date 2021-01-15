@@ -6,17 +6,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/01main")
-public class Ch00Controller {
+@RequestMapping("/countries")
+public class CountriesController {
 		private static final Logger logger=
-				LoggerFactory.getLogger(Ch00Controller.class);
+				LoggerFactory.getLogger(CountriesController.class);
 
 
-		//http:// ... /webapp1/ch00/content
+		// http://.../teamproject/countries 생략됨
 		@RequestMapping("/content")
 		public String content() {
 			logger.info("실행");
-			return "ch00/content";
+			return "countries/content";
 		}
 		
 

@@ -21,7 +21,7 @@
 <link rel="stylesheet"
 	href="<%=application.getContextPath()%>/resources/css/main.css">
 <script
-	src="<%=application.getContextPath()%>/resources/javascript/01main.js"></script>
+	src="<%=application.getContextPath()%>/resources/javascript/main.js"></script>
 </head>
 
 <body>
@@ -33,28 +33,10 @@
 		<div class="mainCenter">
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
-			<div class="content">
+			<div class="content container">
 				<div class="sector">
-						<br />
-						<h1>어디로 떠나세요?</h1>
-						<div class="container d-flex flex-wrap justify-content-around">
-							<div class="contents city">
-								<div id="city1_img" class="img_cover"></div>
-								<div id="city1_text" class="city_text">도시</div>
-							</div>
-							<div class="contents city">
-								<div id="city2_img" class="img_cover">도시</div>
-								<div id="city2_text" class="city_text">도시</div>
-							</div>
-							<div class="contents city">
-								<div id="city3_img" class="img_cover"></div>
-								<div id="city3_text" class="city_text">도시</div>
-							</div>
-							<div class="contents city">
-								<div id="city4_img" class="img_cover"></div>
-								<div id="city4_text" class="city_text">도시</div>
-							</div>
-						</div>
+						<h1>main 필드</h1>
+						
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
