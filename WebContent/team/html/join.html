@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원가입 페이지</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="../js/team_main.js"></script>
+		<link rel="stylesheet" href="../css/team.css">
+		<script type="text/javascript">
+			$(document).ready(function() {
+					$("#btnjoin").click(function () {
+						
+							if($("#ujoinname").val() === ""){
+								alert("한 글자 이상을 기입하세요.");
+								
+							}else if($("#ujoinid").val() === ""){
+								alert("사용하실 아이디를 입력하세요.");
+								
+							}else if($("#ujoinpassword").val().length < 8 ){
+								alert("8자 이상을 기입하세요.");
+
+							}else if ($("#ujoinpassword").val() !== $("#ujoinpassword_re").val()){
+								alert("동일한 비밀번호를 입력하세요.");
+
+							}else {
+								var con = alert("가입을 축하합니다.");
+								if(con = true){
+									location.href = "http://localhost:8080/html_css_javascript/team/login/login.html"
+								}
+							}
+						
+					});
+						$("#uagreeall").click(()=>{
+							if($("#uagreeall").prop("checked") !== true){
+								$(".ucheck").prop("checked", false);
+							} else {
+								$(".ucheck").prop("checked", true);
+							}
+							
+						});
+				});
+				
+		</script>
+	</head>
+	
+	<body>
+		<h2 id="h2_join">회원가입</h2>
+		<form class="joinform">
+			<div class="joinformbox">
+				<label for="ujoinname">이름 * </label><br/>
+				<input class="join" type="text" placeholder="이름을 입력하세요" id="ujoinname" name="ujoinname" /><br/>
+				<label for="ujoinid">이메일 * </label><br/>
+				<input class="join" type="email" placeholder="ID@example.com" id="ujoinid" name="ujoinid" /><br/>
+				<label for="ujoinpassword">비밀번호 * </label><br/>
+				<input class="join" type="password" placeholder="비밀번호를 입력하세요." id="ujoinpassword" name="ujoinpassword" /><br/>
+				<label for="ujoinpassword_re">비밀번호 확인 * </label><br/>
+				<input class="join" type="password" placeholder="다시 입력하세요." id="ujoinpassword_re" name="ujoinpassword_re" /><br/>
+				
+					<label for="uagreeall"></label>
+					<input type="checkbox" id="uagreeall" name="uagreeall" value="uchecked" />전체 약관 동의
+					<ul class="joinform_ul">
+						<li>
+							<label for="uagree1">
+							<input class="ucheck" type="checkbox" id="uagree1" name="uagree1" value="joindata">회원 가입 및 운영약관 동의 (필수)<br/>
+							</label>
+						</li>
+							
+						<li>
+							<label for="uagree2">
+							<input class="ucheck" type="checkbox" id="uagree2" name="uagree2" value="privatedata">개인정보 수집 및 이용 (필수)<br/>
+							</label>
+						</li>
+							
+						<li>
+							<label for="uagree3">
+							<input class="ucheck" type="checkbox" id="uagree3" name="uagree3" value="locationdata">위치정보 이용약관 (선택)<br/>
+							</label>
+						</li>
+							
+						<li>
+							<label for="uagree4">
+							<input class="ucheck" type="checkbox" id="uagree4" name="uagree4" value="ticketdata">특가 항공권 및 할인 혜택 안내 동의  (선택)
+							</label>
+						</li>
+					</ul>
+				<div class="joinspan">
+					<span>*선택 항목을 동의하지 않아도 서비스를 이용하실 수 있습니다.</span><br/>
+					<span>*회원 가입 시 본인이 만 14세 이상임에 동의하게 됩니다.</span><br/>
+					<input id="btnjoin" type="button" value="회원가입"/>
+				</div>
+				
+			</div>
+		</form>
+	</body>
+</html>

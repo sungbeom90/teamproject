@@ -1,0 +1,59 @@
+<h5>바르셀로나 라발지구 올드바 투어 with 에이쁠투어</h5>
+<a id="link_country" href="spain.html">스페인</a>
+<a id="link_city" href="barcelona.html">바르셀로나</a>
+<a id="link_img" href="barcelona_package1.html">
+	<img src="../data/package/barcelona/main_photo.jpg" alt="main photo" class="img_center package_img"/>
+</a>
+
+<h1 id="title">바르셀로나 라발지구 올드바 투어 with 에이쁠투어</h1>
+<img src="../data/package/barcelona/main_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/barcelona/sub1_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/barcelona/sub2_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/barcelona/sub3_photo.jpg" alt="main photo" class="contents"/>
+
+
+<h2 id="description_title">바르셀로나의 가장 오래된 바에서 한잔 하며 숨겨진 진주 같은 라발지구의 낭만을 함께 즐겨보아요!<h2>
+<div id="description_body">					
+	<br/><p>낯설지만 흥미로운, 다가가기 쉽지 않지만 그만큼 더 매력적인 라발지구에서 저와 함께 한 잔해요!</p>
+	<br/><p>여러 사회적 문제들로 인해 위험한 곳으로 생각되었지만 1990년대 바르셀로나시의 라발지구 개선사업 후 새롭게 변화된 동네에 유니크한 샵들과 트렌디한 레스토랑들이 들어서면서 바르셀로나의 힙한 곳으로 떠오르고 있답니다.<p>
+	<br/><p>개성이 넘치는 라발지구의 골목마다 숨겨진 이야기를 들어보세요. 작은 에피소드 하나로 그 거리에 대한 추억을 오랫동안 간직하실 수 있어요.</p>
+	<br/><p>다리가 조금 지칠 때쯤 19세기 카탈루냐의 모더니즘 스타일이 그대로 남아 있는 바에서 스페인 사람들처럼 베르뭇 한 잔 해보아요.</p>
+	<br/><p>헤밍웨이와 피카소가 자주 들렀던 바르셀로나의 가장 오래된 바에서 그들이 마셨던 압생트를 마셔보아요. 1920년대 예술가들이 카페에 모여 이야기했던 분위기를 즐길 수 있어요.</p>
+	<br/><p>친구와 함께 동네 구경을 하는 것 처럼, 오랜만에 만난 친구와 한잔 하는 것처럼 편안하고 즐거운 분위기로 라발지구를 소개해드릴게요.</p>
+	<br/><p>에이쁠투어와 함께 해요 :D</p>
+</div>
+
+<div id="infomation_body">			
+	<br/><h3>포함 사항</h3>
+		<p>가이드 비용</p>
+	<br/><h3>불포함 사항</h3>
+		<p>개인 음료와 간단한 스낵</p>
+		<p>가이드 음료</p>
+		<ul>
+			<li>베르뭇,맥주,와인과 같은 음료는 1.5~2.5유로입니다.</li>
+			<li>압생트는 5유로 입니다.</li>
+			<li>그룹으로 함께 먹은 안주는 N분의 1로 계산합니다.</li>
+		</ul>
+</div>
+<div id="adguide_body">
+<br/><h3>만나는 시간</h3>
+		<p>오후 5시 00분</p>				
+	<br/><h3>만나는 장소</h3>
+		<p>카탈루냐 광장 은편 하바나 Havanas 옆 어반 아우피터스 Urban Outfitters 입구</p>
+	<br/><h3r>필수 안내</h3>
+	<ul>
+	    <li>성인만 참여 가능한 투어입니다.</li>
+	    <li>바르셀로나에는 관광객들을 노리는 소메치기들이 많습니다. 여권을 포함한 귀중품은 숙소에 두고 오시기 바랍니다.</li>
+	    <li>라발지구는 절대 깨끗하고 아름답기만 한 동네가 아닙니다. 현지 모습을 그대로 받아들여 주시기 바랍니다.</li>
+	    <li>라발지구에서 가장 안전한 거리를 골라 투어합니다. 걱정 마시고 저만 따라오세요.</li>
+	    <li>술과 아주 간단한 안주만 먹을 예정이므로 저녁을 든든히 드시고 오시기 바랍니다.</li>
+	    <li>방문할 바에서 모두 음료 한 잔씩 주문을 해주셔야 해요. 술을 드시지 않는 분들도 물이나 탄산음료 같은 것들을 주문해 주시기 바랍니다.</li>
+	    <li>술은 적당히!! 취하시는 분이 계시는 경우 다른 분들에게 방해되지 않도록 숙소에 돌아가실 것을 정중히 부탁드리겠습니다.</li>
+    </ul>					
+</div>
+<h3 id="cost">38,500원</h3>
+<p  id="wish">405명이 이 상품을 위시리스트에 담았습니다.</p>
+					
+					
+					
+							

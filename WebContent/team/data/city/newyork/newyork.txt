@@ -1,0 +1,11 @@
+<h1>뉴욕</h1>
+<h4>뉴욕</h4>
+<h5>1230여개의 상품</h5>
+<a id="link_country" href="usa.html">미국</a>
+<a id="link_city" href="newyork.html">뉴욕</a>
+<a id="link_img" href="newyork.html">
+	<img src="../data/city/newyork/newyork.jpg" alt="newyork" class="img_center zoom"/>
+</a>
+<a id="head_img" href="newyork.html">
+	<img src="../data/city/newyork/newyork_head.jpg" alt="newyork" class="top_head_center"/>
+</a>

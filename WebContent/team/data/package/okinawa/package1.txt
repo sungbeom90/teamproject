@@ -1,0 +1,56 @@
+<h5>[나하공항 수령] 오키나와 츄라우미 수족관 대인(만16세 이상) 입장권 티켓</h5>
+<a id="link_country" href="japan.html"><span>일본<span></a>
+<a id="link_city" href="okinawa.html"><span>오키나와<span></a>
+<a id="link_img" href="okinawa_package1.html">
+	<img src="../data/package/okinawa/main_photo.jpg" alt="main photo" class="img_center package_img ">
+</a>
+
+<h1 id="title">[나하공항 수령] 오키나와 츄라우미 수족관 대인(만16세 이상) 입장권 티켓</h1>
+<img src="../data/package/okinawa/main_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/okinawa/sub1_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/okinawa/sub2_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/okinawa/sub3_photo.jpg" alt="main photo" class="contents"/>
+
+
+<h2 id="description_title">아름다운 오키나와 바다의 축소판! 츄라우미 수족관에 놀러오세요!<h2>
+<div id="description_body">					
+	<br/><p>오키나와를 여행하면 반드시 방문하게 되는 No.1 관광 명소, 츄라우미 수족관!</p>
+	<br/><p>아름다운 오키나와 바다의 축소판이라고 할 수 있는 이곳은 이미 세간에 많이 알려진 고래상어뿐만 아니라 다양한 해양 생물들의 터전이기도 하기에 남녀노소 누구에게나 인기있는 관광지입니다.<p>
+	<br/><p>특히 명성 그대로 거대 고래상어와 그들의 놀이터인 압도적인 크기의 투명수조는 관광객들의 탄성을 절로 자아내고 있으며, 야외의 오키짱쇼(돌고래쇼) 역시 많은 방문객들의 사랑을 받고 있습니다.</p>
+	<br/><p>이러한 관광명소인 츄라우미 수족관 입장권을 드디어 나하공항에서도 만나 볼 수 있게 되었습니다.</p>
+	<br/><p>직접 나하 국제거리까지 가서 입장권을 수령해야만 했던 과거와는 달리, 이제는 나하공항 국내선 터미널에서도 간편히 수령할 수 있기 때문에 이동시간을 아끼고자 하는 관광객들에게는 안성맞춤의 상품입니다</p>	
+</div>
+
+<div id="infomation_body">			
+	<br/><h3>포함 사항</h3>
+		<p>츄라우미 수족관 입장료 (성인)</p>
+	<br/><h3>불포함 사항</h3>
+		<p>기타 개인 지출</p>
+</div>
+<div id="adguide_body">
+<br/><h3>이용 시간</h3>
+		<p>나하공항 국내선 H.I.S 카운터 영업시간 : 9:30-18:30 / 휴게시간 : 13:00-14:00 / (영업시간 외에 티켓 교환이 불가하오니 시간을 꼭 확인해주세요.)</p>				
+	<br/><h3>위치 안내</h3>
+		<p>나하공항 국내선 도착로비 A와B사이 H.I.S 카운터 (나하공항 수령 상품입니다)</p>
+	<br/><h3r>사용 방법</h3>
+	<ul>
+		<li>바우처는 구매일로부터 90일간 유효하며, 이 기간 내에 반드시 실물 입장권으로 교환하셔야 합니다.</li>
+		<li>실물 입장권은 티켓에 표기된 유효기간까지 사용 가능합니다.</li>
+		<li>태풍과 같은 불가항력 요인으로 인해 나하 공항 국내선 카운터가 폐쇄될 수 있습니다.</li>
+		<li>만 6세 미만은 무료 입장입니다.</li>
+		<li>수족관 내에서 음식물 섭취는 불가합니다.</li>
+		<li>수족관 내 전구역은 금연입니다. (화재경보기 항시 작동 중)</li>
+		<li>애완동물은 동반 입장이 불가합니다.(보조견, 맹인 안내견 등을 제외)</li>
+		<li>관람 시 자유롭게 사진 촬영은 가능하지만 셀카봉/삼각대 사용은 삼가해주세요.</li>
+		<li>안전을 위해 관내 보행 중 스마트폰 사용은 삼가해주세요.</li>
+		<li>츄라우미 수족관의 음성가이드(PDA)는 예약 후 무료로 이용이 가능합니다. 이용 일주일 전까지 시설에 직접 문의해주세요.</li>
+		<li>유모차 및 휠체어 무료 대여가 가능합니다. 예약은 불가하며 선착순으로 대여가 가능합니다.</li>
+		<li>돌고래쇼 공연시간은 약 20분입니다. 공연 시간은 11:00, 13:00, 14:30, 16:00입니다.</li>							
+	</ul>				
+</div>
+<h3 id="cost">17,600원</h3>
+<p  id="wish">207명이 이 상품을 위시리스트에 담았습니다.</p>
+					
+					
+					
+							

@@ -1,0 +1,11 @@
+<h1>오키나와</h1>
+<h4>오키나와</h4>
+<h5>172여개의 상품</h5>
+<a id="link_country" href="japan.html">일본</a>
+<a id="link_city" href="okinawa.html">오키나와</a>
+<a id="link_img" href="okinawa.html">
+	<img src="../data/city/okinawa/okinawa.jpg" alt="okinawa" class="img_center zoom"/>
+</a>
+<a id="head_img" href="okinawa.html">
+	<img src="../data/city/okinawa/okinawa_head.jpg" alt="okinawa" class="top_head_center"/>
+</a>

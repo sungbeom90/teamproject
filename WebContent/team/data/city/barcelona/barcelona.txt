@@ -1,0 +1,11 @@
+<h1>바르셀로나</h1>
+<h4>바르셀로나</h4>
+<h5>223여개의 상품</h5>
+<a id="link_country" href="spain.html">스페인</a>
+<a id="link_city" href="barcelona.html">바르셀로나</a>
+<a id="link_img" href="barcelona.html">
+	<img src="../data/city/barcelona/barcelona.jpg" alt="barcelona" class="img_center zoom"/>
+</a>
+<a id="head_img" href="barcelona.html">
+	<img src="../data/city/barcelona/barcelona_head.jpg" alt="barcelona" class="top_head_center"/>
+</a>

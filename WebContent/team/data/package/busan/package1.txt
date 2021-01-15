@@ -1,0 +1,53 @@
+<h5>부산 나이트 시티투어 (동부산)</h5>
+<a id="link_country" href="korea.html">대한민국</a>
+<a id="link_city" href="busan.html">부산</a>
+<a id="link_img" href="busan_package1.html">
+	<img src="../data/package/busan/main_photo.jpg" alt="main photo" class="img_center package_img ">
+</a>
+
+<h1 id="title">부산 나이트 시티투어 (동부산)</h1>
+<img src="../data/package/busan/main_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/busan/sub1_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/busan/sub2_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/busan/sub3_photo.jpg" alt="main photo" class="contents"/>
+
+
+<h2 id="description_title">부산의 밤풍경을 한눈에 볼 수 있는 투어<h2>
+<div id="description_body">					
+	<br/><p>부산에서 가장 유명한 야경 명소 네 곳을, 약 3시간에 걸친 투어로 모두 볼 수 있는 기회입니다.</p>
+	<br/><p>근대화 이전과 이후의 부산의 모습을 한 눈에 볼 수 있는 호천마을의 야경은 보는 이의 가슴도 뻥 뚫릴 만한 탁 트인 절경을 자랑하고 있습니다.<p>
+	<br/><p>부산의 밤문화의 상징인 광안리를 거닐며 부산에서의 여행을 조금 더 특별하게 만들어 보세요.</p>
+	<br/><p>부산의 모든 곳을 한 눈에 내려다 볼 수 있는 황령산 봉수대에 올라 서서 은하수와 같은 부산의 나이트 뷰를 만끽할 수 있습니다.</p>
+	<br/><p>아름다운 선율의 파도소리와 부산을 상징하는 마린시티를 한 눈에 감상할 수 있는 The bay101 에서 당신의 눈과 귀를 즐겁게 해드리겠습니다.</p>		
+</div>
+
+<div id="infomation_body">			
+	<br/><h3>포함 사항</h3>
+		<p>차량</p>
+		<p>언어서비스</p>
+	<br/><h3>불포함 사항</h3>
+		<p>스낵과 음료</p>
+		<p>우산과 우비</p>
+</div>
+<div id="adguide_body">
+<br/><h3>만나는 시간</h3>
+		<p>오후 7시 30분</p>				
+	<br/><h3>만나는 장소</h3>
+		<p>서면역 12번 출구</p>
+	<br/><h3r>필수 안내</h3>
+	<ul>
+	    <li>저녁시간은 따로 주어지지 않습니다.</li>
+		<li>만약 베이비시트, 휠체어 또는 캐리어를 가지고 오실 경우 미리 알려주세요.</li>
+		<li>기상악화나 예기치 못한 상황으로 인해 투어 일정이 변경될 수 있습니다.</li>
+		<li>바우처는 정해진 날짜에만 이용 가능합니다.</li>
+		<li>영유아의 경우 무료입니다. (영유아는 자리를 차지하지 않고, 보호자가 안고 탈 수 있는 경우에만 해당됩니다. )</li>
+		<li>비가 오거나 눈이 와도 투어는 일정대로 진행됩니다.</li>
+		<li>각 명소마다 약간의 도보이동이 있습니다. 편한 옷과 신발을 착용해주세요.</li>
+    </ul>					
+</div>
+<h3 id="cost">29,900원</h3>
+<p id="wish">179명이 이 상품을 위시리스트에 담았습니다.</p>
+					
+					
+					
+							

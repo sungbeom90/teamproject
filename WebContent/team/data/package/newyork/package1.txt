@@ -1,0 +1,58 @@
+<h5>[투어]뉴욕 메트로폴리탄 미술관 - 서양미술사 공부하는 미술관 투어 ::미국/뉴욕</h5>
+<a id="link_country" href="usa.html">미국</a>
+<a id="link_city" href="newyork.html">뉴욕</a>
+<a id="link_img" href="newyork_package1.html">
+	<img src="../data/package/newyork/main_photo.jpg" alt="main photo" class="img_center package_img ">
+</a>
+
+<h1 id="title">[투어]뉴욕 메트로폴리탄 미술관 - 서양미술사 공부하는 미술관 투어 ::미국/뉴욕</h1>
+<img src="../data/package/newyork/main_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/newyork/sub1_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/newyork/sub2_photo.jpg" alt="main photo" class="contents"/>
+<img src="../data/package/newyork/sub3_photo.jpg" alt="main photo" class="contents"/>
+
+
+<h2 id="description_title">그리스로마-중세-고전-근대의 흐름으로 이어지는 대화 중심의 미술사 투어<h2>
+<div id="description_body">					
+	<br/><p>메트로폴리탄 미술관은 전 세계에서 4번째로 큰 미술관이며, 서양미술사의 역사 순서대로 정리가 잘 되어있다는 장점이 있습니다.</p>
+	<br/><p>그리고 미국이라는 나라가 근대에 발전한 나라이기 때문에 고전 시대의 걸작은 적은 편이지만, 마네, 모네, 고흐, 고갱, 세잔과 같은 근대 화가의 작품이 많은 편입니다.<p>
+	<br/><p>이 MET의 장점을 살려서 관람하는 것은, 우선 미술사의 순서대로 관람하는 것을 기본으로 하고, 그리고 인상주의 이후의 근대 미술에 대한 강의를 따로 짧게라도 듣고 나서 근대 미술을 관람하는 것이라고 생각합니다.</p>
+	<br/><p>가이드 투어는 아래의 순서로 진행됩니다.</p>
+	<br/><p>1 그리스로마 미술</p>
+	<br/><p>2 중세 미술</p>
+	<br/><p>3 카페나 편안한 곳에 앉에서 인상주의 이후 근대미술에 대한 강의가 30분 정도 진행됩니다</p>
+	<br/><p>4 고전미술(유러피안 페인팅European Paintings)</p>
+	<br/><p>5 근대미술</p>
+	<br/><p>6 모더니즘 페인팅 이후 미니멀리즘 까지</p>
+	<br/><p>가이드는 주로 대화 위주의 형식으로 진행할 계획입니다. 그리고 가이드가 끝나면 자유롭게 관람하시면 됩니다.</p>		
+</div>
+
+<div id="infomation_body">			
+	<br/><h3>포함 사항</h3>
+		<p>입장료는 포함 되어 있습니다.</p>
+	<br/><h3>불포함 사항</h3>
+		<p>기타 개인 지출</p>
+</div>
+<div id="adguide_body">
+<br/><h3>만나는 시간</h3>
+		<p>제가 전업이 아니기 때문에 시간이 자유롭지는 않습니다. 월요일은 아침 12시, 금요일 토요일은 2시반에서 3시사이에 진행하겠습니다.(예약하실때 따로 문의하시면 시간 조정은 가능합니다만 금,토는 기본적으로 2시반 이후에 진행 가능합니다) MET 오픈시간 화요일 - 오전10:00~오후5:30 금,토요일 - 오전10:00~오후9:00</p>				
+		<p>그리고 월,금,토임에도 날짜가 막혀있는 경우 문의하기로 메세지를 보내시면 따로 열어드립니다.</p>				
+	<br/><h3>만나는 장소</h3>
+		<p>Metropolitan Museum of Art 미술관 앞</p>
+	<br/><h3r>필수 안내</h3>
+	<ul>
+		<li>메트로폴리탄 미술관은 기본적으로 음식물, 음료수 반입 금지입니다. 중간에 휴식겸 강의 진행할 때 구내 까페에서 진행할 예정입니다.</li>
+		<li>자녀와 동행하는 경우, 최소 중학교 3학년 이상은 되어야 강의를 이해할 수 있을 것으로 생각 됩니다.</li>
+		<li>3시간동안 걷는다는 것은 생각보다 체력소모가 큽니다. 가급적 무거운 가방을 들고 미술관 관람을 하시는 것은 피하시기를 권장합니다.</li>
+		<li>인원은 3인 이하로 진행 되고, 두팀일 경우 4명이하로 진행합니다. 1명일 경우 취소될 수도 있습니다.</li>
+		<li>미술관 투어는 기상에 상관 없이 진행합니다.</li>
+		<li>원하시는 경우 마지막에 현대미술 파트도 짦게 가이드 해 드릴 수 있습니다.</li>
+		<li>여행자 보험에 가입후 투어 참여를 권장하며 가이드 진행 중 발생하는 사고에 대해서는 가이드가 책임지지 않습니다</li>
+	</ul>				
+</div>
+<h3 id="cost">68,401원</h3>
+<p id="wish">218명이 이 상품을 위시리스트에 담았습니다.</p>
+					
+					
+					
+							
