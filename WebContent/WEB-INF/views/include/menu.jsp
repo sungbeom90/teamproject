@@ -22,7 +22,13 @@
 			<a href="<%=application.getContextPath()%>/ch06/content">Forward / Redirect</a></li>
 		<li class="chapter">
 			Ch07.
-			<a href="<%=application.getContextPath()%>/ch07/content">Data Delivery</a></li>
+			<a href="<%=application.getContextPath()%>/ch07/content">Data Delivery(Model이용)</a></li>
+		<li class="chapter">
+			Ch08.
+			<a href="<%=application.getContextPath()%>/ch08/content">Data Delivery(Session이용)</a></li>
+		<li class="chapter">
+			Ch09.
+			<a href="<%=application.getContextPath()%>/ch09/content">File Upload/ Download</a></li>
 		
 	</ul>			
 </div>
