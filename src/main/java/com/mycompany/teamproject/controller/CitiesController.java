@@ -28,10 +28,10 @@ public class CitiesController {
 		}
 		
 		// http://.../teamproject/cities 생략됨
-		@RequestMapping("/busan")
+		@GetMapping("/busan")
 		public String busan() {
 			logger.info("실행");
-			return "cities/content";
+			return "cities/busan";
 		}
 		
 		

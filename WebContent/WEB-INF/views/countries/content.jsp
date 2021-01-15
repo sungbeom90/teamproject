@@ -34,8 +34,44 @@
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
-				<div class="sector">
-						<h1>countries 필드</h1>
+				<div class="sector">				
+						<div class="card img-fluid countries">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <div class="card-img-overlay" >
+						      <h2 class="card-title">미국</h2>
+						      <a href="#" class="btn btn-primary stretched-link">바로가기</a>
+						    </div>
+						</div>
+						<div class="card img-fluid countries">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <div class="card-img-overlay" >
+						      <h2 class="card-title">미국</h2>
+						      <a href="#" class="btn btn-primary stretched-link">바로가기</a>
+						    </div>
+						</div>
+						<div class="card img-fluid countries">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <div class="card-img-overlay" >
+						      <h2 class="card-title">미국</h2>
+						      <a href="#" class="btn btn-primary stretched-link">바로가기</a>
+						    </div>
+						</div>
+						<div class="card img-fluid countries">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <div class="card-img-overlay" >
+						      <h2 class="card-title">미국</h2>
+						      <a href="#" class="btn btn-primary stretched-link">바로가기</a>
+						    </div>
+						</div>
+						<div class="card img-fluid countries">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <div class="card-img-overlay" >
+						      <h2 class="card-title">미국</h2>
+						      <a href="#" class="btn btn-primary stretched-link">바로가기</a>
+						    </div>
+						</div>
+						
+						 
 						
 				</div>
 			</div>

@@ -36,22 +36,10 @@
 			<div class="content container">
 				<div class="sector">
 						<h1>cities 필드</h1>
-						<h2>고정 해더 이미지를 띄우자</h2>
-						
+						<h2>busan</h2>						
 				</div>
 				<div class="sector">
-					<div class="card-deck">
-						<div class="card img-fluid cities">
-						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
-						    <div class="card-img-overlay">
-						      <h4 class="card-title">John Doe</h4>
-						      <p class="card-text">Some example text some example text. Some example text some example text. Some example text some example text. Some example text some example text.</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
-						    </div>
-						  </div>
-						  
-						  
-						</div>
+					<a><img alt="부산" src="<%=application.getContextPath()%>/resources/img/photo1.jpg"></a>
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
