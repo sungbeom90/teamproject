@@ -28,16 +28,33 @@
 					<div class="sector">
 						<h5>파일 업로드</h5>
 						<div>
-							<form method="post" enctype="multipart/form-data" action="fileupload">
-								<input type="text" name="title" placeholder="그림제목"><br/>
-								<input type="text" name="desc" placeholder="그림설명" style="width:500px"><br/>
-								<input type="file" name="attach" placeholder="파일선택"><br/>
-								<input class="btn btn-primary btn-sm" type="submit" value="사진 올리기"/>
+							<form method="post" enctype="multipart/form-data" action="photoupload">
+								<input type="text" name="uid" placeholder="아이디"><br/>
+								<input type="text" name="uname" placeholder="이름"><br/>
+								<input type="password" name="upassword" placeholder="패스워드"><br/>
+								<input type="file" name="uphoto"><br/>
+								<input class="btn btn-primary btn-sm" type="submit" value="회원가입"/>
 							</form>
 						</div>
 					</div>
-									
-				
+					
+					<div class="sector">
+						<h5>파일 리스트</h5>
+						<div>
+							<script type="text/javascript">
+								$(function(){
+									$.ajax({
+										url: "photolist",
+										method: "get",
+										success: function(data){
+											$("#photoList").html(data);
+										}
+									});
+								});
+							</script>
+							<div id="photoList"></div>
+						</div>
+					</div>					
 				</div>
 			</div>
 		</div>
