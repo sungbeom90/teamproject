@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/ch00")
+@RequestMapping("/01main")
 public class Ch00Controller {
 		private static final Logger logger=
 				LoggerFactory.getLogger(Ch00Controller.class);

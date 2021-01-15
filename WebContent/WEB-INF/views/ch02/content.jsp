@@ -22,7 +22,7 @@
 			<div class="mainCenter">
 				<%-- 공통 메뉴 --%>
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
-				<div class="content">
+				<div class="content container">
 					
 					<div class="sector">
 						<h5>요청 매핑</h5>
