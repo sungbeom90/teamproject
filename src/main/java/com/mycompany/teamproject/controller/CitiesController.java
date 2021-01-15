@@ -1,8 +1,16 @@
 package com.mycompany.teamproject.controller;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -18,6 +26,14 @@ public class CitiesController {
 			logger.info("실행");
 			return "cities/content";
 		}
+		
+		// http://.../teamproject/cities 생략됨
+		@RequestMapping("/busan")
+		public String busan() {
+			logger.info("실행");
+			return "cities/content";
+		}
+		
 		
 		
 

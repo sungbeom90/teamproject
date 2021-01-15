@@ -45,6 +45,8 @@
 				</div>
 				<div class="sector">
 					<h5>HttpSession 객체를 이용한 로그인</h5>
+					<h5>id:admin</h5>
+					<h5>password:12345</h5>
 					<div>
 						<c:if test="${loginStatus == null}">
 							<div>

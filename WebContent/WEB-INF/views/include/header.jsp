@@ -3,11 +3,10 @@
 
 
 <header class="container">
-	<nav
-		class="navbar navbar-expand-sm bg-light navbar-light justify-content-end">
+	<nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-end">
 		<!-- Brand -->
-		<a class="navbar-brand mr-auto" href="<%=application.getContextPath()%>/main">
-			<img src="../data/myrealtrip.png" alt="logo" style="width: 10rem;">
+		<a class="navbar-brand mr-auto" href="<%=application.getContextPath()%>/main/content">
+			<img src="<%=application.getContextPath()%>/resources/img/myrealtrip.png" alt="logo" style="width: 10rem;">
 		</a>
 
 		<!-- Links -->

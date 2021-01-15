@@ -36,7 +36,11 @@
 			<div class="content container">
 				<div class="sector">
 						<h1>cities 필드</h1>
+						<h2>고정 해더 이미지를 띄우자</h2>
 						
+				</div>
+				<div class="sector">
+					
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
