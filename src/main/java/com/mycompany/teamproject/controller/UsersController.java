@@ -51,12 +51,12 @@ public class UsersController {
 		@RequestMapping("/password_re")
 		public String password_re() {
 			logger.info("비밀번호 재설정 완료");
-			return "users/password_re";
+			return "redirect:/users/sign_in";
 		}
 		
 		@PostMapping("/login")
 		public String login(String uid, String upassword, HttpSession session) {
-			if(uid.equals("admin") && upassword.equals("12345")) {
+			if(uid.equals("admin@naver.com") && upassword.equals("12345")) {
 			session.setAttribute("loginStatus",uid);
 			}
 			return "redirect:/main/content";

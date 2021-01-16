@@ -45,12 +45,12 @@
 				</div>
 				<div class="sector">
 					<h2>비밀번호 재설정</h2>
-						<form class="password_re" action="login">
+						<form method="post" class="password_re" action="password_re">
 							<div>
-								<label for="urepassword1">새로운 비밀번호를 입력하세요 .* </label><br/>
-								<input type="password" placeholder="비밀번호를 입력하세요." name="uname" /><br/>
-								<label for="urepassword2">다시 입력해주세요. * </label><br/>
-								<input type="password" placeholder="다시 입력하세요." name="upassword_re" />
+								<label for="upassword_re_1">새로운 비밀번호를 입력하세요 .* </label><br/>
+								<input type="password" placeholder="비밀번호를 입력하세요." name="upassword_re_1" /><br/>
+								<label for="upassword_re_2">다시 입력해주세요. * </label><br/>
+								<input type="password" placeholder="다시 입력하세요." name="upassword_re_2" />
 							</div>
 							<button>비밀번호 재설정</button>
 						</form>

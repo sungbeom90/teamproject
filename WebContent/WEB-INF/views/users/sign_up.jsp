@@ -87,7 +87,7 @@
 							<div class="joinspan">
 								<span>*선택 항목을 동의하지 않아도 서비스를 이용하실 수 있습니다.</span><br/>
 								<span>*회원 가입 시 본인이 만 14세 이상임에 동의하게 됩니다.</span><br/>
-								<button>회원가입</button>
+								<button class="btn btn-primary btn-sm">회원가입</button>
 							</div>
 							
 						</div>

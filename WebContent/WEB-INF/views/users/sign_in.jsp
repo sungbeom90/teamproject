@@ -45,7 +45,7 @@
 				</div>
 				<div class="sector">
 					<h5>HttpSession 객체를 이용한 로그인</h5>
-					<h5>id:admin</h5>
+					<h5>id:admin@naver.com</h5>
 					<h5>password:12345</h5>
 					<div>
 						<c:if test="${loginStatus == null}">
@@ -57,7 +57,7 @@
 									<input type="password" name="upassword" placeholder="비밀번호" /><br/>
 									<button class="btn btn-success btn-sm">로그인</button>
 									<a class="btn btn-danger btn-sm" href="password">비밀번호 찾기</a><br/>
-									<span>아직 회원이 아니신가요?</span>	<a href="sign_up">회원가입</a>
+									<span>아직 회원이 아니신가요?</span>	<a class="btn btn-primary btn-sm" href="sign_up">회원가입</a>
 								</form>
 							</div>
 						</c:if>
