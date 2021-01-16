@@ -45,7 +45,7 @@
 				</div>
 				<div class="sector">
 					<h2>비밀번호 재설정</h2>
-						<form method="post" class="password_re" action="password_re">
+						<form method="post" class="password_re" action="sign_in">
 							<div>
 								<label for="upassword_re_1">새로운 비밀번호를 입력하세요 .* </label><br/>
 								<input type="password" placeholder="비밀번호를 입력하세요." name="upassword_re_1" /><br/>

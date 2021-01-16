@@ -1,5 +1,6 @@
 package com.mycompany.teamproject.controller;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mycompany.teamproject.dto.User;
 
 @Controller
 @RequestMapping("/users")
@@ -31,8 +34,14 @@ public class UsersController {
 		}
 		
 		@RequestMapping("/sign_up")
-		public String sign_up() {
-			logger.info("회원가입 화면 실행");
+		public String sign_up(User user, HttpSession session) {
+			String signup = (String)session.getAttribute("signupStatus");
+			if(signup != null) {
+				logger.info("이름 : " , user.getUname());
+				logger.info("이메일 : " , user.getUid());
+				logger.info("패스워드 : " , user.getUpassword());
+				logger.info("회원가입 화면 실행");
+			}
 			return "users/sign_up";
 		}
 		
@@ -51,7 +60,7 @@ public class UsersController {
 		@RequestMapping("/password_re")
 		public String password_re() {
 			logger.info("비밀번호 재설정 완료");
-			return "redirect:/users/sign_in";
+			return "users/password_re";
 		}
 		
 		@PostMapping("/login")
