@@ -1,6 +1,5 @@
 package com.mycompany.teamproject.controller;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;

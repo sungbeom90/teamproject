@@ -19,5 +19,13 @@ public class CountriesController {
 			return "countries/content";
 		}
 		
+		@RequestMapping("/usa")
+		public String usa() {
+			logger.info("뉴욕");
+			return "countries/usa";
+		}
+	
+		
+		
 
 }
