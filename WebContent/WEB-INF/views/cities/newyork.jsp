@@ -36,7 +36,7 @@
 			<div class="content container">
 				<div class="sector">
 						<h1>cities 필드</h1>
-						<h2>busan</h2>						
+						<h2>newyork</h2>						
 				</div>
 				<div class="sector">
 					<a><img alt="부산" src="<%=application.getContextPath()%>/resources/img/photo1.jpg"></a>
