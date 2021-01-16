@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>비밀번호 찾기</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -44,31 +44,17 @@
 					
 				</div>
 				<div class="sector">
-					<h5>HttpSession 객체를 이용한 로그인</h5>
-					<h5>id:admin</h5>
-					<h5>password:12345</h5>
-					<div>
-						<c:if test="${loginStatus == null}">
+					<h2>비밀번호 재설정</h2>
+						<form class="password_re" action="login">
 							<div>
-								<form method="post" action="login">
-									<label for="uid">이메일 * </label><br/>
-									<input type="email" name="uid" placeholder="ID@example.com" /><br/>
-									<label for="upassword">비밀번호 * </label><br/>
-									<input type="password" name="upassword" placeholder="비밀번호" /><br/>
-									<button class="btn btn-success btn-sm">로그인</button>
-									<a class="btn btn-danger btn-sm" href="password">비밀번호 찾기</a><br/>
-									<span>아직 회원이 아니신가요?</span>	<a href="sign_up">회원가입</a>
-								</form>
+								<label for="urepassword1">새로운 비밀번호를 입력하세요 .* </label><br/>
+								<input type="password" placeholder="비밀번호를 입력하세요." name="uname" /><br/>
+								<label for="urepassword2">다시 입력해주세요. * </label><br/>
+								<input type="password" placeholder="다시 입력하세요." name="upassword_re" />
 							</div>
-						</c:if>
-						<c:if test="${loginStatus != null}">
-							<div>
-								<a class="btn btn-danger btn-sm" href="logout">로그아웃</a>
-							</div>
-						</c:if>
-					</div>
+							<button>비밀번호 재설정</button>
+						</form>
 				</div>
-			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>
 	</div>
