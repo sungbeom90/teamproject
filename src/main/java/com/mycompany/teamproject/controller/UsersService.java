@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Service
-public class HomeService {
-	private static final Logger logger=LoggerFactory.getLogger(HomeService.class);
+public class UsersService {
+	private static final Logger logger=LoggerFactory.getLogger(UsersService.class);
 	
 	
 }
