@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>미국 페이지</title>
+<title>한국</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -37,6 +37,7 @@
 				<div class="sector">
 					<div>
 						<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg">
+						<span style="font-size: 400%; font-weight: bold;">한 국</span>
 					</div>
 					<div class="card-deck">
 							<div class="card img-fluid cities">
@@ -51,9 +52,9 @@
 							 <div class="card img-fluid cities">
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
-							      <h4 class="card-title">서 울</h4>
+							      <h4 class="card-title">속 초</h4>
 							      <p class="card-text">Some example text some </p>
-							      <a href="<%=application.getContextPath()%>/cities/seoul" class="btn btn-primary">See Profile</a>
+							      <a href="<%=application.getContextPath()%>/cities/sokcho" class="btn btn-primary">See Profile</a>
 							    </div>
 							 </div>
 					</div>					

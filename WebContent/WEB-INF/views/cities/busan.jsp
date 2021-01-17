@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>부산</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -52,7 +52,7 @@
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">론다 야경투어</h4>
+						      <h4 class="card-title">요트투어</h4>
 						      <p class="card-text">:: 당일치기로 떠나는 투어 ::</p>
 						      <a href="#" class="btn btn-primary">See Profile</a>
 						    </div>

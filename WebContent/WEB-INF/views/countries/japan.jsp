@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>미국 페이지</title>
+<title>일본</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -36,7 +36,8 @@
 			<div class="content container">
 				<div class="sector">
 					<div>
-						<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg">
+						<img style="width:00%" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg">
+						<span style="font-size: 400%; font-weight: bold;">일 본</span>
 					</div>
 					<div class="card-deck">
 							<div class="card img-fluid cities">
