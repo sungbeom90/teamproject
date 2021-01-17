@@ -54,7 +54,7 @@ public class OfferController {
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
 		board.setTitle("바르셀로나: 벨 항구에서 일몰 항해투어");
-		board.setSubtitle("낭만적인 시간을 보내고 싶다면, 태양으로 붉게 물든 바르셀로나의 바다에서 하루를 마무리해보세요!");
+		board.setSubtitle("낭만적인 시간을 보내고 싶다면 태양으로 붉게 물든 바르셀로나의 바다에서 하루를 마무리해보세요!");
 		board.setSubcontent("본 투어는 영어로 진행되며  다국적 여행자들과 함께하는 단체 투어로 진행됩니다."
 				+ "소규모 그룹으로 진행되어 개인적인 서비스를 제공해드려요."
 				+ "무료 음료, 간식을 제공합니다."
@@ -67,8 +67,38 @@ public class OfferController {
 				+ "- 스패니쉬 기타연주");
 		board.setUninclude("- 호텔 픽업 및 샌딩"
 				+ "- 기타 음식 및 음료");
-		board.setCourse("르셀로나 포트벨 일몰항해투어" + "붉게 물든 바다 위에서 바르셀로나의 석양을 즐겨 보세요!");
+		board.setCourse("바르셀로나 포트벨 일몰항해투어" + "붉게 물든 바다 위에서 바르셀로나의 석양을 즐겨 보세요!");
 		board.setAddinfo("만나는 시간 : 예약시 선택한 날짜에 따라 만나는 시간이 상이합니다.");
+		model.addAttribute("content",board);
+		
+		return "offers/content";
+		
+	}
+	
+	@GetMapping("/seville_offer1")
+	public String seville_offer1(Model model) {
+		logger.info("세비야 offer1 실행");
+		OfferBoard board = new OfferBoard();
+		board.setWriter("작성자");
+		board.setTitle("스페인광장부터 대성당까지 한번에 둘러보는 워킹투어");
+		board.setSubtitle("600개가 넘는 후기로 검증된 세비야 대표투어! 이제 대성당까지 함께 입장합니다");
+		board.setSubcontent("본 투어는 영어로 진행되며  다국적 여행자들과 함께하는 단체 투어로 진행됩니다."
+				+ "소규모 그룹으로 진행되어 개인적인 서비스를 제공해드려요."
+				+ "무료 음료, 간식을 제공합니다."
+				+ "커플들에게 로맨틱한 여행을 선사해드립니다."
+				+ "구시가지 항구(Old Harbour)로 잘 알려져 있는 포트벨(Port Vell)에서 전문 선장을 만나 특별한 항해를 경험해보세요! 배를 타고 바르셀로나의 고급 요트가 정박된 아름다운 항구 선착장을 지나가며 투어를 시작합니다!."
+				+ "우선 보안사항을 검토 받고 보트 여행 일정에 대한 설명을 듣게 됩니다. 이후 2시간 동안 항구와 바르셀로나의 해안을 항해하며 여행 일정에 따라 올림픽 항구, 이카리아 해변 및 도시의 대성당과 같은 도시의 주요 명소들을 보실 수 있답니다."
+				+ "붉게 지는 태양 아래 멋진 경관을 감상하고 음료를 마시며 하루를 마무리해보세요. 친구나 가족과 함께 특별한 순간을 사진으로 남기는 것도 잊지 마세요! 투어가 끝나면 포트벨로 다시 돌아갑니다.");
+		board.setInclude("1. 가이드 비용 (현지인 공인 가이드 비용 포함)"+"2.무선 수신기 대여료");
+		board.setUninclude("1. 대성당 입장료" + 
+				"- 성인 : 10유로" + 
+				"- 학생 (국제학생증 소지, 만 25세 이하) : 5유로" + 
+				"- 경로 (여권 소지, 만 65세 이상) : 5유로" + 
+				"- 어린이 (여권 소지, 만 14세 이하) : 무료" + 
+				"- 개별 구매한 입장권 사용 가능");
+		board.setCourse("거대한 역사 교과서, 스페인 광장" + "스페인의 거대한 역사 교과서라 불릴 만큼, 스페인 역사에 대한 방대한 이야기를 품고 있는 곳입니다." + 
+				"처음에는 웅장하고 화려한 외관에 감동하고, 알면 알수록 스페인 사람들의 섬세함에 감탄하게 됩니다");
+		board.setAddinfo("만나는 시간 : 스페인 광장 오전 8시 30분");
 		model.addAttribute("content",board);
 		
 		return "offers/content";
