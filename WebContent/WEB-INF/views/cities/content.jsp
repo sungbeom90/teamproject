@@ -47,6 +47,7 @@
 						      <h4 class="card-title">뉴 욕</h4>
 						      <p class="card-text">Some example text some example text.</p>
 						      <a href="newyork" class="btn btn-primary">바로가기</a>
+
 						    </div>
 						  </div>
 						  

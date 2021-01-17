@@ -10,5 +10,4 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UsersService {
 	private static final Logger logger=LoggerFactory.getLogger(UsersService.class);
 	
-	
 }

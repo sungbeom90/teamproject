@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">다이아몬드헤드 투어</h4>
 						      <p class="card-text">:: 일출보러 가기 ::</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
 					
