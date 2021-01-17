@@ -35,14 +35,14 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<h2>${barcellona.writer}</h2>
-					<h1>${barcellona.title}</h1>
-					<h5>${barcellona.subtitle}</h5>
-					<h5>${barcellona.subcontent}</h5>
-					<h5>${barcellona.include}</h5>
-					<h5>${barcellona.uninclude}</h5>
-					<h5>${barcellona.course}</h5>
-					<h5>${barcellona.addinfo}</h5>
+					<h2>${content.writer}</h2>
+					<h1>${content.title}</h1>
+					<h5>${content.subtitle}</h5>
+					<h5>${content.subcontent}</h5>
+					<h5>${content.include}</h5>
+					<h5>${content.uninclude}</h5>
+					<h5>${content.course}</h5>
+					<h5>${content.addinfo}</h5>
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

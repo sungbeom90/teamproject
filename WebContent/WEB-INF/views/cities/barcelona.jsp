@@ -43,8 +43,8 @@
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">다이아몬드헤드 투어</h4>
-						      <p class="card-text">:: 일출보러 가기 ::</p>
+						      <h4 class="card-title">라발지구 올드바 투어</h4>
+						      <p class="card-text">:: 투어하러 가기 ::</p>
 						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
@@ -52,9 +52,9 @@
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">스쿠버 다이빙 체험</h4>
-						      <p class="card-text">:: 거북이 만나러 가기 ::</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
+						      <h4 class="card-title">벨 항구에서 일몰 요트투어</h4>
+						      <p class="card-text">:: 일몰투어 가기 ::</p>
+						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer2" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
 			  </div>
