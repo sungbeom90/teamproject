@@ -45,6 +45,8 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">라발지구 관광</h4>
 						      <p class="card-text">:: 올드바 투어하기 ::</p>
+						      <h4 class="card-title">라발지구 올드바 투어</h4>
+						      <p class="card-text">:: 투어하러 가기 ::</p>
 						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
@@ -55,6 +57,9 @@
 						      <h4 class="card-title">사그라다 파밀리아</h4>
 						      <p class="card-text">:: 건축가 가우디 투어 ::</p>
 						      <a href="#" class="btn btn-primary">See Profile</a>
+						      <h4 class="card-title">벨 항구에서 일몰 요트투어</h4>
+						      <p class="card-text">:: 일몰투어 가기 ::</p>
+						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer2" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
 			  </div>
