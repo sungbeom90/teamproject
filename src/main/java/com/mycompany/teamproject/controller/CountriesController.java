@@ -21,9 +21,29 @@ public class CountriesController {
 		
 		@RequestMapping("/usa")
 		public String usa() {
-			logger.info("뉴욕");
+			logger.info("미국");
 			return "countries/usa";
 		}
+		
+		@RequestMapping("/spain")
+		public String spain() {
+			logger.info("스페인");
+			return "countries/spain";
+		}
+		
+		@RequestMapping("/japan")
+		public String japan() {
+			logger.info("일본");
+			return "countries/japan";
+		}
+		
+		@RequestMapping("/korea")
+		public String korea() {
+			logger.info("한국");
+			return "countries/korea";
+		}
+		
+		
 	
 		
 		

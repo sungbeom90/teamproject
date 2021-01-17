@@ -36,15 +36,15 @@
 			<div class="content container">
 				<div class="sector">
 				<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg">	
-						<h1>뉴 욕</h1>
+						<h1>바르셀로나</h1>
 						<h2>추천 상품</h2>		 				
 				</div>
 				<div class="card-deck">
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">메트로폴리탄 미술관</h4>
-						      <p class="card-text">:: 서양 미술사 투어 ::</p>
+						      <h4 class="card-title">다이아몬드헤드 투어</h4>
+						      <p class="card-text">:: 일출보러 가기 ::</p>
 						      <a href="#" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
@@ -52,8 +52,8 @@
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">자유의 여신상</h4>
-						      <p class="card-text">:: 자유의 여신상 투어 ::</p>
+						      <h4 class="card-title">스쿠버 다이빙 체험</h4>
+						      <p class="card-text">:: 거북이 만나러 가기 ::</p>
 						      <a href="#" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>

@@ -35,8 +35,41 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-						<h1>packages 필드</h1>
-						
+					<h1>packages 필드</h1>
+					<div class="card-deck">
+						<div class="card img-fluid cities">
+					    	<img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+							    <div class="card-img">
+							      <h4 class="card-title">John Doe</h4>
+							      <p class="card-text">Some example text some example text.</p>
+							      <a href="#" class="btn btn-primary">See Profile</a>
+							    </div>
+						</div>
+						<div class="card img-fluid cities">
+					    	<img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+							    <div class="card-img">
+							      <h4 class="card-title">John Doe</h4>
+							      <p class="card-text">Some example text some example text.</p>
+							      <a href="#" class="btn btn-primary">See Profile</a>
+							    </div>
+						</div>
+						<div class="card img-fluid cities">
+					    	<img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+							    <div class="card-img">
+							      <h4 class="card-title">John Doe</h4>
+							      <p class="card-text">Some example text some example text.</p>
+							      <a href="#" class="btn btn-primary">See Profile</a>
+							    </div>
+						</div>
+						<div class="card img-fluid cities">
+					    	<img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+							    <div class="card-img">
+							      <h4 class="card-title">John Doe</h4>
+							      <p class="card-text">Some example text some example text.</p>
+							      <a href="#" class="btn btn-primary">See Profile</a>
+							    </div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

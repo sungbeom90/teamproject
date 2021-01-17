@@ -42,18 +42,18 @@
 							<div class="card img-fluid cities">
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork3.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
-							      <h4 class="card-title">뉴 욕</h4>
+							      <h4 class="card-title">바 르 셀 로 나</h4>
 							      <p class="card-text"> Some example text some example text.</p>
-							      <a href="<%=application.getContextPath()%>/cities/newyork" class="btn btn-primary">See Profile</a>
+							      <a href="<%=application.getContextPath()%>/cities/barcelona" class="btn btn-primary">See Profile</a>
 							    </div>
 							  </div>
 							  
 							 <div class="card img-fluid cities">
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
-							      <h4 class="card-title">하 와 이</h4>
-							      <p class="card-text">Some example text some </p>
-							      <a href="<%=application.getContextPath()%>/cities/hawaii" class="btn btn-primary">See Profile</a>
+							      <h4 class="card-title">세 비 야</h4>
+							      <p class="card-text">Some example text some example text.</p>
+							      <a href="<%=application.getContextPath()%>/cities/seville" class="btn btn-primary">See Profile</a>
 							    </div>
 							 </div>
 					</div>					

@@ -20,11 +20,53 @@ public class CitiesController {
 			return "cities/content";
 		}
 		
-		// http://.../teamproject/cities 생략됨
-		@GetMapping("/busan")
+		
+		@RequestMapping("/newyork")
+		public String newyork() {
+			logger.info("뉴욕 상품");
+			return "cities/newyork";
+		}
+		
+		@RequestMapping("/hawaii")
+		public String hawaii() {
+			logger.info("하와이 상품");
+			return "cities/hawaii";
+		}
+		
+		@RequestMapping("/barcelona")
+		public String barcelona() {
+			logger.info("바르셀로나 상품");
+			return "cities/barcelona";
+		}
+		
+		@RequestMapping("/seville")
+		public String seville() {
+			logger.info("세비야 상품");
+			return "cities/seville";
+		}
+		
+		@RequestMapping("/okinawa")
+		public String okinawa() {
+			logger.info("오키나와 상품");
+			return "cities/okinawa";
+		}
+		
+		@RequestMapping("/fukuoka")
+		public String fukuoka() {
+			logger.info("후쿠오카 상품");
+			return "cities/fukuoka";
+		}
+	
+		@RequestMapping("/busan")
 		public String busan() {
-			logger.info("실행");
+			logger.info("부산 상품");
 			return "cities/busan";
+		}
+		
+		@RequestMapping("/seoul")
+		public String seoul() {
+			logger.info("서울 상품");
+			return "cities/seoul";
 		}
 		
 		
