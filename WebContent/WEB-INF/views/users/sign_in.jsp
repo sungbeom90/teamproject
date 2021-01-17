@@ -51,14 +51,14 @@
 						<c:if test="${loginStatus == null}">
 							<div>
 								<form method="post" action="login">
-									<label for="uid">이메일 * </label><br/>
-									<input type="email" name="uid" placeholder="ID@example.com" /><br/>
+									<label for="uemail">이메일 * </label><br/>
+									<input type="email" id="uemail" name="uemail" placeholder="ID@example.com" /><br/>
 									<label for="upassword">비밀번호 * </label><br/>
-									<input type="password" name="upassword" placeholder="비밀번호" /><br/>
-									<button class="btn btn-success btn-sm">로그인</button>
-									<a class="btn btn-danger btn-sm" href="password">비밀번호 찾기</a><br/>
-									<span>아직 회원이 아니신가요?</span>	<a class="btn btn-primary btn-sm" href="sign_up">회원가입</a>
+									<input type="password" id="upassword" name="upassword" placeholder="비밀번호" /><br/>
+									<input type="submit" class="btn btn-success btn-sm" id="sign_in_btn" value="로그인"/>
 								</form>
+								<a class="btn btn-danger btn-sm" href="password">비밀번호 찾기</a><br/>
+									<span>아직 회원이 아니신가요?</span>	<a class="btn btn-primary btn-sm" href="sign_up">회원가입</a>
 							</div>
 						</c:if>
 						<c:if test="${loginStatus != null}">

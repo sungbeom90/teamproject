@@ -26,9 +26,6 @@ $(()=>{
 			return;	
 		} else {
 			var con = confirm("가입을 축하합니다.");
-			if(con === true){
-				location.href="sign_up_success"
-			}
 		}
 	});
 
@@ -47,6 +44,18 @@ $(()=>{
 			}
 			
 		});
+		
+		
+		$(function(){
+			$.ajax({
+				url: "photolist",
+				method: "get",
+				success: function(data){
+					$("#photoList").html(data);
+				}
+			});
+		});
+
 
 
 //예시 함수
