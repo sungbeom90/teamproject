@@ -2,7 +2,7 @@ package com.mycompany.teamproject.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class Ch09User {
+public class Offer {
 	private String utitle;
 	private String usubtitle;
 	private String usubcontents;

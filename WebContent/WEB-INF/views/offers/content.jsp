@@ -35,8 +35,7 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-						<h1>packages 필드</h1>
-						
+						<h1>packages 필드</h1>			
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
