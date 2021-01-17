@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>속초</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -36,15 +36,15 @@
 			<div class="content container">
 				<div class="sector">
 				<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg">	
-						<h1>부 산</h1>
+						<h1>속 초</h1>
 						<h2>추천 상품</h2>		 				
 				</div>
 				<div class="card-deck">
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">부산 야경 투어</h4>
-						      <p class="card-text">:: 야경보러가기 ::</p>
+						      <h4 class="card-title">설 악 산</h4>
+						      <p class="card-text">:: 트래킹하러가기 ::</p>
 						      <a href="#" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
@@ -52,8 +52,8 @@
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">론다 야경투어</h4>
-						      <p class="card-text">:: 당일치기로 떠나는 투어 ::</p>
+						      <h4 class="card-title">요 트</h4>
+						      <p class="card-text">:: 선 셋 투어 ::</p>
 						      <a href="#" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
