@@ -46,7 +46,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">John Doe</h4>
 						      <p class="card-text">Some example text some example text.</p>
-						      <a href="newyork" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-primary">See Profile</a>
 						    </div>
 						  </div>
 						  
