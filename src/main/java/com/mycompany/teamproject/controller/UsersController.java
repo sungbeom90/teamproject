@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.UserDto;
-import com.mycompany.teamproject.service.UsersService;
 
 @Controller
 @RequestMapping("/users")

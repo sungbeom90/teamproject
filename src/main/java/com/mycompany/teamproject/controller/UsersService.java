@@ -1,4 +1,4 @@
-package com.mycompany.teamproject.service;
+package com.mycompany.teamproject.controller;
 
 import java.io.File;
 import java.util.Date;
