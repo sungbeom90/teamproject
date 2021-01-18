@@ -90,7 +90,7 @@ public class OfferController {
 				+ "우선 보안사항을 검토 받고 보트 여행 일정에 대한 설명을 듣게 됩니다. 이후 2시간 동안 항구와 바르셀로나의 해안을 항해하며 여행 일정에 따라 올림픽 항구, 이카리아 해변 및 도시의 대성당과 같은 도시의 주요 명소들을 보실 수 있답니다."
 				+ "붉게 지는 태양 아래 멋진 경관을 감상하고 음료를 마시며 하루를 마무리해보세요. 친구나 가족과 함께 특별한 순간을 사진으로 남기는 것도 잊지 마세요! 투어가 끝나면 포트벨로 다시 돌아갑니다.");
 		board.setInclude("1. 가이드 비용 (현지인 공인 가이드 비용 포함)"+"2.무선 수신기 대여료");
-		board.setUninclude("<p>1. 대성당 입장료" + 
+		board.setUninclude("1. 대성당 입장료" + 
 				"- 성인 : 10유로" + 
 				"- 학생 (국제학생증 소지, 만 25세 이하) : 5유로" + 
 				"- 경로 (여권 소지, 만 65세 이상) : 5유로" + 
@@ -99,6 +99,32 @@ public class OfferController {
 		board.setCourse("거대한 역사 교과서, 스페인 광장" + "스페인의 거대한 역사 교과서라 불릴 만큼, 스페인 역사에 대한 방대한 이야기를 품고 있는 곳입니다." + 
 				"처음에는 웅장하고 화려한 외관에 감동하고, 알면 알수록 스페인 사람들의 섬세함에 감탄하게 됩니다");
 		board.setAddinfo("만나는 시간 : 스페인 광장 오전 8시 30분");
+		model.addAttribute("content",board);
+		
+		return "offers/content";
+		
+	}
+	
+	@GetMapping("/seville_offer2")
+	public String seville_offer2(Model model) {
+		logger.info("세비야 offer2 실행");
+		OfferBoard board = new OfferBoard();
+		board.setWriter("작성자");
+		board.setTitle("세비야 론다 별밤투어");
+		board.setSubtitle("론다의 야경을 보지 못했다면 론다를 봤다고 할 수 없다!!");
+		board.setSubcontent("★‘론다는 낮에도 좋은데 밤이 더 좋아’\r\n" + 
+				"모든 여행객이 입을 모아 하는 이야기지요.\r\n" + 
+				"이 작은 도시에 매년 많은 여행객이 찾는 이유도 론다 특유의 낭만 때문이 아닐까 싶어요." + 
+				"하지만 론다에서 세비야 가는 시외버스 막차는 오후 6시 (좌절)" + 
+				"론다 야경을 보기에는 불가한 일정이지요. (노을 지는 모습은 뽀나스~!)" + 
+				"그렇다면 정답은? 세비야에서 출발하는 론다 별밤 투어!" + 
+				"혼자 오시는 손님도 환영합니다." + 
+				"혼자 오시는 분들이 많은 투어이며, 함께 여행하며 친해질 수 있어요!");
+		board.setInclude("전문 가이드비, 전용 차량비, 로컬가이드비, 무선 수신기 대여비 (개인 이어폰 필수 지참)");
+		board.setUninclude("개인 이어폰 지참, 저녁 식사비, 개인음료 및 간식비");
+		board.setCourse("론다 시내 투어 : 타호 공원 > 투우장 > 헤밍웨이 산책길 > 론다 전망대 > 누에보다리");
+		board.setAddinfo("현장으로 추가는 되지 않습니다! 당일예약도 자리가 있는 경우 가능하니 메시지 주세요!" + 
+				"론다는 밤에 많이 춥습니다. 따뜻한 외투를 챙겨 와 주세요. 구글에서 ronda를 검색하면 기온을 확인할 수 있습니다");
 		model.addAttribute("content",board);
 		
 		return "offers/content";
@@ -157,6 +183,55 @@ public class OfferController {
 		board.setAddinfo("일정은 상담을 통해 자유롭게 변경 및 조율 가능합니다."
 				+ "주간투어 [13:00] [14:00] [15:00] [16:00] [17:00]"
 				+ "야간투어 [18:00] [19:00] [20:00] [21:00] [22:00]");
+		model.addAttribute("content",board);
+		
+		return "offers/content";
+		
+	}
+	
+	@GetMapping("/okinawa_offer1")
+	public String okinawa_offer1(Model model) {
+		logger.info("오키나와 offer1 실행");
+		OfferBoard board = new OfferBoard();
+		board.setWriter("작성자");
+		board.setTitle("오키나와 : 추라우미 엔조이 패스 (오키나와 추라우미 수족관+공통 11시설 입장)");
+		board.setSubtitle("오키나와 본도를 대표하는 관광명소인 오키나와 추라우미 수족관과 그 외 지정된 공통 11시설을 패스 1장으로 즐기실 수 있습니다.");
+		board.setSubcontent("[ 이 패스의 매력 포인트! ]" + 
+				"- 각 시설의 입장권을 따로따로 구입할 경우와 비교하여 7,290엔이나 저렴하게 이용하실 수 있습니다." + 
+				"(만 18세 이상의 성인이 모든 시설에 입장했을 경우)" + 
+				"- 엔조이 패스는 교환일로부터 5일간 유효하므로, 여유있게 오키나와 본도 관광을 즐기실 수 있습니다." + 
+				"오키나와 추라우미 수족관이 포함되어 있습니다. 그 외의 11곳을 마음대로 즐기실 수 있습니다");
+		board.setInclude("- 오키나와 관광지 11곳의 입장");
+		board.setUninclude("- 교통비" + 
+				"- 시설 내의 유료 입장 시설, 유료 놀이기구 및 음식대금" + 
+				"- 기타 개인 지출 비용");
+		board.setCourse("오키나와 추라우미 수족관, 다이세키린잔, 고우리 오션타워, 류구조, OKINAWA 후루츠랜드, 나고 파인애플 파크, 네오파크 오키나와, 류큐무라, 무라사쿠무라 체험, 비오스의 언덕, 오키나와 월드 교쿠센도, 오키나와 평화 기념당");
+		board.setAddinfo("일정은 상담을 통해 자유롭게 변경 및 조율 가능합니다.");
+		model.addAttribute("content",board);
+		
+		return "offers/content";
+		
+	}
+	
+	@GetMapping("/okinawa_offer2")
+	public String okinawa_offer2(Model model) {
+		logger.info("오키나와 offer2 실행");
+		OfferBoard board = new OfferBoard();
+		board.setWriter("작성자");
+		board.setTitle("오키나와 게라마 제도 1일 투어 - 스노클링");
+		board.setSubtitle("오키나와 제일의 바다라고 불리는 아름다운 게마라제도에서 1일 동안 스노클링 체험하며 즐길 수 있는 인기만점 투어");
+		board.setSubcontent("- 산호초가 발달한 국립공원 게라마 제도의 바다는 그야말로 낙원 그 자체의 아름다움으로 가득합니다!" + 
+				"- 나하에서 출발하여 오키나와 제일의 바다라고 불리는 아름다운 게마라제도에서 1일 동안 스노클링 체험하며 즐길 수 있는 인기만점 투어입니다." + 
+				"- 나하시내의 호텔은 무료로 픽업해 드립니다.(예약시 신청필요)");
+		board.setInclude("- 승선료" + 
+				"- 가이드요금" + 
+				"- 웨트슈트 렌탈요금" + 
+				"- 장비 렌탈요금" + 
+				"- 미네랄 워터" + 
+				"- 목욕타월 렌탈요금(1장)");
+		board.setUninclude("- 수영복" + "- 비치샌들");
+		board.setCourse("오키나와 추라우미 수족관, 다이세키린잔, 고우리 오션타워, 류구조, OKINAWA 후루츠랜드, 나고 파인애플 파크, 네오파크 오키나와, 류큐무라, 무라사쿠무라 체험, 비오스의 언덕, 오키나와 월드 교쿠센도, 오키나와 평화 기념당");
+		board.setAddinfo("일정은 상담을 통해 자유롭게 변경 및 조율 가능합니다.");
 		model.addAttribute("content",board);
 		
 		return "offers/content";
