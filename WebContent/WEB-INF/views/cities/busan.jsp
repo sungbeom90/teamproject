@@ -52,9 +52,6 @@
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/busan2.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">힐링 관광</h4>
-						      <p class="card-text">:: 거제도에서 느끼는 휴식 ::</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
 						      <h4 class="card-title">와우 요트투어</h4>
 						      <p class="card-text">:: 당일치기로 떠나는 투어 ::</p>
 						      <a href="<%=application.getContextPath()%>/offers/busan_offer2" class="btn btn-primary">See Profile</a>
