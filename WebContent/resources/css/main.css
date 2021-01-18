@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* Reset CSS */
-* {	margin:0; padding:0; }
+* {	margin:0; padding:0; font-family:Brush Script MT; }
 ol,ul {	list-style: none; }
 img { border:0; }
 
@@ -21,9 +21,23 @@ img { border:0; }
 
 .cities {margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: white; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
 
+.packages {margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
+
 .img_center{
 	width: auto;
 	position: relative;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);	
+	transform: translate(-50%, -50%);
+}
+.card_btn{
+	position: absolute;
+	left: 1rem;
+	bottom: 1rem;
+}
+.img_packages{
+	width: auto;
+	height: 60%;
+}
+	
+		
