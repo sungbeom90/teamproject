@@ -36,12 +36,12 @@
 			<div class="content container">
 				<div class="sector">
 					<div>
-						<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg">
+						<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/usa_head.jpg">
 						<span style="font-size: 400%; font-weight: bold;">미 국</span>
 					</div>
 					<div class="card-deck">
 							<div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork3.jpg" alt="Card image" style="width:100%">
+							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">뉴 욕</h4>
 							      <p class="card-text"> Some example text some example text.</p>
@@ -50,7 +50,7 @@
 							  </div>
 							  
 							 <div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/hawaii_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">하 와 이</h4>
 							      <p class="card-text">Some example text some </p>

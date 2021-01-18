@@ -35,13 +35,13 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-				<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg">	
+				<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/busan_head.jpg">	
 						<h1>부 산</h1>
 						<h2>추천 상품</h2>		 				
 				</div>
 				<div class="card-deck">
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/busan1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">부산 야경 투어</h4>
 						      <p class="card-text">:: 야경보러가기 ::</p>
@@ -50,8 +50,11 @@
 					</div>
 					
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/busan2.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
+						      <h4 class="card-title">힐링 관광</h4>
+						      <p class="card-text">:: 거제도에서 느끼는 휴식 ::</p>
+						      <a href="#" class="btn btn-primary">See Profile</a>
 						      <h4 class="card-title">와우 요트투어</h4>
 						      <p class="card-text">:: 당일치기로 떠나는 투어 ::</p>
 						      <a href="<%=application.getContextPath()%>/offers/busan_offer2" class="btn btn-primary">See Profile</a>

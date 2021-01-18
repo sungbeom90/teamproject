@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 찾기</title>
+<title>비밀번호 재설정</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -43,19 +43,20 @@
 					<h2>로그인 이후에는 ch06 리다이렉트를 적용해보자</h2>
 					
 				</div>
-				<div class="sector">
-					<h2>비밀번호 재설정</h2>
-						<form method="post" class="password_re" action="sign_in">
-							<div>
-								<label for="upassword_re_1">새로운 비밀번호를 입력하세요 .* </label><br/>
-								<input type="password" placeholder="비밀번호를 입력하세요." name="upassword_re_1" /><br/>
-								<label for="upassword_re_2">다시 입력해주세요. * </label><br/>
-								<input type="password" placeholder="다시 입력하세요." name="upassword_re_2" />
-							</div>
-							<button>비밀번호 재설정</button>
-						</form>
-				</div>
-			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+					<div class="sector">
+						<h2>비밀번호 재설정</h2>
+							<form method="post" class="password_re" action="sign_in">
+								<div>
+									<label for="upassword_re_1">새로운 비밀번호를 입력하세요 .* </label><br/>
+									<input type="password" placeholder="비밀번호를 입력하세요." name="upassword_re_1" /><br/>
+									<label for="upassword_re_2">다시 입력해주세요. * </label><br/>
+									<input type="password" placeholder="다시 입력하세요." name="upassword_re_2" />
+								</div>
+								<button>비밀번호 재설정</button>
+							</form>
+					</div>
+				<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+			</div>
 		</div>
 	</div>
 </body>
