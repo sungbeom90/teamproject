@@ -44,6 +44,7 @@
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa1.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">스노우쿨링</h4>
+						      <h4 class="card-title">스노우쿨링</h4>
 						      <p class="card-text">:: 산호초 체험 ::</p>
 						      <a href="#" class="btn btn-primary">See Profile</a>
 						    </div>
