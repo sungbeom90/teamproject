@@ -35,12 +35,17 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<h2>${content.writer}</h2>
+				
+					<div>${content.writer}</div>
+					<hr/>
 					<h1>${content.title}</h1>
-					<h5>${content.subtitle}</h5>
-					<h5>${content.subcontent}</h5>
-					<h5>${content.include}</h5>
-					<h5>${content.uninclude}</h5>
+					<!-- 이미지 -->
+					<hr/>
+					<h3>${content.subtitle}</h3>
+					<div>${content.subcontent}</div>	
+						
+					<div>${content.include}</div>
+					<div>${content.uninclude}></div>
 					<h5>${content.course}</h5>
 					<h5>${content.addinfo}</h5>
 				</div>
