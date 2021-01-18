@@ -89,44 +89,7 @@ public class UsersController {
 		return "users/photolist";	
 	}
 	
-	@GetMapping("/photodownload")
-	public void photoDownload(String photo, HttpServletResponse response) {
-		String saveDirPath = "D:/MyWorkspace/uploadfiles/";
-		String filePath = saveDirPath+photo;
-		
-		//응답 본문 데이터의 종류를 응답 헤더에 추가
-		response.setContentType("image/jpeg");
-		
-		//응답 본문 데이터를 파일로 다운로드 할 수 있도록 응답 헤더에 추가
-		try {
-			photo=new String(photo.getBytes("UTF-8"), "ISO-8859-1"); //HTTP 규약에 따라 헤더에는 한글을 넣지 못함. 그래서 UTF-8을 다시 ISO-8859-1로 인코딩 해야함.
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
-		response.setHeader("Content-Disposition", "attachment; filename=\""+photo+"\"");
-		
-		try {
-			OutputStream os= response.getOutputStream();
-			InputStream is = new FileInputStream(filePath);
-			
-			/*//귀찮은 스트림 쓰는 버전
-			byte[] data = new byte[1024];
-			while(true) {
-				int readByteNum=is.read(data);
-				if(readByteNum == -1) break;
-				os.write(data, 0, readByteNum);
-			}*/
-			
-			//스프링 제공 버전
-			FileCopyUtils.copy(is, os);
-			os.flush();
-			os.close();
-			is.close();
-		} catch (Exception e) {			
-			e.printStackTrace();
-		}
 	
-	}
 	
 	
 
