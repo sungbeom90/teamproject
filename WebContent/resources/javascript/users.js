@@ -39,6 +39,34 @@ $(()=>{
 			return;
 		}
 	});
+	
+	$("#password_compare_btn").click(()=>{		
+		if($("#email_compare").val() === ""){
+			event.preventDefault();
+			alert("비밀번호를 재설정 할 아이디를 입력하세요.");
+			return;		
+		}else if($("#name_compare").val() === ""){
+			event.preventDefault();
+			alert("가입한 이메일의 이름을 입력하세요.");
+			return;
+		}
+	});
+	
+	
+	
+	$("#password_reset_btn").click(()=>{		
+		if($("#password_reset1").val().length < 8 ){
+			event.preventDefault();
+			alert("변경하실비밀번호를 입력하세요.");
+			return;		
+		}else if ($("#password_reset2").val() !== $("#password_reset1").val()){
+			event.preventDefault();
+			alert("동일한 비밀번호를 입력하세요.");
+			return;	
+		} else {
+			var con = confirm("비밀번호가 성공적으로 변경되었습니다.");
+		}
+	});
 
 		
 		$("#uagree_all").click(()=>{

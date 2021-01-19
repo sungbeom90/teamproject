@@ -46,7 +46,7 @@
 										<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
 									</div>								
 									<input type="submit" class="btn btn-success d-block" id="sign_in_btn" value="로그인"/>
-								</form>
+								</form>							
 								<div class="container justify-content-center">
 									<a class="btn btn-danger d-block" href="password">비밀번호 찾기</a>
 									<a class="btn btn-primary d-block" href="sign_up">회원가입</a>
