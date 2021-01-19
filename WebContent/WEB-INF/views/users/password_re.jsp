@@ -35,15 +35,6 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<h1>users 필드</h1>
-					<h2>sign_in 필드</h2>
-					<h2>ch06를 적용해보자</h2>
-					<h2>로그인 구현은 했으나 디테일이 좀 더 필요함.</h2>
-					<h2>기존에 작성했던 이메일 방식으로 바꿔볼것.</h2>
-					<h2>로그인 이후에는 ch06 리다이렉트를 적용해보자</h2>
-					
-				</div>
-					<div class="sector">
 						<h2>비밀번호 재설정</h2>
 							<form method="post" class="password_re" action="sign_in">
 								<div>

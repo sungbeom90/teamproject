@@ -1,12 +1,15 @@
 package com.mycompany.teamproject.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.teamproject.dto.Offer;
+import com.mycompany.teamproject.dto.OfferBoard;
+import com.mycompany.teamproject.dto.UserDto;
 
 @Controller
 @RequestMapping("/register")
@@ -23,22 +26,30 @@ public class RegisterController {
 		}
 		
 		@PostMapping("/offerupload")
-		public String offerUpload(Offer offer) {
-			String utitle = offer.getUtitle();
-			String usubtitle = offer.getUsubtitle();
-			String usubcontents = offer.getUsubcontents();
-			String uinclude = offer.getUinclude();
-			String uuninclude = offer.getUuninclude();
-			String ucourse = offer.getUcourse();
-			String uaddinfo = offer.getUaddinfo();
+		public String offerUpload(OfferBoard offerBoard,HttpSession session) {
+			UserDto userDto= (UserDto) session.getAttribute("userDto");
+			String title = offerBoard.getTitle();
+			String subtitle = offerBoard.getSubtitle();
+			String subcontents = offerBoard.getSubcontent();
+			String include = offerBoard.getInclude();
+			String uninclude = offerBoard.getUninclude();
+			String price = offerBoard.getPrice();
+			String course = offerBoard.getCourse();
+			String addinfo = offerBoard.getAddinfo();
+			String contacttime = offerBoard.getContacttime();
+			String contactplace = offerBoard.getContactplace();
 			
-			logger.info("utitle: "+utitle);
-			logger.info("usubtitle: "+usubtitle);
-			logger.info("usubcontents: "+usubcontents);
-			logger.info("uinclude: "+uinclude);
-			logger.info("uuninclude: "+uuninclude);
-			logger.info("ucourse: "+ucourse);
-			logger.info("uaddinfo: "+uaddinfo);
+			logger.info("writer: "+userDto.getUname());
+			logger.info("title: "+title);
+			logger.info("subtitle: "+subtitle);
+			logger.info("subcontents: "+subcontents);
+			logger.info("include: "+include);
+			logger.info("uninclude: "+uninclude);
+			logger.info("price: "+price);
+			logger.info("course: "+course);
+			logger.info("addinfo: "+addinfo);
+			logger.info("contacttime: "+contacttime);
+			logger.info("contactplace: "+contactplace);
 		
 		
 		return "redirect:/main/content";

@@ -4,12 +4,12 @@
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.*"%>
 
-  
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 찾기</title>
+<title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -31,35 +31,47 @@
 
 		<%-- 내용 --%>
 		<div class="mainCenter">
-			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
-				<div class="content container">
-					<div class="sector">
-						<h1>users 필드</h1>
-						<h2>sign_in 필드</h2>
-						<h2>ch06를 적용해보자</h2>
-						<h2>로그인 구현은 했으나 디테일이 좀 더 필요함.</h2>
-						<h2>기존에 작성했던 이메일 방식으로 바꿔볼것.</h2>
-						<h2>로그인 이후에는 ch06 리다이렉트를 적용해보자</h2>
-						
-					</div>
-					<div class="sector">
-						<h2>비밀번호 찾기</h2>
-							<form method="post" class="password_form" action="password_re">
-								<p>마이리얼트립 가입 시 사용한 이메일 주소를 입력해주시면 비밀번호를 재설정 할 수 있는 링크를 보내드립니다.</p>
-								<div class="password_box">
-									<label for="uid">이메일 * </label>
-									<input type="email" placeholder="ID@example.com" id="uid" name="uid" /><br/>
-								</div>	
-								
-								<div class="password_box">
-									<button>비밀번호 재설정</button><br/>
+			<div class="content container">
+				<div class="sector container border sign_in mt-5 mb-5">
+					<h2>비밀번호 재 설정</h2>
+						<c:if test="${passwordreset == null}">	
+								<form method="post" action="password_compare" class="was-validated">
+									<div class="form-group">
+										<input type="email" class="form-control form-control-lg" id="email_compare" name="email_compare" placeholder="ID@example.com" required/>
+										<div class="valid-feedback">유효한 이메일 입니다.</div>
+										<div class="invalid-feedback">이메일을 입력해주세요.</div>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control form-control-lg" id="name_compare" name="name_compare" placeholder="이름" required/>
+										<div class="valid-feedback">유효한 이름입니다.</div>
+										<div class="invalid-feedback">이름을 입력해주세요.</div>
+									</div>								
+									<input type="submit" class="btn btn-success d-block" id="password_compare_btn" value="비밀번호 재설정"/>
+								</form>
+								</c:if>
+								<c:if test="${passwordreset != null}">
+									<form method="post" action="password_reset" class="was-validated">
+										<div class="form-group">
+											<input type="password" class="form-control form-control-lg" id="password_reset1" name="password_reset1" placeholder="새로운 비밀번호를 입력하세요" required/>
+											<div class="valid-feedback">유효한 비밀번호 입니다..</div>
+											<div class="invalid-feedback">새로운 비밀번호를 입력해주세요.</div>
+										</div>
+										<div class="form-group">
+											<input type="password" class="form-control form-control-lg" id="password_reset2" name="password_reset2" placeholder="비밀번호를 다시 입력해주세요." required/>
+											<div class="valid-feedback">유효한 비밀번호입니다.</div>
+											<div class="invalid-feedback">비밀번호를 다시 입력해주세요.</div>
+										</div>								
+										<input type="submit" class="btn btn-success d-block" id="password_reset_btn" value="비밀번호 재설정"/>
+									</form>
+								</c:if>
+								<div class="container justify-content-center">
+									<a class="btn btn-danger d-block" href="sign_in">로그인페이지</a>
+									<a class="btn btn-primary d-block" href="sign_up">회원가입</a>
 								</div>
-								<span>혹시 이메일이 기억났나요?</span><a class="btn btn-success btn-sm" href="sign_in">로그인</a>
-							</form>
 					</div>
-					<jsp:include page="/WEB-INF/views/include/footer.jsp" />
-				</div>
+			</div>
+			<div class="fixed-bottom">
+			<jsp:include page="/WEB-INF/views/include/footer.jsp"/></div>
 		</div>
 	</div>
 </body>
