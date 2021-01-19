@@ -38,7 +38,10 @@
 					
 					<div>${content.writer}</div>
 					<hr/>
-					<h1>${content.title}</h1>
+					<div class="d-flex">
+					<h1 class="d-inlineblock">${content.title}</h1>
+					<h1 class="d-inlineblock ml-auto">가격</h1>
+					</div>
 					<!-- 이미지 -->
 					<hr/>
 					<img src="<%=application.getContextPath()%>${content.img}" width="500px" height="500px" 
