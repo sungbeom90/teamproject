@@ -6,7 +6,7 @@
 	<nav class="navbar navbar-expand-sm bg-light navbar-light justify-content-end">
 		<!-- Brand -->
 		<a class="navbar-brand mr-auto" href="<%=application.getContextPath()%>/main/content">
-			<img src="<%=application.getContextPath()%>/resources/img/myrealtrip.png" alt="logo" style="width: 10rem;">
+			<img src="<%=application.getContextPath()%>/resources/img/logo.jpg" alt="logo" style="width: 10rem;">
 		</a>
 
 		<!-- Links -->
