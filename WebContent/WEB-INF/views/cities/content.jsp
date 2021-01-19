@@ -42,39 +42,39 @@
 				<div class="sector">
 					<div class="card-deck">
 						<div class="card img-fluid cities">
-						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">뉴 욕</h4>
-						      <p class="card-text">Some example text some example text.</p>
-						      <a href="newyork" class="btn btn-primary">바로가기</a>
+						      <p class="card-text"></p>
+						      <a href="newyork" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 
 						    </div>
 						  </div>
 						  
 						  <div class="card img-fluid cities">
-						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/barcelona1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">바르셀로나</h4>
-						      <p class="card-text">  Some example text some example text.</p>
-						      <a href="barcelona" class="btn btn-primary">바로가기</a>
+						      <p class="card-text"> </p>
+						      <a href="barcelona" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						  </div>
 						  
 						  <div class="card img-fluid cities">
-						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">오키나와</h4>
-						      <p class="card-text"> Some example text some example text.</p>
-						      <a href="okinawa" class="btn btn-primary">바로가기</a>
+						      <p class="card-text"></p>
+						      <a href="okinawa" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						  </div>
 						  
 						  <div class="card img-fluid cities">
-						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/photo1.jpg" alt="Card image" style="width:100%">
+						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/busan1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">부산</h4>
-						      <p class="card-text"> Some example text some example text.</p>
-						      <a href="busan" class="btn btn-primary">바로가기</a>
+						      <p class="card-text"></p>
+						      <a href="busan" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						  </div>
 						  

@@ -40,7 +40,7 @@
 				</div>
 					<div class="card-deck">
 							<div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa_head.jpg" alt="Card image" style="width:100%">
+							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa_head.jpg" alt="Card image">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">오 키 나 와</h4>
 							      <p class="card-text"></p>
@@ -49,7 +49,7 @@
 							  </div>
 							  
 							 <div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/fukuoka_head.jpg" alt="Card image" style="width:100%">
+							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/fukuoka_head.jpg" alt="Card image">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">후 쿠 오 카</h4>
 							      <p class="card-text"></p>
