@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>한국</title>
+<title>미국</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -35,25 +35,25 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<div class="head" style="background-image:url('<%=application.getContextPath()%>/resources/img/korea_head.jpg')">
-				한 국
+					<div class="head" style="background-image:url('<%=application.getContextPath()%>${country.imgHead}')">
+				${country.nameCountry}
 				</div>
 					<div class="card-deck">
 							<div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/busan_head.jpg" alt="Card image">
+							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${country.imgCity1}" alt="Card image">
 							    <div class="card-img-overlay">
-							      <h4 class="card-title">부 산</h4>
+							      <h4 class="card-title">${country.nameCity1}</h4>
 							      <p class="card-text"></p>
-							      <a href="<%=application.getContextPath()%>/cities/busan" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+							      <a href="<%=application.getContextPath()%>${country.rootCity1}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							  </div>
 							  
 							 <div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/sokcho_head.jpg" alt="Card image">
+							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${country.imgCity2}" alt="Card image">
 							    <div class="card-img-overlay">
-							      <h4 class="card-title">속 초</h4>
+							      <h4 class="card-title">${country.nameCity2}</h4>
 							      <p class="card-text"></p>
-							      <a href="<%=application.getContextPath()%>/cities/sokcho" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+							      <a href="<%=application.getContextPath()%>${country.rootCity2}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							 </div>
 					</div>					

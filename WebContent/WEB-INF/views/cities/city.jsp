@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>바르셀로나</title>
+<title>뉴욕</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -35,26 +35,26 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-				<div class="head" style="background-image:url('<%=application.getContextPath()%>/resources/img/barcelona_head.jpg')">
-				바 르 셀 로 나
+				<div class="head" style="background-image:url('<%=application.getContextPath()%>${city.imgHead}')">
+				${city.name}
 				</div>
-						<h2>추천 상품</h2>	 				
+						<h2>${city.recommend}</h2>		 				
 				<div class="card-deck">
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/barcelona1.jpg" alt="Card image">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${city.imgPackage1}" alt="Card image">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">라발지구 올드바 투어</h4>
-						      <p class="card-text">:: 투어하러 가기 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						     	<h4 class="card-title">${city.big1}</h4>
+						      <p class="card-text">${city.big2}</p>
+						      <a href="<%=application.getContextPath()%>${city.btn2}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/barcelona2.jpg" alt="Card image">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${city.imgPackage2}" alt="Card image">
 						    <div class="card-img-overlay">
-						      <h4 class="card-title">벨 항구에서 일몰 요트투어</h4>
-						      <p class="card-text">:: 일몰투어 가기 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer2" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						      <h4 class="card-title">${city.sm1}</h4>
+						      <p class="card-text">${city.sm2}</p>
+						      <a href="<%=application.getContextPath()%>${city.btn2}" class="btn btn-outline-dark btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>
