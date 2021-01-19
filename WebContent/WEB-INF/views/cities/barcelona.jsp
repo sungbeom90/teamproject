@@ -35,10 +35,10 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-				<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/barcelona_head.jpg">	
-						<h1>바르셀로나</h1>
-						<h2>추천 상품</h2>		 				
+				<div class="head" style="background-image:url('<%=application.getContextPath()%>/resources/img/barcelona_head.jpg')">
+				바 르 셀 로 나
 				</div>
+						<h2>추천 상품</h2>	 				
 				<div class="card-deck">
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/barcelona1.jpg" alt="Card image" style="width:100%">
@@ -57,6 +57,7 @@
 						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer2" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
+				</div>
 			  </div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
