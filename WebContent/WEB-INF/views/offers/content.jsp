@@ -45,22 +45,22 @@
 					class="rounded" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
 					<img src="<%=application.getContextPath()%>${content.img2}" width="500px" height="500px" 
 					class="rounded" style="margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
-					<div>${content.subtitle}</div>
+					<div class="space mb-3">${content.subtitle}</div>
 					<div>${content.subcontent}</div>
 					<hr/>
 					<h4>상품 정보</h4>
 					<h5>포함 사항</h5>
-					<div>${content.include}</div><br/>
+					<div class="space mb-5">${content.include}</div>
 					<h5>불포함 사항</h5>
-					<div>${content.uninclude}</div><br/>
+					<div class="space mb-5">${content.uninclude}</div>
 					<h4>코스 소개</h4>
-					<div>${content.course}</div>
+					<div class="space mb-5">${content.course}</div>
 					<h4>추가 정보</h4>
-					<div>${content.addinfo}</div>
+					<div class="space mb-5">${content.addinfo}</div>
 					<h5>만나는 시간</h5>
-					<div>${content.contacttime}</div><br/>
+					<div class="space mb-5">${content.contacttime}</div>
 					<h5>만나는 장소</h5>
-					<div>${content.contactplace}</div>
+					<div class="space mb-5">${content.contactplace}</div>
 				</div>
 				
 			</div>
