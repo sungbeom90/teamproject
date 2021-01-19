@@ -40,33 +40,41 @@
 						<div class="card img-fluid packages">
 					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/fukuoka1.jpg" alt="Card image">
 							    <div class="card-img">
-							      <h4 class="card-title">벳푸 온천체험</h4>
-							      <p class="card-text">::다양한 지옥 온천 체험::</p>
-							      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								    <div class="text_box">
+								      <h4 class="card-title">벳푸 온천체험</h4>
+								      <p class="card-text">::다양한 지옥 온천 체험::</p>
+								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								    </div>
 							    </div>
 						</div>
 						<div class="card img-fluid packages">
 					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/hawaii1.jpg" alt="Card image">
 							    <div class="card-img">
-							      <h4 class="card-title">다이아몬드헤드 투어</h4>
-							      <p class="card-text">::일출보러 가기::</p>
-							      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+							    	<div class="text_box">
+								      <h4 class="card-title">다이아몬드헤드 투어</h4>
+								      <p class="card-text">::일출보러 가기::</p>
+								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								    </div>
 							    </div>
 						</div>
 						<div class="card img-fluid packages">
 					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/seville1.jpg" alt="Card image">
 							    <div class="card-img">
-							      <h4 class="card-title">스페인 광장 투어</h4>
-							      <p class="card-text">::일출보러 가기::</p>
-							      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+							    	<div class="text_box">
+								      <h4 class="card-title">스페인 광장 투어</h4>
+								      <p class="card-text">::일출보러 가기::</p>
+								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								    </div>
 							    </div>
 						</div>
 						<div class="card img-fluid packages">
 					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/sokcho1.jpg" alt="Card image">
 							    <div class="card-img">
-							      <h4 class="card-title">설 악 산</h4>
-							      <p class="card-text">::트래킹하러가기::</p>
-							      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+							   		<div class="text_box">
+								      <h4 class="card-title">설 악 산</h4>
+								      <p class="card-text">::트래킹하러가기::</p>
+								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								    </div>
 							    </div>
 						</div>
 					</div>
