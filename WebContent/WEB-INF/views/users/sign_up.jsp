@@ -41,10 +41,7 @@
 								<input type="text" id="uname" name="uname" placeholder="이름 입력하세요"><br/>
 								
 								<br/>
-								<p>선택 입력 사항</p>
-								<label for="uname">이름</label>
-								<input type="text" id="uname" name="uname" placeholder="이름 입력하세요"><br/>
-								
+								<p>선택 입력 사항</p>								
 								<label for="usex">성별</label>
 								<input type="radio" id="usex" name="usex" value="male"/> 남성
 								<input type="radio" id="usex" name="usex" value="female"/> 여성
