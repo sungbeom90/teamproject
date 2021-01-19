@@ -61,7 +61,7 @@
 											<div class="valid-feedback">유효한 비밀번호입니다.</div>
 											<div class="invalid-feedback">비밀번호를 다시 입력해주세요.</div>
 										</div>								
-										<input type="submit" class="btn btn-success d-block" id="password_reset_btn" value="비밀번호 재설정"/>
+										<input type="submit" class="btn btn-danger d-block" id="password_reset_btn" value="비밀번호 재설정"/>
 									</form>
 								</c:if>
 								<div class="container justify-content-center">
