@@ -3,7 +3,6 @@ package com.mycompany.teamproject.controller;
 import java.io.File;
 import java.util.Date;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
