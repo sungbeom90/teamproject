@@ -21,6 +21,7 @@ p{font-family:'InfinitySans-RegularA1';}
 * {	margin:0; padding:0; font-family:TmoneyRoundWindExtraBold; }
  ul {	list-style: none; } 
  ol { list-style-position: inside;}
+ li {font-family:'InfinitySans-RegularA1';}
 img { border:0; }
 
 /* Background Image */
