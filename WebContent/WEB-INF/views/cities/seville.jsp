@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">스페인 광장 투어</h4>
 						      <p class="card-text">:: 일출보러 가기 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/seville_offer1" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/seville_offer1" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">론다 야경투어</h4>
 						      <p class="card-text">:: 당일치기로 떠나는 투어 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/seville_offer2" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/seville_offer2" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>

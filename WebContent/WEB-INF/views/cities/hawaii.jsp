@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">다이아몬드헤드 투어</h4>
 						      <p class="card-text">:: 일출보러 가기 ::</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
+						      <a href="#" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">스쿠버 다이빙 체험</h4>
 						      <p class="card-text">:: 거북이 만나러 가기 ::</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
+						      <a href="#" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>

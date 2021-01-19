@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">부산 야경 투어</h4>
 						      <p class="card-text">:: 야경보러가기 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/busan_offer1" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/busan_offer1" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">와우 요트투어</h4>
 						      <p class="card-text">:: 당일치기로 떠나는 투어 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/busan_offer2" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/busan_offer2" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>

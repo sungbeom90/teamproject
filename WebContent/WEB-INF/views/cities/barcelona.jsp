@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">라발지구 올드바 투어</h4>
 						      <p class="card-text">:: 투어하러 가기 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">벨 항구에서 일몰 요트투어</h4>
 						      <p class="card-text">:: 일몰투어 가기 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer2" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/barcelona_offer2" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>

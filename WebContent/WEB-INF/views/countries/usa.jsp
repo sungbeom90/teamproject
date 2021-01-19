@@ -43,8 +43,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">뉴 욕</h4>
-							      <p class="card-text"> Some example text some example text.</p>
-							      <a href="<%=application.getContextPath()%>/cities/newyork" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/newyork" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							  </div>
 							  
@@ -52,8 +52,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/hawaii_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">하 와 이</h4>
-							      <p class="card-text">Some example text some </p>
-							      <a href="<%=application.getContextPath()%>/cities/hawaii" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/hawaii" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							 </div>
 					</div>					

@@ -39,28 +39,28 @@
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/usa_head.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay" >
 						      <h2 class="card-title">미국</h2>
-						      <a href="usa" class="btn btn-primary stretched-link">바로가기</a>
+						      <a href="usa" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						</div>
 						<div class="card img-fluid countries">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/spain_head.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay" >
 						      <h2 class="card-title">스페인</h2>
-						      <a href="spain" class="btn btn-primary stretched-link">바로가기</a>
+						      <a href="spain" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						</div>
 						<div class="card img-fluid countries">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/japan_head.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay" >
 						      <h2 class="card-title">일본</h2>
-						      <a href="japan" class="btn btn-primary stretched-link">바로가기</a>
+						      <a href="japan" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						</div>
 						<div class="card img-fluid countries">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/korea_head.jpg" alt="Card image" style="width:100%">
 						    <div class="card-img-overlay" >
 						      <h2 class="card-title">한국</h2>
-						      <a href="korea" class="btn btn-primary stretched-link">바로가기</a>
+						      <a href="korea" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						</div>
 				</div>

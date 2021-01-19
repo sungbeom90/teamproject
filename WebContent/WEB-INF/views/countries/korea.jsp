@@ -43,8 +43,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/busan_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">부 산</h4>
-							      <p class="card-text"> Some example text some example text.</p>
-							      <a href="<%=application.getContextPath()%>/cities/busan" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/busan" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							  </div>
 							  
@@ -52,8 +52,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/sokcho_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">속 초</h4>
-							      <p class="card-text">Some example text some </p>
-							      <a href="<%=application.getContextPath()%>/cities/sokcho" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/sokcho" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							 </div>
 					</div>					

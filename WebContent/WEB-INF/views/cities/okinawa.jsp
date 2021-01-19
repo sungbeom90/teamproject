@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">츄라우미 수족관</h4>
 						      <p class="card-text">:: 수족관 투어 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/okinawa_offer1" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/okinawa_offer1" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">스노쿨링 체험</h4>
 						      <p class="card-text">:: 산호초 투어 ::</p>
-						      <a href="<%=application.getContextPath()%>/offers/okinawa_offer1" class="btn btn-primary">See Profile</a>
+						      <a href="<%=application.getContextPath()%>/offers/okinawa_offer1" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>

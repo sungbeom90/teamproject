@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">벳푸 온천체험</h4>
 						      <p class="card-text">:: 다양한 지옥 온천 체험::</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
+						      <a href="#" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">후쿠오카 유후인 관광</h4>
 						      <p class="card-text">:: 버스투어 ::</p>
-						      <a href="#" class="btn btn-primary">See Profile</a>
+						      <a href="#" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>

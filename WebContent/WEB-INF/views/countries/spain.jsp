@@ -35,7 +35,7 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<div class="head" style="background-image:url('<%=application.getContextPath()%>/resources/img/sapain_head.jpg')">
+					<div class="head" style="background-image:url('<%=application.getContextPath()%>/resources/img/spain_head.jpg')">
 				스 페 인
 				</div>
 					<div class="card-deck">
@@ -43,8 +43,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/barcelona_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">바 르 셀 로 나</h4>
-							      <p class="card-text"> Some example text some example text.</p>
-							      <a href="<%=application.getContextPath()%>/cities/barcelona" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/barcelona" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							  </div>
 							  
@@ -52,8 +52,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/seville_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">세 비 야</h4>
-							      <p class="card-text">Some example text some example text.</p>
-							      <a href="<%=application.getContextPath()%>/cities/seville" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/seville" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							 </div>
 					</div>					

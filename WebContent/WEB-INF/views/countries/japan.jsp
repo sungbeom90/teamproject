@@ -43,8 +43,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">오 키 나 와</h4>
-							      <p class="card-text"> Some example text some example text.</p>
-							      <a href="<%=application.getContextPath()%>/cities/okinawa" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/okinawa" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							  </div>
 							  
@@ -52,8 +52,8 @@
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/fukuoka_head.jpg" alt="Card image" style="width:100%">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">후 쿠 오 카</h4>
-							      <p class="card-text"> Some example text some example text.</p>
-							      <a href="<%=application.getContextPath()%>/cities/fukuoka" class="btn btn-primary">See Profile</a>
+							      <p class="card-text"></p>
+							      <a href="<%=application.getContextPath()%>/cities/fukuoka" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							 </div>
 					</div>					
