@@ -36,25 +36,25 @@
 			<div class="content container">
 				<div class="sector">
 					<form method="post" enctype="multipart/form-data" action="offerupload">
-								<input style=" border: none; " type="text" name="utitle" placeholder="제목"><br/>
+								<input size="118px;" style=" border: none; " type="text" name="utitle" placeholder="제목"><br/>
 								<hr/>
-								<input style=" border: none; " type="text" name="usubtitle" placeholder="부제목"><br/>
-								<input style=" border: none; " type="text" name="usubcontents" placeholder="부제목의 내용을 입력하세요"><br/>
+								<input size="118px;" style=" border: none; " type="text" name="usubtitle" placeholder="부제목"><br/><br/>
+								<input size="118px;" style=" border: none; " type="text" name="usubcontents" placeholder="부제목의 내용을 입력하세요"><br/>
 								<hr/>
-								<h4 style="margin-left: 0.6em ;">상품 정보</h4>
+								<h4 style="margin-left: 0.6em ;">상품 정보</h4><br/>
 								<h5 style="font-weight: bold; margin-left: 0.6em;">포함 사항</h5>
-								<input style=" border: none; " type="text" name="uinclude" placeholder="포함 사항을 입력하세요"><br/>
+								<input size="118px;" style=" border: none; " type="text" name="uinclude" placeholder="포함 사항을 입력하세요"><br/><br/>
 								<h5 style="font-weight: bold; margin-left: 0.6em;">불포함 사항</h5>
-								<input style=" border: none; " type="text" name="uuninclude" placeholder="불포함 사항을 입력하세요"><br/>
+								<input size="118px;" style=" border: none; " type="text" name="uuninclude" placeholder="불포함 사항을 입력하세요"><br/>
 								<hr/>
 								<h4 style="margin-left: 0.6em;">코스 소개</h4>
-								<input style=" border: none; " type="text" name="ucourse" placeholder="코스 내용을 입력하세요"><br/>
+								<input size="118px;" style=" border: none;" type="text" name="ucourse" placeholder="코스 내용을 입력하세요"><br/>
 								<hr/>
 								<h5 style="font-weight: bold; margin-left: 0.6em;">추가 정보</h5>
-								<input style=" border: none; " type="text" name="uaddinfo" placeholder="추가 정보를 입력하세요"><br/>
+								<input size="118px;" style=" border: none; " type="text" name="uaddinfo" placeholder="추가 정보를 입력하세요"><br/><br/>
 								<input type="file" name="uphoto"><br/>
-								<input class="btn btn-danger btn-sm" type="reset" value="취소"/>
-								<input class="btn btn-primary btn-sm" type="submit" value="저장"/>
+								<input style="margin-top: 20px;" class="btn btn-danger btn-sm" type="reset" value="취소"/>
+								<input style="margin-top: 20px;" class="btn btn-primary btn-sm" type="submit" value="저장"/>
 					</form>	
 	
 						<!-- <h1>register 필드</h1>
