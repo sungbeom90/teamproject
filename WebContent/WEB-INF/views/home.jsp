@@ -24,7 +24,10 @@
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				
 				<div class="content container">
-									
+						<div class="sector">
+						<img src="<%=application.getContextPath()%>/resources/img/logo2.jpg" alt="logo" width="100%">
+						
+				</div>			
 								
 				</div>
 			</div>
