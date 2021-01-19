@@ -35,10 +35,10 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-				<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/hawaii_head.jpg">	
-						<h1>하 와 이</h1>
-						<h2>추천 상품</h2>		 				
+				<div class="head" style="background-image:url('<%=application.getContextPath()%>/resources/img/hawaii_head.jpg')">
+				하 와 이
 				</div>
+						<h2>추천 상품</h2>	 				
 				<div class="card-deck">
 					<div class="card img-fluid cities">
 					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/hawaii1.jpg" alt="Card image" style="width:100%">
@@ -57,6 +57,7 @@
 						      <a href="#" class="btn btn-primary">See Profile</a>
 						    </div>
 					</div>
+				</div>
 			  </div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
