@@ -31,45 +31,34 @@
 
 		<%-- 내용 --%>
 		<div class="mainCenter">
-			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
-				<div class="sector">
-					<h1>users 필드</h1>
-					<h2>sign_in 필드</h2>
-					<h2>ch06를 적용해보자</h2>
-					<h2>로그인 구현은 했으나 디테일이 좀 더 필요함.</h2>
-					<h2>기존에 작성했던 이메일 방식으로 바꿔볼것.</h2>
-					<h2>로그인 이후에는 ch06 리다이렉트를 적용해보자</h2>
-					
-				</div>
-				<div class="sector">
-					<h5>HttpSession 객체를 이용한 로그인</h5>
-					<h5>id:admin@naver.com</h5>
-					<h5>password:12345</h5>
-					<div>
-						<c:if test="${loginStatus == null}">
-							<div>
-								<form method="post" action="login">
-									<label for="uemail">이메일 * </label><br/>
-									<input type="email" id="uemail" name="uemail" placeholder="ID@example.com" /><br/>
-									<label for="upassword">비밀번호 * </label><br/>
-									<input type="password" id="upassword" name="upassword" placeholder="비밀번호" /><br/>
-									<input type="submit" class="btn btn-success btn-sm" id="sign_in_btn" value="로그인"/>
+				<div class="sector container border sign_in mt-5 mb-5">
+						<c:if test="${loginStatus == null}">						
+								<form method="post" action="login" class="was-validated">
+									<div class="form-group">
+										<input type="email" class="form-control form-control-lg" id="uemail" name="uemail" placeholder="ID@example.com" required/>
+										<div class="valid-feedback">유효한 이메일 입니다.</div>
+										<div class="invalid-feedback">이메일을 입력해주세요.</div>
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control form-control-lg" id="upassword" name="upassword" placeholder="비밀번호" required/>
+										<div class="valid-feedback">유효한 비밀번호 입니다.</div>
+										<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+									</div>								
+									<input type="submit" class="btn btn-success d-block" id="sign_in_btn" value="로그인"/>
 								</form>
-								<a class="btn btn-danger btn-sm" href="password">비밀번호 찾기</a><br/>
-									<span>아직 회원이 아니신가요?</span>	<a class="btn btn-primary btn-sm" href="sign_up">회원가입</a>
-							</div>
+								<div class="container justify-content-center">
+									<a class="btn btn-danger d-block" href="password">비밀번호 찾기</a>
+									<a class="btn btn-primary d-block" href="sign_up">회원가입</a>
+								</div>
 						</c:if>
 						<c:if test="${loginStatus != null}">
-							<div>
 								<a class="btn btn-danger btn-sm" href="logout">로그아웃</a>
-							</div>
 						</c:if>
 					</div>
-				</div>
 			</div>
-			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+			<div class="fixed-bottom">
+			<jsp:include page="/WEB-INF/views/include/footer.jsp"/></div>
 		</div>
 	</div>
 </body>

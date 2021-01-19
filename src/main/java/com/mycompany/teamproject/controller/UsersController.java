@@ -40,7 +40,7 @@ public class UsersController {
 				return "users/sign_up";
 			}
 			@PostMapping("/sign_up_success")
-			public String sign_up_success(UserDto userDto) {
+			public String sign_up_success(UserDto userDto, HttpSession session) {
 					//문자파트 정보얻기
 					String uemail = userDto.getUemail();
 					String upassword = userDto.getUpassword();
