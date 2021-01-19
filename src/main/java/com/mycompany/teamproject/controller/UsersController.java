@@ -49,8 +49,7 @@ public class UsersController {
 					String uagree_e1 = userDto.getUagree_e1();
 					String uagree_e2 = userDto.getUagree_e2();
 					String uagree_o1 = userDto.getUagree_o1();
-					String uagree_o2 = userDto.getUagree_o2();
-					
+					String uagree_o2 = userDto.getUagree_o2();					
 					
 					logger.info("uemail: "+uemail);
 					logger.info("upassword: "+upassword);
@@ -82,11 +81,11 @@ public class UsersController {
 							e.printStackTrace();
 						}
 					}
-				
-				
+				session.setAttribute("userDto",userDto);				
 				logger.info("회원가입 완료");
 				return "redirect:/users/sign_in";
 			}
+			
 			@RequestMapping("/password")
 			public String password() {
 				logger.info("비밀번호 찾기 화면 실행");
@@ -101,9 +100,11 @@ public class UsersController {
 			
 			@PostMapping("/login")
 			public String login(String uemail, String upassword, HttpSession session) {
-				if(uemail.equals("admin@naver.com") && upassword.equals("12345")) {
-				session.setAttribute("loginStatus",uemail);
+				UserDto userDto= (UserDto) session.getAttribute("userDto");
+				if(uemail.equals(userDto.getUemail()) && upassword.equals(userDto.getUpassword())){
+					session.setAttribute("loginStatus",uemail);				
 				}
+				logger.info(userDto.getUname());
 				return "redirect:/main/content";
 			}
 			@GetMapping("/logout")

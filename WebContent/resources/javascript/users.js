@@ -1,9 +1,7 @@
 $(()=>{
 // users.js 파일입니다. 위치 잘 확인하세요!
 // 이곳부터 작성할것
-	//sign_up_js 다시 손봐야함
-	$("#sign_up_btn").click(()=>{
-		
+	$("#sign_up_btn").click(()=>{		
 		if($("#uemail").val() === ""){
 			event.preventDefault();
 			alert("사용하실 아이디를 입력하세요.");
@@ -28,6 +26,19 @@ $(()=>{
 			var con = confirm("가입을 축하합니다.");
 		}
 	});
+	
+	
+	$("#sign_in_btn").click(()=>{		
+		if($("#uemail").val() === ""){
+			event.preventDefault();
+			alert("로그인할 아이디를 입력하세요.");
+			return;		
+		}else if($("#upassword").val().length < 8 ){
+			event.preventDefault();
+			alert("비밀번호를 입력하세요.");
+			return;
+		}
+	});
 
 		
 		$("#uagree_all").click(()=>{
@@ -45,23 +56,6 @@ $(()=>{
 			
 		});
 		
-		
-		
-
-
-
-//예시 함수
-		$(function(){
-			$.ajax({
-				url: "photolist",
-				method: "get",
-				success: function(data){
-					$("#photoList").html(data);
-				}
-			});
-	});
-	
-	
 	
 //이곳까지 작성할것	
 });
