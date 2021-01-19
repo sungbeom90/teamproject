@@ -35,44 +35,44 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<h1>원하는 여행지를 골라보세요</h1>
+					<h1>${packages.want}</h1>
 					<div class="card-deck">
 						<div class="card img-fluid packages">
-					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/fukuoka1.jpg" alt="Card image">
+					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>${packages.img1}" alt="Card image">
 							    <div class="card-img">
 								    <div class="text_box">
-								      <h4 class="card-title">벳푸 온천체험</h4>
-								      <p class="card-text">::다양한 지옥 온천 체험::</p>
+								      <h4 class="card-title">${packages.big1}</h4>
+								      <p class="card-text">${packages.sm1}</p>
 								      <a href="<%=application.getContextPath()%>/offers/fukuoka_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>
 						</div>
 						<div class="card img-fluid packages">
-					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/hawaii1.jpg" alt="Card image">
+					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>${packages.img2}" alt="Card image">
 							    <div class="card-img">
 							    	<div class="text_box">
-								      <h4 class="card-title">다이아몬드헤드 투어</h4>
-								      <p class="card-text">::일출보러 가기::</p>
+								      <h4 class="card-title">${packages.big2}</h4>
+								      <p class="card-text">${packages.sm2}</p>
 								      <a href="<%=application.getContextPath()%>/offers/hawaii_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>
 						</div>
 						<div class="card img-fluid packages">
-					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/seville1.jpg" alt="Card image">
+					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>${packages.img3}" alt="Card image">
 							    <div class="card-img">
 							    	<div class="text_box">
-								      <h4 class="card-title">스페인 광장 투어</h4>
-								      <p class="card-text">::걸어서 광장 가기::</p>
+								      <h4 class="card-title">${packages.big3}</h4>
+								      <p class="card-text">${packages.sm3}</p>
 								      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>
 						</div>
 						<div class="card img-fluid packages">
-					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>/resources/img/sokcho1.jpg" alt="Card image">
+					    	<img class="card-img-top img_packages" src="<%=application.getContextPath()%>${packages.img4}" alt="Card image">
 							    <div class="card-img">
 							   		<div class="text_box">
-								      <h4 class="card-title">설 악 산</h4>
-								      <p class="card-text">::트래킹 하러가기::</p>
+								      <h4 class="card-title">${packages.big4}</h4>
+								      <p class="card-text">${packages.sm4}</p>
 								      <a href="<%=application.getContextPath()%>/offers/sokcho_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>

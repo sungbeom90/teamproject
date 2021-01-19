@@ -40,7 +40,7 @@ public class CitiesController {
 			ctdto.setSm1("자유의 여신상");
 			ctdto.setSm2("::자유의 여신상 투어::");
 			ctdto.setBtn1("/offers/newyork_offer1");
-			ctdto.setBtn1("/offers/newyork_offer2");
+			ctdto.setBtn2("/offers/newyork_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
@@ -61,7 +61,7 @@ public class CitiesController {
 			ctdto.setSm1("스쿠버 다이빙 체험");
 			ctdto.setSm2("::거북이 만나러 가기::");
 			ctdto.setBtn1("/offers/hawaii_offer1");
-			ctdto.setBtn1("/offers/hawaii_offer2");
+			ctdto.setBtn2("/offers/hawaii_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
@@ -82,7 +82,7 @@ public class CitiesController {
 			ctdto.setSm1("벨 항구에서 일몰 요트");
 			ctdto.setSm2("::일몰보며 힐링::");
 			ctdto.setBtn1("/offers/barcelona_offer1");
-			ctdto.setBtn1("/offers/barcelona_offer2");
+			ctdto.setBtn2("/offers/barcelona_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
@@ -103,7 +103,7 @@ public class CitiesController {
 			ctdto.setSm1("론다 야경투어");
 			ctdto.setSm2("::당일치기로 떠나는 투어::");
 			ctdto.setBtn1("/offers/seville_offer1");
-			ctdto.setBtn1("/offers/seville_offer2");
+			ctdto.setBtn2("/offers/seville_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
@@ -124,7 +124,7 @@ public class CitiesController {
 			ctdto.setSm1("스노쿨링 체험");
 			ctdto.setSm2("::산호초 보러가기::");
 			ctdto.setBtn1("/offers/okinawa_offer1");
-			ctdto.setBtn1("/offers/okinawa_offer2");
+			ctdto.setBtn2("/offers/okinawa_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
@@ -145,7 +145,7 @@ public class CitiesController {
 			ctdto.setSm1("후쿠오카 유후인 관광");
 			ctdto.setSm2("::버스 투어::");
 			ctdto.setBtn1("/offers/fukuoka_offer1");
-			ctdto.setBtn1("/offers/fukuoka_offer2");
+			ctdto.setBtn2("/offers/fukuoka_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
@@ -166,7 +166,7 @@ public class CitiesController {
 			ctdto.setSm1("와우 요트 투어");
 			ctdto.setSm2("::요트에서 힐링::");
 			ctdto.setBtn1("/offers/busan_offer1");
-			ctdto.setBtn1("/offers/busan_offer2");
+			ctdto.setBtn2("/offers/busan_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
@@ -187,7 +187,7 @@ public class CitiesController {
 			ctdto.setSm1("요 트");
 			ctdto.setSm2("::선 셋 투어::");
 			ctdto.setBtn1("/offers/sokcho_offer1");
-			ctdto.setBtn1("/offers/sokcho_offer2");
+			ctdto.setBtn2("/offers/sokcho_offer2");
 			
 			session.setAttribute("city", ctdto);
 			
