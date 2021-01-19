@@ -35,7 +35,7 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-						<h1>main 필드</h1>
+						<img src="<%=application.getContextPath()%>/resources/img/home_img.jpg" alt="logo" width="100%">
 						
 						
 						

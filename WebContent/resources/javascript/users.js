@@ -57,7 +57,7 @@ $(()=>{
 	$("#password_reset_btn").click(()=>{		
 		if($("#password_reset1").val().length < 8 ){
 			event.preventDefault();
-			alert("변경하실비밀번호를 입력하세요.");
+			alert("8자 이상을 기입하세요.");
 			return;		
 		}else if ($("#password_reset2").val() !== $("#password_reset1").val()){
 			event.preventDefault();

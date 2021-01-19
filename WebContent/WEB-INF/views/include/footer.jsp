@@ -6,7 +6,6 @@
 		<div class="container-md">
 			<div id="service">
 			<h4>고객센터</h4>
-			<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/users/sign_up">문의</a>
 			<p>월~금: 09:00-18:00 (점심시간 12:00-13:00) 공휴일-주말: 1:1 채팅 상담만 가능 항공권 환불,변경 접수: 월~금 09:00-17:00</p>
 			</div>
 			<hr />
