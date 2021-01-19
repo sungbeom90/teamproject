@@ -35,10 +35,9 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<div>
-						<img style="width:100%" src="<%=application.getContextPath()%>/resources/img/spain_head.jpg">
-						<span style="font-size: 400%; font-weight: bold;">스페인</span>
-					</div>
+					<div class="head" style="background-image:url('<%=application.getContextPath()%>/resources/img/sapain_head.jpg')">
+				스 페 인
+				</div>
 					<div class="card-deck">
 							<div class="card img-fluid cities">
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/barcelona_head.jpg" alt="Card image" style="width:100%">
