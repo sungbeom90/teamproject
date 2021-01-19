@@ -41,7 +41,7 @@
 						<h2>추천 상품</h2>	 				
 				<div class="card-deck">
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/fukuoka1.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/fukuoka1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">벳푸 온천체험</h4>
 						      <p class="card-text">:: 다양한 지옥 온천 체험::</p>
@@ -50,7 +50,7 @@
 					</div>
 					
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/fukuoka2.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/fukuoka2.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">후쿠오카 유후인 관광</h4>
 						      <p class="card-text">:: 버스투어 ::</p>

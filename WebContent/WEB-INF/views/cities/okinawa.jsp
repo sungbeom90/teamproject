@@ -41,7 +41,7 @@
 						<h2>추천 상품</h2>	 				
 				<div class="card-deck">
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa1.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">츄라우미 수족관</h4>
 						      <p class="card-text">:: 수족관 투어 ::</p>
@@ -50,7 +50,7 @@
 					</div>
 					
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa2.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa2.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">스노쿨링 체험</h4>
 						      <p class="card-text">:: 산호초 투어 ::</p>

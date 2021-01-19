@@ -41,7 +41,7 @@
 						<h2>추천 상품</h2>		 				
 				<div class="card-deck">
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork1.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">메트로폴리탄 미술관</h4>
 						      <p class="card-text">:: 서양 미술사 투어 ::</p>
@@ -50,7 +50,7 @@
 					</div>
 					
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork2.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork2.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">자유의 여신상</h4>
 						      <p class="card-text">:: 자유의 여신상 투어 ::</p>

@@ -41,7 +41,7 @@
 						<h2>추천 상품</h2>		 				
 				<div class="card-deck">
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/seville1.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/seville1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">스페인 광장 투어</h4>
 						      <p class="card-text">:: 일출보러 가기 ::</p>
@@ -50,7 +50,7 @@
 					</div>
 					
 					<div class="card img-fluid cities">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/seville2.jpg" alt="Card image" style="width:100%">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/seville2.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">론다 야경투어</h4>
 						      <p class="card-text">:: 당일치기로 떠나는 투어 ::</p>
