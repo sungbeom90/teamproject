@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">자유의 여신상</h4>
 						      <p class="card-text">:: 자유의 여신상 투어 ::</p>
-						      <a href="#" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						      <a href="#" class="btn btn-outline-dark btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>

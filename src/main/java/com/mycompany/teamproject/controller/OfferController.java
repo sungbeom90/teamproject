@@ -3,6 +3,8 @@ package com.mycompany.teamproject.controller;
 
 
 
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -31,7 +33,9 @@ public class OfferController {
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
 		board.setTitle("<h1>바르셀로나 라발지구 올드바 투어 with 에이쁠투어</h1>");
-		board.setSubtitle("바르셀로나의 가장 오래된 바에서 한잔 하며 숨겨진 진주 같은 라발지구의 낭만을 함께 즐겨보아요!");
+		board.setImg("/resources/img/barcelona1.jpg ");
+		board.setImg2("/resources/img/barcelona_bar.jpg ");
+		board.setSubtitle("<h3>바르셀로나의 가장 오래된 바에서 한잔 하며 숨겨진 진주 같은 라발지구의 낭만을 함께 즐겨보아요!</h3>");
 		board.setSubcontent("<p>낯설지만 흥미로운, 다가가기 쉽지 않지만 그만큼 더 매력적인 라발지구에서 저와 함께 한 잔해요!</p>"
 				+ "<p>여러 사회적 문제들로 인해 위험한 곳으로 생각되었지만 1990년대 바르셀로나시의 라발지구 개선사업 후 새롭게 변화된 동네에 유니크한 샵들과 트렌디한 레스토랑들이 들어서면서 바르셀로나의 힙한 곳으로 떠오르고 있답니다.</p>"
 				+ "<p>개성이 넘치는 라발지구의 골목마다 숨겨진 이야기를 들어보세요. 작은 에피소드 하나로 그 거리에 대한 추억을 오랫동안 간직하실 수 있어요.</p>"
@@ -39,17 +43,10 @@ public class OfferController {
 				+ "<p>헤밍웨이와 피카소가 자주 들렀던 바르셀로나의 가장 오래된 바에서 그들이 마셨던 압생트를 마셔보아요. 1920년대 예술가들이 카페에 모여 이야기했던 분위기를 즐길 수 있어요.</p>"
 				+ "<p>친구와 함께 동네 구경을 하는 것 처럼, 오랜만에 만난 친구와 한잔 하는 것처럼 편안하고 즐거운 분위기로 라발지구를 소개해드릴게요.</p>");
 		board.setInclude("<li>가이드 비용</li>");
-		board.setUninclude("<li>개인 음료와 간단한 스낵</li>" + 
-				"<li>가이드 음료</li>" + 
-				"<li>베르뭇, 맥주, 와인과 같은 음료는 1.5~2.5 유로입니다.</li>" + 
-				"<li>압생트는 5유로 입니다.</li>" + 
-				"<li>그룹으로 함께 먹은 안주는 N분의 1로 계산합니다.</li>");
-		board.setCourse("람블라 거리" + "바르셀로나 현대 미술관"
-				+ "까사 알미라이"
-				+ "산타 크레우 병원"
-				+ "보테로 고양이"
-				+ "바 마르세야");
-		board.setAddinfo("만나는 시간 : 오후 5시");
+		board.setUninclude("<li>개인 음료와 간단한 스낵</li><li>가이드 음료</li><li>베르뭇, 맥주, 와인과 같은 음료는 1.5~2.5 유로입니다.</li><li>압생트는 5유로 입니다.</li><li>그룹으로 함께 먹은 안주는 N분의 1로 계산합니다.</li>");
+		board.setCourse("<ol><li>람블라 거리</li><li>바르셀로나 현대 미술관</li><li>까사 알미라이</li><li>산타 크레우 병원</li><li>보테로 고양이</li><li>바 마르세야</li></ol>");
+		board.setContacttime("오후 5시");
+		board.setContactplace("카탈루냐 광장 맞은편 하바나");
 		model.addAttribute("content",board);
 		
 		return "offers/content";
@@ -61,15 +58,15 @@ public class OfferController {
 		logger.info("바르셀로나 offer2 실행");
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
-		board.setTitle("바르셀로나: 벨 항구에서 일몰 항해투어");
+		board.setTitle("<h1>바르셀로나: 벨 항구에서 일몰 항해투어<h1>");
 		board.setSubtitle("낭만적인 시간을 보내고 싶다면 태양으로 붉게 물든 바르셀로나의 바다에서 하루를 마무리해보세요!");
-		board.setSubcontent("본 투어는 영어로 진행되며  다국적 여행자들과 함께하는 단체 투어로 진행됩니다."
-				+ "소규모 그룹으로 진행되어 개인적인 서비스를 제공해드려요."
-				+ "무료 음료, 간식을 제공합니다."
-				+ "커플들에게 로맨틱한 여행을 선사해드립니다."
-				+ "구시가지 항구(Old Harbour)로 잘 알려져 있는 포트벨(Port Vell)에서 전문 선장을 만나 특별한 항해를 경험해보세요! 배를 타고 바르셀로나의 고급 요트가 정박된 아름다운 항구 선착장을 지나가며 투어를 시작합니다!."
-				+ "우선 보안사항을 검토 받고 보트 여행 일정에 대한 설명을 듣게 됩니다. 이후 2시간 동안 항구와 바르셀로나의 해안을 항해하며 여행 일정에 따라 올림픽 항구, 이카리아 해변 및 도시의 대성당과 같은 도시의 주요 명소들을 보실 수 있답니다."
-				+ "붉게 지는 태양 아래 멋진 경관을 감상하고 음료를 마시며 하루를 마무리해보세요. 친구나 가족과 함께 특별한 순간을 사진으로 남기는 것도 잊지 마세요! 투어가 끝나면 포트벨로 다시 돌아갑니다.");
+		board.setSubcontent("<p>본 투어는 영어로 진행되며  다국적 여행자들과 함께하는 단체 투어로 진행됩니다.</p>"
+				+ "<p>소규모 그룹으로 진행되어 개인적인 서비스를 제공해드려요.</p>"
+				+ "<p>무료 음료, 간식을 제공합니다.</p>"
+				+ "<p>커플들에게 로맨틱한 여행을 선사해드립니다.</p>"
+				+ "<p>구시가지 항구(Old Harbour)로 잘 알려져 있는 포트벨(Port Vell)에서 전문 선장을 만나 특별한 항해를 경험해보세요! 배를 타고 바르셀로나의 고급 요트가 정박된 아름다운 항구 선착장을 지나가며 투어를 시작합니다!.</p>"
+				+ "<p>우선 보안사항을 검토 받고 보트 여행 일정에 대한 설명을 듣게 됩니다. 이후 2시간 동안 항구와 바르셀로나의 해안을 항해하며 여행 일정에 따라 올림픽 항구, 이카리아 해변 및 도시의 대성당과 같은 도시의 주요 명소들을 보실 수 있답니다.</p>"
+				+ "<p>붉게 지는 태양 아래 멋진 경관을 감상하고 음료를 마시며 하루를 마무리해보세요. 친구나 가족과 함께 특별한 순간을 사진으로 남기는 것도 잊지 마세요! 투어가 끝나면 포트벨로 다시 돌아갑니다.</p>");
 		board.setInclude("- 전문 선장이 운항하는 2시간의 항해 여행"
 				+ "- 간식,음료수"
 				+ "- 스패니쉬 기타연주");
@@ -203,7 +200,9 @@ public class OfferController {
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
 		board.setTitle("오키나와 : 추라우미 엔조이 패스 (오키나와 추라우미 수족관+공통 11시설 입장)");
-		board.setSubtitle("오키나와 본도를 대표하는 관광명소인 오키나와 추라우미 수족관과 그 외 지정된 공통 11시설을 패스 1장으로 즐기실 수 있습니다.");
+		board.setImg("/resources/img/okinawa1.jpg ");
+		board.setImg2("/resources/img/okinawa2.jpg ");
+		board.setSubtitle("<h3>오키나와 본도를 대표하는 관광명소인 오키나와 추라우미 수족관과 그 외 지정된 공통 11시설을 패스 1장으로 즐기실 수 있습니다.</h3>");
 		board.setSubcontent("[ 이 패스의 매력 포인트! ]" + 
 				"- 각 시설의 입장권을 따로따로 구입할 경우와 비교하여 7,290엔이나 저렴하게 이용하실 수 있습니다." + 
 				"(만 18세 이상의 성인이 모든 시설에 입장했을 경우)" + 

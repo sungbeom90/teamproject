@@ -35,20 +35,34 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-				
+					
 					<div>${content.writer}</div>
 					<hr/>
 					<h1>${content.title}</h1>
 					<!-- 이미지 -->
 					<hr/>
-					<h3>${content.subtitle}</h3>
-					<div>${content.subcontent}</div>	
-						
-					<div>${content.include}</div>
-					<div>${content.uninclude}></div>
-					<h5>${content.course}</h5>
-					<h5>${content.addinfo}</h5>
+					<img src="<%=application.getContextPath()%>${content.img}" width="500px" height="500px" 
+					class="rounded" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
+					<img src="<%=application.getContextPath()%>${content.img2}" width="500px" height="500px" 
+					class="rounded" style="margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
+					<div>${content.subtitle}</div>
+					<div>${content.subcontent}</div>
+					<hr/>
+					<h4>상품 정보</h4>
+					<h5>포함 사항</h5>
+					<div>${content.include}</div><br/>
+					<h5>불포함 사항</h5>
+					<div>${content.uninclude}</div><br/>
+					<h4>코스 소개</h4>
+					<div>${content.course}</div>
+					<h4>추가 정보</h4>
+					<div>${content.addinfo}</div>
+					<h5>만나는 시간</h5>
+					<div>${content.contacttime}</div><br/>
+					<h5>만나는 장소</h5>
+					<div>${content.contactplace}</div>
 				</div>
+				
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>
