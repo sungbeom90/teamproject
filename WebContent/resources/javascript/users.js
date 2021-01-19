@@ -14,6 +14,10 @@ $(()=>{
 			event.preventDefault();
 			alert("동일한 비밀번호를 입력하세요.");
 			return;	
+		}else if ($("#uname").val() === ""){
+			event.preventDefault();
+			alert("이름을 입력해주세요.");
+			return;	
 		}else if ($("#uagree_e1").prop("checked") === false){
 			event.preventDefault();
 			alert("필수약관을 동의하세요.");

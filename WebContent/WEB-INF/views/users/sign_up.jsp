@@ -37,8 +37,11 @@
 				 				<label for="upassword_re">비밀번호 확인</label>				
 								<input type="password" id="upassword_re" name="upassword_re" placeholder="비밀번호를 다시 입력하세요."/> <br/>
 								
+								<label for="uname">이름</label>
+								<input type="text" id="uname" name="uname" placeholder="이름 입력하세요"><br/>
+								
 								<br/>
-								<p>개인정보사항</p>
+								<p>선택 입력 사항</p>
 								<label for="uname">이름</label>
 								<input type="text" id="uname" name="uname" placeholder="이름 입력하세요"><br/>
 								
