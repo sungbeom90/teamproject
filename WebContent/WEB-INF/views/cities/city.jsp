@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						     	<h4 class="card-title">${city.big1}</h4>
 						      <p class="card-text">${city.big2}</p>
-						      <a href="<%=application.getContextPath()%>${city.btn2}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						      <a href="<%=application.getContextPath()%>${city.btn1}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">${city.sm1}</h4>
 						      <p class="card-text">${city.sm2}</p>
-						      <a href="<%=application.getContextPath()%>${city.btn2}" class="btn btn-outline-dark btn-sm stretched-link">바로가기</a>
+						      <a href="<%=application.getContextPath()%>${city.btn1}" class="btn btn-outline-dark btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>
