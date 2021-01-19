@@ -43,7 +43,7 @@
 								    <div class="text_box">
 								      <h4 class="card-title">벳푸 온천체험</h4>
 								      <p class="card-text">::다양한 지옥 온천 체험::</p>
-								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								      <a href="<%=application.getContextPath()%>/offers/fukuoka_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>
 						</div>
@@ -53,7 +53,7 @@
 							    	<div class="text_box">
 								      <h4 class="card-title">다이아몬드헤드 투어</h4>
 								      <p class="card-text">::일출보러 가기::</p>
-								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								      <a href="<%=application.getContextPath()%>/offers/hawaii_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>
 						</div>
@@ -62,8 +62,8 @@
 							    <div class="card-img">
 							    	<div class="text_box">
 								      <h4 class="card-title">스페인 광장 투어</h4>
-								      <p class="card-text">::일출보러 가기::</p>
-								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								      <p class="card-text">::걸어서 광장 가기::</p>
+								      <a href="<%=application.getContextPath()%>/offers/barcelona_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>
 						</div>
@@ -72,8 +72,8 @@
 							    <div class="card-img">
 							   		<div class="text_box">
 								      <h4 class="card-title">설 악 산</h4>
-								      <p class="card-text">::트래킹하러가기::</p>
-								      <a href="#" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
+								      <p class="card-text">::트래킹 하러가기::</p>
+								      <a href="<%=application.getContextPath()%>/offers/sokcho_offer1" class="btn btn-outline-light btn-sm text-dark stretched-link">바로가기</a>
 								    </div>
 							    </div>
 						</div>

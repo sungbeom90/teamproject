@@ -45,7 +45,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">설 악 산</h4>
 						      <p class="card-text">:: 트래킹하러가기 ::</p>
-						      <a href="#" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						      <a href="<%=application.getContextPath()%>/offers/sokcho_offer1" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 					
@@ -54,7 +54,7 @@
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">요 트</h4>
 						      <p class="card-text">:: 선 셋 투어 ::</p>
-						      <a href="#" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						      <a href="<%=application.getContextPath()%>/offers/sokcho_offer2" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 					</div>
 				</div>
