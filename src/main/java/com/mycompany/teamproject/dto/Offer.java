@@ -1,9 +1,5 @@
 package com.mycompany.teamproject.dto;
 
-import java.util.Date;
-
-import org.springframework.web.multipart.MultipartFile;
-
 public class Offer {
 	private String utitle;
 	private String usubtitle;
