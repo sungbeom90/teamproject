@@ -35,11 +35,6 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-						<h1>cities 필드</h1>
-						<h2>고정 해더 이미지를 띄우자</h2>
-						
-				</div>
-				<div class="sector">
 					<div class="card-deck">
 						<div class="card img-fluid cities">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork1.jpg" alt="Card image">

@@ -25,7 +25,7 @@
 				
 				<div class="content container">
 						<div class="sector">
-						<img src="<%=application.getContextPath()%>/resources/img/logo2.jpg" alt="logo" width="100%">
+						<img src="<%=application.getContextPath()%>/resources/img/home_img.jpg" alt="logo" width="100%">
 						
 				</div>			
 								
