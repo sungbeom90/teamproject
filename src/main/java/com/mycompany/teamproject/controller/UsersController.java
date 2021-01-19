@@ -92,11 +92,30 @@ public class UsersController {
 				return "users/password";
 			}
 			
-			@RequestMapping("/password_re")
-			public String password_re() {
-				logger.info("비밀번호 재설정 완료");
-				return "users/password_re";
+			@PostMapping("/password_compare")
+			public String password_compare(String email_compare, String name_compare, HttpSession session) {
+				UserDto userDto= (UserDto) session.getAttribute("userDto");
+				if(email_compare.equals(userDto.getUemail()) && name_compare.equals(userDto.getUname())){
+					session.setAttribute("passwordreset",email_compare);				
+				}
+				logger.info(userDto.getUpassword());
+				logger.info("비밀번호 재설정 확인");
+				return "users/password";
 			}
+			
+			@PostMapping("/password_reset")
+			public String password_reset(String password_reset1, HttpSession session) {
+				UserDto userDto= (UserDto) session.getAttribute("userDto");
+				userDto.setUpassword(password_reset1);
+				session.removeAttribute("passwordreset");
+				logger.info(userDto.getUpassword());
+				session.setAttribute("userDto",userDto);				
+				logger.info("비밀번호 재설정 완료");
+				return "users/sign_in";
+			}
+			
+			
+			
 			
 			@PostMapping("/login")
 			public String login(String uemail, String upassword, HttpSession session) {

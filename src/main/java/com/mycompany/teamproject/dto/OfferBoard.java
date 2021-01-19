@@ -1,6 +1,6 @@
 package com.mycompany.teamproject.dto;
 
-import java.util.Date;
+import org.springframework.web.multipart.MultipartFile;
 
 public class OfferBoard {
 	private String writer;
@@ -16,7 +16,7 @@ public class OfferBoard {
 	private String addinfo;
 	private String contacttime;
 	private String contactplace;
-	private Date date;
+	private MultipartFile offerPhoto;
 	public String getWriter() {
 		return writer;
 	}
@@ -79,12 +79,6 @@ public class OfferBoard {
 	}
 	public void setAddinfo(String addinfo) {
 		this.addinfo = addinfo;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
 	}
 	public String getSubcontent() {
 		return subcontent;
