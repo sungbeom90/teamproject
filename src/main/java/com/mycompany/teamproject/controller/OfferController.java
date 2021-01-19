@@ -32,7 +32,8 @@ public class OfferController {
 		logger.info("바르셀로나 offer1 실행");
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
-		board.setTitle("<h1>바르셀로나 라발지구 올드바 투어 with 에이쁠투어</h1>");
+		board.setTitle("<h1><바르셀로나> 라발지구 올드바 투어 ");
+		board.setPrice("<h4>가격 : 42000원 (1인)");
 		board.setImg("/resources/img/barcelona1.jpg ");
 		board.setImg2("/resources/img/barcelona_bar.jpg ");
 		board.setSubtitle("<h3>바르셀로나의 가장 오래된 바에서 한잔 하며 숨겨진 진주 같은 라발지구의 낭만을 함께 즐겨보아요!</h3>");
@@ -58,7 +59,8 @@ public class OfferController {
 		logger.info("바르셀로나 offer2 실행");
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
-		board.setTitle("<h1>바르셀로나: 벨 항구에서 일몰 항해투어<h1>");
+		board.setTitle("<h1><바르셀로나> 벨 항구에서 일몰 항해투어<h1>");
+		board.setPrice("<h4>가격 : 50000원 (1인)");
 		board.setImg("/resources/img/spain_sunset.jpg ");
 		board.setImg2("/resources/img/spain_sunset2.jpg ");
 		board.setSubtitle("<h3>낭만적인 시간을 보내고 싶다면 태양으로 붉게 물든 바르셀로나의 바다에서 하루를 마무리해보세요!</h3>");
@@ -96,6 +98,7 @@ public class OfferController {
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
 		board.setTitle("<h1>스페인광장부터 대성당까지 한번에 둘러보는 워킹투어</h1>");
+		board.setPrice("<h4>가격 : 30000원부터</h4>");
 		board.setImg("/resources/img/seville_gwangjang.jpg");
 		board.setImg2("/resources/img/seville_gwangjang2.jpg");
 		board.setSubtitle("<h3>600개가 넘는 후기로 검증된 세비야 대표투어! 이제 대성당까지 함께 입장합니다</h3>");
@@ -136,6 +139,7 @@ public class OfferController {
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
 		board.setTitle("<h1>세비야 론다 별밤투어");
+		board.setPrice("<h4>가격 : 30000원부터</h4>");
 		board.setImg("/resources/img/seville_ronda.jpg");
 		board.setImg2("/resources/img/seville_ronda2.jpg");
 		board.setSubtitle("<h3>론다의 야경을 보지 못했다면 론다를 봤다고 할 수 없다!!");
@@ -172,6 +176,7 @@ public class OfferController {
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
 		board.setTitle("<h1>멋진 부산의 야경구경 & 인생사진 남기기");
+		board.setPrice("<h4>가격 : 30000원부터</h4>");
 		board.setImg("/resources/img/busan_yabam.jpg");
 		board.setImg2("/resources/img/busan_yabam2.jpg");
 		board.setSubtitle("<h3>부산에서 인생사진 남기기");
@@ -209,6 +214,7 @@ public class OfferController {
 		logger.info("부산 offer2 실행");
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
+		board.setPrice("<h4>가격 : 75000원부터</h4>");
 		board.setTitle("<h1>해운대: 와우 요트투어");
 		board.setImg("/resources/img/busan_yort.jpg");
 		board.setImg2("/resources/img/busan_yort2.jpg");
@@ -236,6 +242,7 @@ public class OfferController {
 		logger.info("오키나와 offer1 실행");
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
+		board.setPrice("<h4>가격 : 33000원부터</h4>");
 		board.setTitle("<h1>오키나와 : 추라우미 엔조이 패스 (오키나와 추라우미 수족관+공통 11시설 입장)");
 		board.setImg("/resources/img/okinawa1.jpg ");
 		board.setImg2("/resources/img/okinawa_sujok.jpg ");
@@ -265,6 +272,7 @@ public class OfferController {
 		logger.info("오키나와 offer2 실행");
 		OfferBoard board = new OfferBoard();
 		board.setWriter("작성자");
+		board.setPrice("<h4>가격 : 85000원부터</h4>");
 		board.setTitle("<h1>오키나와 게라마 제도 1일 투어 - 스노클링");
 		board.setImg("/resources/img/okinawa_gerema.jpg ");
 		board.setImg2("/resources/img/okinawa_gerema2.jpg ");

@@ -8,6 +8,7 @@ public class OfferBoard {
 	private String img;
 	private String img2;
 	private String subtitle;
+	private String price;
 	private String subcontent;
 	private String include;
 	private String uninclude;
@@ -47,6 +48,13 @@ public class OfferBoard {
 	}
 	public void setSubtitle(String subtitle) {
 		this.subtitle = subtitle;
+	}
+	
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	public String getInclude() {
 		return include;
