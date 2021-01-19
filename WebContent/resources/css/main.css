@@ -2,7 +2,8 @@
 
 /* Reset CSS */
 * {	margin:0; padding:0; font-family:Lucida Console; }
-ol,ul {	list-style: none; }
+ ul {	list-style: none; } 
+ ol { list-style-position: inside;}
 img { border:0; }
 
 /* Background Image */

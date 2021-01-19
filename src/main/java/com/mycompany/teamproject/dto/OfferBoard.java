@@ -5,12 +5,16 @@ import java.util.Date;
 public class OfferBoard {
 	private String writer;
 	private String title;
+	private String img;
+	private String img2;
 	private String subtitle;
 	private String subcontent;
 	private String include;
 	private String uninclude;
 	private String course;
 	private String addinfo;
+	private String contacttime;
+	private String contactplace;
 	private Date date;
 	public String getWriter() {
 		return writer;
@@ -23,6 +27,20 @@ public class OfferBoard {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	
+	public String getImg2() {
+		return img2;
+	}
+	public void setImg2(String img2) {
+		this.img2 = img2;
 	}
 	public String getSubtitle() {
 		return subtitle;
@@ -66,6 +84,19 @@ public class OfferBoard {
 	public void setSubcontent(String subcontent) {
 		this.subcontent = subcontent;
 	}
+	public String getContacttime() {
+		return contacttime;
+	}
+	public void setContacttime(String contacttime) {
+		this.contacttime = contacttime;
+	}
+	public String getContactplace() {
+		return contactplace;
+	}
+	public void setContactplace(String contactplace) {
+		this.contactplace = contactplace;
+	}
 	
 	
 }
+
