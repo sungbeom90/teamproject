@@ -46,7 +46,7 @@
 										<div class="valid-feedback">유효한 이름입니다.</div>
 										<div class="invalid-feedback">이름을 입력해주세요.</div>
 									</div>								
-									<input type="submit" class="btn btn-success d-block" id="password_compare_btn" value="비밀번호 재설정"/>
+									<input type="submit" class="btn btn-danger d-block" id="password_compare_btn" value="비밀번호 재설정"/>
 								</form>
 								</c:if>
 								<c:if test="${passwordreset != null}">
@@ -65,7 +65,7 @@
 									</form>
 								</c:if>
 								<div class="container justify-content-center">
-									<a class="btn btn-danger d-block" href="sign_in">로그인페이지</a>
+									<a class="btn btn-success d-block" href="sign_in">로그인페이지</a>
 									<a class="btn btn-primary d-block" href="sign_up">회원가입</a>
 								</div>
 					</div>
