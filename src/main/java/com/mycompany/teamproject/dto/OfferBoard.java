@@ -98,6 +98,12 @@ public class OfferBoard {
 	public void setContactplace(String contactplace) {
 		this.contactplace = contactplace;
 	}
+	public MultipartFile getOfferPhoto() {
+		return offerPhoto;
+	}
+	public void setOfferPhoto(MultipartFile offerPhoto) {
+		this.offerPhoto = offerPhoto;
+	}
 	
 	
 }

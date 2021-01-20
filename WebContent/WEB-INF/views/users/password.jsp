@@ -32,7 +32,7 @@
 		<%-- 내용 --%>
 		<div class="mainCenter">
 			<div class="content container">
-				<div class="sector container border sign_in mt-5 mb-5">
+				<div class="sector container border rounded user_in mt-5 mb-5">
 					<h2>비밀번호 재 설정</h2>
 						<c:if test="${passwordreset == null}">	
 								<form method="post" action="password_compare" class="was-validated">
@@ -45,8 +45,10 @@
 										<input type="text" class="form-control form-control-lg" id="name_compare" name="name_compare" placeholder="이름" required/>
 										<div class="valid-feedback">유효한 이름입니다.</div>
 										<div class="invalid-feedback">이름을 입력해주세요.</div>
-									</div>								
-									<input type="submit" class="btn btn-danger d-block" id="password_compare_btn" value="비밀번호 재설정"/>
+									</div>
+									<div class="container justify-content-center">								
+										<input type="submit" class="btn btn-danger d-block mb-1" id="password_compare_btn" value="비밀번호 재설정" style="width:100%;"/>
+									</div>
 								</form>
 								</c:if>
 								<c:if test="${passwordreset != null}">
@@ -60,13 +62,15 @@
 											<input type="password" class="form-control form-control-lg" id="password_reset2" name="password_reset2" placeholder="비밀번호를 다시 입력해주세요." required/>
 											<div class="valid-feedback">유효한 비밀번호입니다.</div>
 											<div class="invalid-feedback">비밀번호를 다시 입력해주세요.</div>
-										</div>								
-										<input type="submit" class="btn btn-danger d-block" id="password_reset_btn" value="비밀번호 재설정"/>
+										</div>
+										<div class="container justify-content-center">					
+											<input type="submit" class="btn btn-danger d-block mb-1" id="password_reset_btn" value="비밀번호 재설정" style="width:100%;"/>
+										</div>										
 									</form>
 								</c:if>
 								<div class="container justify-content-center">
-									<a class="btn btn-success d-block" href="sign_in">로그인페이지</a>
-									<a class="btn btn-primary d-block" href="sign_up">회원가입</a>
+									<a class="btn btn-success d-block mb-1" href="sign_in">로그인페이지</a>
+									<a class="btn btn-primary d-block mb-1" href="sign_up">회원가입</a>
 								</div>
 					</div>
 					<script type="text/javascript">

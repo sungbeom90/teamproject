@@ -61,8 +61,6 @@ $(()=>{
 	});
 	
 	
-	
-	
 	$("#password_reset_btn").click(()=>{		
 		if($("#password_reset1").val().length < 8 ){
 			event.preventDefault();

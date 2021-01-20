@@ -24,9 +24,8 @@
 				<%-- 공통 메뉴 --%>
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">					
-					<div class="sector border border-secondary rounded">
-						<h2>회원가입</h2>
-					
+					<div class="sector container user_in border rounded">
+						<h2>회원가입</h2>					
 							<form method="post" enctype="multipart/form-data" action="sign_up_success">
 								<label for="uemail">이메일</label>
 				 				<input type="email" id="uemail" name="uemail" placeholder="ID@example.com"/><br>
@@ -41,7 +40,7 @@
 								<input type="text" id="uname" name="uname" placeholder="이름 입력하세요"><br/>
 								
 								<br/>
-								<p>선택 입력 사항</p>								
+								<h5>선택 입력 사항</h5>								
 								<label for="usex">성별</label>
 								<input type="radio" id="usex" name="usex" value="male"/> 남성
 								<input type="radio" id="usex" name="usex" value="female"/> 여성
@@ -49,18 +48,21 @@
 								<br/>								
 								<label for="uphoto">사진</label>
 								<input type="file" name="uphoto"><br/>
+								
 								<br/>		
+					 			<h5>회원 가입 약관</h5>
 					 			<input type="checkbox" id="uagree_all" name="uagree_all" value="all" /> 전체 약관 동의<br/>
 								<input type="checkbox" id="uagree_e1" name="uagree_e1" value="essential1"/> 회원 가입 및 운영약관 동의 (필수)<br/>
 								<input type="checkbox" id="uagree_e2" name="uagree_e2" value="essential2"/> 개인정보 수집 및 이용 (필수)<br/>
 								<input type="checkbox" id="uagree_o1" name="uagree_o1" value="option1"> 위치정보 이용약관 (선택)<br/>
 								<input type="checkbox" id="uagree_o2" name="uagree_o2" value="option2"/> 특가 항공권 및 할인 혜택 안내 동의  (선택)<br/>
 								
-								
+								<br/>
 								<p>*선택 항목을 동의하지 않아도 서비스를 이용하실 수 있습니다.</p>
 								<p>*회원 가입 시 본인이 만 14세 이상임에 동의하게 됩니다.</p>
-								
-								<input type="submit" class="btn btn-primary btn-sm" id="sign_up_btn" value="회원가입"/>
+								<div class="container justify-content-center">
+								<input type="submit" class="btn btn-primary d-block mb-1" id="sign_up_btn" value="회원가입" style="width:100%;"/>
+								</div>
 							</form>
 						</div>
 	

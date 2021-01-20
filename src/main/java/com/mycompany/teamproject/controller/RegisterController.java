@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.OfferBoard;
 import com.mycompany.teamproject.dto.UserDto;
@@ -50,7 +51,16 @@ public class RegisterController {
 			logger.info("addinfo: "+addinfo);
 			logger.info("contacttime: "+contacttime);
 			logger.info("contactplace: "+contactplace);
-		
+			
+			MultipartFile offerPhoto= offerBoard.getOfferPhoto();
+			if(!offerPhoto.isEmpty()) {
+				String originalFileName = offerPhoto.getOriginalFilename();
+				String contentType = offerPhoto.getContentType();
+				long size = offerPhoto.getSize();
+				logger.info("originalFileName: "+originalFileName);
+				logger.info("contentType: "+contentType);
+				logger.info("size: "+size);
+			}
 		
 		return "redirect:/main/content";
 		}
