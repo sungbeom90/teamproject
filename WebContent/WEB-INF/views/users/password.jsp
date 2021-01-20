@@ -22,8 +22,8 @@
 	href="<%=application.getContextPath()%>/resources/css/main.css">
 <script
 	src="<%=application.getContextPath()%>/resources/javascript/users.js"></script>
-</head>
 
+</head>
 <body>
 	<div class="wrap">
 		<%-- 공통 헤더 --%>
@@ -69,6 +69,21 @@
 									<a class="btn btn-primary d-block" href="sign_up">회원가입</a>
 								</div>
 					</div>
+					<script type="text/javascript">
+						$("#password_compare_btn").click(()=>{
+							if($("#email_compare").val() === ""){
+								event.preventDefault();
+								alert("비밀번호를 재설정 할 아이디를 입력하세요.");
+								return;		
+							}else if($("#name_compare").val() === ""){
+								event.preventDefault();
+								alert("가입한 이메일의 이름을 입력하세요.");
+								return;
+							}else {
+								var con = confirm("인증되었습니다. 변경하실 비밀번호를 입력하세요.");
+							}							
+						});
+</script>
 			</div>
 			<div class="fixed-bottom">
 			<jsp:include page="/WEB-INF/views/include/footer.jsp"/></div>

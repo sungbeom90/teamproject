@@ -41,10 +41,12 @@ $(()=>{
 			event.preventDefault();
 			alert("비밀번호를 입력하세요.");
 			return;
-		}
+		}else {
+			var con = confirm("로그인이 성공적으로 되었습니다.");
+		}	
 	});
 	
-	$("#password_compare_btn").click(()=>{		
+	$("#password_compare_btn").click(()=>{
 		if($("#email_compare").val() === ""){
 			event.preventDefault();
 			alert("비밀번호를 재설정 할 아이디를 입력하세요.");
@@ -53,8 +55,11 @@ $(()=>{
 			event.preventDefault();
 			alert("가입한 이메일의 이름을 입력하세요.");
 			return;
-		}
+		}else {
+			var con = confirm("인증되었습니다. 변경하실 비밀번호를 입력하세요.");
+		}							
 	});
+	
 	
 	
 	
