@@ -63,7 +63,7 @@ public class CountriesController {
 		}
 		
 		@GetMapping("/spain")
-		public String spain(HttpSession session){
+		public String spain(HttpSession session){		
 			logger.info("spain 실행");
 			CountryDto usadto = new CountryDto();
 			usadto.setImgHead("/resources/img/spain_head.jpg");
@@ -74,9 +74,7 @@ public class CountriesController {
 			usadto.setNameCountry("스 페 인");
 			usadto.setRootCity1("/cities/barcelona");
 			usadto.setRootCity2("/cities/seville");
-			
 			session.setAttribute("country", usadto);
-			
 			return "countries/country"; 
 		}
 		
