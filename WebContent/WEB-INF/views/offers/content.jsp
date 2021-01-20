@@ -68,32 +68,6 @@
 					<h5>만나는 장소</h5>
 					<div class="space mb-5">${content.contactplace}</div>
 				</div>
-				<script type="text/javascript">
-				$("#sign_in_btn").click(()=>{		
-					if($("#uemail").val() === ""){
-						event.preventDefault();
-						alert("로그인할 아이디를 입력하세요.");
-						return;		
-					}else if($("#upassword").val().length < 8 ){
-						event.preventDefault();
-						alert("비밀번호를 입력하세요.");
-						return;		
-					}else if($("#uemail").val() === ${userDto.uemail}){
-						if($("#upassword").val() === ${userDto.upassword}){
-							var con = confirm("어서오세요! 떠날곳을 찾아볼까요?.");
-						} else {
-							event.preventDefault();
-							var con = confirm("입력하신 이메일과 비밀번호가 맞지 않습니다. 다시 확인하세요.");
-							return;
-						}
-					} else {
-					event.preventDefault();
-					var con = alert("가입이력이 없는 이메일입니다.");
-					return;
-					}
-				});
-				
-				</script>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>
