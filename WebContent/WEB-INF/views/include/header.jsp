@@ -12,8 +12,8 @@
 		<!-- Links -->
 		<ul class="navbar-nav">
 			<c:if test="${loginStatus == null}">
-				<li class="nav-item"><a class="nav-link" href="<%=application.getContextPath()%>/users/sign_up">회원가입</a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=application.getContextPath()%>/users/sign_in">로그인</a></li>
+				<li class="nav-item"><a class="nav-link" href="<%=application.getContextPath()%>/members/sign_up">회원가입</a></li>
+				<li class="nav-item"><a class="nav-link" href="<%=application.getContextPath()%>/members/sign_in">로그인</a></li>
 			</c:if>
 			<c:if test="${loginStatus != null}">
 				<!-- Dropdown -->
@@ -22,7 +22,7 @@
 						<img src="<%=application.getContextPath()%>/resources/img/myphoto.png" width="50px"/>
 					</a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="<%=application.getContextPath()%>/users/logout">로그아웃</a>
+						<a class="dropdown-item" href="<%=application.getContextPath()%>/members/logout">로그아웃</a>
 						<a class="dropdown-item" href="<%=application.getContextPath()%>/register/content">상품등록</a>
 					</div>
 				</li>

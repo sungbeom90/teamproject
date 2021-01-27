@@ -2,7 +2,7 @@ package com.mycompany.teamproject.dto;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class UserDto {
+public class MemberDto {
 	private String uemail;	
 	private String upassword;
 	private String uname;
@@ -12,6 +12,7 @@ public class UserDto {
 	private String uagree_e2;
 	private String uagree_o1;
 	private String uagree_o2;
+	private String partner;
 	
 	
 	
@@ -69,6 +70,13 @@ public class UserDto {
 	public void setUagree_o2(String uagree_o2) {
 		this.uagree_o2 = uagree_o2;
 	}
+	public String getPartner() {
+		return partner;
+	}
+	public void setPartner(String partner) {
+		this.partner = partner;
+	}
+	
 	
 	
 	

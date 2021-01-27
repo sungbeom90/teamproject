@@ -3,6 +3,7 @@ package com.mycompany.teamproject.controller;
 import java.io.File;
 import java.util.Date;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -13,34 +14,36 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mycompany.teamproject.dto.UserDto;
+import com.mycompany.teamproject.dto.MemberDto;
+import com.mycompany.teamproject.service.MemberService;
 
 @Controller
-@RequestMapping("/users")
-public class UsersController {
-	private static final Logger logger= LoggerFactory.getLogger(UsersController.class);
+@RequestMapping("/members")
+public class MemberController {
+	private static final Logger logger= LoggerFactory.getLogger(MemberController.class);
 	
+	@Resource
+	private MemberService memberservice;
 	
-	// http://.../teamproject/users 생략됨
 			@RequestMapping("/content")		
 			public String content() {
 				logger.info("실행");
-				return "users/content";
+				return "members/content";
 			}
 			
 			@RequestMapping("/sign_in")
 			public String sign_in() {
 				logger.info("로그인 화면 실행");
-				return "users/sign_in";
+				return "members/sign_in";
 			}
 			
 			@RequestMapping("/sign_up")
 			public String sign_up() {
 				logger.info("회원가입 화면 실행");
-				return "users/sign_up";
+				return "members/sign_up";
 			}
 			@PostMapping("/sign_up_success")
-			public String sign_up_success(UserDto userDto, HttpSession session) {
+			public String sign_up_success(MemberDto userDto, HttpSession session) {
 					//문자파트 정보얻기
 					String uemail = userDto.getUemail();
 					String upassword = userDto.getUpassword();
@@ -83,35 +86,35 @@ public class UsersController {
 					}
 				session.setAttribute("userDto",userDto);				
 				logger.info("회원가입 완료");
-				return "redirect:/users/sign_in";
+				return "redirect:/members/sign_in";
 			}
 			
 			@RequestMapping("/password")
 			public String password() {
 				logger.info("비밀번호 찾기 화면 실행");
-				return "users/password";
+				return "members/password";
 			}
 			
 			@PostMapping("/password_compare")
 			public String password_compare(String email_compare, String name_compare, HttpSession session) {
-				UserDto userDto= (UserDto) session.getAttribute("userDto");
+				MemberDto userDto= (MemberDto) session.getAttribute("userDto");
 				if(email_compare.equals(userDto.getUemail()) && name_compare.equals(userDto.getUname())){
 					session.setAttribute("passwordreset",email_compare);				
 				}
 				logger.info(userDto.getUpassword());
 				logger.info("비밀번호 재설정 확인");
-				return "users/password";
+				return "members/password";
 			}
 			
 			@PostMapping("/password_reset")
 			public String password_reset(String password_reset1, HttpSession session) {
-				UserDto userDto= (UserDto) session.getAttribute("userDto");
+				MemberDto userDto= (MemberDto) session.getAttribute("userDto");
 				userDto.setUpassword(password_reset1);
 				session.removeAttribute("passwordreset");
 				logger.info(userDto.getUpassword());
 				session.setAttribute("userDto",userDto);				
 				logger.info("비밀번호 재설정 완료");
-				return "users/sign_in";
+				return "members/sign_in";
 			}
 			
 			
@@ -119,7 +122,7 @@ public class UsersController {
 			
 			@PostMapping("/login")
 			public String login(String uemail, String upassword, HttpSession session) {
-				UserDto userDto= (UserDto) session.getAttribute("userDto");
+				MemberDto userDto= (MemberDto) session.getAttribute("userDto");
 				if(uemail.equals(userDto.getUemail()) && upassword.equals(userDto.getUpassword())){
 					session.setAttribute("loginStatus",uemail);				
 				}
