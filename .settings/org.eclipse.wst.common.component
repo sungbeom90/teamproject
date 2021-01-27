@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="java-output-path" value="/webapp1/build/classes"/>
-        <property name="context-root" value="teamproject"/>
+        <property name="context-root" value="webapp1"/>
     </wb-module>
 </project-modules>

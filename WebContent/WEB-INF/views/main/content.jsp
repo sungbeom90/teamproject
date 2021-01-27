@@ -66,6 +66,10 @@
 							<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입 테스트</a>
 						</div>						
 				</div>
+				<div class="sector">
+					<h5>나라</h5>
+					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/nations3/nationlist">나라별보기</a>
+				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>

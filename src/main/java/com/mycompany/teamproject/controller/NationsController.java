@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.mycompany.teamproject.dto.CountryDto;
 
 @Controller
-@RequestMapping("/countries")
-public class CountriesController {
+@RequestMapping("/nations")
+public class NationsController {
 		private static final Logger logger=
-				LoggerFactory.getLogger(CountriesController.class);
+				LoggerFactory.getLogger(NationsController.class);
 
 
-		// http://.../teamproject/countries 생략됨
+		// http://.../teamproject/nations 생략됨
 		@RequestMapping("/content")
 		public String content() {
 			logger.info("실행");
-			return "countries/content";
+			return "nations/content";
 		}
 		
 		
@@ -36,12 +36,12 @@ public class CountriesController {
 			usadto.setNameCity1("뉴 욕");
 			usadto.setNameCity2("하 와 이");
 			usadto.setNameCountry("미 국");
-			usadto.setRootCity1("/cities/newyork");
-			usadto.setRootCity2("/cities/hawaii");
+			usadto.setRootCity1("/locations/newyork");
+			usadto.setRootCity2("/locations/hawaii");
 			
 			session.setAttribute("country", usadto);
 			
-			return "countries/country"; 
+			return "nations/nation"; 
 		}
 		
 		@GetMapping("/japan")
@@ -54,12 +54,12 @@ public class CountriesController {
 			usadto.setNameCity1("오 키 나 와");
 			usadto.setNameCity2("후 쿠 오 카");
 			usadto.setNameCountry("일 본");
-			usadto.setRootCity1("/cities/okinawa");
-			usadto.setRootCity2("/cities/fukuoka");
+			usadto.setRootCity1("/locations/okinawa");
+			usadto.setRootCity2("/locations/fukuoka");
 			
 			session.setAttribute("country", usadto);
 			
-			return "countries/country"; 
+			return "nations/nation"; 
 		}
 		
 		@GetMapping("/spain")
@@ -72,10 +72,10 @@ public class CountriesController {
 			usadto.setNameCity1("바 르 셀 로 나");
 			usadto.setNameCity2("세 비 야");
 			usadto.setNameCountry("스 페 인");
-			usadto.setRootCity1("/cities/barcelona");
-			usadto.setRootCity2("/cities/seville");
+			usadto.setRootCity1("/locations/barcelona");
+			usadto.setRootCity2("/locations/seville");
 			session.setAttribute("country", usadto);
-			return "countries/country"; 
+			return "nations/nation"; 
 		}
 		
 		@GetMapping("/korea")
@@ -88,12 +88,12 @@ public class CountriesController {
 			usadto.setNameCity1("부 산");
 			usadto.setNameCity2("속 초");
 			usadto.setNameCountry("한 국");
-			usadto.setRootCity1("/cities/busan");
-			usadto.setRootCity2("/cities/sokcho");
+			usadto.setRootCity1("/locations/busan");
+			usadto.setRootCity2("/locations/sokcho");
 			
 			session.setAttribute("country", usadto);
 			
-			return "countries/country"; 
+			return "nations/nation"; 
 		}
 	
 		
