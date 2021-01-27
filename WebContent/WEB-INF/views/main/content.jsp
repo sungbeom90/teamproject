@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>I Love Earth</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -56,6 +56,14 @@
 								};
 							</script>
 							<div id="result1"></div>
+						</div>						
+				</div>
+				
+				<div class="sector">
+						<h5>봉 테스트</h5>
+						<div>
+							<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/login">로그인 테스트</a>
+							<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입 테스트</a>
 						</div>						
 				</div>
 				<div class="sector">

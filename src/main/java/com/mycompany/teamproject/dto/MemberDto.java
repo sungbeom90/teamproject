@@ -8,6 +8,7 @@ public class MemberDto {
 	private String uname;
 	private String usex;
 	private MultipartFile uphoto;
+	
 	private String uagree_e1;
 	private String uagree_e2;
 	private String uagree_o1;

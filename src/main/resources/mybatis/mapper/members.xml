@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="members">
+	<select id="selectByPk" resultType="member">
+		select member_id, memail, mname, mpassword, mphone
+		from members
+		where member_id=#{member_id}
+	
+	</select>
+	
+	<insert id="joininsert" parameterType="member">
+		insert into members
+		(member_id, memail, mname, mpassword, mphone)
+		values
+		(member_id.nextval, #{memail}, #{mname}, #{mpassword}, #{mphone})
+	
+	</insert>
+	
+</mapper>

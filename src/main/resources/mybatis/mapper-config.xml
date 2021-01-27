@@ -5,7 +5,7 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="nation" type="com.mycompany.teamproject.dto.Nation"/>
-				
+		<typeAlias alias="member" type="com.mycompany.teamproject.dto.MemberDtoTest"/>
 	</typeAliases>
 
 </configuration>
