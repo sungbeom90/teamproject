@@ -40,6 +40,24 @@
 						
 						
 				</div>
+				<div class="sector">
+						<h5>연결 테스트</h5>
+						<div>
+							<a class="btn btn-success btn-sm" href="javascript:conntest()">연결 테스트</a>
+							<script>
+								const conntest = function() {									
+									$.ajax({
+										url:"conntest",
+										method: "get",
+										success: function (data) {
+											$("#result1").html(data);											
+										}
+									});														
+								};
+							</script>
+							<div id="result1"></div>
+						</div>						
+				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>

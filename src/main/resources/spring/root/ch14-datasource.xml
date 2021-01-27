@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 커넥션 관리를 사용하기 위한 설정.-->
+	<!-- 컨테이너가 관리할 수 있도록 관리객체 설정.-->
+	<!-- 객체로 관리할 클래스의 경로지정.-->
+	<!-- webapprication이 종료되면 삭제하라는 의미. -->
+	<!-- db연결을 위해 5가지 정보 필요(ip,포트번호,db sid, 사용자이름,사용자pw -->
+	<bean id="dataSource"
+			class="org.apache.commons.dbcp2.BasicDataSource"   
+			destroy-method="close">   
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property> 
+		<property name="url" value="jdbc:oracle:thin:@192.168.2.38:1521:orcl"></property> <!-- (서버의 ip,포트번호,db sid 지정 -->
+		<property name="username" value="team"></property> <!-- 서버 사용자 이름 -->
+		<property name="password" value="123456"></property> <!-- 서버 사용자 비밀번호 -->
+		<property name="initialSize" value="3"></property> <!-- 커넥션 초기 실행숫자 -->
+		<property name="maxTotal" value="3"></property>	<!-- 커넥션 최대 실행숫자 -->
+		<property name="maxIdle" value="2"></property>	<!-- 커넥션 여유시 최대 실행숫자 -->
+			
+	</bean>
+	
+	
+	<!-- MyBatos 주입 -->
+	<bean id="sqlSessionFactory"
+			class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property> <!-- 커넥션 관리 객체를 의존하도록 세터 주입 -->
+		<property name="configLocation" value="classpath:mybatis/mapper-config.xml"></property> <!-- MyBatis 전체 설정 주입 -->
+		<property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"></property> <!-- MyBatis와 연결될 자바 객체와 테이블 설정 주입 -->
+	</bean>
+	
+	<bean id="sqlSessionTemplate"
+			class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref="sqlSessionFactory"></constructor-arg> <!-- Dao에서 사용할 관리객체를 의존하도록 생성자 주입 --> 
+	
+	</bean>
+	
+</beans>
