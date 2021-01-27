@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>I Love Earth</title>
+<title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -21,7 +21,7 @@
 <link rel="stylesheet"
 	href="<%=application.getContextPath()%>/resources/css/main.css">
 <script
-	src="<%=application.getContextPath()%>/resources/javascript/main.js"></script>
+	src="<%=application.getContextPath()%>/resources/javascript/users.js"></script>
 </head>
 
 <body>
@@ -35,36 +35,8 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-						<img src="<%=application.getContextPath()%>/resources/img/home_img.jpg" alt="logo" width="100%">
+						<h1>users 필드</h1>
 						
-						
-						
-				</div>
-				<div class="sector">
-						<h5>연결 테스트</h5>
-						<div>
-							<a class="btn btn-success btn-sm" href="javascript:conntest()">연결 테스트</a>
-							<script>
-								const conntest = function() {									
-									$.ajax({
-										url:"conntest",
-										method: "get",
-										success: function (data) {
-											$("#result1").html(data);											
-										}
-									});														
-								};
-							</script>
-							<div id="result1"></div>
-						</div>						
-				</div>
-				
-				<div class="sector">
-						<h5>봉 테스트</h5>
-						<div>
-							<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/login">로그인 테스트</a>
-							<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입 테스트</a>
-						</div>						
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
