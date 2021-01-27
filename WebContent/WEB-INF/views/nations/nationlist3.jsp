@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.*"%>
@@ -21,7 +22,7 @@
 <link rel="stylesheet"
 	href="<%=application.getContextPath()%>/resources/css/main.css">
 <script
-	src="<%=application.getContextPath()%>/resources/javascript/main.js"></script>
+	src="<%=application.getContextPath()%>/resources/javascript/countries.js"></script>
 </head>
 
 <body>
@@ -35,32 +36,16 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-						<img src="<%=application.getContextPath()%>/resources/img/home_img.jpg" alt="logo" width="100%">
-						
-						
-						
-				</div>
-				<div class="sector">
-						<h5>연결 테스트</h5>
-						<div>
-							<a class="btn btn-success btn-sm" href="javascript:conntest()">연결 테스트</a>
-							<script>
-								const conntest = function() {									
-									$.ajax({
-										url:"conntest",
-										method: "get",
-										success: function (data) {
-											$("#result1").html(data);											
-										}
-									});														
-								};
-							</script>
-							<div id="result1"></div>
-						</div>						
-				</div>
-				<div class="sector">
-					<h5>나라</h5>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/nations3/nationlist">나라별보기</a>
+					<p>nationlist3</p>
+					<c:forEach var="nation" items="${list}">
+						<div class="card img-fluid nations">
+						    <img class="card-img-top img_center" src="${nation.nimage}" alt="Card image">
+						    <div class="card-img-overlay" >
+						      <h2 class="card-title">${nation.nname}</h2>
+						      <a href="usa" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						    </div>
+						</div>					  		
+					</c:forEach>				
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
