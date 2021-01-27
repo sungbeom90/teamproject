@@ -18,9 +18,9 @@
 	</logger>
 
 	<!-- SQL 로깅 -->
-	<!-- <logger name="jdbc.sqltiming">
+	<logger name="jdbc.sqltiming">
 		<level value="info" />
-	</logger> -->
+	</logger>
 
 	<root>
 		<!-- 디폴트 로그레벨 -->

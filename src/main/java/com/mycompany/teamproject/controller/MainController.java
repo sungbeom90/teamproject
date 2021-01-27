@@ -1,7 +1,9 @@
 package com.mycompany.teamproject.controller;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -37,6 +39,16 @@ public class MainController {
 				//커넥션 풀에서 커넥션 대여
 				Connection conn= dataSource.getConnection();
 				logger.info("연결성공");
+				/*Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery("select nation_id, nname, nimage from nations where nation_id=2");
+				if(rs.next()) {
+					logger.info(rs.getString("nname"));
+				} else {
+					logger.info("데이터 없음");
+				}
+				rs.close();*/
+				/* stmt.executeUpdate("insert into nations values (2, 'a', 'b')");
+				stmt.close();*/
 				//대여한 커넥션 반납
 				conn.close();
 			} catch (SQLException e) {
