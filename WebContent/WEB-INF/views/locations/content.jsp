@@ -36,7 +36,7 @@
 			<div class="content container">
 				<div class="sector">
 					<div class="card-deck">
-						<div class="card img-fluid cities">
+						<div class="card img-fluid locations">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/newyork1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">뉴 욕</h4>
@@ -46,7 +46,7 @@
 						    </div>
 						  </div>
 						  
-						  <div class="card img-fluid cities">
+						  <div class="card img-fluid locations">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/barcelona1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">바르셀로나</h4>
@@ -55,7 +55,7 @@
 						    </div>
 						  </div>
 						  
-						  <div class="card img-fluid cities">
+						  <div class="card img-fluid locations">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/okinawa1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">오키나와</h4>
@@ -64,7 +64,7 @@
 						    </div>
 						  </div>
 						  
-						  <div class="card img-fluid cities">
+						  <div class="card img-fluid locations">
 						    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/resources/img/busan1.jpg" alt="Card image">
 						    <div class="card-img-overlay">
 						      <h4 class="card-title">부산</h4>

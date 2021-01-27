@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>미국</title>
+<title>뉴욕</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -35,29 +35,30 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<div class="head" style="background-image:url('<%=application.getContextPath()%>${country.imgHead}')">
-				${country.nameCountry}
+				<div class="head" style="background-image:url('<%=application.getContextPath()%>${city.imgHead}')">
+				${city.name}
 				</div>
-					<div class="card-deck">
-							<div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${country.imgCity1}" alt="Card image">
-							    <div class="card-img-overlay">
-							      <h4 class="card-title">${country.nameCity1}</h4>
-							      <p class="card-text"></p>
-							      <a href="<%=application.getContextPath()%>${country.rootCity1}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
-							    </div>
-							  </div>
-							  
-							 <div class="card img-fluid cities">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${country.imgCity2}" alt="Card image">
-							    <div class="card-img-overlay">
-							      <h4 class="card-title">${country.nameCity2}</h4>
-							      <p class="card-text"></p>
-							      <a href="<%=application.getContextPath()%>${country.rootCity2}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
-							    </div>
-							 </div>
-					</div>					
+						<h2>${city.recommend}</h2>		 				
+				<div class="card-deck">
+					<div class="card img-fluid locations">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${city.imgPackage1}" alt="Card image">
+						    <div class="card-img-overlay">
+						     	<h4 class="card-title">${city.big1}</h4>
+						      <p class="card-text">${city.big2}</p>
+						      <a href="<%=application.getContextPath()%>${city.btn1}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						    </div>
+					</div>
+					
+					<div class="card img-fluid locations">
+					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${city.imgPackage2}" alt="Card image">
+						    <div class="card-img-overlay">
+						      <h4 class="card-title">${city.sm1}</h4>
+						      <p class="card-text">${city.sm2}</p>
+						      <a href="<%=application.getContextPath()%>${city.btn2}" class="btn btn-outline-dark btn-sm stretched-link">바로가기</a>
+						    </div>
+					</div>
 				</div>
+			  </div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>

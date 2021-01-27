@@ -36,9 +36,9 @@ img { border:0; }
 .content .sector {margin-bottom:20px; border-bottom: 1px solid gray; padding:5px;}
 
 /* countries */
-.countries {margin: 1rem 0; height: 14rem; border-radius: 0.7rem; overflow: hidden; color: white; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
+.nations {margin: 1rem 0; height: 14rem; border-radius: 0.7rem; overflow: hidden; color: white; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
 
-.cities {width:16rem; height:13rem; margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: white; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
+.locations {width:16rem; height:13rem; margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: white; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
 
 .packages {margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
 

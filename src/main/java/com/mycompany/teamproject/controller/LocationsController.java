@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.mycompany.teamproject.dto.CitiesDto;
 
 @Controller
-@RequestMapping("/cities")
-public class CitiesController {
+@RequestMapping("/locations")
+public class LocationsController {
 		private static final Logger logger=
-				LoggerFactory.getLogger(CitiesController.class);
+				LoggerFactory.getLogger(LocationsController.class);
 
 
-		// http://.../teamproject/cities 생략됨
+		// http://.../teamproject/locations 생략됨
 		@RequestMapping("/content")
 		public String content() {
 			logger.info("실행");
-			return "cities/content";
+			return "locations/content";
 		}
 	
 		
@@ -43,7 +43,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		@GetMapping("/hawaii")
@@ -64,7 +64,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		@GetMapping("/barcelona")
@@ -85,7 +85,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		@GetMapping("/seville")
@@ -106,7 +106,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		@GetMapping("/okinawa")
@@ -127,7 +127,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		@GetMapping("/fukuoka")
@@ -148,7 +148,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		@GetMapping("/busan")
@@ -169,7 +169,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		@GetMapping("/sokcho")
@@ -190,7 +190,7 @@ public class CitiesController {
 			
 			session.setAttribute("city", ctdto);
 			
-			return "cities/city"; 
+			return "locations/location"; 
 		}
 		
 		
