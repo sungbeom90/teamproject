@@ -1,5 +1,6 @@
 package com.mycompany.teamproject.controller;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -7,10 +8,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mycompany.teamproject.dto.OfferBoard;
 import com.mycompany.teamproject.dto.OfferBoardDto;
+import com.mycompany.teamproject.service.OfferService;
 
 @Controller
 @RequestMapping("/offers")
@@ -26,11 +29,23 @@ public class OfferController {
 	
 	
 	
-	/*@GetMapping("/boardwrite")
-	public String boardwrite(OfferBoardDto board,HttpSession session) {
-		String offer_id = (String) session.getAttribute("sessionOffer_id");
-		board.setOffer_id(offer_id);
-	}*/
+	
+	@GetMapping("/registerwrite")
+	public String registerwriteForm() {
+		return "offers/registerwrite";
+	}
+	
+	@Resource
+	OfferService OfferService;
+	
+	@PostMapping("/registerwrite")
+	public String registerwrite(OfferBoardDto offer,HttpSession session) {
+		int Member_id = (int) session.getAttribute("sessionMember_id");
+		offer.setOffer_id(Member_id);
+		
+		OfferService.saveRegister(offer);
+		return "redirect:/offers/nationlist3";
+	}
 	
 	
 	
@@ -38,7 +53,7 @@ public class OfferController {
 	
 	
 	
-	@GetMapping("/barcelona_offer1")
+	/*@GetMapping("/barcelona_offer1")
 	public String barcelona_offer1(Model model) {
 		logger.info("바르셀로나 offer1 실행");
 		OfferBoard board = new OfferBoard();
@@ -62,11 +77,11 @@ public class OfferController {
 		board.setContacttime("<p>오후 5시</p>");
 		board.setContactplace("<p>카탈루냐 광장 맞은편 하바나</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
-
+	
 	@GetMapping("/barcelona_offer2")
 	public String barcelona_offer2(Model model) {
 		logger.info("바르셀로나 offer2 실행");
@@ -95,11 +110,11 @@ public class OfferController {
 		board.setContacttime("<p>예약시 선택한 날짜에 따라 만나는 시간이 상이합니다.</p>");
 		board.setContactplace("<p>원 오션 클럽</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
-
+	
 	@GetMapping("/seville_offer1")
 	public String seville_offer1(Model model) {
 		logger.info("세비야 offer1 실행");
@@ -129,11 +144,11 @@ public class OfferController {
 		board.setContacttime("<p>오전 8시 30분</p>");
 		board.setContactplace("<p>스페인 광장, 중앙분수</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
-
+	
 	@GetMapping("/seville_offer2")
 	public String seville_offer2(Model model) {
 		logger.info("세비야 offer2 실행");
@@ -156,11 +171,11 @@ public class OfferController {
 		board.setContacttime("<p>예약시 선택한 날짜에 따라 만나는 시간이 상이합니다.</p>");
 		board.setContactplace("<p>원 오션 클럽</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
-
+	
 	@GetMapping("/busan_offer1")
 	public String busan_offer1(Model model) {
 		logger.info("부산 offer1 실행");
@@ -186,11 +201,11 @@ public class OfferController {
 		board.setContacttime("<p>기본 오후 9시 30분에 진행하나, 예약 시 문의주시면 조율 도와드리겠습니다.</p>");
 		board.setContactplace("<p>부산 서면 OR 부산진역");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
-
+	
 	@GetMapping("/busan_offer2")
 	public String busan_offer2(Model model) {
 		logger.info("부산 offer2 실행");
@@ -212,9 +227,9 @@ public class OfferController {
 				+ "<p>야간투어 : [18:00] [19:00] [20:00] [21:00] [22:00]");
 		board.setContactplace("<p>부산광역시 해운대구 우동 해운대해변로 84 요트경기장 본관 1층 110호</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
 	
 	@GetMapping("/sokcho_offer1")
@@ -248,9 +263,9 @@ public class OfferController {
 		board.setContacttime("<p>오전 9시 00분");
 		board.setContactplace("<p>대한민국 속초 설악동 소공원주차장</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
 	
 	@GetMapping("/sokcho_offer2")
@@ -302,11 +317,11 @@ public class OfferController {
 		board.setContacttime("<p>오전 10시부터 오후 7시까지 매시간 운행");
 		board.setContactplace("<p>속초 엑스포장 요트선착장</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
-
+	
 	@GetMapping("/okinawa_offer1")
 	public String okinawa_offer1(Model model) {
 		logger.info("오키나와 offer1 실행");
@@ -330,11 +345,11 @@ public class OfferController {
 		board.setContacttime("<p>일정은 상담을 통해 자유롭게 변경 및 조율 가능합니다.");
 		board.setContactplace("<p>오키나와 나하 공항 영업소</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-
+	
 	}
-
+	
 	@GetMapping("/okinawa_offer2")
 	public String okinawa_offer2(Model model) {
 		logger.info("오키나와 offer2 실행");
@@ -353,19 +368,19 @@ public class OfferController {
 				"<li>승선료" + "<li>가이드요금" + "<li>웨트슈트 렌탈요금" + "<li>장비 렌탈요금" + "<li>미네랄 워터" + "<li>목욕타월 렌탈요금(1장)");
 		board.setUninclude("<li>수영복" + "<li>비치샌들");
 		board.setCourse("<h5>오키나와 게라마 제도 1일 투어</h5>" + "<p>07:30-08:00 고객께서 지정하신 나하 시내 호텔로 픽업(예약 시에 선택한 호텔)" +
-
+	
 				"<p>08:00-09:00 마린하우스 시사 나하점 접수" +
-
+	
 				"<p>09:00 게라마 제도로 출항" +
-
+	
 				"<p>10:30 스노클링" +
-
+	
 				"<p>12:30 런치 타임" +
-
+	
 				"<p>14:00 스노클링" +
-
+	
 				"<p>15:00 나하로 이동" +
-
+	
 				"<p>16:00-16:30 항구 도착 후, 픽업했던 호텔로 샌딩/해산");
 		board.setAddinfo("<p>- 수영복과 비치샌들을 지참해 주십시오. 보트내의 탈의실에서 수영복으로 갈아 입을 수 있습니다."
 				+ "<p>- 또한, 수영복과 비치샌들 등의 판매와 대여는 없습니다." + "<p>- 베지테리언식을 희망하시는 고객은 예약시에 신청해 주세요."
@@ -374,7 +389,7 @@ public class OfferController {
 		board.setContacttime("<p>07:30~08:00사이에 나하 시내의 고객 지정 호텔로 픽업이 진행됩니다</p>");
 		board.setContactplace("<p>숙소에서 픽업해드립니다.</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
 	}
 	
@@ -428,7 +443,7 @@ public class OfferController {
 		board.setContacttime("<p>[온천 영업 시간] 08:00-17:00 (마지막 입장: 16:30)</p>");
 		board.setContactplace("<p>[티켓 사용장소] 벳푸 지옥 온천</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
 	}
 	
@@ -474,12 +489,12 @@ public class OfferController {
 		board.setContacttime("<p>오전 9시 40분");
 		board.setContactplace("<p>하카타역 치쿠시구치 로손 편의점 앞 미팅");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
 	}
 	
 	
-
+	
 	@GetMapping("/newyork_offer1")
 	public String newyork_offer1(Model model) {
 		logger.info("뉴욕 offer1 실행");
@@ -507,10 +522,10 @@ public class OfferController {
 				"<p>월요일은 아침 12시, 금요일 토요일은 2시반에서 3시사이에 진행하겠습니다.<p>(예약하실때 따로 문의하시면 시간 조정은 가능합니다만 금,토는 기본적으로 2시반 이후에 진행 가능합니다)");
 		board.setContactplace("<p>Metropolitan Museum of Art 미술관 앞</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
 	}
-
+	
 	@GetMapping("/newyork_offer2")
 	public String newyork_offer2(Model model) {
 		logger.info("뉴욕 offer2 실행");
@@ -556,7 +571,7 @@ public class OfferController {
 				"<p>- 오전 10시 30분 출발");
 		board.setContactplace("<p>배터리 파크</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
 	}
 	
@@ -598,7 +613,7 @@ public class OfferController {
 		board.setContacttime("<p>오전 5시 00분");
 		board.setContactplace("<p>와이키키 시내 호텔 출발</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
 	}
 	
@@ -635,7 +650,7 @@ public class OfferController {
 		board.setContacttime("<p>예약 확정 후 만나는 시간을 조율합니다.");
 		board.setContactplace("<p>숙소에서 픽업해드립니다.</p>");
 		model.addAttribute("content", board);
-
+	
 		return "offers/content";
-	}
+	}*/
 }

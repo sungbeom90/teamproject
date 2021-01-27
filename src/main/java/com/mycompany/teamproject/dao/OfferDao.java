@@ -27,4 +27,10 @@ public class OfferDao {
 		OfferBoardDto board = sst.selectOne("boards.selectByPk",offer_id);
 		return board;
 	}
+
+
+	public int insert(OfferBoardDto offer) {
+		int rows = sst.insert("offers.insert",offer);
+		return rows;
+	}
 }

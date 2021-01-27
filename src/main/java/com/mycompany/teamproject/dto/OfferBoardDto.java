@@ -6,13 +6,14 @@ public class OfferBoardDto {
 	private int offer_id;
 	private String owriter;
 	private String otitle;
-	private String osubtitle;
-	private String oprice;
-	private String obody;
-	private String oinclude;
-	private String ouninclude;
-	private String oplace_meet;
-	private String otime_meet;
+
+	/*	private String osubtitle;
+		private String oprice;
+		private String obody;
+		private String oinclude;
+		private String ouninclude;
+		private String oplace_meet;
+		private String otime_meet;*/
 	public int getOffer_id() {
 		return offer_id;
 	}
@@ -31,7 +32,7 @@ public class OfferBoardDto {
 	public void setOtitle(String otitle) {
 		this.otitle = otitle;
 	}
-	public String getOsubtitle() {
+	/*public String getOsubtitle() {
 		return osubtitle;
 	}
 	public void setOsubtitle(String osubtitle) {
@@ -72,7 +73,7 @@ public class OfferBoardDto {
 	}
 	public void setOtime_meet(String otime_meet) {
 		this.otime_meet = otime_meet;
-	}
+	}*/
 	
 	
 }
