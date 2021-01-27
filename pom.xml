@@ -41,6 +41,7 @@
   
 	 <dependencies>
 	 	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+	 	<!-- 메소드 실행 경로를 알려주는 로거를 위한 라이브러리 -->
 		<dependency>
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-log4j12</artifactId>
@@ -48,6 +49,7 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<!-- web 사용시 반드시 필요한 라이브러리 -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-webmvc</artifactId>
@@ -60,11 +62,66 @@
 		    <version>1.2</version>
 		</dependency>
 		
+		<!-- 파일 전송을 위한 라이브러리 -->
 		<dependency>
 		    <groupId>commons-fileupload</groupId>
 		    <artifactId>commons-fileupload</artifactId>
 		    <version>1.4</version>
 		</dependency>
+		
+		<!-- 서버 연결을 위한 라이브러리  (독립적 라이브러리 4개, 종속적 라이브러리 1개)-->
+		
+		<!-- 스프링에서 DB접근설정을 위한 라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		</dependency>
+		
+		<!-- 커넥션 관리를 해주기 위한 라이브러리 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-dbcp2</artifactId>
+		    <version>2.6.0</version>
+		</dependency>
+		
+		<!-- SQL 생성 및 실행 결과를 위한 라이브러리 -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>2.0.1</version>
+		</dependency>
+		
+		<!-- 커넥션을 만드는 (생성하는) 라이브러리 [직접경로설정] 이 라이브러리는 드라이버에 종속적이다. -->		
+		<dependency>
+		    <groupId>ojdbc</groupId>
+		    <artifactId>ojdbc</artifactId>
+		    <version>6</version>
+		    <scope>system</scope>
+		    <systemPath>${basedir}/WebContent/WEB-INF/lib/ojdbc6.jar</systemPath>
+		</dependency>
+		
+		
+		<!-- 서버 로거를 위한 라이브러리 -->		
+		<dependency>
+		    <groupId>com.googlecode.log4jdbc</groupId>
+		    <artifactId>log4jdbc</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		
+		
+		<!-- JSON 사용을 위한 라이브러리 -->		
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20201115</version>
+		</dependency>
+		
+		
 	 </dependencies>
 	 
 	 
