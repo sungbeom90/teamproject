@@ -24,8 +24,8 @@ public class OfferDao {
 	
 	
 	public OfferBoardDto selectByPk(int offer_id) {
-		OfferBoardDto board = sst.selectOne("boards.selectByPk",offer_id);
-		return board;
+		OfferBoardDto offer = sst.selectOne("offers.selectByPk",offer_id);
+		return offer;
 	}
 
 
