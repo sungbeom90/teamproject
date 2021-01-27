@@ -10,9 +10,9 @@
 	
 	<insert id="joininsert" parameterType="member">
 		insert into members
-		(member_id, memail, mname, mpassword)
+		(member_id, memail, mname, mpassword, mphone)
 		values
-		(member_id.nextval, #{memail}, #{mname}, #{mpassword})
+		(member_id.nextval, #{memail}, #{mname}, #{mpassword}, #{mphone})
 	
 	</insert>
 	

@@ -36,6 +36,7 @@ public class MemberControllerTest {
 			@PostMapping("/login")
 			public String login() {
 				logger.info("로그인 성공");
+				
 				return "redirect:/main/content";
 			}
 			
@@ -45,6 +46,8 @@ public class MemberControllerTest {
 				return "memberstest/join";
 			}
 			
+			
+			//not null처리 다시 하기
 			@PostMapping("/join")
 			public String join(MemberDtoTest mdt) {
 				logger.info("회원가입 완료");

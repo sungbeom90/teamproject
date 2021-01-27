@@ -16,9 +16,10 @@ public class MemberService {
 	@Resource
 	private MemberDao memberDao;
 	
-	public void joininsert(MemberDtoTest mdt) {
+	public int joininsert(MemberDtoTest mdt) {
 		logger.info("회원가입디토");
-		memberDao.joininsert(mdt);
+		int join = memberDao.joininsert(mdt);
+		return join;
 	}
 	
 	public MemberDtoTest login(MemberDtoTest member) {

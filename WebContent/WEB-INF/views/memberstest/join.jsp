@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,11 @@
 								<input type="password" id="mpassword_re" name="mpassword_re" placeholder="비밀번호를 다시 입력하세요."/> <br/>
 								
 								<label for="mname">이름</label>
-								<input type="text" id="mname" name="mname" placeholder="이름 입력하세요"><br/>
+								<input type="text" id="mname" name="mname" placeholder="이름 입력하세요."><br/>
+								
+								<label for="mphone">전화번호</label>
+								<input type="text" id="mphone" name="mphone" placeholder="전화번호를 입력하세요."><br/>
+								
 								
 								<br/>
 								<h5>선택 입력 사항</h5>								
@@ -46,6 +51,7 @@
 								<input type="radio" id="mgender2" name="mgender" value="female"/> 여성
 								<br/>								
 								
+								<fmt:formatDate value="${date.mjoin}" pattern="yyyy-MM-dd"/>
 									
 								
 								<!-- form 추가 -->
