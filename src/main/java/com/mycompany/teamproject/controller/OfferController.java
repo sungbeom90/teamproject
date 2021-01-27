@@ -1,5 +1,7 @@
 package com.mycompany.teamproject.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mycompany.teamproject.dto.OfferBoard;
+import com.mycompany.teamproject.dto.OfferBoardDto;
 
 @Controller
 @RequestMapping("/offers")
@@ -19,7 +22,22 @@ public class OfferController {
 		logger.info("실행");
 		return "offers/content";
 	}
-
+	
+	
+	
+	
+	/*@GetMapping("/boardwrite")
+	public String boardwrite(OfferBoardDto board,HttpSession session) {
+		String offer_id = (String) session.getAttribute("sessionOffer_id");
+		board.setOffer_id(offer_id);
+	}*/
+	
+	
+	
+	
+	
+	
+	
 	@GetMapping("/barcelona_offer1")
 	public String barcelona_offer1(Model model) {
 		logger.info("바르셀로나 offer1 실행");
