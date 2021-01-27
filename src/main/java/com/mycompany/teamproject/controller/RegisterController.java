@@ -31,7 +31,7 @@ public class RegisterController {
 			MemberDto userDto= (MemberDto) session.getAttribute("userDto");
 			String title = offerBoard.getTitle();
 			String subtitle = offerBoard.getSubtitle();
-			String subcontents = offerBoard.getSubcontent();
+			String subcontent = offerBoard.getSubcontent();
 			String include = offerBoard.getInclude();
 			String uninclude = offerBoard.getUninclude();
 			String price = offerBoard.getPrice();
@@ -43,7 +43,7 @@ public class RegisterController {
 			logger.info("writer: "+userDto.getUname());
 			logger.info("title: "+title);
 			logger.info("subtitle: "+subtitle);
-			logger.info("subcontents: "+subcontents);
+			logger.info("subcontent: "+subcontent);
 			logger.info("include: "+include);
 			logger.info("uninclude: "+uninclude);
 			logger.info("price: "+price);

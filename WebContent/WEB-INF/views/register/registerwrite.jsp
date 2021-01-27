@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>패키지 등록</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -35,7 +35,7 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<form method="post" enctype="multipart/form-data" action="offerupload" >
+					<form method="post" enctype="multipart/form-data" name="registerwriteform" action="offerwrite" >
 						
 								
 
@@ -43,7 +43,7 @@
 								<hr/>
 								<input class="form-control" size="118px;" style=" border: none; " type="text" name="subtitle" placeholder="부제목"><br/><br/>
 								<!-- <input size="118px;" style=" border: none; " type="text" name="subcontent" placeholder="부제목의 내용을 입력하세요"><br/> -->
-								 <textarea class="form-control" rows="10" cols="50" name="subcontent" placeholder="내용 입력" style="resize: none; border: none;"></textarea><br/>
+								 <textarea rows="10" cols="50" name="subcontent" placeholder="내용 입력" style="resize: none;"></textarea><br/>
 								<hr/>
 								<h4 style="margin-left: 0.6em ;">상품 정보</h4><br/>
 								<h5 style="font-weight: bold; margin-left: 0.6em;">포함 사항</h5>
@@ -56,7 +56,7 @@
 								<hr/>
 								<h4 style="margin-left: 0.6em;">코스 소개</h4>
 
-								<input size="118px;" style=" border: none;" type="text" name="course" placeholder="코스 내용을 입력하세요"><br/>
+								<input class="form-control" size="118px;" style=" border: none;" type="text" name="course" placeholder="코스 내용을 입력하세요"><br/>
 
 								<hr/>
 								<h5 style="font-weight: bold; margin-left: 0.6em;">추가 정보</h5>
