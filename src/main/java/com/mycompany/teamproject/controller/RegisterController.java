@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.OfferBoard;
-import com.mycompany.teamproject.dto.UserDto;
+import com.mycompany.teamproject.dto.MemberDto;
 
 @Controller
 @RequestMapping("/register")
@@ -28,7 +28,7 @@ public class RegisterController {
 		
 		@PostMapping("/offerupload")
 		public String offerUpload(OfferBoard offerBoard,HttpSession session) {
-			UserDto userDto= (UserDto) session.getAttribute("userDto");
+			MemberDto userDto= (MemberDto) session.getAttribute("userDto");
 			String title = offerBoard.getTitle();
 			String subtitle = offerBoard.getSubtitle();
 			String subcontent = offerBoard.getSubcontent();
