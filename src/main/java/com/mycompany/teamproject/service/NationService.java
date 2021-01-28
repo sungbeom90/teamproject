@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.mycompany.teamproject.controller.RegisterController;
 import com.mycompany.teamproject.dao.MemberDao;
 import com.mycompany.teamproject.dao.NationDao;
-import com.mycompany.teamproject.dto.Nation;
+import com.mycompany.teamproject.dto.NationDto;
 
 @Service
 public class NationService {
@@ -21,15 +21,15 @@ public class NationService {
 	private NationDao nationDao;
 	
 	//나라별 리스트 불러오기. dao로 요청
-	public List<Nation> getNationList() {
+	public List<NationDto> getNationList() {
 		logger.info("실행");
-		List<Nation> nationList = nationDao.selectAll();		
+		List<NationDto> nationList = nationDao.selectAll();		
 		return nationList;
 	}
 	
-	public Nation getNation(int nation_id) {
+	public NationDto getNation(int nation_id) {
 		logger.info("실행");
-		Nation nation = nationDao.selectNation(nation_id);
+		NationDto nation = nationDao.selectNation(nation_id);
 		return nation;
 	}
 	

@@ -4,7 +4,8 @@
 			"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="nation" type="com.mycompany.teamproject.dto.Nation"/>
+		<typeAlias alias="NationDto" type="com.mycompany.teamproject.dto.NationDto"/>
+		<typeAlias alias="LocationDto" type="com.mycompany.teamproject.dto.LocationDto"/>
 		<typeAlias alias="member" type="com.mycompany.teamproject.dto.MemberDtoTest"/>
 		<typeAlias alias="offer" type="com.mycompany.teamproject.dto.OfferBoardDto"/>
 		<typeAlias alias="image" type="com.mycompany.teamproject.dto.ImageDto"/>

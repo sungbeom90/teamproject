@@ -2,13 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="nations">
 
-	<select id="selectAll" resultType="nation">
+	<select id="selectAll" resultType="NationDto">
 		select nation_id, nname, nimagesname, nimageoname, nimagetype 
 		from nations
 		order by nation_id desc
 	</select>
 	
-	<select id="selectByPk" parameterType="int" resultType="nation">
+	<select id="selectByPk" parameterType="int" resultType="NationDto">
 		select nation_id, nname, nimagesname, nimageoname, nimagetype 
 		from nations
 		where nation_id=#{nation_id}
