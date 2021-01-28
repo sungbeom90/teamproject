@@ -3,13 +3,13 @@
 <mapper namespace="nations">
 
 	<select id="selectAll" resultType="nation">
-		select nation_id, nname, nimage
+		select nation_id, nname, nimagesname, nimageoname, nimagetype 
 		from nations
 		order by nation_id desc
 	</select>
 	
 	<select id="selectByPk" parameterType="int" resultType="nation">
-		select nation_id, nname, nimage
+		select nation_id, nname, nimagesname, nimageoname, nimagetype 
 		from nations
 		where nation_id=#{nation_id}
 	</select>

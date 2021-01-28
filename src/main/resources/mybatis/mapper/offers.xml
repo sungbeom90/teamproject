@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="offers">
+	<insert id="insertoffer" parameterType="offer">
+		insert into offers ()
+		values(#{offer_id})
+	</insert>
+	
+	<insert id="insertimage" parameterType="image">
+		insert into images ()
+		values(#{offer_id})
+	</insert>
+	
+	
+	<insert id="insertcourse" parameterType="course">
+		insert into courses ()
+		values(#{offer_id})
+	</insert>
+	
+
+</mapper>

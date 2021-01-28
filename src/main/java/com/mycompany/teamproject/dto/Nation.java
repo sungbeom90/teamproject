@@ -3,7 +3,9 @@ package com.mycompany.teamproject.dto;
 public class Nation {
 	private int nation_id;
 	private String nname;
-	private String nimage;
+	private String nimagesname;
+	private String nimageoname;
+	private String nimagetype;
 	
 	public int getNation_id() {
 		return nation_id;
@@ -17,11 +19,23 @@ public class Nation {
 	public void setNname(String nname) {
 		this.nname = nname;
 	}
-	public String getNimage() {
-		return nimage;
+	public String getNimagesname() {
+		return nimagesname;
 	}
-	public void setNimage(String nimage) {
-		this.nimage = nimage;
-	}	
+	public void setNimagesname(String nimagesname) {
+		this.nimagesname = nimagesname;
+	}
+	public String getNimageoname() {
+		return nimageoname;
+	}
+	public void setNimageoname(String nimageoname) {
+		this.nimageoname = nimageoname;
+	}
+	public String getNimagetype() {
+		return nimagetype;
+	}
+	public void setNimagetype(String nimagetype) {
+		this.nimagetype = nimagetype;
+	}
 	
 }
