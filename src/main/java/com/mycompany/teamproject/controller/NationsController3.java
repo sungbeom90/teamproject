@@ -60,27 +60,21 @@ public class NationsController3 {
 			logger.info("실행");
 			Nation nation = nationService.getNation(nation_id);
 			model.addAttribute("nation", nation);
-			return "nations/nationlist3";
+			return "nations/nation3";
 		}
 		
 		@GetMapping("/nimage")
-		public void mphoto(int nation_id, HttpSession session, HttpServletResponse response) throws Exception{
+		public void nimage(int nation_id, HttpSession session, HttpServletResponse response) throws Exception{
 			
 			Nation nation = nationService.getNation(nation_id);
 			String filePath=null;
 			if(nation.getNimagesname() !=null) {   ///첨부파일이 있을때
 				String nimagesname = nation.getNimagesname();
 				String nname = nation.getNname();
-				filePath = "D:/MyWorkspace/teatfiles/nations/" + nname + "/" + nimagesname;			
-				response.setContentType(nation.getNimagetype()); //받아올 사진타입을 받아오기 위함.
-				
-				String nimageoname = nation.getNimageoname();
-				nimageoname=new String(nimageoname.getBytes("UTF-8"), "ISO-8859-1");  // 한글 파일명을 살리기 위함.
-				response.setHeader("Content-Disposition", "attachment; filename=\""+nimageoname+"\"");  //원본이름으로 주기위함
+				filePath = "D:/MyWorkspace/teamfiles/nations/" + nname + "/" + nimagesname; // 나라별 다른 폴더 이미지 가져오기.
 				
 			} else {							// 첨부파일이 없을때
-				filePath = "D:/MyWorkspace/teatfiles/nations/defaultnimage.jpg";		
-				response.setContentType("image/jpg");			
+				filePath = "D:/MyWorkspace/teamfiles/nations/defaultnimage.jpg";
 			}
 			OutputStream os= response.getOutputStream();
 			InputStream is = new FileInputStream(filePath);
