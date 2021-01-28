@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.web.multipart.MultipartFile;
 
 public class MemberDtoTest {
+	private int member_id;
 	private String memail;	
 	private String mpassword;
 	private String mname;
@@ -16,6 +17,17 @@ public class MemberDtoTest {
 
 	
 	
+	
+	
+
+	public int getMember_id() {
+		return member_id;
+	}
+
+	public void setMember_id(int member_id) {
+		this.member_id = member_id;
+	}
+
 	public String getMemail() {
 		return memail;
 	}

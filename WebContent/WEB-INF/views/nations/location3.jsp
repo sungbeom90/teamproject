@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.*"%>
@@ -40,16 +39,16 @@
 						${nation.nname}
 					</div>
 					<div class="card-deck">
-						<c:forEach var="location" items="${list}">
+						
 							<div class="card img-fluid locations">
-							    <img class="card-img-top img_center" src="../locations3/limage?location_id=${location.location_id}" alt="Card image">
+							    <img class="card-img-top img_center" src="nimage?location_id=${nation.nation_id}" alt="Card image">
 							    <div class="card-img-overlay">
-							      <h4 class="card-title">${location.lname}</h4>
+							      <h4 class="card-title">${country.nameCity1}</h4>
 							      <p class="card-text"></p>
-							      <a href="../locations3/locationread?location_id=${location.location_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+							      <a href="<%=application.getContextPath()%>${country.rootCity1}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							  </div>
-						 </c:forEach>
+							  
 							 
 					</div>					
 				</div>

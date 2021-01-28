@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="locations">
+
+	<select id="selectAll" resultType="LocationDto">
+		select Location_id, lname, limagesname, limageoname, limagetype, lclimate
+		from locations
+		order by location_id desc
+	</select>
+	
+	<select id="selectByPk" parameterType="int" resultType="LocationDto">
+		select Location_id, lname, limagesname, limageoname, limagetype, lclimate
+		from locations
+		where location_id=#{location_id}
+	</select>
+	
+	
+	
+
+	<select id="selectByFk" parameterType="int" resultType="LocationDto">
+		select location_id, lname, limagesname, limageoname, limagetype, lclimate, nation_id
+		from locations
+		where nation_id=#{nation_id}
+	</select>
+
+
+
+</mapper>

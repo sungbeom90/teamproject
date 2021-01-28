@@ -15,16 +15,18 @@ public class MemberDao {
 	
 	@Resource
 	private SqlSessionTemplate sst;
-
+	
+	//인설트로 행을 추가하여 리턴
 	public int joininsert(MemberDtoTest mdt) {
 		logger.info("회원가입다오");
 		int rows = sst.insert("members.joininsert", mdt);
 		return rows;
 	}
 	
-	public MemberDtoTest selectByPk(String uemail) {
+	//맴버_아이디 받아와서 리턴
+	public MemberDtoTest login(String memail) {
 		logger.info("로그인다오");
-		MemberDtoTest member = sst.selectOne("members.selectByPk", uemail);
+		MemberDtoTest member = sst.selectOne("members.login", memail);
 		return member;
 	}
 
