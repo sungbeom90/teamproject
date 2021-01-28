@@ -1,5 +1,9 @@
 package com.mycompany.teamproject.controller;
 
+import java.io.File;
+import java.util.Date;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.mycompany.teamproject.dto.ImageDto;
 import com.mycompany.teamproject.dto.OfferBoard;
 import com.mycompany.teamproject.dto.OfferBoardDto;
 import com.mycompany.teamproject.service.OfferService;
@@ -36,14 +42,53 @@ public class OfferController {
 	}
 	
 	@Resource
-	OfferService OfferService;
+	OfferService offerService;
 	
 	@PostMapping("/registerwrite")
-	public String registerwrite(OfferBoardDto offer,HttpSession session) {
+	public String registerwrite(OfferBoardDto offer,List imagelist,List courselist, HttpSession session) {
 		int Member_id = (int) session.getAttribute("sessionMember_id");
 		offer.setOffer_id(Member_id);
+		offerService.saveRegister(offer);
+		offerService.(offer);
+		
+		
+			for(int i=0;i<imagelist.size();i++){
+				ImageDto image = (ImageDto) imagelist.get(i);
+				image.setOffer_id(offer_id);
+				
+			MultipartFile mf = image.getOattach();
+			if(!mf.isEmpty()) {
+				image.setOattachoname(mf.getOriginalFilename());
+				String saveName = new Date().getTime() + "-" +mf.getOriginalFilename();
+				image.setOattachsname(saveName);
+				image.setOattachtype(mf.getContentType());
+				//파일 저장
+				File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offer.getOtitle()+ "/"+ saveName);			
+				mf.transferTo(saveFile);
+				offerService.saveImageRegister(image);	
+				}
+			}
+		
+		/*	for(){
+		MultipartFile mf = course.getBattach();
+		if(!mf.isEmpty()) {
+			course.setBattachoname(mf.getOriginalFilename());
+			String saveName = new Date().getTime() + "-" +mf.getOriginalFilename();
+			course.setBattachsname(saveName);
+			course.setBattachtype(mf.getContentType());
+			//파일 저장
+			File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+otitle+"/course/"+ saveName);
+			mf.transferTo(saveFile);
+			offerService.saveRegister(course);
+			}
+		}*/
+		
+		
+		
 		
 		OfferService.saveRegister(offer);
+		
+		
 		return "redirect:/offers/nationlist3";
 	}
 	

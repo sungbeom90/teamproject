@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.mycompany.teamproject.controller.RegisterController;
 import com.mycompany.teamproject.dao.MemberDao;
 import com.mycompany.teamproject.dao.OfferDao;
+import com.mycompany.teamproject.dto.CourseDto;
+import com.mycompany.teamproject.dto.ImageDto;
 import com.mycompany.teamproject.dto.OfferBoardDto;
 
 @Service
@@ -19,9 +21,18 @@ public class OfferService {
 	private OfferDao offerDao;
 
 	public void saveRegister(OfferBoardDto offer) {
-		offerDao.insert(offer);
+		offerDao.insertoffer(offer);
 		
 	}
+	public void saveImageRegister(ImageDto image) {
+		offerDao.insertimage(image);
+		
+	}
+	public void saveCourseRegister(CourseDto course) {
+		offerDao.insertcourse(course);
+		
+	}
+	
 
 		
 }

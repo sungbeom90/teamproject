@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.teamproject.dto.CourseDto;
+import com.mycompany.teamproject.dto.ImageDto;
 import com.mycompany.teamproject.dto.OfferBoardDto;
 
 
@@ -29,8 +31,17 @@ public class OfferDao {
 	}
 
 
-	public int insert(OfferBoardDto offer) {
-		int rows = sst.insert("offers.insert",offer);
+	public int insertoffer(OfferBoardDto offer) {
+		int rows = sst.insert("offers.insertoffer",offer);
+		return rows;
+	}
+	
+	public int insertimage(ImageDto iamge) {
+		int rows = sst.insert("offers.insertimage",iamge);
+		return rows;
+	}
+	public int insertcourse(CourseDto course) {
+		int rows = sst.insert("offers.insertcourse",course);
 		return rows;
 	}
 }
