@@ -12,7 +12,7 @@
 		insert into members
 		(member_id, memail, mname, mpassword, mphone)
 		values
-		(member_id.nextval, #{memail}, #{mname}, #{mpassword}, #{mphone})
+		(members_seq.nextval, #{memail}, #{mname}, #{mpassword}, #{mphone})
 	
 	</insert>
 	

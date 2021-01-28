@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.*"%>
@@ -59,13 +61,21 @@
 						</div>						
 				</div>
 				
-				<div class="sector">
-						<h5>봉 테스트</h5>
-						<div>
-							<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/login">로그인 테스트</a>
-							<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입 테스트</a>
-						</div>						
-				</div>
+				<c:if test="${loginStatus == null}">
+					<div class="sector">
+							<h5>봉 테스트</h5>
+							<div>
+								<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/login">로그인 테스트</a>
+								<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입 테스트</a>
+							</div>						
+					</div>
+				</c:if>
+				<c:if test="${loginStatus != null}">
+						<a class="btn btn-danger btn-sm" href="logout">로그아웃</a>
+						<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
+				</c:if>
+				
+				
 				<div class="sector">
 					<h5>나라</h5>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/nations3/nationlist">나라별보기</a>

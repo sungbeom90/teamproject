@@ -27,7 +27,7 @@
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
 						<h2>회원가입</h2>					
-							<form method="post" enctype="multipart/form-data" action="join">
+							<form name="joinForm" method="post" enctype="multipart/form-data" action="join">
 								<label for="memail">이메일</label>
 				 				<input type="email" id="memail" name="memail" placeholder="ID@example.com"/><br>
 				 							 				
