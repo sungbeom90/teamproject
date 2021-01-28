@@ -34,7 +34,7 @@ public class OfferController {
 	
 	
 	
-	
+	/*
 	
 	@GetMapping("/registerwrite")
 	public String registerwriteForm() {
@@ -69,7 +69,7 @@ public class OfferController {
 				}
 			}
 		
-		/*	for(){
+			for(){
 		MultipartFile mf = course.getBattach();
 		if(!mf.isEmpty()) {
 			course.setBattachoname(mf.getOriginalFilename());
@@ -81,8 +81,7 @@ public class OfferController {
 			mf.transferTo(saveFile);
 			offerService.saveRegister(course);
 			}
-		}*/
-		
+		}
 		
 		
 		
@@ -91,14 +90,14 @@ public class OfferController {
 		
 		return "redirect:/offers/nationlist3";
 	}
+	*/
 	
 	
 	
 	
 	
 	
-	
-	/*@GetMapping("/barcelona_offer1")
+	@GetMapping("/barcelona_offer1")
 	public String barcelona_offer1(Model model) {
 		logger.info("바르셀로나 offer1 실행");
 		OfferBoard board = new OfferBoard();
@@ -697,5 +696,5 @@ public class OfferController {
 		model.addAttribute("content", board);
 	
 		return "offers/content";
-	}*/
+	}
 }
