@@ -51,7 +51,6 @@
 								<input type="radio" id="mgender2" name="mgender" value="female"/> 여성
 								<br/>								
 								
-								<fmt:formatDate value="${date.mjoin}" pattern="yyyy-MM-dd"/>
 									
 								
 								<!-- form 추가 -->

@@ -16,16 +16,24 @@ public class MemberService {
 	@Resource
 	private MemberDao memberDao;
 	
+	
 	public int joininsert(MemberDtoTest mdt) {
-		logger.info("회원가입디토");
+		logger.info("회원가입서비스");
 		int join = memberDao.joininsert(mdt);
 		return join;
 	}
 	
-	public MemberDtoTest login(MemberDtoTest member) {
-		logger.info("로그인디토");
-		MemberDtoTest dbmember = memberDao.selectByPk(member.getMemail());
-		return dbmember;
+	// 성공, 이메일, 비번 다를때
+	public String login(MemberDtoTest member) {
+		logger.info("로그인서비스");
+		MemberDtoTest dbmember = memberDao.login(member.getMemail());
+		if(dbmember == null) {
+			return "failEmail";
+		}else if(dbmember.getMpassword().equals(member.getMpassword())){
+			return "loginSuccess";
+		}else {
+			return "wrongPassword";
+		}
 	}
 
 	
