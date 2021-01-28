@@ -35,12 +35,12 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<div class="head" style="background-image:url('<%=application.getContextPath()%>${country.imgHead}')">
-				${country.nameCountry}
+					<div class="head" style="background-image:url('nimage?nation_id=${nation.nation_id}')">
+				${nation.nname}
 				</div>
 					<div class="card-deck">
 							<div class="card img-fluid locations">
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${country.imgCity1}" alt="Card image">
+							    <img class="card-img-top img_center" src="nimage?location_id=${nation.nation_id}" alt="Card image">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">${country.nameCity1}</h4>
 							      <p class="card-text"></p>
