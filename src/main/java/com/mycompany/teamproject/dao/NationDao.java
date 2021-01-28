@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.mycompany.teamproject.controller.RegisterController;
-import com.mycompany.teamproject.dto.Nation;
+import com.mycompany.teamproject.dto.NationDto;
 
 @Repository
 public class NationDao {
@@ -19,15 +19,15 @@ public class NationDao {
 	@Resource
 	private SqlSessionTemplate sst;
 
-	public List<Nation> selectAll() {
+	public List<NationDto> selectAll() {
 		logger.info("실행");
-		List<Nation> nationList = sst.selectList("nations.selectAll");		
+		List<NationDto> nationList = sst.selectList("nations.selectAll");		
 		return nationList;
 	}
 	
-	public Nation selectNation(int nation_id) {
+	public NationDto selectNation(int nation_id) {
 		logger.info("실행");
-		Nation nation = sst.selectOne("nations.selectByPk", nation_id);	
+		NationDto nation = sst.selectOne("nations.selectByPk", nation_id);	
 		return nation;
 	}
 }

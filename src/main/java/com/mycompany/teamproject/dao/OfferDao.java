@@ -1,7 +1,5 @@
 package com.mycompany.teamproject.dao;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -11,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mycompany.teamproject.dto.CourseDto;
 import com.mycompany.teamproject.dto.ImageDto;
-import com.mycompany.teamproject.dto.OfferBoardDto;
+import com.mycompany.teamproject.dto.OfferDto;
 
 
 
@@ -25,13 +23,13 @@ public class OfferDao {
 	private SqlSessionTemplate sst;
 	
 	
-	public OfferBoardDto selectByPk(int offer_id) {
-		OfferBoardDto offer = sst.selectOne("offers.selectByPk",offer_id);
+	public OfferDto selectByPk(int offer_id) {
+		OfferDto offer = sst.selectOne("offers.selectByPk",offer_id);
 		return offer;
 	}
 
 
-	public int insertoffer(OfferBoardDto offer) {
+	public int insertoffer(OfferDto offer) {
 		int rows = sst.insert("offers.insertoffer",offer);
 		return rows;
 	}

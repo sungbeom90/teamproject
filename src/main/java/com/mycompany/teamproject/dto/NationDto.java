@@ -1,6 +1,6 @@
 package com.mycompany.teamproject.dto;
 
-public class Nation {
+public class NationDto {
 	private int nation_id;
 	private String nname;
 	private String nimagesname;
