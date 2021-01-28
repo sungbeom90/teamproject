@@ -31,7 +31,7 @@
 		<div class="mainCenter">
 			<div class="content container">
 				<div class="sector container border rounded user_in mt-5 mb-5">
-						<c:if test="${loginStatus == null}">
+					
 							<h2>로그인</h2>					
 								<form name="loginForm" onsubmit="login()" method="post"  class="was-validated">
 									<div class="form-group">
@@ -55,10 +55,8 @@
 									<a class="btn btn-danger d-block mb-1" href="password">비밀번호 찾기</a>
 									<a class="btn btn-primary d-block mb-1" href="join">회원가입</a>
 								</div>
-						</c:if>
-						<c:if test="${loginStatus != null}">
-								<a class="btn btn-danger btn-sm" href="logout">로그아웃</a>
-						</c:if>
+					
+				
 					</div>
 					<script>
 						function login(){
