@@ -24,17 +24,20 @@ public class OfferDao {
 	
 	
 	public OfferDto selectByPk(int offer_id) {
+		logger.info("실행");
 		OfferDto offer = sst.selectOne("offers.selectByPk",offer_id);
 		return offer;
 	}
 
 
-	public int insertoffer(OfferDto offer) {
+	public int inserttext(OfferDto offer) {
+		logger.info("실행");
 		int rows = sst.insert("offers.insertoffer",offer);
 		return rows;
 	}
 	
 	public int insertimage(ImageDto iamge) {
+		logger.info("실행");
 		int rows = sst.insert("offers.insertimage",iamge);
 		return rows;
 	}
