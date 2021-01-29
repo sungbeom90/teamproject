@@ -36,32 +36,21 @@
 			<div class="content container">
 				<div class="sector">
 					<form method="post" enctype="multipart/form-data" action="offerupload" >
-						<input class="form-control" size="118px;" type="text" id="otitle" name="otitle" placeholder="제목"><br/>
-						<hr/>
-						<input class="form-control" size="118px;" type="text" id="osubtitle" name="osubtitle" placeholder="부제목"><br/>
-						
-						<textarea class="form-control" rows="10" cols="50" name="subcontent" placeholder="내용 입력" style="resize: none; border: none;"></textarea><br/>
-						<hr/>
-						<h4 style="margin-left: 0.6em ;">상품 정보</h4><br/>
-						<h5 style="font-weight: bold; margin-left: 0.6em;">포함 사항</h5>
-						<input class="form-control" size="118px;" style=" border: none; " type="text" name="include" placeholder="포함 사항을 입력하세요"><br/><br/>
-						<h5 style="font-weight: bold; margin-left: 0.6em;">불포함 사항</h5>
-						<input class="form-control" size="118px;" style=" border: none; " type="text" name="uninclude" placeholder="불포함 사항을 입력하세요"><br/>
-
-						<input class="form-control" size="118px;" style=" border: none; " type="text" name="price" placeholder="가격을 입력하세요."><br/>
-
-						<hr/>
-						<hr/>
-						<h5 style="font-weight: bold; margin-left: 0.6em;">추가 정보</h5>
-
-						<input class="form-control" size="118px;" style=" border: none; " type="text" name="addinfo" placeholder="추가 정보를 입력하세요"><br/><br/>
-						<h5 style="font-weight: bold; margin-left: 0.6em;">만나는 시간</h5>
-						<input class="form-control" size="118px;" style=" border: none; " type="text" name="contacttime" placeholder="만나는 시간을 입력하세요"><br/><br/>
-						<h5 style="font-weight: bold; margin-left: 0.6em;">만나는 장소</h5>
-						<input class="form-control" size="118px;" style=" border: none; " type="text" name="contactplace" placeholder="만나는 장소를 입력하세요"><br/>
-						<input style="margin-top: 20px;" type="file" name="offerPhoto"><br/>
-						<input style="margin-top: 20px;" class="btn btn-danger btn-sm" type="reset" value="취소"/>
-						
+						<input class="form-control" type="text" id="otitle" name="otitle" placeholder="제목"><br/>
+						<input class="form-control" type="text" id="osubtitle" name="osubtitle" placeholder="부제목"><br/>
+						<input class="form-control" type="number" id="oprice" name="oprice" placeholder="가격"><br/>
+						<textarea  class="form-control" rows="10" cols="50" id="obody" name="obody" placeholder="본문"></textarea><br/>
+						<input class="form-control" type="text" id="oinclude" name="oinclude" placeholder="포함사항"><br/>
+						<input class="form-control" type="text" id="ouninclude" name="ouninclude" placeholder="불포함사항"><br/>
+						<input class="form-control" type="text" id="oplace_meet" name="oplace_meet" placeholder="만나는 장소"><br/>
+						<input class="form-control" type="text" id="otime_meet" name="otime_meet" placeholder="만나는 시간"><br/>
+						<input class="form-control" type="file" id="offerPhoto" name="offerImage" placeholder="첨부파일" multiple><br/>
+						<input class="btn btn-info btn-sm" type="submit" value="입력"><br/>
+						<input class="btn btn-danger btn-sm" type="reset" value="취소"><br/>
+					
+					
+					
+					
 					</form>
 					
 						<!-- <form method="post" enctype="multipart/form-data" onsubmit="fun1()" >
@@ -71,9 +60,6 @@
 						<input style="margin-top: 20px;" type="file" name="offerPhoto"><br/>
 						<input style="margin-top: 20px;" class="btn btn-primary btn-sm" type="submit" value="저장"/>
 						</form>	 -->
-						
-					
-
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,30 +44,32 @@ public class OfferController3 {
 		public String offerUploadForm() {
 			return "offers/offerUpload";
 		}
-		
+		@Transactional
 		@PostMapping("/offerupload")
-		public String offerUpload(OfferDto offerDto,HttpSession session) throws Exception {
+		public String offerUpload(OfferDto offerDto, HttpSession session) throws Exception {
 			logger.info("실행");
-			/*String mid = (String) session.getAttribute("sessionMid");
+			int mid = (int) session.getAttribute("sessionMid");
 			//MemberDto mdto= memberService.getMember(mid);
 			//PartnerDto pdto= memberService.getPartner(mdto.getPartner());
 			//offerDto.setPartner_id(pdto.partner_id);
-			offerDto.setPartner_id(1);
-			offerService.saveRegister(offerDto);
+			offerDto.setPartner_id(10);
+			offerService.textRegister(offerDto);
 			
 			MultipartFile[] mfArray = offerDto.getOfferImage();
-			ImageDto iDto = new ImageDto();
+			ImageDto imageDto = new ImageDto();
 			for (MultipartFile mf : mfArray) {
+				logger.info("파일전송 for문실행");
 				if(!mf.isEmpty()) {
-					iDto.setOattachoname(mf.getOriginalFilename());
-					String saveName = new Date().getTime() + "-" + mf.getOriginalFilename();
-					iDto.setOattachsname(saveName);
-					iDto.setOattachtype(mf.getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOtitle()+"/"+saveName); 
+					imageDto.setOffer_id(offerDto.getOffer_id());
+					String oName = mf.getOriginalFilename();
+					imageDto.setIimageoname(oName);
+					imageDto.setIimagetype(mf.getContentType());
+					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOtitle()+"/"+oName); 
 					mf.transferTo(saveFile);
-					offerService.saveImageRegister(iDto);
+					logger.info(""+imageDto.getOffer_id());
+					offerService.ImageRegister(imageDto);
 				}
-			}*/
+			}
 			return "main/content";
 			
 		}

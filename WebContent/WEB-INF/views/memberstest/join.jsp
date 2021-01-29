@@ -29,8 +29,9 @@
 						<h2>회원가입</h2>					
 							<form name="joinForm" method="post" enctype="multipart/form-data" action="join">
 								<label for="memail">이메일</label>
-				 				<input type="email" id="memail" name="memail" placeholder="ID@example.com"/><br>
-				 							 				
+				 				<input type="email" id="memail" name="memail" placeholder="ID@example.com"/>
+				 				<a id="checkEmail" href="emailcheck">중복확인</a><br>
+				 				
 				 				<label for="mpassword">비밀번호</label>
 				 				<input type="password" id="mpassword" name="mpassword" placeholder="비밀번호를 입력하세요."/><br/>
 				 				
@@ -41,7 +42,7 @@
 								<input type="text" id="mname" name="mname" placeholder="이름 입력하세요."><br/>
 								
 								<label for="mphone">전화번호</label>
-								<input type="text" id="mphone" name="mphone" placeholder="전화번호를 입력하세요."><br/>
+								<input type="number" id="mphone" name="mphone" placeholder="전화번호를 입력하세요."><br/>
 								
 								
 								<br/>
@@ -68,6 +69,25 @@
 								<input type="submit" class="btn btn-primary d-block mb-1" id="sign_up_btn" value="회원가입" style="width:100%;"/>
 								</div>
 							</form>
+							<script>
+								function checkEmail(){
+								const email = $("#checkEmail").val();
+									$.ajax({
+										url:"emailcheck",
+										method:"post",
+										data:{email:email},
+										succese:function(data){
+											if(data.email === "sameEmail"){
+												alert("이메일이 중복이에요.");
+											}else{
+												alert("사용해도 좋아요.");
+											}
+										}
+										
+									});
+								}
+							
+							</script>
 						</div>
 	
 					</div>

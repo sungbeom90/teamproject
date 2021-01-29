@@ -16,7 +16,13 @@ public class PartnerDao {
 	@Resource
 	private SqlSessionTemplate sst;
 	
+	public int locationName(String location_name) {
+		int locationId = sst.selectOne("partners.selectByName", location_name);
+		return locationId;
+	}
+	
 	public int partnerinsert(PartnerDto partnerjoin) {
+		logger.info("파트너 등록 다오");
 		int rows = sst.insert("partners.partnerinsert", partnerjoin);
 		return rows;
 	}

@@ -1,6 +1,7 @@
 package com.mycompany.teamproject.controller;
 
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -42,12 +43,14 @@ public class MemberControllerTest {
 	public void login(MemberDtoTest member, HttpSession session, HttpServletResponse response) throws Exception {
 		logger.info("로그인 실행");
 		// 리턴 값 받아와서 객체에 저장
+		int memberId = memberService.loginId(member.getMemail());
+		session.setAttribute("sessionMid", memberId);
 		String login = memberService.login(member);
 		if (login.equals("loginSuccess")) {
 			logger.info("로그인 성공");
 			session.setAttribute("loginStatus", member.getMemail());
-			session.setAttribute("sessionMid", member.getMember_id());
 		}
+		logger.info(""+memberId);
 
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
@@ -61,18 +64,41 @@ public class MemberControllerTest {
 		pw.close();
 
 	}
+	
 
 	@GetMapping("/join")
 	public String joinForm() {
 		logger.info("회원가입 화면 실행");
 		return "memberstest/join";
 	}
+	
+
+	@GetMapping("/emailcheck")
+	public void emailcheck(MemberDtoTest memail, HttpServletResponse response) throws Exception {
+		logger.info("이멜 확인 겟");
+		String ckemail = memberService.emailselect(memail);
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();
+		
+		JSONObject email = new JSONObject();
+		email.put("email", ckemail);
+		String cemail = email.toString();
+		pw.println(cemail);
+		
+		pw.flush();
+		pw.close();
+		
+		
+	}
+	
+	
+	
 
 	// not null처리 다시 하기
 	@PostMapping("/join")
 	public String join(MemberDtoTest mdt) {
 		logger.info("회원가입 완료");
-
+		
 		memberService.joininsert(mdt);
 
 		return "redirect:/main/content";
@@ -80,6 +106,7 @@ public class MemberControllerTest {
 
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
+		logger.info("로그아웃");
 		session.invalidate();
 		return "redirect:/main/content";
 	}
