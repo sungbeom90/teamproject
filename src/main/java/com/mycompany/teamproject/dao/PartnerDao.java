@@ -16,7 +16,14 @@ public class PartnerDao {
 	@Resource
 	private SqlSessionTemplate sst;
 	
+	public PartnerDto getPartner(int pid) {
+		logger.info("pid 객체 다오");
+		PartnerDto partner = sst.selectOne("partners.getPartner", pid);
+		return partner;
+	}
+	
 	public int locationName(String location_name) {
+		logger.info("지역 이름 가져오기 다오");
 		int locationId = sst.selectOne("partners.selectByName", location_name);
 		return locationId;
 	}
@@ -26,4 +33,6 @@ public class PartnerDao {
 		int rows = sst.insert("partners.partnerinsert", partnerjoin);
 		return rows;
 	}
+
+	
 }

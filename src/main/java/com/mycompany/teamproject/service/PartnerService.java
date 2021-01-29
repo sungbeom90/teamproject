@@ -16,7 +16,15 @@ public class PartnerService {
 	@Resource
 	private PartnerDao partnerDao;
 
+	
+	public PartnerDto getPartner(int pid) {
+		logger.info("pid 객체 가져오기 서비스");
+		PartnerDto partner = partnerDao.getPartner(pid);
+		return partner;
+	}
+	
 	public int locationname(String location_name) {
+		logger.info("지역 이름 가져오기 서비스");
 		int locationid = partnerDao.locationName(location_name);
 		return locationid;
 

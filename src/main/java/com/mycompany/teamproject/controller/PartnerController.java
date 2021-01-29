@@ -23,8 +23,7 @@ public class PartnerController {
 	@Resource
 	private PartnerService partnerService;
 	
-	@Resource
-	private LocationService locationService;
+	
 	
 	
 	
