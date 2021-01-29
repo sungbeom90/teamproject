@@ -34,20 +34,7 @@
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
-				<div class="sector">
-					<form method="post" enctype="multipart/form-data" action="offerupload" >
-						<input class="form-control" type="text" id="otitle" name="otitle" placeholder="제목"><br/>
-						<input class="form-control" type="text" id="osubtitle" name="osubtitle" placeholder="부제목"><br/>
-						<input class="form-control" type="number" id="oprice" name="oprice" placeholder="가격"><br/>
-						<textarea  class="form-control" rows="10" cols="50" id="obody" name="obody" placeholder="본문"></textarea><br/>
-						<input class="form-control" type="text" id="oinclude" name="oinclude" placeholder="포함사항"><br/>
-						<input class="form-control" type="text" id="ouninclude" name="ouninclude" placeholder="불포함사항"><br/>						
-						<input class="form-control" type="text" id="oplace_meet" name="oplace_meet" placeholder="만나는 장소"><br/>
-						<input class="form-control" type="text" id="otime_meet" name="otime_meet" placeholder="만나는 시간"><br/>
-						<input class="form-control" type="file" id="offerImage" name="offerImage" placeholder="첨부파일" multiple><br/>
-						<input class="btn btn-info btn-sm" type="submit" value="입력"><br/>
-						<input class="btn btn-danger btn-sm" type="reset" value="취소"><br/>
-					</form>
+				<div class="sector">					
 					<form>
 						<div id="courselist">코스설명</div>
 						<a class="btn btn-info btn-sm" href="javascript:courseupload()">코스 추가</a>
