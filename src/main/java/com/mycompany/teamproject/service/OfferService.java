@@ -18,15 +18,18 @@ public class OfferService {
 	@Resource
 	private OfferDao offerDao;
 
-	public void saveRegister(OfferDto offer) {
-		offerDao.insertoffer(offer);
+	public void textRegister(OfferDto offer) {
+		logger.info("실행");		
+		offerDao.inserttext(offer);
 		
 	}
-	public void saveImageRegister(ImageDto image) {
+	public void ImageRegister(ImageDto image) {
+		logger.info("실행");
 		offerDao.insertimage(image);
 		
 	}
-	public void saveCourseRegister(CourseDto course) {
+	public void CourseRegister(CourseDto course) {
+		logger.info("실행");
 		offerDao.insertcourse(course);
 		
 	}

@@ -4,7 +4,6 @@ public class CourseDto {
 	private int course_no;
 	private String cplace;
 	private String cdetail;
-	private String cimagesname;
 	private String cimageoname;
 	private String cimagetype;
 	
@@ -25,12 +24,6 @@ public class CourseDto {
 	}
 	public void setCdetail(String cdetail) {
 		this.cdetail = cdetail;
-	}
-	public String getCimagesname() {
-		return cimagesname;
-	}
-	public void setCimagesname(String cimagesname) {
-		this.cimagesname = cimagesname;
 	}
 	public String getCimageoname() {
 		return cimageoname;
