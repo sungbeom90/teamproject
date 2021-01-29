@@ -42,11 +42,35 @@
 						<textarea  class="form-control" rows="10" cols="50" id="obody" name="obody" placeholder="본문"></textarea><br/>
 						<input class="form-control" type="text" id="oinclude" name="oinclude" placeholder="포함사항"><br/>
 						<input class="form-control" type="text" id="ouninclude" name="ouninclude" placeholder="불포함사항"><br/>
+						
+						<div id="courselist">코스설명</div>
+						<a class="btn btn-info btn-sm" href="javascript:courseupload()">코스 추가</a>
+						
 						<input class="form-control" type="text" id="oplace_meet" name="oplace_meet" placeholder="만나는 장소"><br/>
 						<input class="form-control" type="text" id="otime_meet" name="otime_meet" placeholder="만나는 시간"><br/>
-						<input class="form-control" type="file" id="offerPhoto" name="offerImage" placeholder="첨부파일" multiple><br/>
+						<input class="form-control" type="file" id="offerImage" name="offerImage" placeholder="첨부파일" multiple><br/>
 						<input class="btn btn-info btn-sm" type="submit" value="입력"><br/>
 						<input class="btn btn-danger btn-sm" type="reset" value="취소"><br/>
+						
+						
+						
+						<div class="sector">
+						<h5>코스 리스트</h5>
+						<div>
+							<script type="text/javascript">
+							function courseupload(){
+									$.ajax({
+										url: "courseupload",
+										method: "get",
+										success: function(data){
+											$("#courselist").append(data);
+										}
+									});
+								};
+							</script>
+						
+						</div>
+					</div>	
 					
 					
 					
