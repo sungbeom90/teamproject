@@ -16,8 +16,8 @@
 	
 	
 	<insert id="insertcourse" parameterType="course">
-		insert into courses ()
-		values(#{offer_id})
+		insert into courses (offer_id, course_no, cplace, cdetail, ctime, cimageoname, cimagetype)
+		values(#{offer_id}, #{course_no}, #{cplace}, #{cdetail}, #{ctime}, #{cimageoname}, #{cimagetype})
 	</insert>
 	
 
