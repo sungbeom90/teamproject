@@ -3,10 +3,14 @@
 
 
 
+<!-- <form method="post" enctype="multipart/form-data" action="courseupload" > -->
 <div>
-	<input class="form-control" type="number" id="course_no" name="course_no" placeholder="코스 순서"><br/>
-	<input class="form-control" type="text" id="cplace" name="cplace" placeholder="만나는 장소"><br/>
-	<input class="form-control" type="text" id="cdetail" name="cdetail" placeholder="만나는 시간"><br/>
-	<input class="form-control" type="file" id="cimageoname" name="cimageoname" placeholder="첨부파일"><br/>
-</div>
+	<input class="form-control" type="number" id="course_no_array[${sessionNo}]" name="course_no_array[${sessionNo}]" placeholder="코스넘버${sessionNo+1}"><br/>
+	<input class="form-control" type="text" id="cplace_array[${sessionNo}]" name="cplace_array[${sessionNo}]" placeholder="코스위치${sessionNo+1}"><br/>
+	<input class="form-control" type="text" id="cdetail_array[${sessionNo}]" name="cdetail_array[${sessionNo}]" placeholder="코스설명${sessionNo+1}"><br/>
+	<input class="form-control" type="text" id="ctime_array[${sessionNo}]" name="ctime_array[${sessionNo}]" placeholder="코스소요시간${sessionNo+1}"><br/>
+	<input class="form-control" type="file" id="cimage_array[${sessionNo}]" name="cimage_array[${sessionNo}]" placeholder="첨부파일${sessionNo+1}"><br/>
+	<!-- <button class="btn btn-info btn-sm">완료</button> -->
+	</div>
+<!-- </form> -->
 

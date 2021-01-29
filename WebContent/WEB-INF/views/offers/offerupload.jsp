@@ -48,33 +48,7 @@
 						<input class="btn btn-info btn-sm" type="submit" value="입력"><br/>
 						<input class="btn btn-danger btn-sm" type="reset" value="취소"><br/>
 					</form>
-					<form>
-						<div id="courselist">코스설명</div>
-						<a class="btn btn-info btn-sm" href="javascript:courseupload()">코스 추가</a>
-						
-						
-						<div class="sector">
-						<h5>코스 리스트</h5>
-						<div>
-							<script type="text/javascript">
-							function courseupload(){
-									$.ajax({
-										url: "courseupload",
-										method: "get",
-										success: function(data){
-											$("#courselist").append(data);
-										}
-									});
-								};
-							</script>
-						
-						</div>
-					</div>	
 					
-					
-					
-					
-					</form>
 					
 						<!-- <form method="post" enctype="multipart/form-data" onsubmit="fun1()" >
 						<h4 style="margin-left: 0.6em;">코스 소개</h4>
