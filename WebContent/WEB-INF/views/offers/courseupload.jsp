@@ -34,35 +34,33 @@
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
-				<div class="sector">					
-					<form>
-						<div id="courselist">코스설명</div>
-						<a class="btn btn-info btn-sm" href="javascript:courseupload()">코스 추가</a>
-						
-						
-						<div class="sector">
-						<h5>코스 리스트</h5>
-						<div>
-							<script type="text/javascript">
-							function courseupload(){
-									$.ajax({
-										url: "courseupload",
-										method: "get",
-										success: function(data){
-											$("#courselist").append(data);
-										}
-									});
-								};
-							</script>
-						
-						</div>
+				<div class="sector">
+				<form method="post" enctype="multipart/form-data" action="courseupload" >
+					<div id="courselist">
+					
+					
+					</div>
+					<button class="btn btn-info btn-sm">완료</button>
+				</form>
+					
+				</div>					
+					
+				<div class="sector">
+					<a class="btn btn-info btn-sm" href="javascript:courseplus()">코스 추가</a>
+					<div>
+						<script type="text/javascript">
+							function courseplus(){
+								$.ajax({
+									url: "courseplus",
+									method: "get",
+									success: function(data){
+										$("#courselist").append(data);
+									}
+								});
+							};
+						</script>
 					</div>	
-					
-					
-					
-					
-					</form>
-					
+			
 						<!-- <form method="post" enctype="multipart/form-data" onsubmit="fun1()" >
 						<h4 style="margin-left: 0.6em;">코스 소개</h4>
 						<input size="118px;" style=" border: none;" type="text" name="cplace" placeholder="코스  장소를 입력하세요"><br/>

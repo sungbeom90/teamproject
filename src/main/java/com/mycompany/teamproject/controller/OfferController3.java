@@ -1,7 +1,6 @@
 package com.mycompany.teamproject.controller;
 
 import java.io.File;
-import java.util.Date;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -18,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.CourseDto;
 import com.mycompany.teamproject.dto.ImageDto;
-import com.mycompany.teamproject.dto.MemberDto;
+import com.mycompany.teamproject.dto.MemberDtoTest;
 import com.mycompany.teamproject.dto.OfferDto;
 import com.mycompany.teamproject.dto.PartnerDto;
 import com.mycompany.teamproject.service.MemberService;
@@ -56,10 +55,8 @@ public class OfferController3 {
 		public String offerUpload(OfferDto offerDto, HttpSession session) throws Exception {
 			logger.info("실행");
 			int mid = (int) session.getAttribute("sessionMid");
-			//MemberDto mdto= memberService.getMember(mid);
-			//PartnerDto pdto= memberService.getPartner(mdto.getPartner());
-		//	offerDto.setPartner_id(pdto.partner_id);
-			offerDto.setPartner_id(10);
+			PartnerDto pdto= partnerService.getPartner(mid);
+			offerDto.setPartner_id(pdto.getPartner_id());
 			offerService.textRegister(offerDto);
 			
 			MultipartFile[] mfArray = offerDto.getOfferImage();
@@ -75,25 +72,62 @@ public class OfferController3 {
 					mf.transferTo(saveFile);
 					logger.info(""+imageDto.getOffer_id());
 					offerService.ImageRegister(imageDto);
-				}
-			}
-			return "redirect:offer3/courseupload";
+					}
+			}			
+			session.setAttribute("sessionOffer",offerDto);
+			return "redirect:courseupload";
 		}
 		@GetMapping("/courseupload")
 		public String courseuploadForm() {
 			return "offers/courseupload";
 		}
 		@PostMapping("/courseupload")
-		public String courseupload(CourseDto courseDto) {
+		public String courseupload(CourseDto courseDto, HttpSession session) throws Exception {
 			logger.info("실행");
+			int[] course_no_array = courseDto.getCourse_no_array();
+			String[] cplace_array = courseDto.getCplace_array();
+			String[] cdetail_array = courseDto.getCdetail_array();
+			String[] ctime_array = courseDto.getCtime_array();
+			MultipartFile[] cimage_array = courseDto.getCimage_array();
+			OfferDto offerDto=(OfferDto) session.getAttribute("sessionOffer");
+			
+			
+			courseDto.setOffer_id(offerDto.getOffer_id());
+			for(int i=0; i<course_no_array.length; i++) {
+				courseDto.setCourse_no(course_no_array[i]);
+				courseDto.setCplace(cplace_array[i]);
+				courseDto.setCdetail(cdetail_array[i]);
+				courseDto.setCtime(ctime_array[i]);
+				
+				/* if(!cimage_array[i].isEmpty()) { */
+					String oName = cimage_array[i].getOriginalFilename();
+					courseDto.setCimageoname(oName);
+					courseDto.setCimagetype(cimage_array[i].getContentType());
+					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOtitle()+"/courses/"+oName); 
+					cimage_array[i].transferTo(saveFile);
+					logger.info(""+courseDto.getOffer_id());
+					offerService.CourseRegister(courseDto);
+					/* } */
+			}
+			session.removeAttribute("sessionOid");
+			session.removeAttribute("sessionNo");
 			return "redirect:/main/content";	
 		}
 		@GetMapping("/courseplus")
-		public String courseplus(CourseDto courseDto) {
+		public String courseplus(HttpSession session) {
 			logger.info("실행");
+			if(session.getAttribute("sessionNo")==null) {
+				logger.info("no null 실행");
+				int number=0;
+				session.setAttribute("sessionNo", number);
+			} else if(session.getAttribute("sessionNo")!=null) {
+				logger.info("no not null 실행");
+				int number=(int) session.getAttribute("sessionNo");
+				number++;
+				session.setAttribute("sessionNo", number);
+			}
 			return "offers/course";	
-		}
-		
+		}		
 		@PostMapping("/offerresult")
 		public String offerresult(CourseDto courseDto, HttpSession session) throws Exception {
 			logger.info("실행");
