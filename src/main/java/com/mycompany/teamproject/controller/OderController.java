@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //지울예정
 
 @Controller
-@RequestMapping("/recommandoffer")
+@RequestMapping("/orderoffer")
 public class OderController {
 	private static final Logger logger=
 			LoggerFactory.getLogger(OderController.class);
