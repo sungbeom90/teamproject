@@ -50,11 +50,11 @@
 				<div class="sector">
 				<c:forEach var="location" items="${list}" >
 				
-					<div class="card" style="width: 26rem;">	
-							<img src="../locations3/limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
+					<div class="card" style="width: 20rem; display: inline-block; margin: 20px" >	
+							<img height="200rem" src="../locations3/limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
 							<div class="card-body">
 								<h5 class="card-title">${location.lname}</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<p class="card-text">${location.ldetail}</p>
 								<a href="locationread?location_id=${location.location_id}" class="btn btn-primary">바로가기</a>
 							</div>
 					</div>
