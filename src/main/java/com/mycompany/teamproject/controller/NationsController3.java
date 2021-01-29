@@ -33,10 +33,10 @@ public class NationsController3 {
 				LoggerFactory.getLogger(NationsController3.class);
 		
 		@Resource
-		NationService nationService;
+		private NationService nationService;
 		
 		@Resource
-		LocationService locationService;
+		private LocationService locationService;
 
 		// http://.../teamproject/nations 생략됨
 		@RequestMapping("/content")

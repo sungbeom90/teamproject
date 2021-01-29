@@ -7,6 +7,7 @@ public class LocationDto {
 	private String limageoname;
 	private String limagetype;
 	private String lclimate;
+	private String ldetail;
 	private int nation_id;
 	public int getNation_id() {
 		return nation_id;
@@ -49,6 +50,12 @@ public class LocationDto {
 	}
 	public void setLclimate(String lclimate) {
 		this.lclimate = lclimate;
+	}
+	public String getLdetail() {
+		return ldetail;
+	}
+	public void setLdetail(String ldetail) {
+		this.ldetail = ldetail;
 	}
 	
 	
