@@ -24,5 +24,29 @@
 	</select>
 
 
-
+	<!--              -->
+	
+	<select id="countAll" resultType="int">
+		select count(*) from locations
+	</select>
+	
+	
+	<select id="selectByPage" parameterType="pager"
+		resultType="locationDto">
+		select 
+			rno, 
+			lname,
+			ldetail
+		from
+		(
+			select 
+				rownum as rno
+				lname,
+				ldetail
+			from locations
+			where rownum &lt;= #{endRowNo}
+		)
+		where rno &gt;= #{startRowNo}
+		<!-- '<' 꺽쇠는 태그의 시작이므로 연산자 쓸때는 &lt; less than 이런식으로 바꿔줘야함 -->
+	</select>
 </mapper>

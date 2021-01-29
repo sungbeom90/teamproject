@@ -16,11 +16,14 @@ import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mycompany.teamproject.dto.LocationDto;
+import com.mycompany.teamproject.dto.LocationPager;
 import com.mycompany.teamproject.dto.NationDto;
 import com.mycompany.teamproject.service.LocationService;
 import com.mycompany.teamproject.service.NationService;
+
 
 
 
@@ -50,6 +53,18 @@ public class LocationsController3 {
 			return "locations/locationlist3";
 		}
 		
+		//----------------------------------------------------------------
+		@GetMapping("/locationlist2")
+		public String locationlist2(@RequestParam(defaultValue="1") int pageNo, Model model) {
+			int totalRows = locationService.getTotalRows();
+			LocationPager pager = new LocationPager(3,5, totalRows, pageNo);
+			List<LocationDto> list = locationService.getLocationList(pager);
+			model.addAttribute("list",list);
+			model.addAttribute("pager",pager);
+			return "locations/locationlist3";
+		}
+		
+		//----------------------------------------------------------------
 		/*@GetMapping("/nation")
 		public String nation(Model model, int nation_id) {
 			logger.info("실행");

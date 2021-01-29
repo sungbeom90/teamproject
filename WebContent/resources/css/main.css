@@ -40,6 +40,8 @@ img { border:0; }
 
 .locations {width:16rem; height:13rem; margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: white; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
 
+.locationlists {width:16rem; height:13rem; margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: blue; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
+
 .packages {margin: 1rem 0; border-radius: 0.7rem; overflow: hidden; color: black; box-shadow: 0.1rem 0.2rem 0.5rem gray;}
 
 .head{color: white; padding-top:4.5rem; text-shadow: 0.1rem 0.2rem 0.5rem black; box-shadow: 0.1rem 0.2rem 0.5rem gray; text-align:center;  font-size:200%; font-weight: bold; height:222px; background-size: 100% 100%;}

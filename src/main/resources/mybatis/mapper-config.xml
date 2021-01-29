@@ -11,6 +11,7 @@
 		<typeAlias alias="offer" type="com.mycompany.teamproject.dto.OfferDto"/>
 		<typeAlias alias="image" type="com.mycompany.teamproject.dto.ImageDto"/>
 		<typeAlias alias="course" type="com.mycompany.teamproject.dto.CourseDto"/>
+		<typeAlias alias="pager" type="com.mycompany.teamproject.dto.LocationPager"/>
 	</typeAliases>
 
 </configuration>
