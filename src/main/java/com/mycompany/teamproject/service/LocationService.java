@@ -13,7 +13,9 @@ import com.mycompany.teamproject.dao.LocationDao;
 import com.mycompany.teamproject.dao.MemberDao;
 import com.mycompany.teamproject.dao.NationDao;
 import com.mycompany.teamproject.dto.LocationDto;
+import com.mycompany.teamproject.dto.LocationPager;
 import com.mycompany.teamproject.dto.NationDto;
+
 
 @Service
 public class LocationService {
@@ -39,6 +41,20 @@ public class LocationService {
 	public List<LocationDto> getLocations(int Nation_id) {
 		logger.info("실행");
 		List<LocationDto> list = locationDao.selectLocations(Nation_id);
+		return list;
+	}
+	
+	
+	
+	//----------------------------------------------------------
+	public int getTotalRows() {
+		logger.info("값 확인1");
+		int totalRows = locationDao.countAll();
+		logger.info("값 확인 allll");
+		return totalRows;
+	}
+	public List<LocationDto> getLocationList(LocationPager pager) {
+		List<LocationDto> list = locationDao.selectByPage(pager);
 		return list;
 	}
 	

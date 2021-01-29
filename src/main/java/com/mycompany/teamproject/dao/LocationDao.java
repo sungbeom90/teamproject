@@ -11,7 +11,9 @@ import org.springframework.stereotype.Repository;
 
 import com.mycompany.teamproject.controller.RegisterController;
 import com.mycompany.teamproject.dto.LocationDto;
+import com.mycompany.teamproject.dto.LocationPager;
 import com.mycompany.teamproject.dto.NationDto;
+
 
 @Repository
 public class LocationDao {
@@ -37,5 +39,19 @@ public class LocationDao {
 		logger.info("실행");
 		List<LocationDto> list = sst.selectList("locations.selectByFk", nation_id);
 		return list;
+	}
+
+//----------------------------------------------------------------------------
+	public List<LocationDto> selectByPage(LocationPager pager) {
+		List<LocationDto> list = sst.selectList("locations.selectByPage",pager);
+		return list;
+	}
+
+
+	public int countAll() {
+		logger.info("값 확인");
+		int count = sst.selectOne("locations.countAll");
+		
+		return count;
 	}
 }
