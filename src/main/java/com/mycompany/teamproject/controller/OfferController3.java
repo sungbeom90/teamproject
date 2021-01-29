@@ -77,19 +77,11 @@ public class OfferController3 {
 		@GetMapping("/courseupload")
 		public String courseupload(CourseDto courseDto, Model model) {
 			logger.info("실행");
-			/*
-			courseNo = model.getAttribute("courseNo");
-			if(courseNo==0)
-			int courseNo = courseDto.getCourse_no();
-			courseNo++;
-			
-			
 			
 			String saveDirPath = "D:/MyWorkspace/uploadfiles/";
 			File dir = new File(saveDirPath);
 			String[] fileNames = dir.list();
 			model.addAttribute("fileNames", fileNames);
-			*/
 			return "offers/course";	
 		}
 		

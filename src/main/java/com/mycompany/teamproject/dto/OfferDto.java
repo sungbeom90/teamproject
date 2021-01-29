@@ -1,5 +1,7 @@
 package com.mycompany.teamproject.dto;
 
+import java.util.List;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class OfferDto {
@@ -17,6 +19,7 @@ public class OfferDto {
 		
 	// 브라우저 -> form -> 컨트롤러 매개변수로 쓰이는 필드
 	private MultipartFile[] offerImage;
+	private List<CourseDto> courseList;
 
 
 	public int getOffer_id() {
@@ -127,6 +130,17 @@ public class OfferDto {
 	public void setOfferImage(MultipartFile[] offerImage) {
 		this.offerImage = offerImage;
 	}
+
+
+	public List<CourseDto> getCourseList() {
+		return courseList;
+	}
+
+
+	public void setCourseList(List<CourseDto> courseList) {
+		this.courseList = courseList;
+	}
+	
 
 	
 
