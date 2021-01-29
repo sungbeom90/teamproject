@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -73,13 +74,17 @@ public class OfferController3 {
 			return "main/content";
 			
 		}
-		@PostMapping("/courseupload")
-		public String courseupload(CourseDto courseDto, HttpSession session) throws Exception {
+		@GetMapping("/courseupload")
+		public String courseupload(CourseDto courseDto, Model model) {
 			logger.info("실행");
-			//String mid = (String) session.getAttribute("sessionMid");
-			return "main/content";
 			
+			String saveDirPath = "D:/MyWorkspace/uploadfiles/";
+			File dir = new File(saveDirPath);
+			String[] fileNames = dir.list();
+			model.addAttribute("fileNames", fileNames);
+			return "offers/course";	
 		}
+		
 		@PostMapping("/offerresult")
 		public String offerresult(CourseDto courseDto, HttpSession session) throws Exception {
 			logger.info("실행");

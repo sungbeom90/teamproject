@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>미국</title>
+<title>${nation.nname}</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -40,6 +40,8 @@
 						${nation.nname}
 					</div>
 					<div class="card-deck">
+						<!-- 도시들을 보여주기 위함 -->
+						<p>nation3</p>
 						<c:forEach var="location" items="${list}">
 							<div class="card img-fluid locations">
 							    <img class="card-img-top img_center" src="../locations3/limage?location_id=${location.location_id}" alt="Card image">
@@ -51,7 +53,7 @@
 							  </div>
 						 </c:forEach>
 							 
-					</div>					
+					</div>			
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

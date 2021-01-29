@@ -3,13 +3,13 @@
 <mapper namespace="locations">
 
 	<select id="selectAll" resultType="LocationDto">
-		select Location_id, lname, limagesname, limageoname, limagetype, lclimate
+		select Location_id, lname, limagesname, limageoname, limagetype, lclimate, ldetail
 		from locations
 		order by location_id desc
 	</select>
 	
 	<select id="selectByPk" parameterType="int" resultType="LocationDto">
-		select Location_id, lname, limagesname, limageoname, limagetype, lclimate
+		select Location_id, lname, limagesname, limageoname, limagetype, lclimate, ldetail
 		from locations
 		where location_id=#{location_id}
 	</select>
