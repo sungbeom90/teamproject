@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.teamproject.dto.LocationDto;
 import com.mycompany.teamproject.dto.PartnerDto;
-import com.mycompany.teamproject.service.LocationService;
+import com.mycompany.teamproject.service.MemberService;
 import com.mycompany.teamproject.service.PartnerService;
 
 @Controller
@@ -22,11 +21,6 @@ public class PartnerController {
 	
 	@Resource
 	private PartnerService partnerService;
-	
-	@Resource
-	private LocationService locationService;
-	
-	
 	
 	@RequestMapping("/content")
 	public String content() {

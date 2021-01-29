@@ -1,7 +1,5 @@
 package com.mycompany.teamproject.service;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -18,10 +16,13 @@ public class MemberService {
 	@Resource
 	private MemberDao memberDao;
 	
-	public List<MemberDtoTest> mid() {
-		List<MemberDtoTest> member_id = memberDao.getMid();
-		return member_id;
+	
+	public MemberDtoTest getMember(int mid) {
+		logger.info("mid 객체 받기 확인");
+		MemberDtoTest member = memberDao.getMember(mid);
+		return member;
 	}
+
 	
 	
 	
