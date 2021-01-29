@@ -17,9 +17,9 @@ public class PartnerService {
 	private PartnerDao partnerDao;
 
 	
-	public PartnerDto getPartner(int pid) {
+	public PartnerDto getPartner(int mid) {
 		logger.info("pid 객체 가져오기 서비스");
-		PartnerDto partner = partnerDao.getPartner(pid);
+		PartnerDto partner = partnerDao.getPartner(mid);
 		return partner;
 	}
 	

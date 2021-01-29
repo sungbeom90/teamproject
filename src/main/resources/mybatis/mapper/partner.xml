@@ -5,7 +5,7 @@
 	<select id="getPartner" parameterType="int" resultType="PartnerDto">
 		select partner_id, pname, member_id, location_id
 		from partners
-		where partner_id=#{partner_id}
+		where member_id=#{member_id}
 	</select>
 	
 	

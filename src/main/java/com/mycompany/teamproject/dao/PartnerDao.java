@@ -16,9 +16,9 @@ public class PartnerDao {
 	@Resource
 	private SqlSessionTemplate sst;
 	
-	public PartnerDto getPartner(int pid) {
+	public PartnerDto getPartner(int mid) {
 		logger.info("pid 객체 다오");
-		PartnerDto partner = sst.selectOne("partners.getPartner", pid);
+		PartnerDto partner = sst.selectOne("partners.getPartner", mid);
 		return partner;
 	}
 	

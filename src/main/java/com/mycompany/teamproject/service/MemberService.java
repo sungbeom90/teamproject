@@ -18,7 +18,7 @@ public class MemberService {
 	
 	
 	public MemberDtoTest getMember(int mid) {
-		logger.info("mid 객체 받기 서비스");
+		logger.info("mid 객체 받기 확인");
 		MemberDtoTest member = memberDao.getMember(mid);
 		return member;
 	}
