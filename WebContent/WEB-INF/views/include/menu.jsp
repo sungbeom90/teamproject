@@ -8,3 +8,4 @@
 		<li><a class="btn btn-info"	href="<%=application.getContextPath()%>/packages/content">추천상품</a></li>
 	</ul>
 </div>
+

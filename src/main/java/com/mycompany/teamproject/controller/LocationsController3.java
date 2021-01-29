@@ -31,8 +31,8 @@ public class LocationsController3 {
 				LoggerFactory.getLogger(LocationsController3.class);
 		
 		@Resource
-		LocationService locationService;
-		NationService nationService;
+		private LocationService locationService;
+		/*private	NationService nationService;*/
 
 
 		// http://.../teamproject/nations 생략됨
@@ -47,23 +47,23 @@ public class LocationsController3 {
 			logger.info("실행");
 			List<LocationDto> list = locationService.getLocationList();			
 			model.addAttribute("list",list);
-			return "nations/locationlist3";
+			return "locations/locationlist3";
 		}
 		
-		@GetMapping("/nation")
+		/*@GetMapping("/nation")
 		public String nation(Model model, int nation_id) {
 			logger.info("실행");
 			NationDto nation = nationService.getNation(nation_id);
 			model.addAttribute("nation1", nation);
 			return "nations/nationlist3";
-		}
+		}*/
 		
 		@GetMapping("/locationread")
 		public String locationread(int location_id, Model model) {
 			logger.info("실행");
 			LocationDto location = locationService.getLocation(location_id);
 			model.addAttribute("location", location);
-			return "nations/location3";
+			return "locations/location3";
 		}
 		
 		@GetMapping("/limage")
@@ -76,7 +76,7 @@ public class LocationsController3 {
 			if(location.getLimagesname() !=null) {   //첨부파일이 있을때
 				String limagesname = location.getLimagesname();
 				String lname = location.getLname();
-				filePath = "D:/MyWorkspace/teamfiles/locations/" + lname + "/" + limagesname; // 나라별 다른 폴더 이미지 가져오기.
+				filePath = "D:/MyWorkspace/teamfiles/locations/" + lname + "/" + limagesname; // 도시별 다른 폴더 이미지 가져오기.
 				//주소맞나모르껬음
 			} else {							// 첨부파일이 없을때
 				filePath = "D:/MyWorkspace/teamfiles/locations/defaultnimage.jpg";
@@ -89,5 +89,13 @@ public class LocationsController3 {
 			os.close();
 			is.close();
 			}
+		
+		//오퍼리드
+			/*@GetMapping("offerread")
+			public String offerread() {
+				return "offers/offer3";
+			}*/
+		
+		
 		
 }
