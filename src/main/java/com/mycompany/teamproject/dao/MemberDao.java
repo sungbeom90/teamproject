@@ -1,7 +1,5 @@
 package com.mycompany.teamproject.dao;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -18,9 +16,11 @@ public class MemberDao {
 	@Resource
 	private SqlSessionTemplate sst;
 	
-	public List<MemberDtoTest> getMid() {
-		List<MemberDtoTest> member_id = sst.selectList("members.getMid");
-		return member_id;
+	//mid 객체
+	public MemberDtoTest getMember(int mid) {
+		logger.info("mid 객체 다오");
+		MemberDtoTest member = sst.selectOne("members.getMember", mid);
+		return member;
 	}
 	
 	
@@ -49,6 +49,8 @@ public class MemberDao {
 		MemberDtoTest email = sst.selectOne("members.login", memail);
 		return email;
 	}
+
+
 
 
 

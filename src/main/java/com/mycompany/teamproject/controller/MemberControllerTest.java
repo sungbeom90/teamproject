@@ -1,7 +1,6 @@
 package com.mycompany.teamproject.controller;
 
 import java.io.PrintWriter;
-import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;

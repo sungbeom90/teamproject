@@ -18,9 +18,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.CourseDto;
 import com.mycompany.teamproject.dto.ImageDto;
+import com.mycompany.teamproject.dto.MemberDto;
 import com.mycompany.teamproject.dto.OfferDto;
+import com.mycompany.teamproject.dto.PartnerDto;
 import com.mycompany.teamproject.service.MemberService;
 import com.mycompany.teamproject.service.OfferService;
+import com.mycompany.teamproject.service.PartnerService;
 
 @Controller
 @RequestMapping("/offer3")
@@ -33,6 +36,9 @@ public class OfferController3 {
 		
 		@Resource
 		MemberService memberService;
+		
+		@Resource
+		PartnerService partnerService;
 
 
 		// http://.../teamproject/register 생략됨
@@ -43,7 +49,7 @@ public class OfferController3 {
 		}
 		@GetMapping("/offerupload")
 		public String offerUploadForm() {
-			return "offers/offerUpload";
+			return "offers/offerupload";
 		}
 		@Transactional
 		@PostMapping("/offerupload")
@@ -52,7 +58,7 @@ public class OfferController3 {
 			int mid = (int) session.getAttribute("sessionMid");
 			//MemberDto mdto= memberService.getMember(mid);
 			//PartnerDto pdto= memberService.getPartner(mdto.getPartner());
-			//offerDto.setPartner_id(pdto.partner_id);
+		//	offerDto.setPartner_id(pdto.partner_id);
 			offerDto.setPartner_id(10);
 			offerService.textRegister(offerDto);
 			
@@ -71,17 +77,20 @@ public class OfferController3 {
 					offerService.ImageRegister(imageDto);
 				}
 			}
-			return "main/content";
-			
+			return "redirect:offer3/courseupload";
 		}
 		@GetMapping("/courseupload")
-		public String courseupload(CourseDto courseDto, Model model) {
+		public String courseuploadForm() {
+			return "offers/courseupload";
+		}
+		@PostMapping("/courseupload")
+		public String courseupload(CourseDto courseDto) {
 			logger.info("실행");
-			
-			String saveDirPath = "D:/MyWorkspace/uploadfiles/";
-			File dir = new File(saveDirPath);
-			String[] fileNames = dir.list();
-			model.addAttribute("fileNames", fileNames);
+			return "redirect:/main/content";	
+		}
+		@GetMapping("/courseplus")
+		public String courseplus(CourseDto courseDto) {
+			logger.info("실행");
 			return "offers/course";	
 		}
 		
