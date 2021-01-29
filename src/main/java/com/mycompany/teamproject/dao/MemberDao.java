@@ -1,5 +1,7 @@
 package com.mycompany.teamproject.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -16,6 +18,12 @@ public class MemberDao {
 	@Resource
 	private SqlSessionTemplate sst;
 	
+	public List<MemberDtoTest> getMid() {
+		List<MemberDtoTest> member_id = sst.selectList("members.getMid");
+		return member_id;
+	}
+	
+	
 	//인설트로 행을 추가하여 리턴
 	public int joininsert(MemberDtoTest mdt) {
 		logger.info("회원가입다오");
@@ -29,5 +37,19 @@ public class MemberDao {
 		MemberDtoTest member = sst.selectOne("members.login", memail);
 		return member;
 	}
+
+	public int loginId(String memail) {
+		logger.info("멤버 아이디 다오");
+		int mid = sst.selectOne("members.memberId", memail);
+		return mid;
+	}
+
+	public MemberDtoTest emailselect(MemberDtoTest memail) {
+		logger.info("이메일 확인 다오");
+		MemberDtoTest email = sst.selectOne("members.login", memail);
+		return email;
+	}
+
+
 
 }

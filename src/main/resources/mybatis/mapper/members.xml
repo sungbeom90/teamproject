@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="members">
-	<select id="login" parameterType="string" resultType="member">
+	<select id="getMid" resultType="memberDto">
+		select member_id, memail, mname, mpassword, mphone
+		from members
+		
+	
+	</select>
+	
+	<select id="memberId" parameterType="String" resultType="int">
+		select member_id
+		from members
+		where memail=#{memail}
+	</select>
+	
+	<select id="login" parameterType="string" resultType="memberDto">
 		select member_id, memail, mname, mpassword, mphone
 		from members
 		where memail=#{memail}
 	
 	</select>
 	
-	<insert id="joininsert" parameterType="member">
+	
+	
+	<insert id="joininsert" parameterType="memberDto">
+		<selectKey keyProperty="member_id" resultType="int" order="BEFORE">
+				select members_seq.nextval
+				from dual
+		</selectKey>
+		
 		insert into members
 		(member_id, memail, mname, mpassword, mphone)
 		values
-		(members_seq.nextval, #{memail}, #{mname}, #{mpassword}, #{mphone})
-	
+		(#{member_id}, #{memail}, #{mname}, #{mpassword}, #{mphone})
 	</insert>
 	
 </mapper>

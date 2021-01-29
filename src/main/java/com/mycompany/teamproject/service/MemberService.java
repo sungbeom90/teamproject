@@ -1,5 +1,7 @@
 package com.mycompany.teamproject.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -15,6 +17,12 @@ public class MemberService {
 	
 	@Resource
 	private MemberDao memberDao;
+	
+	public List<MemberDtoTest> mid() {
+		List<MemberDtoTest> member_id = memberDao.getMid();
+		return member_id;
+	}
+	
 	
 	
 	public int joininsert(MemberDtoTest mdt) {
@@ -34,6 +42,26 @@ public class MemberService {
 		}else {
 			return "wrongPassword";
 		}
+	}
+	
+	public int loginId(String memail) {
+		logger.info("멤버pk 받아오기");
+		int mid = memberDao.loginId(memail);
+		return mid;
+	}
+	
+
+
+	public String emailselect(MemberDtoTest email) {
+		logger.info("이메일 중복 검사");
+		MemberDtoTest dbemail = memberDao.emailselect(email);
+		if(dbemail.getMemail().equals(email.getMemail())) {
+			return "sameEmail";
+		}else {
+			return "passEmail";
+		}
+		
+		
 	}
 
 	
