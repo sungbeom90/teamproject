@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.teamproject.dto.LocationDto;
 import com.mycompany.teamproject.dto.PartnerDto;
+import com.mycompany.teamproject.service.LocationService;
 import com.mycompany.teamproject.service.PartnerService;
 
 @Controller
@@ -20,6 +22,11 @@ public class PartnerController {
 	
 	@Resource
 	private PartnerService partnerService;
+	
+	@Resource
+	private LocationService locationService;
+	
+	
 	
 	@RequestMapping("/content")
 	public String content() {
@@ -34,11 +41,15 @@ public class PartnerController {
 	}
 	
 	@PostMapping("/partnerjoin")
-	public String partnerjoin(PartnerDto pdt, HttpSession sesseion) {
+	public String partnerjoin(PartnerDto pdt, String location_name, HttpSession session) {
 		logger.info("파트너 등록 페이지");
-		int mid = (int) sesseion.getAttribute("sessionMid");
-		pdt.setMember_id(mid);
 		
+		int lid = partnerService.locationname(location_name);
+		int mid = (int) session.getAttribute("sessionMid");
+		logger.info("" + mid);
+		
+		pdt.setMember_id(mid);
+		pdt.setLocation_id(lid);
 		partnerService.partnerinsert(pdt);
 		return "partners/content";
 				

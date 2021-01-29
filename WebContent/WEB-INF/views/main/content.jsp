@@ -71,7 +71,7 @@
 					</div>
 				</c:if>
 				<c:if test="${loginStatus != null}">
-						<a class="btn btn-danger btn-sm" href="logout">로그아웃</a>
+						<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/memberstest/logout">로그아웃</a>
 						<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
 				</c:if>
 				
