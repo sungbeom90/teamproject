@@ -49,14 +49,16 @@
 				</div>
 				<div class="sector">
 				<c:forEach var="location" items="${list}" >
-				
-					<div class="card" style="width: 20rem; display: inline-block; margin: 20px" >	
-							<img height="200rem" src="../locations3/limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
+					
+					<div class="card locationlists" style="width: 20rem; height: 19.5rem; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;" >							
+						<img height="160px" src="../locations3/limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
+						<!-- <div class="card-img-overlay" > -->
 							<div class="card-body">
-								<h5 class="card-title">${location.lname}</h5>
+								<h5  class="card-title">${location.lname}</h5>
 								<p class="card-text">${location.ldetail}</p>
 								<a href="locationread?location_id=${location.location_id}" class="btn btn-primary">바로가기</a>
-							</div>
+							</div>					
+						<!-- </div> -->
 					</div>
 				
 				</c:forEach>
