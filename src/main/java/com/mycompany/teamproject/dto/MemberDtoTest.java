@@ -12,6 +12,8 @@ public class MemberDtoTest {
 	private String mphone;
 	private String mgender;
 	private Date mjoin;
+	private String mimageoname;
+	private String mimagetype;
 	
 	private MultipartFile mimage;
 
@@ -74,6 +76,22 @@ public class MemberDtoTest {
 
 	public void setMjoin(Date mjoin) {
 		this.mjoin = mjoin;
+	}
+	
+	public String getMimageoname() {
+		return mimageoname;
+	}
+
+	public void setMimageoname(String mimageoname) {
+		this.mimageoname = mimageoname;
+	}
+
+	public String getMimagetype() {
+		return mimagetype;
+	}
+
+	public void setMimagetype(String mimagetype) {
+		this.mimagetype = mimagetype;
 	}
 
 	public MultipartFile getMimage() {

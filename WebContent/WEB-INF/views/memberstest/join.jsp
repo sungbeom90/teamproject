@@ -44,6 +44,16 @@
 								<label for="mphone">전화번호</label>
 								<input type="number" id="mphone" name="mphone" placeholder="전화번호를 입력하세요."><br/>
 								
+								<label for="mdate">가입날짜</label>
+								<input type="date" 
+								value='<fmt:formatDate value="${date.mjoin}" pattern="yyyy-MM-dd"/>' id="mdate" name="mdate"><br/>
+								
+								
+								
+								<label for="mimage">프로필 사진</label>
+								<input type="file" id="mimage" name="mimage">사진 주세요.<br/>
+								
+								
 								
 								<br/>
 								<h5>선택 입력 사항</h5>								

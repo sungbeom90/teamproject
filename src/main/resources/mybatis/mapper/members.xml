@@ -31,11 +31,10 @@
 				select members_seq.nextval
 				from dual
 		</selectKey>
-		
-		insert into members
-		(member_id, memail, mname, mpassword, mphone)
-		values
-		(#{member_id}, #{memail}, #{mname}, #{mpassword}, #{mphone})
+			insert into members
+			(member_id, memail, mname, mpassword, mphone, mjoin, mgender, mimageoname, mimagetype)
+			values
+			(#{member_id}, #{memail}, #{mname}, #{mpassword}, #{mphone}, sysdate, null, #{mimageoname}, #{mimagetype})
 	</insert>
 	
 </mapper>
