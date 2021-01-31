@@ -1,5 +1,7 @@
 package com.mycompany.teamproject.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -21,14 +23,6 @@ public class OfferDao {
 	
 	@Resource
 	private SqlSessionTemplate sst;
-	
-	
-	public OfferDto selectByPk(int offer_id) {
-		logger.info("실행");
-		OfferDto offer = sst.selectOne("offers.selectByPk",offer_id);
-		return offer;
-	}
-
 
 	public int inserttext(OfferDto offer) {
 		logger.info("실행");
@@ -44,5 +38,23 @@ public class OfferDao {
 	public int insertcourse(CourseDto course) {
 		int rows = sst.insert("offers.insertcourse",course);
 		return rows;
+	}
+
+	public OfferDto selectOffer(int offer_id) {
+		logger.info("실행");		
+		OfferDto offer = sst.selectOne("offers.selectOffer", offer_id);
+		return offer;
+	}
+
+	public List<ImageDto> selectImageList(int offer_id) {
+		logger.info("실행");	
+		List<ImageDto> imageList = sst.selectList("offers.selectImageList", offer_id); 
+		return imageList;
+	}
+
+	public List<CourseDto> selectCourseList(int offer_id) {
+		logger.info("실행");
+		List<CourseDto> CourseList = sst.selectList("offers.selectCourseList", offer_id);
+		return CourseList;
 	}
 }

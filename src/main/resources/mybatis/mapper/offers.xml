@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="offers">
-	<insert id="insertoffer" parameterType="offer">
+	<insert id="insertoffer" parameterType="offer"> <!-- 상품텍스트 입력하기 -->
 		<selectKey keyProperty="offer_id" resultType="int" order="BEFORE">
 			select offer_id_seq.nextval from dual
 		</selectKey>
 		insert into offers (offer_id, otitle, osubtitle, oprice, obody, oinclude, ouninclude, oplace_meet, otime_meet, partner_id)
 		values (#{offer_id}, #{otitle}, #{osubtitle}, #{oprice}, #{obody}, #{oinclude}, #{ouninclude}, #{oplace_meet}, #{otime_meet}, #{partner_id} )
-	</insert>
-	
-	<insert id="insertimage" parameterType="image">
+	</insert>	
+	<insert id="insertimage" parameterType="image"> <!-- 상품이미지 입력하기 -->
 		insert into images (offer_id, iimageoname, iimagetype)
 		values(#{offer_id}, #{iimageoname}, #{iimagetype})
 	</insert>
-	
-	
-	<insert id="insertcourse" parameterType="course">
+	<insert id="insertcourse" parameterType="course"> <!-- 상품코스 입력하기 -->
 		insert into courses (offer_id, course_no, cplace, cdetail, ctime, cimageoname, cimagetype)
 		values(#{offer_id}, #{course_no}, #{cplace}, #{cdetail}, #{ctime}, #{cimageoname}, #{cimagetype})
 	</insert>
+	
+	<select id="selectOffer" parameterType="int" resultType="offer">
+		select *
+		from offers
+		where offer_id=#{offer_id}	
+	</select>
+	
+	<select id="selectImageList" parameterType="int" resultType="image">
+		select *
+		from images
+		where offer_id=#{offer_id}	
+	</select>
+	
+	<select id="selectCourseList" parameterType="int" resultType="course">
+		select *
+		from courses
+		where offer_id=#{offer_id}
+		order by course_no ASC
+	</select>
 	
 
 </mapper>

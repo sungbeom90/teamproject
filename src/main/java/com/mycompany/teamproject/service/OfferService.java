@@ -1,5 +1,7 @@
 package com.mycompany.teamproject.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -32,6 +34,21 @@ public class OfferService {
 		logger.info("실행");
 		offerDao.insertcourse(course);
 		
+	}
+	public OfferDto getOffer(int offer_id) {
+		logger.info("실행");
+		OfferDto offer = offerDao.selectOffer(offer_id);
+		return offer;
+	}
+	public List<ImageDto> getImageList(int offer_id) {
+		logger.info("실행");
+		List<ImageDto> imageList = offerDao.selectImageList(offer_id);
+		return imageList;
+	}
+	public List<CourseDto> getCourseList(int offer_id) {
+		logger.info("실행");
+		List<CourseDto> CourseList = offerDao.selectCourseList(offer_id);
+		return CourseList;
 	}
 	
 
