@@ -30,7 +30,7 @@
 							<form name="joinForm" method="post" enctype="multipart/form-data" action="join">
 								<label for="memail">이메일</label>
 				 				<input type="email" id="memail" name="memail" placeholder="ID@example.com"/>
-				 				<a id="checkEmail" href="emailcheck?memail=${loginemail.memail}">중복확인</a><br>
+				 				<a id="checkEmail" href="javascript:emailcheck()">중복확인</a><br>
 				 				
 				 				<label for="mpassword">비밀번호</label>
 				 				<input type="password" id="mpassword" name="mpassword" placeholder="비밀번호를 입력하세요."/><br/>
@@ -80,7 +80,7 @@
 								var checkEmail = $("#checkEmail").val();
 									$.ajax({
 										url:"emailcheck",
-										method:"post",
+										method:"get",
 										data:{checkEmail:checkEmail},
 										succese:function(data){
 											if(data.memail === "sameEmail"){

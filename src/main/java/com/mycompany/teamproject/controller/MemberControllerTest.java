@@ -215,12 +215,14 @@ public class MemberControllerTest {
 	@GetMapping("/emailcheck")
 	public void emailcheck(MemberDtoTest memail, Model model, HttpServletResponse response) throws Exception {
 		logger.info("이멜 확인 겟");
+		/*
 		MemberDtoTest loginemail = memberService. loginemail(memail.getMemail());
+		logger.info("이멜 정보 : "+memail.getMemail());
 		model.addAttribute("loginemail", loginemail);
 		logger.info("이멜 정보 : "+memail.getMemail());
-		
+		*/
 		String ckemail = memberService.emailcheck(memail);
-		
+		logger.info("이멜 확인 겟 : "+memail.getMemail());
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		

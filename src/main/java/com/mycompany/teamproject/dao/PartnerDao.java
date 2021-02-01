@@ -68,6 +68,12 @@ public class PartnerDao {
 		return update;
 	}
 
+	public int partnerdelete(int partner_id) {
+		logger.info("파트너 취소 다오");
+		int delete = sst.delete("partners.partnerdelete", partner_id);
+		return delete;
+	}
+
 
 	
 }

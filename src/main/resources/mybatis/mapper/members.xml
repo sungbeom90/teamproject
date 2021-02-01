@@ -28,7 +28,7 @@
 	</select>
 	
 	<!-- 이메일 중복확인 -->
-	<select id="email" parameterType="string" resultType="memberDto">
+	<select id="email" parameterType="string" resultType="string">
 		select memail
 		from members
 		where memail=#{memail}
