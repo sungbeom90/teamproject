@@ -45,10 +45,8 @@
 					<!-- 상품을 나타내기 위함 -->
 					
 						<c:forEach var="offer" items="${list}">
-							<div class="card img-fluid locations">
-								<c:if test="${offer.offer_id = '*_head'}">
-							    <img class="card-img-top img_center" src="../offer3/oimage?offer_id=${offer.offer_id}<%-- &iimageoname=${이미지 넣기} --%>" alt="Card image">
-							    </c:if>
+							<div class="card img-fluid locations">								
+							    <img class="card-img-top img_center" src="../offer3/oimagehead?offer_id=${offer.offer_id}" alt="Card image">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">${offer.otitle}</h4>
 							      <h5 class="card-title">${offer.osubtitle}</h5>

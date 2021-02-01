@@ -37,9 +37,17 @@
 	</select>
 	
 	<select id="selectImageonameHead" parameterType="int" resultType="string">
-		select iimageoname
+		<!-- select iimageoname
 		from images
-		where offer_id=#{offer_id} and iimageoname like '%_head'
+		where offer_id=#{offer_id} and iimageoname like 'head%' -->
+		select iimageoname
+			from  (
+			select iimageoname
+				from images
+				where offer_id=#{offer_id} 	
+				order by dbms_random.value
+			)
+			where rownum = 1
 	</select>
 	
 	
@@ -52,8 +60,8 @@
 	<select id="selectOfferList" parameterType="int" resultType="offer">
 		select offer_id, otitle, osubtitle, oprice
 		from offers
-		where offer_id = (
-		    select offer_id
+		where partner_id in (
+		    select partner_id
 		    from partners
 		    where location_id=#{location_id}
 		)

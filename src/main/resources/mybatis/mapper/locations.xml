@@ -14,9 +14,6 @@
 		where location_id=#{location_id}
 	</select>
 	
-	
-	
-
 	<select id="selectByFk" parameterType="int" resultType="LocationDto">
 		select location_id, lname, limagesname, limageoname, limagetype, lclimate, nation_id
 		from locations

@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mycompany.teamproject.dto.LocationDto;
 import com.mycompany.teamproject.dto.LocationPager;
-import com.mycompany.teamproject.dto.NationDto;
+import com.mycompany.teamproject.dto.OfferDto;
 import com.mycompany.teamproject.service.LocationService;
-import com.mycompany.teamproject.service.NationService;
 import com.mycompany.teamproject.service.OfferService;
 
 
@@ -37,7 +36,9 @@ public class LocationsController3 {
 		@Resource
 		private LocationService locationService;
 		/*private	NationService nationService;*/
-
+		
+		@Resource
+		OfferService offerService;
 
 		// http://.../teamproject/nations 생략됨
 		@RequestMapping("/content")
@@ -74,13 +75,15 @@ public class LocationsController3 {
 			return "nations/nationlist3";
 		}*/
 		
+		
+		
 		@GetMapping("/locationread")
 		public String locationread(int location_id, Model model) {
 			logger.info("실행");
 			LocationDto location = locationService.getLocation(location_id);
-			//ImageDto image = OfferService.getimageronameHead(o)
+			List<OfferDto> list = offerService.getOfferList(location_id);
+			model.addAttribute("list",list);
 			model.addAttribute("location", location);
-			//model.addAttribute("image",image);
 			return "locations/location3";
 		}
 		
