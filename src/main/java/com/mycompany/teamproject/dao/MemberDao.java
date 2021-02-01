@@ -22,33 +22,75 @@ public class MemberDao {
 		MemberDtoTest member = sst.selectOne("members.getMember", mid);
 		return member;
 	}
-	
-	
-	//인설트로 행을 추가하여 리턴
-	public int joininsert(MemberDtoTest mdt) {
-		logger.info("회원가입다오");
-		int rows = sst.insert("members.joininsert", mdt);
-		return rows;
-	}
-	
-	//맴버_아이디 받아와서 리턴
-	public MemberDtoTest login(String memail) {
-		logger.info("로그인다오");
-		MemberDtoTest member = sst.selectOne("members.login", memail);
-		return member;
-	}
-
+	//이메일에 대한 pk
 	public int loginId(String memail) {
 		logger.info("멤버 아이디 다오");
 		int mid = sst.selectOne("members.memberId", memail);
 		return mid;
 	}
+	
+	//인설트로 행을 추가하여 리턴
+	public int joininsert(MemberDtoTest mdt) {
+		logger.info("회원가입 다오");
+		int rows = sst.insert("members.joininsert", mdt);
+		return rows;
+	}
+	
+	//회원가입시, 사진을 추가하면 업데이트 방식으로 설정
+	public int imageUpdate(MemberDtoTest mdt) {
+		logger.info("회원가입 사진 추가 다오");
+		int rows = sst.update("members.imageUpdate", mdt);
+		return rows;
+	}
+	
+	//맴버_아이디 받아와서 리턴
+	public MemberDtoTest login(String memail) {
+		logger.info("회원정보 다오");
+		MemberDtoTest status = sst.selectOne("members.login", memail);
+		logger.info("회원정보 다오 : " + status.getMemail());
+		return status;
+	}
 
-	public MemberDtoTest emailselect(MemberDtoTest memail) {
+	//프로필 사진
+	/*
+	public MemberDtoTest loginimage(String mimage) {
+		logger.info("회원사진 정보 다오");
+		MemberDtoTest image = sst.selectOne("members.login", mimage);
+		logger.info("회원사진 정보 다오 : " + image.getMemail());
+		return image;
+	}
+	*/
+	
+	//이메일 중복 확인
+	public MemberDtoTest emailcheck(String memail) {
 		logger.info("이메일 확인 다오");
-		MemberDtoTest email = sst.selectOne("members.login", memail);
+		MemberDtoTest email = sst.selectOne("members.email", memail);
+		logger.info("이메일 : "+ email.getMemail());
 		return email;
 	}
+	
+	//회원정보 관리
+	public MemberDtoTest loginstatus(String mstatus) {
+		logger.info("회원정보 관리 다오");
+		MemberDtoTest status = sst.selectOne("members.login", mstatus);
+		logger.info("회원정보 관리 다오 : " + status.getMemail());
+		return status;
+	}
+	//회원정보 수정
+	public int statusUpdate(MemberDtoTest status) {
+		logger.info("회원정보 수정 다오");
+		int update = sst.update("members.statusUpdate", status);
+		return update;
+	}
+	public int memberdelete(int member_id) {
+		logger.info("회원 탈퇴 다오");
+		int delete = sst.delete("members.memberdelete", member_id);
+		return delete;
+	}
+	
+
+
+	
 
 
 

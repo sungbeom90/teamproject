@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>파트너 등록</title>
+		<title>파트너 정보</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -26,17 +26,33 @@
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
-						<h2>파트너 등록</h2>					
-							<form name="partnerJoinForm" method="post" action="partnerjoin">
-								<label for="pname">별명주세요.</label>
-								<input type="text" id="pname" name="pname" placeholder="사용하실 닉네임을 주세요."><br/>
+						<h2>파트너 정보</h2>					
+							<form name="partnerstatusForm" method="post" action="partnerstatus">
+								<input type="hidden" name="partner_id" value="${partner.partner_id}"/>
+									<ul>
+										
+										<li>
+											<label for="pname">닉네임</label>
+											<input type="text" value="${partner.pname}" id="pname" name="pname" readonly/>
+										</li>
+										
+										<li>
+											<label for="location_name">지역번호</label>
+											<input type="text" value="${partner.location_id}" id="location_name" name="location_name" readonly/>
+										</li>
+										
+										
+										<li><label for="pjoin">가입 날짜</label>
+							   			 <input type="date" 
+												value='<fmt:formatDate value="${partner.pjoin}" pattern="yyyy-MM-dd"/>'
+												 readonly class="form-control" id="pjoin" name="pjoin"/>
+										 </li>
+										
+									</ul>
+									
+									<a href="partnerupdate?partner_id=${partner.member_id}" class="btn btn-warning">파트너 정보 수정</a>
+									<a href="#" class="btn btn-danger">파트너 그만하기</a>
 								
-								<label for="location_name">지역주세요.</label>
-								<input type="text" id="location_name" name="location_name" placeholder="지역주세요.">
-								
-								<fmt:formatDate value="${pdate.pjoin}" pattern="yyyy-MM-dd"/><br/>
-								
-								<button>등록하기</button>
 							</form>
 							
 						</div>

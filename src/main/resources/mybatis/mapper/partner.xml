@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="partners">
-
-	<select id="getPartner" parameterType="int" resultType="PartnerDto">
-		select partner_id, pname, member_id, location_id
+	
+	<!-- 맴버id에 대한 파트너 정보 -->
+	<select id="getPartner" parameterType="int" resultType="partnerDto">
+		select partner_id, pname, pjoin, member_id, location_id
 		from partners
 		where member_id=#{member_id}
 	</select>
 	
+	<!-- 로그인시에 필요한 파트너 id -->
+	<select id="getPartnerId" parameterType="int" resultType="partnerDto">
+		select partner_id
+		from partners
+		where member_id=#{member_id}
+	</select>
 	
+	<!-- 파트너 정보용 -->
+	<select id="partnerStatus" parameterType="int" resultType="partnerDto">
+		select partner_id, pname, pjoin, location_id
+		from partners
+		where member_id=#{member_id}
+	</select>
+	
+	<!-- 로그인 이메일에 대한 파트너 pk -->
+	<select id="partnerEmail" parameterType="string" resultType="partnerDto">
+		select partner_id
+		from partners , members
+		where partners.member_id=members.member_id
+       		 and memail=#{memail}
+	</select>
+	
+	<!-- 지역이름 가져오기 -->
 	<select id="selectByName" parameterType="string" resultType="int">
 		select location_id
 		from locations
@@ -22,8 +45,8 @@
 				from dual
 		</selectKey>
 		insert into partners
-		(partner_id, pname, member_id, location_id )
+		(partner_id, pname, pjoin, member_id, location_id )
 		values
-		(#{partner_id}, #{pname}, #{member_id}, #{location_id})
+		(#{partner_id}, #{pname}, #{pjoin}, #{member_id}, #{location_id})
 	</insert>
 </mapper>
