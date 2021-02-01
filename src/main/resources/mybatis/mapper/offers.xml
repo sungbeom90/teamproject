@@ -36,5 +36,11 @@
 		order by course_no ASC
 	</select>
 	
+	<delete id="deleteImage" parameterType="image">
+		delete
+		from images
+		where offer_id=#{offer_id} and iimageoname=#{iimageoname}
+	</delete>
+	
 
 </mapper>

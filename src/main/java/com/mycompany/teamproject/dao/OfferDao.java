@@ -57,4 +57,9 @@ public class OfferDao {
 		List<CourseDto> CourseList = sst.selectList("offers.selectCourseList", offer_id);
 		return CourseList;
 	}
+
+	public int deleteImage(ImageDto image) {
+		int rows = sst.delete("offers.deleteImage", image);
+		return rows;
+	}
 }

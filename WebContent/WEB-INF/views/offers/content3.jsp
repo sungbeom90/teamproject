@@ -35,6 +35,7 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
+					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer3/offerupdate?offer_id=${offer.offer_id}">수정하기(텍스트만)</a>
 					
 					<div class="d-flex">
 						<div class="d-inlineblock">작성자들어갈곳</div>

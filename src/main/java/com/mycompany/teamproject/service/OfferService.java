@@ -50,6 +50,9 @@ public class OfferService {
 		List<CourseDto> CourseList = offerDao.selectCourseList(offer_id);
 		return CourseList;
 	}
+	public void deleteImage(ImageDto image) {
+		offerDao.deleteImage(image);		
+	}
 	
 
 		
