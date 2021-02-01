@@ -66,7 +66,19 @@ public class OfferService {
 	}
 	public void offerUpdate(OfferDto offer) {
 		logger.info("실행");		
-		offerDao.updateoffer(offer);		
+		offerDao.updateOffer(offer);		
+	}
+	public void CourseUpdateText(CourseDto course) {
+		logger.info("실행");
+		offerDao.updateCourseText(course);		
+	}
+	public void CourseUpdateImage(CourseDto course) {
+		logger.info("실행");
+		offerDao.updateCourseImage(course);	
+	}
+	public void deleteCourseImage(CourseDto course) {
+		logger.info("실행");
+		offerDao.deleteCourseImage(course);			
 	}
 	
 

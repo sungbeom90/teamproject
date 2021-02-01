@@ -36,9 +36,8 @@
 			<div class="content container">
 				<div class="sector">
 				<form method="post" enctype="multipart/form-data" action="courseupload" >
-					<div id="courselist">
-					
-					
+					<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${sessionOffer_id.offer_id}">
+					<div id="courselist">					
 					</div>
 					<button class="btn btn-info btn-sm">완료</button>
 				</form>

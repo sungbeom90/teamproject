@@ -10,7 +10,6 @@
 	<input class="form-control" type="text" id="cdetail_array[${sessionNo}]" name="cdetail_array[${sessionNo}]" placeholder="코스설명${sessionNo+1}"><br/>
 	<input class="form-control" type="text" id="ctime_array[${sessionNo}]" name="ctime_array[${sessionNo}]" placeholder="코스소요시간${sessionNo+1}"><br/>
 	<input class="form-control" type="file" id="cimage_array[${sessionNo}]" name="cimage_array[${sessionNo}]" placeholder="첨부파일${sessionNo+1}"><br/>
-	<!-- <button class="btn btn-info btn-sm">완료</button> -->
-	</div>
+</div>
 <!-- </form> -->
 
