@@ -66,5 +66,10 @@ public class PartnerService {
 		logger.info("파트너 정보 수정 서비스");
 		partnerDao.statusUpdate(status);
 	}
+	public void partnerdelete(int partner_id) {
+		logger.info("파트너 취소 서비스");
+		partnerDao.partnerdelete(partner_id);
+	}
+	
 
 }

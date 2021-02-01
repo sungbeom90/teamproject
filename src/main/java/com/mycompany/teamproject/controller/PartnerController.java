@@ -86,4 +86,13 @@ public class PartnerController {
 		partnerService.statusUpdate(status);
 		return "redirect:/partners/partnerstatus";
 	}
+	
+	//파트너 탈퇴
+	@GetMapping("/partnerdelete")
+	public String partnerdelete(int partner_id, HttpSession session) {
+		logger.info("파트너 취소하기");
+		partnerService.partnerdelete(partner_id);
+		session.invalidate();
+		return "redirect:/partners/content";
+	}
 }
