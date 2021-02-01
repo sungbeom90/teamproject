@@ -30,7 +30,7 @@
 							<form name="joinForm" method="post" enctype="multipart/form-data" action="join">
 								<label for="memail">이메일</label>
 				 				<input type="email" id="memail" name="memail" placeholder="ID@example.com"/>
-				 				<a id="checkEmail" href="emailcheck">중복확인</a><br>
+				 				<a id="checkEmail" href="emailcheck?memail=${loginemail.memail}">중복확인</a><br>
 				 				
 				 				<label for="mpassword">비밀번호</label>
 				 				<input type="password" id="mpassword" name="mpassword" placeholder="비밀번호를 입력하세요."/><br/>
@@ -44,17 +44,13 @@
 								<label for="mphone">전화번호</label>
 								<input type="number" id="mphone" name="mphone" placeholder="전화번호를 입력하세요."><br/>
 								
-								<label for="mdate">가입날짜</label>
-								<input type="date" 
-								value='<fmt:formatDate value="${date.mjoin}" pattern="yyyy-MM-dd"/>' id="mdate" name="mdate"><br/>
+								<fmt:formatDate value="${date.mjoin}" pattern="yyyy-MM-dd"/><br/>
+								
+								<label for="mimage">프로필 사진</label><br/>
+								<input type="file" id="mimage" name="mimage">
 								
 								
-								
-								<label for="mimage">프로필 사진</label>
-								<input type="file" id="mimage" name="mimage">사진 주세요.<br/>
-								
-								
-								
+								<br/>
 								<br/>
 								<h5>선택 입력 사항</h5>								
 								<label for="mgender">성별</label>
@@ -80,14 +76,14 @@
 								</div>
 							</form>
 							<script>
-								function checkEmail(){
-								const email = $("#checkEmail").val();
+								function emailcheck(){
+								var checkEmail = $("#checkEmail").val();
 									$.ajax({
 										url:"emailcheck",
 										method:"post",
-										data:{email:email},
+										data:{checkEmail:checkEmail},
 										succese:function(data){
-											if(data.email === "sameEmail"){
+											if(data.memail === "sameEmail"){
 												alert("이메일이 중복이에요.");
 											}else{
 												alert("사용해도 좋아요.");

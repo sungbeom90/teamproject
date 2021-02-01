@@ -77,7 +77,7 @@ public class MemberDtoTest {
 	public void setMjoin(Date mjoin) {
 		this.mjoin = mjoin;
 	}
-	
+
 	public String getMimageoname() {
 		return mimageoname;
 	}

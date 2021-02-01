@@ -1,8 +1,10 @@
 package com.mycompany.teamproject.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.Date;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,16 +48,18 @@ public class MemberControllerTest {
 	@PostMapping("/login")
 	public void login(MemberDtoTest member, HttpSession session, HttpServletResponse response) throws Exception {
 		logger.info("로그인 실행");
-		// 리턴 값 받아와서 객체에 저장
+		// email에 대한 pk값 저장
 		int memberId = memberService.loginId(member.getMemail());
 		session.setAttribute("sessionMid", memberId);
+		
+		//로그인 실행
 		String login = memberService.login(member);
 		if (login.equals("loginSuccess")) {
 			logger.info("로그인 성공");
 			session.setAttribute("loginStatus", member.getMemail());
 		}
-		logger.info(""+memberId);
-
+		
+		//json으로 설정
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 
@@ -68,6 +73,45 @@ public class MemberControllerTest {
 
 	}
 	
+	//로그인시 프로필사진
+	@GetMapping("/mimage")
+	public void mimage(String memail, HttpSession session, HttpServletResponse response) throws Exception{
+		logger.info("사진 가져오기 컨트롤러");
+		memail = (String) session.getAttribute("loginStatus");
+		MemberDtoTest mimage = memberService.loginstatus(memail);
+		
+		String filePath = null;
+		//사진 정보의 유무
+		if(mimage.getMimageoname() != null) { 
+			logger.info("사진정보 확인용 : " + mimage.getMimageoname() + mimage.getMimagetype());
+			//가져올 경로 설정
+			String imageName = mimage.getMimageoname();
+			filePath = "D:/MyWorkspace/teamfiles/members/" 
+								+ mimage.getMember_id() + "/" + imageName;
+			//응답 본문 내용의 데이터 종류를 응답 헤더에 추가
+			response.setContentType(mimage.getMimagetype());
+			
+					
+		}else {
+			logger.info("사진 없을때");
+			//기본사진
+			filePath = "D:/MyWorkspace/teamfiles/myphoto.png";
+			response.setContentType("image/png");
+		}
+		
+		//사진 응답으로 보여주기
+		OutputStream os = response.getOutputStream();
+		InputStream is = new FileInputStream(filePath);
+		
+		FileCopyUtils.copy(is, os);
+		
+		os.flush();
+		os.close();
+		is.close();
+		
+		
+	}
+	
 
 	@GetMapping("/join")
 	public String joinForm() {
@@ -75,37 +119,95 @@ public class MemberControllerTest {
 		return "memberstest/join";
 	}
 	
-	// not null처리 다시 하기
+	//회원가입
 	@PostMapping("/join")
 	public String join(MemberDtoTest mdt, Model model) throws Exception{
 		logger.info("회원가입 완료");
-		Date mdate = mdt.getMjoin();
-		model.addAttribute("date", mdate);
+		int date = memberService.joininsert(mdt);
+		
+		model.addAttribute("date", date);
+		
 		//사진 첨부
 		MultipartFile jphoto = mdt.getMimage();
 		if(!jphoto.isEmpty()) {
 			logger.info("사진 넣기");
-			mdt.setMimageoname(jphoto.getOriginalFilename());
+			String photo = jphoto.getOriginalFilename();
+			mdt.setMimageoname(photo);
 			mdt.setMimagetype(jphoto.getContentType());
 			
-			String photo = jphoto.getOriginalFilename();
 			//파일 저장
-			File save = new File("D:/MyWorkspace/teamfiles/members/" + mdt.getMember_id() + "/" + photo);
+			File save = new File("D:/MyWorkspace/teamfiles/members/"
+			+ mdt.getMember_id() + "/" + photo);
 			
 			jphoto.transferTo(save);
+			memberService.imageUpdate(mdt);
 		}
-		
-		
-		
-		memberService.joininsert(mdt);
 		
 		return "redirect:/main/content";
 	}
-
+	
+	//회원정보 관리(수정, 탈퇴)
+	@GetMapping("/memberstatus")
+	public String memberstatus(String mstatus, HttpSession session) {
+		logger.info("회원정보 관리");
+		mstatus = (String) session.getAttribute("loginStatus");
+		MemberDtoTest status = memberService.loginstatus(mstatus);
+		logger.info("회원 이름 : "+status.getMname());
+		session.setAttribute("mstatus", status);
+		return "memberstest/memberstatus";
+	}
+	
+	//회원정보 수정
+	@GetMapping("/memberupdate")
+	public String statusUpdate(String status, HttpSession session) {
+		logger.info("회원정보 수정 요청");
+		status = (String) session.getAttribute("loginStatus");
+		MemberDtoTest update = memberService.loginstatus(status);
+		logger.info("회원정보 수정 요청 : "+update.getMname()+" / "+update.getMphone());
+		session.setAttribute("update", update);
+		return "memberstest/memberupdate";
+	}
+	
+	@PostMapping("/memberupdate")
+	public String statusUpdate(MemberDtoTest status){
+		logger.info("회원정보 수정 보내기");
+		/*MultipartFile mphoto = status.getMimage();
+			if(jphoto.isEmpty()) {
+			logger.info("사진 넣기");
+			String photo = jphoto.getOriginalFilename();
+			status.setMimageoname(photo);
+			status.setMimagetype(jphoto.getContentType());
+			
+			//파일 저장
+			File save = new File("D:/MyWorkspace/teamfiles/members/"
+			+ status.getMember_id() + "/" + photo);
+			
+			jphoto.transferTo(save);
+		}*/
+		memberService.statusUpdate(status);
+		return "memberstest/memberstatus";
+	}
+	
+	@GetMapping("/memberdelete")
+	public String memberdelete(int member) {
+		logger.info("회원 탈퇴");
+		memberService.memberdelete(member);
+		return "redirect:/main/content";
+	}
+	
+	
+	
+	
+	//이메일 중복체크 진행중, 입력값 다시 생각해보기
 	@GetMapping("/emailcheck")
-	public void emailcheck(MemberDtoTest memail, HttpServletResponse response) throws Exception {
+	public void emailcheck(MemberDtoTest memail, Model model, HttpServletResponse response) throws Exception {
 		logger.info("이멜 확인 겟");
-		String ckemail = memberService.emailselect(memail);
+		MemberDtoTest loginemail = memberService. loginemail(memail.getMemail());
+		model.addAttribute("loginemail", loginemail);
+		logger.info("이멜 정보 : "+memail.getMemail());
+		
+		String ckemail = memberService.emailcheck(memail);
+		
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		
@@ -116,9 +218,9 @@ public class MemberControllerTest {
 		
 		pw.flush();
 		pw.close();
-		
-		
 	}
+	
+	
 	
 	
 	
