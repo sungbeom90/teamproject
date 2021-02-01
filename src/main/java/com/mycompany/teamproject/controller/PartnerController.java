@@ -70,6 +70,7 @@ public class PartnerController {
 	//파트너 정보 수정
 	@GetMapping("/partnerupdate")
 	public String partnerupdate(PartnerDto pid, HttpSession session) {
+		logger.info("파트너 정보 수정 요청");
 		int mid = (int) session.getAttribute("sessionMid");
 		pid.setMember_id(mid);
 		partnerService.partnerupdate(pid);
@@ -78,8 +79,9 @@ public class PartnerController {
 	}
 	
 	@PostMapping("/partnerupdate")
-	public String partnerupdate() {
-		
+	public String statusUpdate(PartnerDto status) {
+		logger.info("파트너 정보 수정 보내기");
+		partnerService.statusUpdate(status);
 		return "redirect:/partners/partnerstatus";
 	}
 }

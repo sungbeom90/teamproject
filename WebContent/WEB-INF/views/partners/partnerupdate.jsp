@@ -27,7 +27,7 @@
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
 						<h2>파트너 정보 수정</h2>					
-							<form name="memberupdateForm" method="post" action="memberupdate">
+							<form name="partnerupdateForm" method="post" action="partnerupdate">
 							<!-- 아무것도변경 사항 없을때 처리하기 -->
 								<input type="hidden" name="partner_id" value="${partner.member_id}"/>
 									<ul>
@@ -36,11 +36,10 @@
 											<label for="pname">바꾸실 닉네임 주세요.</label>
 											<input type="text" value="${partner.pname}" id="pname" name="pname"/>
 										</li>
-										
-										
 										<li>
+											
 											<label for="location_name">지역주세요.</label>
-											<input type="text" value="${partner.location_id}" id="location_name" name="location_name">
+											<input type="text" value="${partner.location_name}" id="location_name" name="location_name">
 										</li>
 									</ul>
 									<button class="btn btn-info btn-sm">수정하기</button>

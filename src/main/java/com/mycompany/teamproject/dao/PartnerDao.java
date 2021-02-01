@@ -62,6 +62,12 @@ public class PartnerDao {
 		return update;
 	}
 
+	public int statusUpdate(PartnerDto status) {
+		logger.info("파트너 정보 수정 다오");
+		int update = sst.update("partners.partnerUpdate", status);
+		return update;
+	}
+
 
 	
 }
