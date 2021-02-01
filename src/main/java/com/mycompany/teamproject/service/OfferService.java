@@ -20,9 +20,9 @@ public class OfferService {
 	@Resource
 	private OfferDao offerDao;
 
-	public void textRegister(OfferDto offer) {
+	public void offerRegister(OfferDto offer) {
 		logger.info("실행");		
-		offerDao.inserttext(offer);
+		offerDao.insertoffer(offer);
 		
 	}
 	public void ImageRegister(ImageDto image) {
@@ -63,6 +63,10 @@ public class OfferService {
 		logger.info("실행");
 		List<OfferDto> list = offerDao.selectOfferList(location_id);
 		return list;
+	}
+	public void offerUpdate(OfferDto offer) {
+		logger.info("실행");		
+		offerDao.updateoffer(offer);		
 	}
 	
 
