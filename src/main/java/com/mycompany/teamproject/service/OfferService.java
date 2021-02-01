@@ -50,6 +50,20 @@ public class OfferService {
 		List<CourseDto> CourseList = offerDao.selectCourseList(offer_id);
 		return CourseList;
 	}
+	public void deleteImage(ImageDto image) {
+		logger.info("실행");
+		offerDao.deleteImage(image);		
+	}
+	public String getImageonameHead(int offer_id) {
+		logger.info("실행");
+		String iimageonameHead = offerDao.selectImageonameHead(offer_id);		
+		return iimageonameHead;
+	}
+	public List<OfferDto> getOfferList(int location_id) {
+		logger.info("실행");
+		List<OfferDto> list = offerDao.selectOfferList(location_id);
+		return list;
+	}
 	
 
 		
