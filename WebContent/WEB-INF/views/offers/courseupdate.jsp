@@ -35,20 +35,20 @@
 			<div class="content container">
 				<div class="sector">
 				<form method="post" enctype="multipart/form-data" action="courseupload" >
-					<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${sessionOffer_id.offer_id}">					
+					<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${sessionOffer_id}">					
 					<div id="courselist">					
 						<c:forEach var="course" items="${courseList}">
 							<div>
-								<input class="form-control" type="number" id="course_no_array[${course.course_no}-1]" name="course_no_array[${course.course_no}-1]" value="${course.course_no}"><br/>
-								<input class="form-control" type="text" id="cplace_array[${course.course_no}-1]" name="cplace_array[${course.course_no}-1]" value="${course.cplace}"><br/>
-								<input class="form-control" type="text" id="cdetail_array[${course.course_no}-1]" name="cdetail_array[${course.course_no}-1]" value="${course.cdetail}"><br/>
-								<input class="form-control" type="text" id="ctime_array[${course.course_no}-1]" name="ctime_array[${course.course_no}-1]" value="${course.ctime}"><br/>
+								<input class="form-control" type="number" id="course_no_array[${course.course_no}]" name="course_no_array[${course.course_no}]" value="${course.course_no}"><br/>
+								<input class="form-control" type="text" id="cplace_array[${course.course_no}]" name="cplace_array[${course.course_no}]" value="${course.cplace}"><br/>
+								<input class="form-control" type="text" id="cdetail_array[${course.course_no}]" name="cdetail_array[${course.course_no}]" value="${course.cdetail}"><br/>
+								<input class="form-control" type="text" id="ctime_array[${course.course_no}]" name="ctime_array[${course.course_no}]" value="${course.ctime}"><br/>
 								<div id="${course.cimageoname}" style="display:flex; align-items:center; margin-bottom:5px;">					
 									<img src="../offer3/cimage?offer_id=${course.offer_id}&cimageoname=${course.cimageoname}" alt="${course.cimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
 									<a href="javascript:cimagedelete('${course.cimageoname}')">삭제</a>
 								</div>
-								<input class="form-control" type="file" id="cimage_array[${course.course_no}-1]" name="cimage_array[${course.course_no}-1]" placeholder="첨부파일${course.course_no}"><br/>
-							</div>					
+								<input class="form-control" type="file" id="cimage_array[${course.course_no}]" name="cimage_array[${course.course_no}]" placeholder="첨부파일${course.course_no}"><br/>
+							</div>				
 						</c:forEach>								
 					</div>
 					<button class="btn btn-info btn-sm">완료</button>
