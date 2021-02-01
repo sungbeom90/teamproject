@@ -79,7 +79,7 @@
 				<div class="sector">
 					<h2>박성범 테스트</h2>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/nations3/nationlist">나라별보기</a>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/locations3/locationlist">도시별보기</a>
+					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/locations3/locationlist2">도시별보기</a>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer3/offerupload">상품 등록</a>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer3/offerread?offer_id=38">상품 읽기(텍스트만)</a>
 				</div>

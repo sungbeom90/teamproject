@@ -45,19 +45,19 @@ public class LocationsController3 {
 			return "nations/content";
 		}
 		// 메인 -> 도시별 눌렀을때  리스트 나오는 화면. 서비스로 요청
-		@GetMapping("/locationlist")
-		public String locationlist(Model model) {
-			logger.info("실행");
-			List<LocationDto> list = locationService.getLocationList();			
-			model.addAttribute("list",list);
-			return "locations/locationlist3";
-		}
+		/*		@GetMapping("/locationlist")
+				public String locationlist(Model model) {
+					logger.info("실행");
+					List<LocationDto> list = locationService.getLocationList();			
+					model.addAttribute("list",list);
+					return "locations/locationlist3";
+				}*/
 		
 		//----------------------------------------------------------------
 		@GetMapping("/locationlist2")
 		public String locationlist2(@RequestParam(defaultValue="1") int pageNo, Model model) {
 			int totalRows = locationService.getTotalRows();
-			LocationPager pager = new LocationPager(3,5, totalRows, pageNo);
+			LocationPager pager = new LocationPager(6,5, totalRows, pageNo);
 			List<LocationDto> list = locationService.getLocationList(pager);
 			model.addAttribute("list",list);
 			model.addAttribute("pager",pager);
