@@ -61,7 +61,7 @@
 					</div>
 				
 				</c:forEach>	
-					<div>
+					<div style="margin-left: 381px;">
 						<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist2?pageNo=1">처음</a> 
 						<c:if test="${pager.groupNo > 1}">
 							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist2?pageNo=${pager.startPageNo-1}">이전</a>
