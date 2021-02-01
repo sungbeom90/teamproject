@@ -93,6 +93,7 @@
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/nations3/nationlist">나라별보기</a>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/locations3/locationlist2">도시별보기</a>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/orders">결제하기</a>
+					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/wishes/wishlist">위시리스트</a>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer3/offerupload">상품 등록</a>
 					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer3/offerread?offer_id=36">상품 읽기(텍스트만)</a>
 				</div>
