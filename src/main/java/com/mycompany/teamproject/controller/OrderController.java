@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //지울예정
 
 @Controller
-@RequestMapping("/orderoffer")
-public class OderController {
+@RequestMapping("/orders")
+public class OrderController {
 	private static final Logger logger=
-			LoggerFactory.getLogger(OderController.class);
+			LoggerFactory.getLogger(OrderController.class);
 	
 	@GetMapping("/rcmoffer")
-	public String rcmofferlist(Model model) {
+	public String rcmoffer(Model model) {
 		return "locations/rcmofferlist";
 	}
+	
+	
 }

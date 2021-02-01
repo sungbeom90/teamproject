@@ -57,4 +57,22 @@ public class OfferDao {
 		List<CourseDto> CourseList = sst.selectList("offers.selectCourseList", offer_id);
 		return CourseList;
 	}
+
+	public int deleteImage(ImageDto image) {
+		logger.info("실행");
+		int rows = sst.delete("offers.deleteImage", image);
+		return rows;
+	}
+
+	public String selectImageonameHead(int offer_id) {
+		logger.info("실행");
+		String iimageonameHead = sst.selectOne("offers.selectImageonameHead", offer_id);
+		return iimageonameHead;
+	}
+
+	public List<OfferDto> selectOfferList(int location_id) {
+		logger.info("실행");
+		List<OfferDto> list = sst.selectList("offers.selectOfferList", location_id);
+		return list;
+	}
 }

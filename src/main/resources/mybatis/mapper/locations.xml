@@ -14,9 +14,6 @@
 		where location_id=#{location_id}
 	</select>
 	
-	
-	
-
 	<select id="selectByFk" parameterType="int" resultType="LocationDto">
 		select location_id, lname, limagesname, limageoname, limagetype, lclimate, nation_id
 		from locations
@@ -33,20 +30,49 @@
 	
 	<select id="selectByPage" parameterType="pager"
 		resultType="locationDto">
-		select 
-			rno, 
+		
+		
+		<!-- select 
+			 rno,
+			location_id,
 			lname,
 			ldetail
 		from
 		(
 			select 
-				rownum as rno
+				rownum as rno,
+				location_id,
+				lname,
+				ldetail
+			from (
+				select
+				location_id,
+				lname,
+				ldetail
+					from locations
+					order by location_id desc
+				)
+			where rownum &lt;= #{endRowNo}
+		)
+		where rno &gt;= #{startRowNo} -->
+		
+		
+  		select 
+			rno, 
+			location_id,
+			lname,
+			ldetail
+		from
+		(
+			select 
+				rownum as rno,
+				location_id,
 				lname,
 				ldetail
 			from locations
 			where rownum &lt;= #{endRowNo}
 		)
-		where rno &gt;= #{startRowNo}
+		where rno &gt;= #{startRowNo} 
 		<!-- '<' 꺽쇠는 태그의 시작이므로 연산자 쓸때는 &lt; less than 이런식으로 바꿔줘야함 -->
 	</select>
 </mapper>
