@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="selectByPk" parameterType="int" resultType="NationDto">
-		select nation_id, nname, nimagesname, nimageoname, nimagetype 
+		select nation_id, nname, nimagesname, nimageoname, nimagetype
 		from nations
 		where nation_id=#{nation_id}
 	</select>
