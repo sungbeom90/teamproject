@@ -78,7 +78,7 @@ public class LocationsController3 {
 		public String locationread(int location_id, Model model) {
 			logger.info("실행");
 			LocationDto location = locationService.getLocation(location_id);
-			//ImageDto image = OfferService.get
+			//ImageDto image = OfferService.getimageronameHead(o)
 			model.addAttribute("location", location);
 			//model.addAttribute("image",image);
 			return "locations/location3";
