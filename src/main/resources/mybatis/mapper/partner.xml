@@ -22,6 +22,12 @@
 		from partners
 		where member_id=#{member_id}
 	</select>
+	<!-- 파트너 정보 수정용 -->
+	<select id="partnerUpdate" parameterType="int" resultType="partnerDto">
+		select pname, location_id
+		from partners
+		where member_id=#{member_id}
+	</select>
 	
 	<!-- 로그인 이메일에 대한 파트너 pk -->
 	<select id="partnerEmail" parameterType="string" resultType="partnerDto">
@@ -30,6 +36,7 @@
 		where partners.member_id=members.member_id
        		 and memail=#{memail}
 	</select>
+	
 	
 	<!-- 지역이름 가져오기 -->
 	<select id="selectByName" parameterType="string" resultType="int">
@@ -45,8 +52,8 @@
 				from dual
 		</selectKey>
 		insert into partners
-		(partner_id, pname, pjoin, member_id, location_id )
+		(partner_id, pname, member_id, location_id )
 		values
-		(#{partner_id}, #{pname}, #{pjoin}, #{member_id}, #{location_id})
+		(#{partner_id}, #{pname}, #{member_id}, #{location_id})
 	</insert>
 </mapper>

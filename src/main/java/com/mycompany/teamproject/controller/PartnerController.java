@@ -38,8 +38,10 @@ public class PartnerController {
 	@PostMapping("/partnerjoin")
 	public String partnerjoin(PartnerDto pdt, String location_name, HttpSession session, Model model) {
 		logger.info("파트너 등록 페이지");
+		/*
 		int pjoin = partnerService.partnerinsert(pdt);
 		model.addAttribute("pdate", pjoin);
+		*/
 		
 		int lid = partnerService.locationname(location_name);
 		int mid = (int) session.getAttribute("sessionMid");
@@ -49,7 +51,7 @@ public class PartnerController {
 		pdt.setMember_id(mid);
 		pdt.setLocation_id(lid);
 		partnerService.partnerinsert(pdt);
-		return "partners/content";
+		return "redirect:/partners/content";
 				
 	}
 	
@@ -70,6 +72,7 @@ public class PartnerController {
 	//파트너 정보 수정
 	@GetMapping("/partnerupdate")
 	public String partnerupdate(PartnerDto pid, HttpSession session) {
+		logger.info("파트너 정보 수정 요청");
 		int mid = (int) session.getAttribute("sessionMid");
 		pid.setMember_id(mid);
 		partnerService.partnerupdate(pid);
@@ -78,8 +81,9 @@ public class PartnerController {
 	}
 	
 	@PostMapping("/partnerupdate")
-	public String partnerupdate() {
-		
+	public String statusUpdate(PartnerDto status) {
+		logger.info("파트너 정보 수정 보내기");
+		partnerService.statusUpdate(status);
 		return "redirect:/partners/partnerstatus";
 	}
 }

@@ -62,5 +62,9 @@ public class PartnerService {
 		PartnerDto update = partnerDao.partnerupdate(pid);
 		return update;
 	}
+	public void statusUpdate(PartnerDto status) {
+		logger.info("파트너 정보 수정 서비스");
+		partnerDao.statusUpdate(status);
+	}
 
 }

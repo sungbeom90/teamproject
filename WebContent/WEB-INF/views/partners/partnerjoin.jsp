@@ -34,7 +34,7 @@
 								<label for="location_name">지역주세요.</label>
 								<input type="text" id="location_name" name="location_name" placeholder="지역주세요.">
 								
-								<fmt:formatDate value="${pdate.pjoin}" pattern="yyyy-MM-dd"/><br/>
+								<%-- <fmt:formatDate value="${pdate.pjoin}" pattern="yyyy-MM-dd"/><br/> --%>
 								
 								<button>등록하기</button>
 							</form>
