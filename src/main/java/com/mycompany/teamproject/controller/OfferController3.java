@@ -1,8 +1,13 @@
 package com.mycompany.teamproject.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -10,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +23,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.CourseDto;
 import com.mycompany.teamproject.dto.ImageDto;
-import com.mycompany.teamproject.dto.MemberDtoTest;
 import com.mycompany.teamproject.dto.OfferDto;
 import com.mycompany.teamproject.dto.PartnerDto;
 import com.mycompany.teamproject.service.MemberService;
@@ -31,11 +36,9 @@ public class OfferController3 {
 				LoggerFactory.getLogger(OfferController3.class);
 		
 		@Resource
-		OfferService offerService;
-		
+		OfferService offerService;		
 		@Resource
-		MemberService memberService;
-		
+		MemberService memberService;		
 		@Resource
 		PartnerService partnerService;
 
@@ -68,7 +71,7 @@ public class OfferController3 {
 					String oName = mf.getOriginalFilename();
 					imageDto.setIimageoname(oName);
 					imageDto.setIimagetype(mf.getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOtitle()+"/"+oName); 
+					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOffer_id()+"/"+oName); 
 					mf.transferTo(saveFile);
 					logger.info(""+imageDto.getOffer_id());
 					offerService.ImageRegister(imageDto);
@@ -99,15 +102,15 @@ public class OfferController3 {
 				courseDto.setCdetail(cdetail_array[i]);
 				courseDto.setCtime(ctime_array[i]);
 				
-				/* if(!cimage_array[i].isEmpty()) { */
+				if(!cimage_array[i].isEmpty()) {
 					String oName = cimage_array[i].getOriginalFilename();
 					courseDto.setCimageoname(oName);
 					courseDto.setCimagetype(cimage_array[i].getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOtitle()+"/courses/"+oName); 
+					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOffer_id()+"/courses/"+oName); 
 					cimage_array[i].transferTo(saveFile);
 					logger.info(""+courseDto.getOffer_id());
 					offerService.CourseRegister(courseDto);
-					/* } */
+					}
 			}
 			session.removeAttribute("sessionOid");
 			session.removeAttribute("sessionNo");
@@ -128,10 +131,38 @@ public class OfferController3 {
 			}
 			return "offers/course";	
 		}		
-		@PostMapping("/offerresult")
-		public String offerresult(CourseDto courseDto, HttpSession session) throws Exception {
+		@GetMapping("/offerread")
+		public String offerread(int offer_id, Model model) {
 			logger.info("실행");
-			//String mid = (String) session.getAttribute("sessionMid");
-		return "redirect:/main/content";
+			OfferDto offer = offerService.getOffer(offer_id);
+			List<ImageDto> imageList = offerService.getImageList(offer_id);
+			List<CourseDto> courseList = offerService.getCourseList(offer_id);
+			//PartnerDto pdto= partnerService.getPartner(offer_id);
+			model.addAttribute("offer", offer);
+			model.addAttribute("imageList", imageList);
+			model.addAttribute("courseList", courseList);
+			return "offers/content3";
 		}
+		@GetMapping("/oimage")
+		public void oimage(int offer_id, String iimageoname, HttpServletResponse response)  throws Exception {
+			String filePath = "D:/MyWorkspace/teamfiles/offers/" + offer_id + "/" + iimageoname;			
+			OutputStream os= response.getOutputStream();
+			InputStream is = new FileInputStream(filePath);			
+			FileCopyUtils.copy(is, os);
+			os.flush();
+			os.close();
+			is.close();
+		}
+		@GetMapping("/cimage")
+		public void cimage(int offer_id, String cimageoname, HttpServletResponse response)  throws Exception {
+			String filePath = "D:/MyWorkspace/teamfiles/offers/" + offer_id + "/courses/" + cimageoname;			
+			OutputStream os= response.getOutputStream();
+			InputStream is = new FileInputStream(filePath);			
+			FileCopyUtils.copy(is, os);
+			os.flush();
+			os.close();
+			is.close();
+		}
+		
+		
 }
