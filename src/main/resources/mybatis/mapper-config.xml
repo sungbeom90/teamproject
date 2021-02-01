@@ -12,6 +12,7 @@
 		<typeAlias alias="image" type="com.mycompany.teamproject.dto.ImageDto"/>
 		<typeAlias alias="course" type="com.mycompany.teamproject.dto.CourseDto"/>
 		<typeAlias alias="pager" type="com.mycompany.teamproject.dto.LocationPager"/>
+		<typeAlias alias="wishes" type="com.mycompany.teamproject.dto.WishListDto"/>
 	</typeAliases>
 
 </configuration>

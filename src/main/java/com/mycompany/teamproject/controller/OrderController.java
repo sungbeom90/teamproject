@@ -17,8 +17,8 @@ public class OrderController {
 	
 	@GetMapping("/rcmoffer")
 	public String rcmoffer(Model model) {
+		logger.info("실행");
 		return "locations/rcmofferlist";
 	}
-	
 	
 }
