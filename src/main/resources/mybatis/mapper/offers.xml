@@ -36,11 +36,29 @@
 		order by course_no ASC
 	</select>
 	
+	<select id="selectImageonameHead" parameterType="int" resultType="string">
+		select iimageoname
+		from images
+		where offer_id=#{offer_id} and iimageoname like '%_head'
+	</select>
+	
+	
 	<delete id="deleteImage" parameterType="image">
 		delete
 		from images
 		where offer_id=#{offer_id} and iimageoname=#{iimageoname}
 	</delete>
+	
+	<select id="selectOfferList" parameterType="int" resultType="offer">
+		select offer_id, otitle, osubtitle, oprice
+		from offers
+		where offer_id = (
+		    select offer_id
+		    from partners
+		    where location_id=#{location_id}
+		)
+	</select>
+	
 	
 
 </mapper>

@@ -26,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.CourseDto;
 import com.mycompany.teamproject.dto.ImageDto;
+import com.mycompany.teamproject.dto.NationDto;
 import com.mycompany.teamproject.dto.OfferDto;
 import com.mycompany.teamproject.dto.PartnerDto;
 import com.mycompany.teamproject.service.MemberService;
@@ -52,6 +53,7 @@ public class OfferController3 {
 			logger.info("실행");
 			return "offer3/content";
 		}
+				
 		@GetMapping("/offerupload")
 		public String offerUploadForm() {
 			return "offers/offerupload";
@@ -150,6 +152,18 @@ public class OfferController3 {
 		public void oimage(int offer_id, String iimageoname, HttpServletResponse response)  throws Exception {
 			logger.info("실행");
 			String filePath = "D:/MyWorkspace/teamfiles/offers/" + offer_id + "/" + iimageoname;			
+			OutputStream os= response.getOutputStream();
+			InputStream is = new FileInputStream(filePath);			
+			FileCopyUtils.copy(is, os);
+			os.flush();
+			os.close();
+			is.close();
+		}
+		@GetMapping("/oimagehead")
+		public void oimagehead(int offer_id, HttpServletResponse response)  throws Exception {
+			logger.info("실행");
+			String iimageonameHead = offerService.getImageonameHead(offer_id);
+			String filePath = "D:/MyWorkspace/teamfiles/offers/" + offer_id + "/" + iimageonameHead;
 			OutputStream os= response.getOutputStream();
 			InputStream is = new FileInputStream(filePath);			
 			FileCopyUtils.copy(is, os);
