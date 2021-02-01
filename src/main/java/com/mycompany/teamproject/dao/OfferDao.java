@@ -24,7 +24,7 @@ public class OfferDao {
 	@Resource
 	private SqlSessionTemplate sst;
 
-	public int inserttext(OfferDto offer) {
+	public int insertoffer(OfferDto offer) {
 		logger.info("실행");
 		int rows = sst.insert("offers.insertoffer",offer);
 		return rows;
@@ -74,5 +74,11 @@ public class OfferDao {
 		logger.info("실행");
 		List<OfferDto> list = sst.selectList("offers.selectOfferList", location_id);
 		return list;
+	}
+
+	public int updateoffer(OfferDto offer) {
+		logger.info("실행");
+		int rows = sst.update("offers.updateOffer", offer);
+		return rows;
 	}
 }

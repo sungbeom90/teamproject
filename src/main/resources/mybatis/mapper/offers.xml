@@ -67,6 +67,13 @@
 		)
 	</select>
 	
+	<update id="updateOffer">
+		update offers
+		set offer_id=#{offer_id}, otitle=#{otitle}, osubtitle=#{osubtitle}, oprice=#{oprice}, obody=#{obody},
+		oinclude=#{oinclude}, ouninclude=#{ouninclude}, oplace_meet=#{oplace_meet}, otime_meet=#{otime_meet}
+		where partner_id=#{partner_id}
+	</update>
+	
 	
 
 </mapper>

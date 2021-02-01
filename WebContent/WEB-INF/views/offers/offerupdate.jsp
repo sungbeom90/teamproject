@@ -36,8 +36,9 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<form method="post" enctype="multipart/form-data" action="offerupload" >
+					<form method="post" enctype="multipart/form-data" action="offerupdate" >
 						<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${offer.offer_id}">
+						<input class="form-control" type="hidden" id="partner_id" name="partner_id" value="${offer.partner_id}">
 						<input class="form-control" type="text" id="otitle" name="otitle" value="${offer.otitle}"><br/>
 						<input class="form-control" type="text" id="osubtitle" name="osubtitle" value="${offer.osubtitle}"><br/>
 						<input class="form-control" type="number" id="oprice" name="oprice" value="${offer.oprice}"><br/>
