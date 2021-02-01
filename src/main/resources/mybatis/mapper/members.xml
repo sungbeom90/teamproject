@@ -12,7 +12,7 @@
 	
 	
 	<!-- 이메일에 대한 pk -->
-	<select id="memberId" parameterType="String" resultType="int">
+	<select id="memberId" parameterType="string" resultType="int">
 		select member_id
 		from members
 		where memail=#{memail}

@@ -96,9 +96,9 @@ public class MemberService {
 		
 	}
 
-	public void memberdelete(int member) {
+	public void memberdelete(int member_id) {
 		logger.info("회원 탈퇴 서비스");
-		memberDao.memberdelete(member);
+		memberDao.memberdelete(member_id);
 	}
 
 	public MemberDtoTest loginemail(String memail) {

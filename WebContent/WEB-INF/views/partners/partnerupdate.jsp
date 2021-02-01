@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>회원정보 수정</title>
+		<title>파트너 정보 수정</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -26,38 +26,21 @@
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
-						<h2>회원정보 수정</h2>					
+						<h2>파트너 정보 수정</h2>					
 							<form name="memberupdateForm" method="post" action="memberupdate">
 							<!-- 아무것도변경 사항 없을때 처리하기 -->
-								<input type="hidden" name="member_id" value="${mstatus.member_id}"/>
+								<input type="hidden" name="partner_id" value="${partner.member_id}"/>
 									<ul>
-										<li>
-											<label for="mimage">바꾸실 사진 주세요.</label>
-											<c:if test="${mstatus.mimageoname != null}">
-												<img class="rounded" src="mimage?memail=${mstatus.memail}" width="200px;"/>
-											</c:if>
-											<c:if test="${mstatus.mimageoname == null}">
-												<img class="rounded" src="mimage?memail=${mstatus.memail}" width="200px;"/>
-											</c:if>
-											
-										</li>
 										
 										<li>
-											<label for="mname">바꾸실 이름 주세요.</label>
-											<input type="text" value="${update.mname}" id="mname" name="mname"/>
+											<label for="pname">바꾸실 닉네임 주세요.</label>
+											<input type="text" value="${partner.pname}" id="pname" name="pname"/>
 										</li>
 										
-										<li>
-											<label for="mpassword">바꾸실 비밀번호 주세요.</label>
-							 				<input type="password" id="mpassword" name="mpassword"/>
-							 				
-							 				<label for="mpassword_re">바꾸실 비밀번호 다시 주세요.</label>				
-											<input type="password" id="mpassword_re" name="mpassword_re"/>
-										</li>
 										
 										<li>
-											<label for="mphone">바꾸실 전화번호 주세요.</label>
-											<input type="number" value="${update.mphone}" id="mphone" name="mphone"/>
+											<label for="location_name">지역주세요.</label>
+											<input type="text" value="${partner.location_id}" id="location_name" name="location_name">
 										</li>
 									</ul>
 									<button class="btn btn-info btn-sm">수정하기</button>

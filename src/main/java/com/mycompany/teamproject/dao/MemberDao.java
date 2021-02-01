@@ -82,9 +82,9 @@ public class MemberDao {
 		int update = sst.update("members.statusUpdate", status);
 		return update;
 	}
-	public int memberdelete(int member) {
+	public int memberdelete(int member_id) {
 		logger.info("회원 탈퇴 다오");
-		int delete = sst.delete("members.memberdelete", member);
+		int delete = sst.delete("members.memberdelete", member_id);
 		return delete;
 	}
 	

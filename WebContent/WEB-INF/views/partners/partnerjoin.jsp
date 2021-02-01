@@ -28,10 +28,13 @@
 					<div class="sector container user_in border rounded">
 						<h2>파트너 등록</h2>					
 							<form name="partnerJoinForm" method="post" action="partnerjoin">
-								<label for="pname">별 명</label>
-								<input type="text" id="pname" name="pname" placeholder="사용하실 닉네임을 주세요.">
+								<label for="pname">별명주세요.</label>
+								<input type="text" id="pname" name="pname" placeholder="사용하실 닉네임을 주세요."><br/>
 								
+								<label for="location_name">지역주세요.</label>
 								<input type="text" id="location_name" name="location_name" placeholder="지역주세요.">
+								
+								<fmt:formatDate value="${pdate.pjoin}" pattern="yyyy-MM-dd"/><br/>
 								
 								<button>등록하기</button>
 							</form>

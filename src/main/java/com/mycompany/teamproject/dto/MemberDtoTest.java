@@ -15,6 +15,8 @@ public class MemberDtoTest {
 	private String mimageoname;
 	private String mimagetype;
 	
+	private int partner_id;
+	
 	private MultipartFile mimage;
 
 	
@@ -100,6 +102,14 @@ public class MemberDtoTest {
 
 	public void setMimage(MultipartFile mimage) {
 		this.mimage = mimage;
+	}
+
+	public int getPartner_id() {
+		return partner_id;
+	}
+
+	public void setPartner_id(int partner_id) {
+		this.partner_id = partner_id;
 	}
 	
 	

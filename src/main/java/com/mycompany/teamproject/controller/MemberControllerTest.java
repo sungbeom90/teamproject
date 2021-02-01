@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.MemberDtoTest;
+import com.mycompany.teamproject.dto.PartnerDto;
 import com.mycompany.teamproject.service.MemberService;
+import com.mycompany.teamproject.service.PartnerService;
 
 @Controller
 @RequestMapping("/memberstest")
@@ -44,9 +46,12 @@ public class MemberControllerTest {
 		return "memberstest/login";
 	}
 
-	// 응답처리 마저 해주기
+	@Resource
+	PartnerService partnerService;
+	
+	//로그인 하기
 	@PostMapping("/login")
-	public void login(MemberDtoTest member, HttpSession session, HttpServletResponse response) throws Exception {
+	public void login(MemberDtoTest member,PartnerDto partner, HttpSession session, HttpServletResponse response) throws Exception {
 		logger.info("로그인 실행");
 		// email에 대한 pk값 저장
 		int memberId = memberService.loginId(member.getMemail());
@@ -57,6 +62,11 @@ public class MemberControllerTest {
 		if (login.equals("loginSuccess")) {
 			logger.info("로그인 성공");
 			session.setAttribute("loginStatus", member.getMemail());
+			/*
+			PartnerDto partnerId = partnerService.partnerEmail(partner);
+			logger.info("파트너 id : "+partnerId.getPartner_id());
+			session.setAttribute("partnerId", partnerId);
+			*/
 		}
 		
 		//json으로 설정
@@ -152,7 +162,7 @@ public class MemberControllerTest {
 		logger.info("회원정보 관리");
 		mstatus = (String) session.getAttribute("loginStatus");
 		MemberDtoTest status = memberService.loginstatus(mstatus);
-		logger.info("회원 이름 : "+status.getMname());
+		logger.info("회원 이름 : "+status.getMember_id());
 		session.setAttribute("mstatus", status);
 		return "memberstest/memberstatus";
 	}
@@ -163,7 +173,7 @@ public class MemberControllerTest {
 		logger.info("회원정보 수정 요청");
 		status = (String) session.getAttribute("loginStatus");
 		MemberDtoTest update = memberService.loginstatus(status);
-		logger.info("회원정보 수정 요청 : "+update.getMname()+" / "+update.getMphone());
+		logger.info("회원정보 수정 요청 : "+update.getMname()+" / "+update.getMember_id());
 		session.setAttribute("update", update);
 		return "memberstest/memberupdate";
 	}
@@ -171,27 +181,30 @@ public class MemberControllerTest {
 	@PostMapping("/memberupdate")
 	public String statusUpdate(MemberDtoTest status){
 		logger.info("회원정보 수정 보내기");
-		/*MultipartFile mphoto = status.getMimage();
-			if(jphoto.isEmpty()) {
+		/*
+		MultipartFile mphoto = status.getMimage();
+			if(mphoto.isEmpty()) {
 			logger.info("사진 넣기");
-			String photo = jphoto.getOriginalFilename();
+			String photo = mphoto.getOriginalFilename();
 			status.setMimageoname(photo);
-			status.setMimagetype(jphoto.getContentType());
+			status.setMimagetype(mphoto.getContentType());
 			
 			//파일 저장
 			File save = new File("D:/MyWorkspace/teamfiles/members/"
 			+ status.getMember_id() + "/" + photo);
 			
-			jphoto.transferTo(save);
-		}*/
+			mphoto.transferTo(save);
+		}
+		*/
 		memberService.statusUpdate(status);
-		return "memberstest/memberstatus";
+		return "redirect:/memberstest/memberstatus";
 	}
-	
+	//회원탈퇴, 파트너 등록 했을때 처리하기 - 파트너pk값을 불어와서 먼저 삭제 후 적용하면 될듯?
 	@GetMapping("/memberdelete")
-	public String memberdelete(int member) {
+	public String memberdelete(int member_id, HttpSession session) {
 		logger.info("회원 탈퇴");
-		memberService.memberdelete(member);
+		memberService.memberdelete(member_id);
+		session.invalidate();
 		return "redirect:/main/content";
 	}
 	
