@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.teamproject.dto.MemberDto;
 import com.mycompany.teamproject.dto.PartnerDto;
 import com.mycompany.teamproject.service.PartnerService;
 
@@ -36,14 +37,10 @@ public class PartnerController {
 	}
 	
 	@PostMapping("/partnerjoin")
-	public String partnerjoin(PartnerDto pdt, String location_name, HttpSession session, Model model) {
+	public String partnerjoin(PartnerDto pdt, String lname, HttpSession session, Model model) {
 		logger.info("파트너 등록 페이지");
-		/*
-		int pjoin = partnerService.partnerinsert(pdt);
-		model.addAttribute("pdate", pjoin);
-		*/
 		
-		int lid = partnerService.locationname(location_name);
+		int lid = partnerService.locationname(lname);
 		int mid = (int) session.getAttribute("sessionMid");
 		logger.info("" + mid);
 		
@@ -57,15 +54,18 @@ public class PartnerController {
 	
 	//파트너 정보
 	@GetMapping("/partnerstatus")
-	public String partnerstatus(PartnerDto partner, HttpSession session) {
+	public String partnerstatus(PartnerDto partner, HttpSession session, Model model) {
 		logger.info("파트너 정보 관리");
 		int mid = (int) session.getAttribute("sessionMid");
 		logger.info("mid : " + mid);
+		logger.info("paccount : "+partner.getPaccount());
 		partner.setMember_id(mid);
 		
+		
 		PartnerDto status = partnerService.partnerstatus(partner);
+		logger.info("지역 이름  : "+status.getLname());
 		logger.info("파트너 id : "+status.getPartner_id());
-		session.setAttribute("partner", status);
+		model.addAttribute("partner", status);
 		return "partners/partnerstatus";
 	}
 	
@@ -100,4 +100,6 @@ public class PartnerController {
 		partnerService.partnerdelete(partner_id);
 		return "redirect:/main/content";
 	}
+	
+	
 }
