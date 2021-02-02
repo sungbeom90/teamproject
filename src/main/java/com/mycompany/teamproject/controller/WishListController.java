@@ -11,9 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.teamproject.dto.LocationDto;
-import com.mycompany.teamproject.dto.NationDto;
-import com.mycompany.teamproject.dto.OfferDto;
 import com.mycompany.teamproject.dto.WishListDto;
 import com.mycompany.teamproject.service.WishListService;
 
@@ -41,7 +38,7 @@ public class WishListController {
 		logger.info("실행");
 		WishListDto wish = wishlistService.getWishListList(offer_id);
 		model.addAttribute("wish", wish);
-		return "locations/location3";
+		return "";
 	}
 	
 }
