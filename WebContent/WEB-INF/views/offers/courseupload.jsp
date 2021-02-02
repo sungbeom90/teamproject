@@ -30,36 +30,32 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 		
 		<%-- 내용 --%>
-		<div class="mainCenter">
-			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
+		<div class="mainCenter mt-5">
 			<div class="content container">
 				<div class="sector">
 				<form method="post" enctype="multipart/form-data" action="courseupload" >
 					<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${sessionOffer_id}">
-					<div id="courselist">					
+					<div id="courselist"></div>
+					
+					<div class="d-flex">
+						<a class="btn btn-primary btn-sm flex-fill" href="javascript:courseplus()">코스 추가</a>
+						<input class="btn btn-info btn-sm flex-fill" type="submit" value="완료"><br/>
+						<input class="btn btn-danger btn-sm flex-fill" type="reset" value="취소"><br/>
 					</div>
-					<button class="btn btn-info btn-sm">완료</button>
 				</form>
 					
-				</div>					
-					
-				<div class="sector">
-					<a class="btn btn-info btn-sm" href="javascript:courseplus()">코스 추가</a>
-					<div>
-						<script type="text/javascript">
-							function courseplus(){
-								$.ajax({
-									url: "courseplus",
-									method: "get",
-									success: function(data){
-										$("#courselist").append(data);
-									}
-								});
-							};
-						</script>
-					</div>
 				</div>
+				<script type="text/javascript">
+					function courseplus(){
+						$.ajax({
+							url: "courseplus",
+							method: "get",
+							success: function(data){
+								$("#courselist").append(data);
+							}
+						});
+					};
+				</script>			
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>

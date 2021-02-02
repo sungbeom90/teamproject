@@ -69,7 +69,8 @@ public class OrderController {
 	@PostMapping("/orderreserve")
 	public String orderReserve(OrderDto order, HttpSession session){
 		logger.info("실행");
-		order.setOstatus("ready");		
+		order.setOstatus("ready");	
+		/*
 		int member_id = order.getMember_id();
 		int offer_id = order.getOffer_id();
 		int partner_id = offerService.getPartnerId(offer_id);
@@ -81,7 +82,8 @@ public class OrderController {
 		member.setMaccount(ocost);
 		partner.setPaccount(ocost);
 		int result1 = memberService.setMaccountM(member);
-		int result2 = partnerService.setPaccountP(partner);		
+		int result2 = partnerService.setPaccountP(partner);
+		*/
 		orderService.orderProcess(order);		
 		return "redirect:/main/content";
 	}

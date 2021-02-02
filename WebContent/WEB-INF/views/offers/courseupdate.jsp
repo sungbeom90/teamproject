@@ -29,9 +29,7 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 		
 		<%-- 내용 --%>
-		<div class="mainCenter">
-			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
+		<div class="mainCenter mt-5">
 			<div class="content container">
 				<div class="sector">
 				<form method="post" enctype="multipart/form-data" action="courseupload" >
@@ -39,15 +37,46 @@
 					<div id="courselist">					
 						<c:forEach var="course" items="${courseList}">
 							<div>
-								<input class="form-control" type="number" id="course_no_array[${course.course_no}]" name="course_no_array[${course.course_no}]" value="${course.course_no}" readonly="readonly"><br/>
-								<input class="form-control" type="text" id="cplace_array[${course.course_no}]" name="cplace_array[${course.course_no}]" value="${course.cplace}"><br/>
-								<input class="form-control" type="text" id="cdetail_array[${course.course_no}]" name="cdetail_array[${course.course_no}]" value="${course.cdetail}"><br/>
-								<input class="form-control" type="text" id="ctime_array[${course.course_no}]" name="ctime_array[${course.course_no}]" value="${course.ctime}"><br/>
-								<div id="${course.cimageoname}" style="display:flex; align-items:center; margin-bottom:5px;">					
-									<img src="cimage?offer_id=${course.offer_id}&cimageoname=${course.cimageoname}" alt="${course.cimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
-									<a href="javascript:cimagedelete('${course.cimageoname}')">삭제</a>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">코스번호</span>
+									</div>
+									<input class="form-control" type="number" id="course_no_array[${course.course_no}]" name="course_no_array[${course.course_no}]" value="${course.course_no}" readonly="readonly">
 								</div>
-								<input class="form-control" type="file" id="cimage_array[${course.course_no}]" name="cimage_array[${course.course_no}]" placeholder="첨부파일${course.course_no}"><br/>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">코스위치</span>
+									</div>
+								<input class="form-control" type="text" id="cplace_array[${course.course_no}]" name="cplace_array[${course.course_no}]" value="${course.cplace}">
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">코스설명</span>
+									</div>
+								<input class="form-control" type="text" id="cdetail_array[${course.course_no}]" name="cdetail_array[${course.course_no}]" value="${course.cdetail}">
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">코스소요시간</span>
+									</div>
+								<input class="form-control" type="text" id="ctime_array[${course.course_no}]" name="ctime_array[${course.course_no}]" value="${course.ctime}">
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">이미지</span>
+									</div>
+									<div class="flex-fill ml-2" id="${course.cimageoname}">					
+										<img src="cimage?offer_id=${course.offer_id}&cimageoname=${course.cimageoname}" alt="${course.cimageoname}"
+										class="Thumbnail" style="width: 5rem; height: 5rem"/>
+										<a href="javascript:cimagedelete('${course.cimageoname}')">삭제</a>
+									</div>
+								</div>
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">첨부파일</span>
+									</div>
+								<input class="form-control" type="file" id="cimage_array[${course.course_no}]" name="cimage_array[${course.course_no}]" placeholder="첨부파일${course.course_no}">
 							</div>				
 						</c:forEach>								
 					</div>

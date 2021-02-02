@@ -5,14 +5,19 @@
 
 <!-- <form method="post" enctype="multipart/form-data" action="courseupload" > -->
 <div>
-	<span>${order.odate_meet}</span>
-	<hr/>
-	<span>${order.opeople}</span>
-	<hr/>
-	<span>${order.oprice}</span>
-	<hr/>
-	<input class="form-control" type="number" id="ocost" name="ocost" value="${order.ocost}" readonly="readonly"><br/>
-	<input class="btn btn-info btn-sm" type="submit" value="결제하기"><br/>
+	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+	    	<span class="input-group-text">총</span>
+	    </div>
+		<input class="form-control" type="number" id="ocost" name="ocost" value="${order.ocost}" readonly="readonly">
+		<div class="input-group-append">
+        	<span class="input-group-text">원</span>
+     	</div>
+    </div>
+    <div class="d-flex">
+		<input class="btn btn-info btn-sm flex-fill" type="submit" value="결제하기"><br/>
+	</div>
+	
 </div>
 <!-- </form> -->
 

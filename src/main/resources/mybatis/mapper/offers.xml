@@ -81,7 +81,7 @@
 	<select id="selectPartnerId" parameterType="int" resultType="int">
 		select partner_id
 		from offers
-		where offer_id=#{offer_id}	
+		where offer_id=#{offer_id}
 	</select>
 		
 	
