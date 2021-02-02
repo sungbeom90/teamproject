@@ -27,7 +27,7 @@
 	<!-- MyBatos 주입 -->
 	<bean id="sqlSessionFactory"
 			class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property> <!-- 커넥션 관리 객체를 의존하도록 세터 주입 -->
+		<property name="dataSource" ref="dataSource"></property> <!--  커넥션 관리 객체를 의존하도록 세터 주입 -->
 		<property name="configLocation" value="classpath:mybatis/mapper-config.xml"></property> <!-- MyBatis 전체 설정 주입 -->
 		<property name="mapperLocations" value="classpath:mybatis/mapper/*.xml"></property> <!-- MyBatis와 연결될 자바 객체와 테이블 설정 주입 -->
 	</bean>
@@ -37,5 +37,7 @@
 			<constructor-arg ref="sqlSessionFactory"></constructor-arg> <!-- Dao에서 사용할 관리객체를 의존하도록 생성자 주입 --> 
 	
 	</bean>
+	
+	
 	
 </beans>

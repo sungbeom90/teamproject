@@ -67,12 +67,38 @@
 		)
 	</select>
 	
-	<update id="updateOffer">
+	<update id="updateOffer" parameterType="offer">
 		update offers
-		set offer_id=#{offer_id}, otitle=#{otitle}, osubtitle=#{osubtitle}, oprice=#{oprice}, obody=#{obody},
+		set otitle=#{otitle}, osubtitle=#{osubtitle}, oprice=#{oprice}, obody=#{obody},
 		oinclude=#{oinclude}, ouninclude=#{ouninclude}, oplace_meet=#{oplace_meet}, otime_meet=#{otime_meet}
-		where partner_id=#{partner_id}
+		where offer_id=#{offer_id}
 	</update>
+
+	
+	<update id="updateCourseText" parameterType="course">
+		update courses
+		set	cplace=#{cplace}, cdetail=#{cdetail}, ctime=#{ctime}
+		where offer_id=#{offer_id} and course_no=#{course_no}	
+	</update>
+		
+	
+	
+	<update id="updateCourseImage" parameterType="course">
+		update courses
+		set	cimageoname=#{cimageoname}, cimagetype=#{cimagetype}
+		where offer_id=#{offer_id} and course_no=#{course_no}	
+	</update>
+	
+	
+	
+	<delete id="deleteCourseImage" parameterType="course">
+		delete
+		from courses
+		where offer_id=#{offer_id} and cimageoname=#{cimageoname}
+	</delete>
+	
+	
+	
 	
 	
 

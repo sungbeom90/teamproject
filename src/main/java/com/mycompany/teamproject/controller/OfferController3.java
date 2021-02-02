@@ -5,14 +5,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -26,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.teamproject.dto.CourseDto;
 import com.mycompany.teamproject.dto.ImageDto;
-import com.mycompany.teamproject.dto.NationDto;
 import com.mycompany.teamproject.dto.OfferDto;
 import com.mycompany.teamproject.dto.PartnerDto;
 import com.mycompany.teamproject.service.MemberService;
@@ -79,11 +76,11 @@ public class OfferController3 {
 					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offer.getOffer_id()+"/"+oName); 
 					oimage.transferTo(saveFile);
 					logger.info(""+imageDto.getOffer_id());
-					offerService.ImageRegister(imageDto);
+					offerService.imageRegister(imageDto);
 					}
 			}			
-			session.setAttribute("sessionOffer",offer);
-			return "redirect:courseupload";
+			session.setAttribute("sessionOffer_id",offer.getOffer_id());
+			return "redirect:/offer3/courseupload";
 		}
 		@GetMapping("/courseupload")
 		public String courseuploadForm() {
@@ -96,12 +93,9 @@ public class OfferController3 {
 			String[] cplace_array = course.getCplace_array();
 			String[] cdetail_array = course.getCdetail_array();
 			String[] ctime_array = course.getCtime_array();
-			MultipartFile[] cimage_array = course.getCimage_array();
-			OfferDto offerDto=(OfferDto) session.getAttribute("sessionOffer");
+			MultipartFile[] cimage_array = course.getCimage_array();			
 			
-			
-			course.setOffer_id(offerDto.getOffer_id());
-			for(int i=0; i<course_no_array.length; i++) {
+			for(int i=1; i<course_no_array.length; i++) {
 				course.setCourse_no(course_no_array[i]);
 				course.setCplace(cplace_array[i]);
 				course.setCdetail(cdetail_array[i]);
@@ -111,13 +105,13 @@ public class OfferController3 {
 					String oName = cimage_array[i].getOriginalFilename();
 					course.setCimageoname(oName);
 					course.setCimagetype(cimage_array[i].getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offerDto.getOffer_id()+"/courses/"+oName); 
+					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
 					cimage_array[i].transferTo(saveFile);
 					logger.info(""+course.getOffer_id());
-					offerService.CourseRegister(course);
+					offerService.courseRegister(course);
 					}
 			}
-			session.removeAttribute("sessionOid");
+			session.removeAttribute("sessionOffer_id");
 			session.removeAttribute("sessionNo");
 			return "redirect:/main/content";	
 		}
@@ -126,7 +120,7 @@ public class OfferController3 {
 			logger.info("실행");
 			if(session.getAttribute("sessionNo")==null) {
 				logger.info("no null 실행");
-				int number=0;
+				int number=1;
 				session.setAttribute("sessionNo", number);
 			} else if(session.getAttribute("sessionNo")!=null) {
 				logger.info("no not null 실행");
@@ -192,6 +186,28 @@ public class OfferController3 {
 			model.addAttribute("imageList", imageList);
 			return "offers/offerupdate";
 		}
+		@PostMapping("/offerupdate")
+		public String offerupdate(OfferDto offer, HttpSession session) throws Exception {
+			logger.info("실행");
+			offerService.offerUpdate(offer);			
+			MultipartFile[] oimage_array = offer.getOfferImage();
+			ImageDto imageDto = new ImageDto();
+			imageDto.setOffer_id(offer.getOffer_id());
+			for (MultipartFile oimage : oimage_array) {
+				logger.info("파일전송 for문실행");
+				if(!oimage.isEmpty()) {
+					String oName = oimage.getOriginalFilename();
+					imageDto.setIimageoname(oName);
+					imageDto.setIimagetype(oimage.getContentType());
+					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offer.getOffer_id()+"/"+oName); 
+					oimage.transferTo(saveFile);
+					logger.info(""+imageDto.getOffer_id());
+					offerService.imageRegister(imageDto);
+					}
+			}			
+			session.setAttribute("sessionOffer_id",offer.getOffer_id());
+			return "redirect:/offer3/courseupdate";
+		}
 		@GetMapping("/oimagedelete")
 		public void oimagedelete(int offer_id, String iimageoname, HttpServletResponse response) {
 			logger.info("실행");
@@ -201,43 +217,58 @@ public class OfferController3 {
 			offerService.deleteImage(image);			
 		}
 		
-		@PostMapping("/offerupdate")
-		public String offerupdate(OfferDto offer, HttpSession session) throws Exception {
-			logger.info("실행");
-			offerService.offerUpdate(offer);			
-			MultipartFile[] oimage_array = offer.getOfferImage();
-			ImageDto imageDto = new ImageDto();
-			for (MultipartFile oimage : oimage_array) {
-				logger.info("파일전송 for문실행");
-				if(!oimage.isEmpty()) {
-					imageDto.setOffer_id(offer.getOffer_id());
-					String oName = oimage.getOriginalFilename();
-					imageDto.setIimageoname(oName);
-					imageDto.setIimagetype(oimage.getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offer.getOffer_id()+"/"+oName); 
-					oimage.transferTo(saveFile);
-					logger.info(""+imageDto.getOffer_id());
-					offerService.ImageRegister(imageDto);
-					}
-			}			
-			session.setAttribute("sessionOffer",offer);
-			return "redirect:/offers/courseupdate";
-		}		
-		/*
 		@GetMapping("/courseupdate")
-		public String courseupdateform(int offer_id,Model model) {
+		public String courseupdateform(Model model, HttpSession session) {
 			logger.info("실행");
+			int offer_id = (int) session.getAttribute("sessionOffer_id");
 			List<CourseDto> courseList = offerService.getCourseList(offer_id);
-			model.addAttribute("courseList", courseList);
-			return "offers/contentupdate";			
+			int number=courseList.size();
+			session.setAttribute("sessionNo", number);			
+			model.addAttribute("courseList", courseList);			
+			return "offers/courseupdate";			
 		}
 		@PostMapping("/courseupdate")
-		public String courseupdateform(CourseDto course) {
-			logger.info("실행");
-			offerService.updateCourse(course);
-			return"redirect:/main/content";
+		public String courseupdate(CourseDto course, HttpSession session) throws Exception {
+			logger.info("실행");			
+			int[] course_no_array = course.getCourse_no_array();
+			String[] cplace_array = course.getCplace_array();
+			String[] cdetail_array = course.getCdetail_array();
+			String[] ctime_array = course.getCtime_array();
+			MultipartFile[] cimage_array = course.getCimage_array();			
+			
+			for(int i=0; i<course_no_array.length; i++) {
+				if(course_no_array[i]!=0) {
+				course.setCourse_no(course_no_array[i]);
+				course.setCplace(cplace_array[i]);
+				course.setCdetail(cdetail_array[i]);
+				course.setCtime(ctime_array[i]);
+				offerService.courseUpdateText(course);
+				}
+				
+				if(!cimage_array[i].isEmpty()) {
+					String oName = cimage_array[i].getOriginalFilename();
+					course.setCimageoname(oName);
+					course.setCimagetype(cimage_array[i].getContentType());
+					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
+					cimage_array[i].transferTo(saveFile);
+					logger.info(""+course.getOffer_id());
+					offerService.courseUpdateImage(course);
+					}
+			}
+			session.removeAttribute("sessionOffer_id");
+			session.removeAttribute("sessionNo");
+			return "redirect:/main/content";
 		}
-		*/
+		
+		@GetMapping("/cimagedelete")
+		public void cimagedelete(int offer_id, String cimageoname, HttpServletResponse response) {
+			logger.info("실행");
+			CourseDto course = new CourseDto();
+			course.setOffer_id(offer_id);
+			course.setCimageoname(cimageoname);			
+			offerService.courseDeleteImage(course);			
+		}
+		
 		
 		
 }

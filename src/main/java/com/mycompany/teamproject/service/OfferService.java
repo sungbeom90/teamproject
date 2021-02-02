@@ -25,12 +25,12 @@ public class OfferService {
 		offerDao.insertoffer(offer);
 		
 	}
-	public void ImageRegister(ImageDto image) {
+	public void imageRegister(ImageDto image) {
 		logger.info("실행");
 		offerDao.insertimage(image);
 		
 	}
-	public void CourseRegister(CourseDto course) {
+	public void courseRegister(CourseDto course) {
 		logger.info("실행");
 		offerDao.insertcourse(course);
 		
@@ -66,7 +66,19 @@ public class OfferService {
 	}
 	public void offerUpdate(OfferDto offer) {
 		logger.info("실행");		
-		offerDao.updateoffer(offer);		
+		offerDao.updateOffer(offer);		
+	}
+	public void courseUpdateText(CourseDto course) {
+		logger.info("실행");
+		offerDao.updateCourseText(course);		
+	}
+	public void courseUpdateImage(CourseDto course) {
+		logger.info("실행");
+		offerDao.updateCourseImage(course);	
+	}
+	public void courseDeleteImage(CourseDto course) {
+		logger.info("실행");
+		offerDao.deleteCourseImage(course);			
 	}
 	
 

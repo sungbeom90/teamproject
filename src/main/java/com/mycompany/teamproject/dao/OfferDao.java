@@ -76,9 +76,27 @@ public class OfferDao {
 		return list;
 	}
 
-	public int updateoffer(OfferDto offer) {
+	public int updateOffer(OfferDto offer) {
 		logger.info("실행");
 		int rows = sst.update("offers.updateOffer", offer);
+		return rows;
+	}
+
+	public int updateCourseText(CourseDto course) {
+		logger.info("실행");
+		int rows = sst.update("offers.updateCourseText", course);
+		return rows;
+	}
+
+	public int updateCourseImage(CourseDto course) {
+		logger.info("실행");
+		int rows = sst.update("offers.updateCourseImage", course);
+		return rows;
+	}
+
+	public int deleteCourseImage(CourseDto course) {
+		logger.info("실행");
+		int rows = sst.delete("offers.deleteCourseImage", course);
 		return rows;
 	}
 }
