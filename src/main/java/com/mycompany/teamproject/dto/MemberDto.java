@@ -1,82 +1,176 @@
 package com.mycompany.teamproject.dto;
 
+import java.util.Date;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class MemberDto {
-	private String uemail;	
-	private String upassword;
-	private String uname;
-	private String usex;
-	private MultipartFile uphoto;
+	private int member_id;
+	private String memail;	
+	private String mpassword;
+	private String mname;
+	private String mphone;
+	private String mgender;
+	private Date mjoin;
+	private String mimageoname;
+	private String mimagetype;
 	
-	private String uagree_e1;
-	private String uagree_e2;
-	private String uagree_o1;
-	private String uagree_o2;
-	private String partner;
+	private MultipartFile mimage;
+	
+	
+	private int maccount;
+	private int partner_id;
+	
+	private String aessence_1;
+	private String aessence_2;
+	private String aoption_1;
+	private String aoption_2;
+	private String apartner;
 	
 	
 	
-	public String getUemail() {
-		return uemail;
+
+	public int getMember_id() {
+		return member_id;
 	}
-	public void setUemail(String uemail) {
-		this.uemail = uemail;
+
+	public void setMember_id(int member_id) {
+		this.member_id = member_id;
 	}
-	public String getUpassword() {
-		return upassword;
+
+	public String getMemail() {
+		return memail;
 	}
-	public void setUpassword(String upassword) {
-		this.upassword = upassword;
+
+	public void setMemail(String memail) {
+		this.memail = memail;
 	}
-	public String getUname() {
-		return uname;
+
+	public String getMpassword() {
+		return mpassword;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
+
+	public void setMpassword(String mpassword) {
+		this.mpassword = mpassword;
 	}
-	public String getUsex() {
-		return usex;
+
+	public String getMname() {
+		return mname;
 	}
-	public void setUsex(String usex) {
-		this.usex = usex;
+
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
-	public MultipartFile getUphoto() {
-		return uphoto;
+
+	public String getMphone() {
+		return mphone;
 	}
-	public void setUphoto(MultipartFile uphoto) {
-		this.uphoto = uphoto;
+
+	public void setMphone(String mphone) {
+		this.mphone = mphone;
 	}
-	public String getUagree_e1() {
-		return uagree_e1;
+
+	public String getMgender() {
+		return mgender;
 	}
-	public void setUagree_e1(String uagree_e1) {
-		this.uagree_e1 = uagree_e1;
+
+	public void setMgender(String mgender) {
+		this.mgender = mgender;
 	}
-	public String getUagree_e2() {
-		return uagree_e2;
+
+	public Date getMjoin() {
+		return mjoin;
 	}
-	public void setUagree_e2(String uagree_e2) {
-		this.uagree_e2 = uagree_e2;
+
+	public void setMjoin(Date mjoin) {
+		this.mjoin = mjoin;
 	}
-	public String getUagree_o1() {
-		return uagree_o1;
+
+	public String getMimageoname() {
+		return mimageoname;
 	}
-	public void setUagree_o1(String uagree_o1) {
-		this.uagree_o1 = uagree_o1;
+
+	public void setMimageoname(String mimageoname) {
+		this.mimageoname = mimageoname;
 	}
-	public String getUagree_o2() {
-		return uagree_o2;
+
+	public String getMimagetype() {
+		return mimagetype;
 	}
-	public void setUagree_o2(String uagree_o2) {
-		this.uagree_o2 = uagree_o2;
+
+	public void setMimagetype(String mimagetype) {
+		this.mimagetype = mimagetype;
 	}
-	public String getPartner() {
-		return partner;
+
+	public MultipartFile getMimage() {
+		return mimage;
 	}
-	public void setPartner(String partner) {
-		this.partner = partner;
+
+	public void setMimage(MultipartFile mimage) {
+		this.mimage = mimage;
 	}
+
+	public int getPartner_id() {
+		return partner_id;
+	}
+
+	public void setPartner_id(int partner_id) {
+		this.partner_id = partner_id;
+	}
+
+	public int getMaccount() {
+		return maccount;
+	}
+
+	public void setMaccount(int maccount) {
+		this.maccount = maccount;
+	}
+
+	public String getAessence_1() {
+		return aessence_1;
+	}
+
+	public void setAessence_1(String aessence1) {
+		this.aessence_1 = aessence1;
+	}
+
+	public String getAessence_2() {
+		return aessence_2;
+	}
+
+	public void setAessence_2(String aessence2) {
+		this.aessence_2 = aessence2;
+	}
+
+	public String getAoption_1() {
+		return aoption_1;
+	}
+
+	public void setAoption_1(String aoption1) {
+		this.aoption_1 = aoption1;
+	}
+
+	public String getAoption_2() {
+		return aoption_2;
+	}
+
+	public void setAoption_2(String aoption2) {
+		this.aoption_2 = aoption2;
+	}
+
+	public String getApartner() {
+		return apartner;
+	}
+
+	public void setApartner(String apartner) {
+		this.apartner = apartner;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

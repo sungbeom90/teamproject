@@ -50,7 +50,7 @@
 										
 									</ul>
 									
-									<a href="partnerupdate" class="btn btn-warning">파트너 정보 수정</a>
+									<a href="partnerupdate?partner_id=${partner.partner_id}" class="btn btn-warning">파트너 정보 수정</a>
 									<a href="partnerdelete?partner_id=${partner.partner_id}" class="btn btn-danger">파트너 그만하기</a>
 								
 							</form>

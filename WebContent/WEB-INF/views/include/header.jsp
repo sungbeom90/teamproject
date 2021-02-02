@@ -14,25 +14,23 @@
 		<ul class="navbar-nav">
 						<c:if test="${loginStatus == null}">
 								<div>
-									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/login">로그인</a>
-									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입</a>
+									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/members/login">로그인</a>
+									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/members/join">회원가입</a>
 								</div>						
 						</c:if>
 						<c:if test="${loginStatus != null}">
 							<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-									<img src="<%=application.getContextPath()%>/memberstest/mimage" width="50px">
+									<img src="<%=application.getContextPath()%>/members/mimage" width="50px">
 									<span>프로필</span>
 									</a>
 								<div class="dropdown-menu">
-									<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/memberstest/logout">로그아웃</a>
-									<c:if test="${partnerId == null}">
+									<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/members/logout">로그아웃</a>
+									
 										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
-										</c:if>
-										<c:if test="${partnerId != null}">
 										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerstatus">파트너 정보</a>
-									</c:if>
-									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/memberstest/memberstatus">회원정보</a>
+									
+									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/members/memberstatus">회원정보</a>
 									<a class="dropdown-item" href="<%=application.getContextPath()%>/offer/offerupload">상품등록</a>
 								</div>
 							</li>

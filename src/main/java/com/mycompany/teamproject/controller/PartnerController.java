@@ -51,7 +51,7 @@ public class PartnerController {
 		pdt.setMember_id(mid);
 		pdt.setLocation_id(lid);
 		partnerService.partnerinsert(pdt);
-		return "redirect:/partners/content";
+		return "redirect:/main/content";
 				
 	}
 	
@@ -98,6 +98,6 @@ public class PartnerController {
 	public String partnerdelete(int partner_id) {
 		logger.info("파트너 취소하기");
 		partnerService.partnerdelete(partner_id);
-		return "redirect:/partners/content";
+		return "redirect:/main/content";
 	}
 }
