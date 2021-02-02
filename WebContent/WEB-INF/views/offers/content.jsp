@@ -41,13 +41,13 @@
 			</aside>
 			<div class="content container">
 				<div class="sector">
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer/offerupdate?offer_id=${offer.offer_id}">수정하기(텍스트만)</a>
+					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="offerupdate?offer_id=${offer.offer_id}">수정하기(텍스트만)</a>
 					<hr/>					
 					<h1>${offer.otitle}</h1>					
 					<!-- 이미지 -->
 					<hr/>
 					<c:forEach var="image" items="${imageList}">						
-						<img src="../offer/oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}" width="500px" height="500px" 
+						<img src="oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}" width="500px" height="500px" 
 						class="rounded" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>											
 					</c:forEach>					
 					
@@ -60,11 +60,10 @@
 					
 					<script type="text/javascript">
 							function costcalcurater () {
-								/* var odate_meet = $("#odate_meet").val(); */
 								var opeople = $("#opeople").val();
 								var oprice =  $("#oprice").val();
 								$.ajax({
-									url: "../order/costcalcurater",
+									url: "<%=application.getContextPath()%>/order/costcalcurater",
 									method: "get",
 									data:{opeople, oprice},
 									success: function(data){
@@ -87,7 +86,7 @@
 						<div class="space mb-5">${course.cplace}</div>
 						<div class="space mb-5">${course.cdetail}</div>
 						<div class="space mb-5">${course.ctime}</div>
-						<img src="../offer/cimage?offer_id=${offer.offer_id}&cimageoname=${course.cimageoname}" alt="${course.cimageoname}" width="500px" height="500px" 
+						<img src="cimage?offer_id=${offer.offer_id}&cimageoname=${course.cimageoname}" alt="${course.cimageoname}" width="500px" height="500px" 
 						class="rounded" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>										
 					</c:forEach>
 				

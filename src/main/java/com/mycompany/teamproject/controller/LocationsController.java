@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -39,6 +40,9 @@ public class LocationsController {
 		
 		@Resource
 		OfferService offerService;
+		
+		@Value("${database.locations}")
+		private String locationDirPath;
 
 	
 		// 메인 -> 도시별 눌렀을때  리스트 나오는 화면. 서비스로 요청
@@ -92,10 +96,10 @@ public class LocationsController {
 			if(location.getLimagesname() !=null) {   //첨부파일이 있을때
 				String limagesname = location.getLimagesname();
 				String lname = location.getLname();
-				filePath = "D:/MyWorkspace/teamfiles/locations/" + lname + "/" + limagesname; // 도시별 다른 폴더 이미지 가져오기.
+				filePath = locationDirPath + lname + "/" + limagesname; // 도시별 다른 폴더 이미지 가져오기.
 				//주소맞나모르껬음
 			} else {							// 첨부파일이 없을때
-				filePath = "D:/MyWorkspace/teamfiles/locations/defaultnimage.jpg";
+				filePath = locationDirPath + "defaultlimage.jpg";
 			}
 			OutputStream os= response.getOutputStream();
 			InputStream is = new FileInputStream(filePath);

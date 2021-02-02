@@ -44,7 +44,7 @@
 								<input class="form-control" type="text" id="cdetail_array[${course.course_no}]" name="cdetail_array[${course.course_no}]" value="${course.cdetail}"><br/>
 								<input class="form-control" type="text" id="ctime_array[${course.course_no}]" name="ctime_array[${course.course_no}]" value="${course.ctime}"><br/>
 								<div id="${course.cimageoname}" style="display:flex; align-items:center; margin-bottom:5px;">					
-									<img src="../offer/cimage?offer_id=${course.offer_id}&cimageoname=${course.cimageoname}" alt="${course.cimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
+									<img src="cimage?offer_id=${course.offer_id}&cimageoname=${course.cimageoname}" alt="${course.cimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
 									<a href="javascript:cimagedelete('${course.cimageoname}')">삭제</a>
 								</div>
 								<input class="form-control" type="file" id="cimage_array[${course.course_no}]" name="cimage_array[${course.course_no}]" placeholder="첨부파일${course.course_no}"><br/>

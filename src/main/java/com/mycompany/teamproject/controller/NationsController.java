@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -35,6 +36,10 @@ public class NationsController {
 		
 		@Resource
 		private LocationService locationService;
+		
+		@Value("${database.nations}")
+		private String nationDirPath;
+		
 
 		// 메인 -> 나라별 눌렀을때  리스트 나오는 화면. 서비스로 요청
 		@GetMapping("/nationlist")
@@ -71,10 +76,10 @@ public class NationsController {
 			if(nation.getNimagesname() !=null) {   ///첨부파일이 있을때
 				String nimagesname = nation.getNimagesname();
 				String nname = nation.getNname();
-				filePath = "D:/MyWorkspace/teamfiles/nations/" + nname + "/" + nimagesname; // 나라별 다른 폴더 이미지 가져오기.
+				filePath = nationDirPath + nname + "/" + nimagesname; // 나라별 다른 폴더 이미지 가져오기.
 				
 			} else {							// 첨부파일이 없을때
-				filePath = "D:/MyWorkspace/teamfiles/nations/defaultnimage.jpg";
+				filePath = nationDirPath + "defaultnimage.jpg";
 			}
 			OutputStream os= response.getOutputStream();
 			InputStream is = new FileInputStream(filePath);

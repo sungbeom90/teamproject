@@ -50,7 +50,7 @@
 				<div class="sector">
 				<c:forEach var="location" items="${list}" >
 					<div class="card locationlists" style="width: 20rem; height: 19.5rem; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;" >							
-						<img height="160px" src="../locations/limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
+						<img height="160px" src="limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
 						<!-- <div class="card-img-overlay" > -->
 							<div class="card-body">
 								<h5  class="card-title">${location.lname}</h5>
