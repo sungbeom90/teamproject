@@ -60,6 +60,7 @@ public class OfferController3 {
 		public String offerUpload(OfferDto offer, HttpSession session) throws Exception {
 			logger.info("실행");
 			int mid = (int) session.getAttribute("sessionMid");
+			
 			PartnerDto pdto= partnerService.getPartner(mid);
 			offer.setPartner_id(pdto.getPartner_id());
 			offerService.offerRegister(offer);
@@ -80,6 +81,7 @@ public class OfferController3 {
 					}
 			}			
 			session.setAttribute("sessionOffer_id",offer.getOffer_id());
+			session.removeAttribute("sessionNo");
 			return "redirect:/offer3/courseupload";
 		}
 		@GetMapping("/courseupload")
@@ -96,20 +98,22 @@ public class OfferController3 {
 			MultipartFile[] cimage_array = course.getCimage_array();			
 			
 			for(int i=1; i<course_no_array.length; i++) {
-				course.setCourse_no(course_no_array[i]);
-				course.setCplace(cplace_array[i]);
-				course.setCdetail(cdetail_array[i]);
-				course.setCtime(ctime_array[i]);
+				if(course_no_array[i]!=0) {
+					course.setCourse_no(course_no_array[i]);
+					course.setCplace(cplace_array[i]);
+					course.setCdetail(cdetail_array[i]);
+					course.setCtime(ctime_array[i]);
 				
-				if(!cimage_array[i].isEmpty()) {
-					String oName = cimage_array[i].getOriginalFilename();
-					course.setCimageoname(oName);
-					course.setCimagetype(cimage_array[i].getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
-					cimage_array[i].transferTo(saveFile);
-					logger.info(""+course.getOffer_id());
-					offerService.courseRegister(course);
-					}
+					if(!cimage_array[i].isEmpty()) {
+						String oName = cimage_array[i].getOriginalFilename();
+						course.setCimageoname(oName);
+						course.setCimagetype(cimage_array[i].getContentType());
+						File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
+						cimage_array[i].transferTo(saveFile);
+						logger.info(""+course.getOffer_id());
+						offerService.courseRegister(course);
+						}
+				}
 			}
 			session.removeAttribute("sessionOffer_id");
 			session.removeAttribute("sessionNo");
@@ -206,6 +210,7 @@ public class OfferController3 {
 					}
 			}			
 			session.setAttribute("sessionOffer_id",offer.getOffer_id());
+			session.removeAttribute("sessionNo");
 			return "redirect:/offer3/courseupdate";
 		}
 		@GetMapping("/oimagedelete")
@@ -238,22 +243,22 @@ public class OfferController3 {
 			
 			for(int i=0; i<course_no_array.length; i++) {
 				if(course_no_array[i]!=0) {
-				course.setCourse_no(course_no_array[i]);
-				course.setCplace(cplace_array[i]);
-				course.setCdetail(cdetail_array[i]);
-				course.setCtime(ctime_array[i]);
-				offerService.courseUpdateText(course);
+					course.setCourse_no(course_no_array[i]);
+					course.setCplace(cplace_array[i]);
+					course.setCdetail(cdetail_array[i]);
+					course.setCtime(ctime_array[i]);
+					offerService.courseUpdateText(course);
+								
+					if(!cimage_array[i].isEmpty()) {
+						String oName = cimage_array[i].getOriginalFilename();
+						course.setCimageoname(oName);
+						course.setCimagetype(cimage_array[i].getContentType());
+						File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
+						cimage_array[i].transferTo(saveFile);
+						logger.info(""+course.getOffer_id());
+						offerService.courseUpdateImage(course);
+						}
 				}
-				
-				if(!cimage_array[i].isEmpty()) {
-					String oName = cimage_array[i].getOriginalFilename();
-					course.setCimageoname(oName);
-					course.setCimagetype(cimage_array[i].getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
-					cimage_array[i].transferTo(saveFile);
-					logger.info(""+course.getOffer_id());
-					offerService.courseUpdateImage(course);
-					}
 			}
 			session.removeAttribute("sessionOffer_id");
 			session.removeAttribute("sessionNo");

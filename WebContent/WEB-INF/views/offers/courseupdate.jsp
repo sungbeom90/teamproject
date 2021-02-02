@@ -39,7 +39,7 @@
 					<div id="courselist">					
 						<c:forEach var="course" items="${courseList}">
 							<div>
-								<input class="form-control" type="number" id="course_no_array[${course.course_no}]" name="course_no_array[${course.course_no}]" value="${course.course_no}"><br/>
+								<input class="form-control" type="number" id="course_no_array[${course.course_no}]" name="course_no_array[${course.course_no}]" value="${course.course_no}" readonly="readonly"><br/>
 								<input class="form-control" type="text" id="cplace_array[${course.course_no}]" name="cplace_array[${course.course_no}]" value="${course.cplace}"><br/>
 								<input class="form-control" type="text" id="cdetail_array[${course.course_no}]" name="cdetail_array[${course.course_no}]" value="${course.cdetail}"><br/>
 								<input class="form-control" type="text" id="ctime_array[${course.course_no}]" name="ctime_array[${course.course_no}]" value="${course.ctime}"><br/>
