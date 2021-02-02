@@ -59,13 +59,17 @@ public class MemberControllerTest {
 		
 		//로그인 실행
 		String login = memberService.login(member);
-		if (login.equals("loginSuccess")) {
+		if(login.equals("loginSuccess")) {
 			logger.info("로그인 성공");
 			session.setAttribute("loginStatus", member.getMemail());
 			/*
+			//파트너  id 유무로 등록/정보 나누기
+			partner.setMember_id(memberId);
 			PartnerDto partnerId = partnerService.partnerEmail(partner);
-			logger.info("파트너 id : "+partnerId.getPartner_id());
-			session.setAttribute("partnerId", partnerId);
+			if(partnerId.getPartner_id() != 0) {
+				logger.info("파트너 id : "+partnerId.getPartner_id());
+				session.setAttribute("partnerId", partnerId);
+			}
 			*/
 		}
 		
@@ -133,9 +137,8 @@ public class MemberControllerTest {
 	@PostMapping("/join")
 	public String join(MemberDtoTest mdt, Model model) throws Exception{
 		logger.info("회원가입 완료");
-		int date = memberService.joininsert(mdt);
+		memberService.joininsert(mdt);
 		
-		model.addAttribute("date", date);
 		
 		//사진 첨부
 		MultipartFile jphoto = mdt.getMimage();
@@ -212,7 +215,7 @@ public class MemberControllerTest {
 	
 	
 	//이메일 중복체크 진행중, 입력값 다시 생각해보기
-	@GetMapping("/emailcheck")
+	@PostMapping("/emailcheck")
 	public void emailcheck(MemberDtoTest memail, Model model, HttpServletResponse response) throws Exception {
 		logger.info("이멜 확인 겟");
 		/*
@@ -222,12 +225,13 @@ public class MemberControllerTest {
 		logger.info("이멜 정보 : "+memail.getMemail());
 		*/
 		String ckemail = memberService.emailcheck(memail);
-		logger.info("이멜 확인 겟 : "+memail.getMemail());
+		logger.info("이멜 확인 겟 : "+ckemail);
+		
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		
 		JSONObject email = new JSONObject();
-		email.put("email", ckemail);
+		email.put("memail", ckemail);
 		String cemail = email.toString();
 		pw.println(cemail);
 		

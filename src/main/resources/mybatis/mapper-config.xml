@@ -7,6 +7,7 @@
 		<typeAlias alias="NationDto" type="com.mycompany.teamproject.dto.NationDto"/>
 		<typeAlias alias="LocationDto" type="com.mycompany.teamproject.dto.LocationDto"/>
 		<typeAlias alias="memberDto" type="com.mycompany.teamproject.dto.MemberDtoTest"/>
+		<typeAlias alias="agreeDto" type="com.mycompany.teamproject.dto.AgreeDto"/>
 		<typeAlias alias="partnerDto" type="com.mycompany.teamproject.dto.PartnerDto"/>
 		<typeAlias alias="offer" type="com.mycompany.teamproject.dto.OfferDto"/>
 		<typeAlias alias="image" type="com.mycompany.teamproject.dto.ImageDto"/>

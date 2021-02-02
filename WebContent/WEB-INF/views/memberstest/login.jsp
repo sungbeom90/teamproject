@@ -35,20 +35,16 @@
 							<h2>로그인</h2>					
 								<form name="loginForm" onsubmit="login()" method="post"  class="was-validated">
 									<div class="form-group">
-										<input type="email" class="form-control form-control-lg" id="memail" name="memail" placeholder="ID@example.com" required/>
-										<small id="failEmail" class="text-danger"></small>
-										<div class="valid-feedback">유효한 이메일 입니다.</div>
-										<div class="invalid-feedback">이메일을 입력해주세요.</div>
+										<input type="email" class="form-control" id="memail" name="memail" placeholder="ID@example.com"/>
+										<small id="errorEmail" class="text-danger"></small>
 									</div>
 									<div class="form-group">
-										<input type="password" class="form-control form-control-lg" id="mpassword" name="mpassword" placeholder="비밀번호" required/>
-										<small id="wrongPassword" class="text-danger"></small>
-										<div class="valid-feedback">유효한 비밀번호 입니다.</div>
-										<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+										<input type="password" class="form-control" id="mpassword" name="mpassword" placeholder="비밀번호"/>
+										<small id="errorPassword" class="text-danger"></small>
 									</div>
 									<div class="container justify-content-end">						
-									<button class="btn btn-success d-block mb-1">로그인</button>		
-									<a href="content">취소</a>							
+									<button class="btn btn-info d-block mb-1">로그인</button>		
+									<a class="btn btn-warning d-block mb-1" href="content">취소</a>							
 									</div>
 								</form>							
 								<div class="container justify-content-center">
@@ -60,28 +56,48 @@
 					</div>
 					<script>
 						function login(){
+							// 유효성 검사
+							event.preventDefault();
+							//에러 메세지 초기값 설정
+							$("#errorEmail").html("");
+							$("#errorPassword").html("");
+							//입력값 설정
+							var check = true;
 							
-						const memail = $("#memail").val();
-						const mpassword = $("#mpassword").val();
-							$.ajax({
-								url:"login",
-								method:"post",
-								//id값에 상응하는 data를 보내줘야한다.
-								data:{memail, mpassword},
-								success:function(data){
-									if(data.login === "loginSuccess"){
-										alert("로그인 성공");
-										location.href="content";
-									}else if(data.login === "failEmail"){
-										$("#failEmail").html("이메일이 달라요.");
-										location.href="login";
-									}else if(data.login === "wrongPassword"){
-										$("#wrongPassword").html("비밀번호가 달라요.");
-										location.href="login";
+							const memail = $("#memail").val();
+							if(memail === ""){
+								$("#errorEmail").html("이메일 주세요.");
+								check = false;
+							}
+							
+							const mpassword = $("#mpassword").val();
+							if(mpassword === ""){
+								$("#errorPassword").html("비밀번호 주세요.");
+								check = false;
+							}
+							
+							if(!check){
+								return;
+							}
+							
+								$.ajax({
+									url:"login",
+									method:"post",
+									//id값에 상응하는 data를 보내줘야한다.
+									data:{memail, mpassword},
+									success:function(data){
+										if(data.login === "loginSuccess"){
+											alert("로그인 성공");
+											location.href="<%=application.getContextPath()%>/main/content";
+										}else if(data.login === "emptyEmail"){
+											$("#errorEmail").html("이메일이 없어요.");
+										}else{
+											$("#errorPassword").html("비밀번호가 달라요.");
+											
+										}
 									}
-								}
-							});
-						}
+								});
+							}
 					
 					</script>
 			</div>
