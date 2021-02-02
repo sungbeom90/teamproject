@@ -9,11 +9,11 @@
 		order by nation_id desc
 	</select> 
 	
-	<select id="selectByPk" parameterType="int" resultType="Wishes">
+	<!-- <select id="selectByPk" parameterType="int" resultType="Wishes">
 		select nation_id, nname, nimagesname, nimageoname, nimagetype
 		from nations
 		where nation_id=#{nation_id}
 	</select>
-
+ -->
 
 </mapper>

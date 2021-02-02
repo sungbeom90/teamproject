@@ -98,7 +98,7 @@ public class LocationsController3 {
 				String limagesname = location.getLimagesname();
 				String lname = location.getLname();
 				filePath = "D:/MyWorkspace/teamfiles/locations/" + lname + "/" + limagesname; // 도시별 다른 폴더 이미지 가져오기.
-				//주소맞나모르껬음
+				
 			} else {							// 첨부파일이 없을때
 				filePath = "D:/MyWorkspace/teamfiles/locations/defaultnimage.jpg";
 			}
