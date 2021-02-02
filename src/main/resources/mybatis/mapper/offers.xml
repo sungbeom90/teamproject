@@ -56,15 +56,8 @@
 				order by dbms_random.value
 			)
 			where rownum = 1
-	</select>
-	
-	
-	<delete id="deleteImage" parameterType="imageDto">
-		delete
-		from images
-		where offer_id=#{offer_id} and iimageoname=#{iimageoname}
-	</delete>
-	
+	</select>	
+		
 	<select id="selectOfferList" parameterType="int" resultType="offerDto">
 		select offer_id, otitle, osubtitle, oprice
 		from offers
@@ -75,13 +68,24 @@
 		)
 	</select>
 	
+	<select id="selectOfferRandomList" resultType="offerDto">
+		select offer_id, otitle, osubtitle, oprice
+		from (
+			select offer_id, otitle, osubtitle, oprice
+				from offers
+				where where offer_id=#{offer_id}
+				order by dbms_random.value
+		)
+		where rownum &lt;= 6		
+	</select>
+		
+	
 	<update id="updateOffer" parameterType="offerDto">
 		update offers
 		set otitle=#{otitle}, osubtitle=#{osubtitle}, oprice=#{oprice}, obody=#{obody},
 		oinclude=#{oinclude}, ouninclude=#{ouninclude}, oplace_meet=#{oplace_meet}, otime_meet=#{otime_meet}
 		where offer_id=#{offer_id}
 	</update>
-
 	
 	<update id="updateCourseText" parameterType="courseDto">
 		update courses
@@ -89,25 +93,23 @@
 		where offer_id=#{offer_id} and course_no=#{course_no}	
 	</update>
 		
-	
-	
 	<update id="updateCourseImage" parameterType="courseDto">
 		update courses
 		set	cimageoname=#{cimageoname}, cimagetype=#{cimagetype}
 		where offer_id=#{offer_id} and course_no=#{course_no}	
-	</update>
-	
-	
+	</update>		
+		
+		
+	<delete id="deleteImage" parameterType="imageDto">
+		delete
+		from images
+		where offer_id=#{offer_id} and iimageoname=#{iimageoname}
+	</delete>
 	
 	<delete id="deleteCourseImage" parameterType="courseDto">
 		delete
 		from courses
 		where offer_id=#{offer_id} and cimageoname=#{cimageoname}
 	</delete>
-	
-	
-	
-	
-	
 
 </mapper>

@@ -44,10 +44,20 @@ public class OrderController {
 	@GetMapping("/orderreserve")
 	public String orderReserveForm(OrderDto order, Model model, HttpSession session){
 		logger.info("실행");
+		logger.info(""+order.getOrder_id());
+		logger.info(""+order.getOpeople());
+		logger.info(""+order.getOcost());
+		logger.info(""+order.getOdate_com());
+		logger.info(""+order.getOdate_meet());
+		logger.info(""+order.getOstatus());
+		logger.info(""+order.getOffer_id());
+		logger.info(""+order.getMember_id());
+		
 		if(session.getAttribute("sessionMid")!=null) {
 			int member_id = (int) session.getAttribute("sessionMid");
 			order.setMember_id(member_id);
 			String otitle= offerService.getOfferTitle(order.getOffer_id());
+			
 			
 			model.addAttribute("order", order);
 			model.addAttribute("otitle", otitle);
@@ -60,10 +70,9 @@ public class OrderController {
 	@PostMapping("/orderreserve")
 	public String orderReserve(OrderDto order, HttpSession session){
 		logger.info("실행");
-		orderService.orderProcess(order);
-		
-		
-		return "redirect:/memberstest/login";
+		order.setOstatus("ready");
+		orderService.orderProcess(order);		
+		return "redirect:/main/content";
 	}
 	
 }
