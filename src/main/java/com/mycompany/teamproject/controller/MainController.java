@@ -2,6 +2,7 @@ package com.mycompany.teamproject.controller;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -9,8 +10,12 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mycompany.teamproject.dto.OfferDto;
+import com.mycompany.teamproject.service.OfferService;
 
 @Controller
 @RequestMapping("/main")
@@ -19,16 +24,19 @@ public class MainController {
 				LoggerFactory.getLogger(MainController.class);
 
 
-		// http://.../teamproject/main 생략됨
-		@RequestMapping("/content")
-		public String content() {
-			logger.info("실행");
-			return "main/content";
-		}
-		
 		@Resource
 		private DataSource dataSource;
+		@Resource
+		private OfferService offerService;
 		
+		// http://.../teamproject/main 생략됨		
+		@RequestMapping("/content")
+		public String content(Model model) {
+			logger.info("실행");
+			List<OfferDto> list = offerService.getOfferRandomList();		
+			model.addAttribute("list",list);
+			return "main/content";
+		}
 		
 		
 		@GetMapping("/conntest")

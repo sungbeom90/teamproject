@@ -13,6 +13,6 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home() {
 		logger.info("실행");
-		return "home";
+		return "redirect:main/content";
 	}
 }

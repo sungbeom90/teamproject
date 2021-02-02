@@ -73,10 +73,15 @@
 		from (
 			select offer_id, otitle, osubtitle, oprice
 				from offers
-				where where offer_id=#{offer_id}
 				order by dbms_random.value
 		)
 		where rownum &lt;= 6		
+	</select>
+	
+	<select id="selectPartnerId" parameterType="int" resultType="int">
+		select partner_id
+		from offers
+		where offer_id=#{offer_id}	
 	</select>
 		
 	

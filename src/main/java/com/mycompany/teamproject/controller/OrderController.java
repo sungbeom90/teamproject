@@ -13,14 +13,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mycompany.teamproject.dto.LocationDto;
-import com.mycompany.teamproject.dto.LocationPager;
-import com.mycompany.teamproject.dto.NationDto;
+import com.mycompany.teamproject.dto.MemberDto;
 import com.mycompany.teamproject.dto.OrderDto;
+import com.mycompany.teamproject.dto.PartnerDto;
+import com.mycompany.teamproject.service.MemberService;
 import com.mycompany.teamproject.service.OfferService;
 import com.mycompany.teamproject.service.OrderService;
+import com.mycompany.teamproject.service.PartnerService;
 
 //지울예정
 
@@ -34,6 +34,10 @@ public class OrderController {
 	private OrderService orderService;
 	@Resource
 	private OfferService offerService;
+	@Resource
+	private MemberService memberService;
+	@Resource
+	private PartnerService partnerService;
 	
 	
 	@GetMapping("/costcalcurater")
@@ -65,16 +69,19 @@ public class OrderController {
 	@PostMapping("/orderreserve")
 	public String orderReserve(OrderDto order, HttpSession session){
 		logger.info("실행");
-		order.setOstatus("ready");
-		/*
-		int memberId = order.getMember_id();
-		int offerId= order.getOffer_id();
-		int partnerId = partnerService.getPartnerId(offerId);
-		memberService.setDeposit()
-		deposit
-		withdrow
-		partnerService.
-		*/
+		order.setOstatus("ready");		
+		int member_id = order.getMember_id();
+		int offer_id = order.getOffer_id();
+		int partner_id = offerService.getPartnerId(offer_id);
+		int ocost = order.getOcost();		
+		MemberDto member = new MemberDto();
+		PartnerDto partner = new PartnerDto();
+		member.setMember_id(member_id);
+		partner.setPartner_id(partner_id);
+		member.setMaccount(ocost);
+		partner.setPaccount(ocost);
+		int result1 = memberService.setMaccountM(member);
+		int result2 = partnerService.setPaccountP(partner);		
 		orderService.orderProcess(order);		
 		return "redirect:/main/content";
 	}

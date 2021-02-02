@@ -36,35 +36,37 @@
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
+			
 				<div class="sector">
-						<img src="<%=application.getContextPath()%>/resources/img/home_img.jpg" alt="logo" width="100%">
-						
-						
-						
-				</div>
-				<div class="sector">
-						<h5>연결 테스트</h5>
-						<div>
-							<a class="btn btn-success btn-sm" href="javascript:conntest()">연결 테스트</a>
-							<script>
-								const conntest = function() {									
-									$.ajax({
-										url:"conntest",
-										method: "get",
-										success: function (data) {
-											$("#result1").html(data);											
-										}
-									});														
-								};
-							</script>
-							<div id="result1"></div>
-						</div>						
-				</div>
-				
-				
-				
-				<div class="sector">
-					<h2>박성범 테스트</h2>
+					<%-- <div class="head"
+						style="background-image:url('limage?location_id=${location.location_id}')">
+						${location.lname}</div> --%>
+					<div class="container-fluid">
+						<div class="card-deck">
+							<!-- 상품을 나타내기 위함 -->
+
+							<c:forEach var="offer" items="${list}">
+								<div class="card-deck" style="margin-left: 10px; margin-top: 40px;">
+									<div class="card locationlists"
+										style="width: 20rem; height: 400px; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;">
+										<img height="180px"
+											src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${offer.offer_id}"
+											class="card-img-top " alt="Card image">
+										<div class="card-body" style="height: 165px">
+											<h5 class="card-title">${offer.otitle}</h5>
+											<p class="card-title">${offer.osubtitle}</p>
+										</div>
+										<div class="card-footer" align="right">
+											<small class="text-muted">${offer.oprice}원</small> <a
+												href="<%=application.getContextPath()%>/offer/offerread?offer_id=${offer.offer_id}"
+												class="btn btn-outline-primary btn-sm"
+												style="margin-left: 10px;">바로가기</a>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

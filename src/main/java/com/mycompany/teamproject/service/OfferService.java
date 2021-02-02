@@ -69,6 +69,15 @@ public class OfferService {
 		List<OfferDto> list = offerDao.selectOfferList(location_id);
 		return list;
 	}
+	
+	
+	public List<OfferDto> getOfferRandomList() {
+		logger.info("실행");
+		List<OfferDto> list = offerDao.selectOfferRandomList();
+		return list;
+	}
+	
+	
 	public void offerUpdate(OfferDto offer) {
 		logger.info("실행");		
 		offerDao.updateOffer(offer);		
@@ -84,6 +93,11 @@ public class OfferService {
 	public void courseDeleteImage(CourseDto course) {
 		logger.info("실행");
 		offerDao.deleteCourseImage(course);			
+	}
+	public int getPartnerId(int offer_id) {
+		logger.info("실행");
+		int partner_id = offerDao.selectPartnerId(offer_id);
+		return partner_id;
 	}
 	
 
