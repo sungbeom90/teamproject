@@ -8,26 +8,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.teamproject.dao.WishListDao;
-import com.mycompany.teamproject.dto.WishListDto;
+import com.mycompany.teamproject.dao.WishDao;
+import com.mycompany.teamproject.dto.WishDto;
 
 @Service
-public class WishListService {
-	private static final Logger logger=LoggerFactory.getLogger(WishListService.class);
+public class WishService {
+	private static final Logger logger=LoggerFactory.getLogger(WishService.class);
 	
 	
 	
 	@Resource
-	private WishListDao wishlistDao;
+	private WishDao wishDao;
 	
 	//위시리스트 불러오기. dao로 요청
-	public List<WishListDto> getWishListList() {
+	public List<WishDto> getWishList() {
 		logger.info("실행");
-		List<WishListDto> list = wishlistDao.selectAll();		
+		List<WishDto> list = wishDao.selectAll();		
 		return list;
 	}
 
-	public WishListDto getWishListList(int offer_id) {
+	public WishDto getWishList(int offer_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

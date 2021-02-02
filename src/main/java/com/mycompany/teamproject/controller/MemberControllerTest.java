@@ -140,6 +140,7 @@ public class MemberControllerTest {
 		memberService.joininsert(mdt);
 		
 		
+		
 		//사진 첨부
 		MultipartFile jphoto = mdt.getMimage();
 		if(!jphoto.isEmpty()) {

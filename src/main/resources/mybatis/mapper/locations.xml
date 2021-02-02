@@ -28,7 +28,7 @@
 	</select>
 	
 	
-	<select id="selectByPage" parameterType="pager"
+	<select id="selectByPage" parameterType="pagerDto"
 		resultType="locationDto">
 		
 		

@@ -1,6 +1,6 @@
 package com.mycompany.teamproject.dto;
 
-public class WishListDto {
+public class WishDto {
 	private int member_id;
 	private int offer_id;
 	

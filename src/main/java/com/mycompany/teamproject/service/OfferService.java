@@ -22,23 +22,28 @@ public class OfferService {
 
 	public void offerRegister(OfferDto offer) {
 		logger.info("실행");		
-		offerDao.insertoffer(offer);
+		offerDao.insertOffer(offer);
 		
 	}
 	public void imageRegister(ImageDto image) {
 		logger.info("실행");
-		offerDao.insertimage(image);
+		offerDao.insertImage(image);
 		
 	}
 	public void courseRegister(CourseDto course) {
 		logger.info("실행");
-		offerDao.insertcourse(course);
+		offerDao.insertCourse(course);
 		
 	}
 	public OfferDto getOffer(int offer_id) {
 		logger.info("실행");
 		OfferDto offer = offerDao.selectOffer(offer_id);
 		return offer;
+	}
+	public String getOfferTitle(int offer_id) {
+		logger.info("실행");
+		String otitle = offerDao.selectOfferTitle(offer_id);
+		return otitle;
 	}
 	public List<ImageDto> getImageList(int offer_id) {
 		logger.info("실행");

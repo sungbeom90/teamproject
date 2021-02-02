@@ -9,11 +9,12 @@
 		<typeAlias alias="memberDto" type="com.mycompany.teamproject.dto.MemberDtoTest"/>
 		<typeAlias alias="agreeDto" type="com.mycompany.teamproject.dto.AgreeDto"/>
 		<typeAlias alias="partnerDto" type="com.mycompany.teamproject.dto.PartnerDto"/>
-		<typeAlias alias="offer" type="com.mycompany.teamproject.dto.OfferDto"/>
-		<typeAlias alias="image" type="com.mycompany.teamproject.dto.ImageDto"/>
-		<typeAlias alias="course" type="com.mycompany.teamproject.dto.CourseDto"/>
-		<typeAlias alias="pager" type="com.mycompany.teamproject.dto.LocationPager"/>
-		<typeAlias alias="wishes" type="com.mycompany.teamproject.dto.WishListDto"/>
+		<typeAlias alias="offerDto" type="com.mycompany.teamproject.dto.OfferDto"/>
+		<typeAlias alias="imageDto" type="com.mycompany.teamproject.dto.ImageDto"/>
+		<typeAlias alias="courseDto" type="com.mycompany.teamproject.dto.CourseDto"/>
+		<typeAlias alias="pagerDto" type="com.mycompany.teamproject.dto.LocationPager"/>
+		<typeAlias alias="wishDto" type="com.mycompany.teamproject.dto.WishDto"/>
+		<typeAlias alias="orderDto" type="com.mycompany.teamproject.dto.OrderDto"/>
 	</typeAliases>
 
 </configuration>
