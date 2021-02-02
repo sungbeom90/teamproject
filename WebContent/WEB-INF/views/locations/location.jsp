@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 <%@ page import="java.util.*"%>
@@ -30,33 +30,45 @@
 	<div class="wrap">
 		<%-- 공통 헤더 --%>
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
-		
+
 		<%-- 내용 --%>
 		<div class="mainCenter">
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
-			<p>location3</p>
+				<!-- <p>location3</p> -->
 				<div class="sector">
-					<div class="head" style="background-image:url('limage?location_id=${location.location_id}')">
-						${location.lname}
+					<div class="head"
+						style="background-image:url('limage?location_id=${location.location_id}')">
+						${location.lname}</div>
+					<div class="container-fluid">
+						<div class="card-deck">
+							<!-- 상품을 나타내기 위함 -->
+
+							<c:forEach var="offer" items="${list}">
+								<div class="card-deck" style="margin-left: 10px; margin-top: 40px;">
+									<div class="card locationlists"
+										style="width: 20rem; height: 350px; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;">
+										<img height="180px"
+											src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${offer.offer_id}"
+											class="card-img-top " alt="Card image">
+										<div class="card-body">
+											<h5 class="card-title">${offer.otitle}</h5>
+											<p class="card-title">${offer.osubtitle}</p>
+											<%-- <p class="card-text"><small class="text-muted">${offer.oprice}원</small></p>
+									      <a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${offer.offer_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a> --%>
+										</div>
+										<div class="card-footer" align="right">
+											<small class="text-muted">${offer.oprice}원</small> <a
+												href="<%=application.getContextPath()%>/offer/offerread?offer_id=${offer.offer_id}"
+												class="btn btn-outline-primary btn-sm"
+												style="margin-left: 10px;">바로가기</a>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
 					</div>
-					<div class="card-deck">
-					<!-- 상품을 나타내기 위함 -->
-					
-						<c:forEach var="offer" items="${list}">
-							<div class="card img-fluid locations">								
-							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${offer.offer_id}" alt="Card image">
-							    <div class="card-img-overlay">
-							      <h4 class="card-title">${offer.otitle}</h4>
-							      <h5 class="card-title">${offer.osubtitle}</h5>
-							      <p class="card-text">${offer.oprice}원</p>
-							      <a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${offer.offer_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
-							    </div>
-							  </div>
-						</c:forEach>	  
-							 
-					</div>					
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
