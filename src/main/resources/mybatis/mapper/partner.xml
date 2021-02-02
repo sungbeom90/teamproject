@@ -46,16 +46,16 @@
 		where lname=#{lname}
 	</select>
 	
-	
+	<!-- 파트너 등록 -->
 	<insert id="partnerinsert" parameterType="partnerDto">
 		<selectKey keyProperty="partner_id" resultType="int" order="BEFORE">
 				select partners_seq.nextval
 				from dual
 		</selectKey>
 		insert into partners
-		(partner_id, pname, member_id, location_id )
+		(partner_id, pname, pjoin, member_id, location_id )
 		values
-		(#{partner_id}, #{pname}, #{member_id}, #{location_id})
+		(#{partner_id}, #{pname}, sysdate, #{member_id}, #{location_id})
 	</insert>
 	
 	<!-- 파트너 취소 -->

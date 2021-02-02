@@ -137,9 +137,8 @@ public class MemberControllerTest {
 	@PostMapping("/join")
 	public String join(MemberDtoTest mdt, Model model) throws Exception{
 		logger.info("회원가입 완료");
-		int date = memberService.joininsert(mdt);
+		memberService.joininsert(mdt);
 		
-		model.addAttribute("date", date);
 		
 		//사진 첨부
 		MultipartFile jphoto = mdt.getMimage();
