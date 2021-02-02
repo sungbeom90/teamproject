@@ -30,7 +30,7 @@
 							<form name="joinForm" method="post" enctype="multipart/form-data" action="join">
 								<label for="memail">이메일</label>
 				 				<input type="email" id="memail" name="memail" placeholder="ID@example.com"/>
-				 				<a id="email" href="javascript:emailcheck()">중복확인</a><br>
+				 				<a href="javascript:emailcheck()">중복확인</a><br>
 				 				
 				 				<label for="mpassword">비밀번호</label>
 				 				<input type="password" id="mpassword" name="mpassword" placeholder="비밀번호를 입력하세요."/><br/>
@@ -125,14 +125,15 @@
 									});
 									
 									
+							});
+								//이메일 중복확인
 								function emailcheck(){
-									var email = $("#email").val();
+									var memail = $("#memail").val();
 										$.ajax({
 											url:"emailcheck",
 											method:"post",
-											data:{email:email},
-											succese:function(data){
-												consol.log(data);
+											data:{memail:memail},
+											success:function(data){
 												if(data.memail === "sameEmail"){
 													alert("이메일이 중복이에요.");
 												}else{
@@ -142,7 +143,6 @@
 											
 										});
 									}
-							});
 							</script>
 						</div>
 	

@@ -226,13 +226,13 @@ public class MemberControllerTest {
 		logger.info("이멜 정보 : "+memail.getMemail());
 		*/
 		String ckemail = memberService.emailcheck(memail);
-		logger.info("이멜 확인 겟 : "+memail.getMemail());
+		logger.info("이멜 확인 겟 : "+ckemail);
 		
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		
 		JSONObject email = new JSONObject();
-		email.put("email", ckemail);
+		email.put("memail", ckemail);
 		String cemail = email.toString();
 		pw.println(cemail);
 		
