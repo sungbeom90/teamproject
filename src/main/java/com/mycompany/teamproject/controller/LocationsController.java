@@ -1,198 +1,117 @@
 package com.mycompany.teamproject.controller;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mycompany.teamproject.dto.CitiesDto;
+import com.mycompany.teamproject.dto.LocationDto;
+import com.mycompany.teamproject.dto.LocationPager;
+import com.mycompany.teamproject.dto.OfferDto;
+import com.mycompany.teamproject.service.LocationService;
+import com.mycompany.teamproject.service.OfferService;
+
+
+
 
 @Controller
 @RequestMapping("/locations")
 public class LocationsController {
 		private static final Logger logger=
 				LoggerFactory.getLogger(LocationsController.class);
+		
+		@Resource
+		private LocationService locationService;
+		/*private	NationService nationService;*/
+		
+		@Resource
+		OfferService offerService;
 
-
-		// http://.../teamproject/locations 생략됨
-		@RequestMapping("/content")
-		public String content() {
-			logger.info("실행");
-			return "locations/content";
-		}
 	
+		// 메인 -> 도시별 눌렀을때  리스트 나오는 화면. 서비스로 요청
+		/*		@GetMapping("/locationlist")
+				public String locationlist(Model model) {
+					logger.info("실행");
+					List<LocationDto> list = locationService.getLocationList();			
+					model.addAttribute("list",list);
+					return "locations/locationlist3";
+				}*/
 		
-		@GetMapping("/newyork")
-		public String newyork(HttpSession session){
-			logger.info("newyork 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/newyork_head.jpg");
-			ctdto.setImgPackage1("/resources/img/newyork1.jpg");
-			ctdto.setImgPackage2("/resources/img/newyork2.jpg");
-			ctdto.setName("뉴 욕");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("메트로폴리탄 미술관");
-			ctdto.setBig2("::서양 미술사 투어::");
-			ctdto.setSm1("자유의 여신상");
-			ctdto.setSm2("::자유의 여신상 투어::");
-			ctdto.setBtn1("/offers/newyork_offer1");
-			ctdto.setBtn2("/offers/newyork_offer2");
-			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
+		//----------------------------------------------------------------
+		@GetMapping("/locationlist")
+		public String locationlist2(@RequestParam(defaultValue="1") int pageNo, Model model) {
+			int totalRows = locationService.getTotalRows();
+			LocationPager pager = new LocationPager(6,5, totalRows, pageNo);
+			List<LocationDto> list = locationService.getLocationList(pager);
+			model.addAttribute("list",list);
+			model.addAttribute("pager",pager);
+			return "locations/locationlist";
 		}
 		
-		@GetMapping("/hawaii")
-		public String hawaii(HttpSession session){
-			logger.info("hawaii 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/hawaii_head.jpg");
-			ctdto.setImgPackage1("/resources/img/hawaii1.jpg");
-			ctdto.setImgPackage2("/resources/img/hawaii2.jpg");
-			ctdto.setName("하 와 이");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("다이아몬드헤드 투어");
-			ctdto.setBig2("::일출보러 가기::");
-			ctdto.setSm1("스쿠버 다이빙 체험");
-			ctdto.setSm2("::거북이 만나러 가기::");
-			ctdto.setBtn1("/offers/hawaii_offer1");
-			ctdto.setBtn2("/offers/hawaii_offer2");
-			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
+		//----------------------------------------------------------------
+		/*@GetMapping("/nation")
+		public String nation(Model model, int nation_id) {
+			logger.info("실행");
+			NationDto nation = nationService.getNation(nation_id);
+			model.addAttribute("nation1", nation);
+			return "nations/nationlist3";
+		}*/
+		
+		
+		
+		@GetMapping("/locationread")
+		public String locationread(int location_id, Model model) {
+			logger.info("실행");
+			LocationDto location = locationService.getLocation(location_id);
+			List<OfferDto> list = offerService.getOfferList(location_id);
+			model.addAttribute("list",list);
+			model.addAttribute("location", location);
+			return "locations/location";
 		}
 		
-		@GetMapping("/barcelona")
-		public String barcelona(HttpSession session){
-			logger.info("barcelona 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/barcelona_head.jpg");
-			ctdto.setImgPackage1("/resources/img/barcelona1.jpg");
-			ctdto.setImgPackage2("/resources/img/barcelona2.jpg");
-			ctdto.setName("바 르 셀 로 나");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("라발지구 올드바 투어");
-			ctdto.setBig2("::투어하러 가기::");
-			ctdto.setSm1("벨 항구에서 일몰 요트");
-			ctdto.setSm2("::일몰보며 힐링::");
-			ctdto.setBtn1("/offers/barcelona_offer1");
-			ctdto.setBtn2("/offers/barcelona_offer2");
+		@GetMapping("/limage")
+		public void limage(int location_id, HttpSession session, HttpServletResponse response) throws Exception{
+			logger.info("실행");
 			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
-		}
-		
-		@GetMapping("/seville")
-		public String seville(HttpSession session){
-			logger.info("seville 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/seville_head.jpg");
-			ctdto.setImgPackage1("/resources/img/seville1.jpg");
-			ctdto.setImgPackage2("/resources/img/seville2.jpg");
-			ctdto.setName("세 비 야");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("스페인 광장 투어");
-			ctdto.setBig2("::일출보러 가기::");
-			ctdto.setSm1("론다 야경투어");
-			ctdto.setSm2("::당일치기로 떠나는 투어::");
-			ctdto.setBtn1("/offers/seville_offer1");
-			ctdto.setBtn2("/offers/seville_offer2");
-			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
-		}
-		
-		@GetMapping("/okinawa")
-		public String okinawa(HttpSession session){
-			logger.info("okinawa 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/okinawa_head.jpg");
-			ctdto.setImgPackage1("/resources/img/okinawa1.jpg");
-			ctdto.setImgPackage2("/resources/img/okinawa2.jpg");
-			ctdto.setName("오 키 나 와");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("츄라우미 수족관");
-			ctdto.setBig2("::수족관 투어::");
-			ctdto.setSm1("스노쿨링 체험");
-			ctdto.setSm2("::산호초 보러가기::");
-			ctdto.setBtn1("/offers/okinawa_offer1");
-			ctdto.setBtn2("/offers/okinawa_offer2");
-			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
-		}
-		
-		@GetMapping("/fukuoka")
-		public String fukuoka(HttpSession session){
-			logger.info("fukuoka 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/fukuoka_head.jpg");
-			ctdto.setImgPackage1("/resources/img/fukuoka1.jpg");
-			ctdto.setImgPackage2("/resources/img/fukuoka2.jpg");
-			ctdto.setName("후 쿠 오 카");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("벳푸 온천체험");
-			ctdto.setBig2("::다양한 지옥 온천 체험::");
-			ctdto.setSm1("후쿠오카 유후인 관광");
-			ctdto.setSm2("::버스 투어::");
-			ctdto.setBtn1("/offers/fukuoka_offer1");
-			ctdto.setBtn2("/offers/fukuoka_offer2");
-			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
-		}
-		
-		@GetMapping("/busan")
-		public String busan(HttpSession session){
-			logger.info("busan 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/busan_head.jpg");
-			ctdto.setImgPackage1("/resources/img/busan1.jpg");
-			ctdto.setImgPackage2("/resources/img/busan2.jpg");
-			ctdto.setName("부 산");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("부산 야경 투어");
-			ctdto.setBig2("::야경보러가기::");
-			ctdto.setSm1("와우 요트 투어");
-			ctdto.setSm2("::요트에서 힐링::");
-			ctdto.setBtn1("/offers/busan_offer1");
-			ctdto.setBtn2("/offers/busan_offer2");
-			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
-		}
-		
-		@GetMapping("/sokcho")
-		public String sokcho(HttpSession session){
-			logger.info("sokcho 실행");
-			CitiesDto ctdto = new CitiesDto();
-			ctdto.setImgHead("/resources/img/sokcho_head.jpg");
-			ctdto.setImgPackage1("/resources/img/sokcho1.jpg");
-			ctdto.setImgPackage2("/resources/img/sokcho2.jpg");
-			ctdto.setName("속 초");
-			ctdto.setRecommend("<h2>추천 상품</h2>");
-			ctdto.setBig1("설 악 산");
-			ctdto.setBig2("::트래킹하러가기::");
-			ctdto.setSm1("요 트");
-			ctdto.setSm2("::선 셋 투어::");
-			ctdto.setBtn1("/offers/sokcho_offer1");
-			ctdto.setBtn2("/offers/sokcho_offer2");
-			
-			session.setAttribute("city", ctdto);
-			
-			return "locations/location"; 
-		}
-		
-		
+			LocationDto location = locationService.getLocation(location_id);
 
+			String filePath=null;
+			if(location.getLimagesname() !=null) {   //첨부파일이 있을때
+				String limagesname = location.getLimagesname();
+				String lname = location.getLname();
+				filePath = "D:/MyWorkspace/teamfiles/locations/" + lname + "/" + limagesname; // 도시별 다른 폴더 이미지 가져오기.
+				//주소맞나모르껬음
+			} else {							// 첨부파일이 없을때
+				filePath = "D:/MyWorkspace/teamfiles/locations/defaultnimage.jpg";
+			}
+			OutputStream os= response.getOutputStream();
+			InputStream is = new FileInputStream(filePath);
+			
+			FileCopyUtils.copy(is, os);
+			os.flush();
+			os.close();
+			is.close();
+			}
+		
+		//오퍼리드
+			/*@GetMapping("offerread")
+			public String offerread() {
+				return "offers/offer3";
+			}*/
+		
+		
+		
 }

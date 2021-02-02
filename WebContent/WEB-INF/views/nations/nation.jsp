@@ -44,11 +44,11 @@
 						<p>nation3</p>
 						<c:forEach var="location" items="${list}">
 							<div class="card img-fluid locations">
-							    <img class="card-img-top img_center" src="../locations3/limage?location_id=${location.location_id}" alt="Card image">
+							    <img class="card-img-top img_center" src="../locations/limage?location_id=${location.location_id}" alt="Card image">
 							    <div class="card-img-overlay">
 							      <h4 class="card-title">${location.lname}</h4>
 							      <p class="card-text"></p>
-							      <a href="../locations3/locationread?location_id=${location.location_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+							      <a href="../locations/locationread?location_id=${location.location_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 							    </div>
 							  </div>
 						 </c:forEach>
