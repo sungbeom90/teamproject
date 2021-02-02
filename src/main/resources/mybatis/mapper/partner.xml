@@ -23,11 +23,11 @@
 		where member_id=#{member_id}
 	</select>
 	<!-- 파트너 정보 수정용 -->
-	<select id="partnerUpdate" parameterType="partnerDto">
-		select pname, location_id
-		from partners
+	<update id="partnerUpdate" parameterType="partnerDto">
+		update partners
+		set pname=#{pname}, location_id=#{location_id}
 		where member_id=#{member_id}
-	</select>
+	</update>
 	
 	
 	<!-- 로그인 이메일에 대한 파트너 pk -->
@@ -46,7 +46,7 @@
 		where lname=#{lname}
 	</select>
 	
-	<select id="locationName" parameterType="int" resultType="string">
+	<select id="getLname" parameterType="int" resultType="string">
 		select lname
 		from locations
 		where location_id=#{location_id}

@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.teamproject.dto.LocationDto;
 import com.mycompany.teamproject.dto.PartnerDto;
 
 @Repository
@@ -86,8 +87,9 @@ public class PartnerDao {
 		return rows;
 	}
 
-	public String locationName(int lid) {
-		String name = sst.selectOne("partners.locationName", lid);
+	public String getLname(int lid) {
+		logger.info("지역이름 가져오기 다오");
+		String name = sst.selectOne("partners.getLname", lid);
 		return name;
 	}
 

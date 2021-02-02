@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.teamproject.dto.MemberDto;
 import com.mycompany.teamproject.dto.PartnerDto;
+import com.mycompany.teamproject.service.LocationService;
 import com.mycompany.teamproject.service.PartnerService;
 
 @Controller
@@ -40,7 +40,7 @@ public class PartnerController {
 	public String partnerjoin(PartnerDto pdt, String lname, HttpSession session) {
 		logger.info("파트너 등록 페이지");
 		
-		int lid = partnerService.locationname(lname);
+		int lid = partnerService.locatioNname(lname);
 		int mid = (int) session.getAttribute("sessionMid");
 		logger.info("" + mid);
 		 
@@ -50,6 +50,8 @@ public class PartnerController {
 		return "redirect:/main/content";
 				
 	}
+	@Resource
+	LocationService locationService;
 	
 	//파트너 정보
 	@GetMapping("/partnerstatus")
@@ -57,15 +59,13 @@ public class PartnerController {
 		logger.info("파트너 정보 관리");
 		int mid = (int) session.getAttribute("sessionMid");
 		logger.info("mid : " + mid);
-		logger.info("paccount : "+partner.getPaccount());
 		partner.setMember_id(mid);
 		
-		 /*
-		String lname = partnerService.locationName(lid);
-		partner.setLname(lname);
-		*/
-		
 		PartnerDto status = partnerService.partnerstatus(partner);
+		int lid = status.getLocation_id();
+		String lname = partnerService.getLname(lid);
+		
+		status.setLname(lname);
 		logger.info("지역 이름  : "+status.getLname());
 		logger.info("파트너 id : "+status.getPartner_id());
 		model.addAttribute("partner", status);
@@ -85,9 +85,9 @@ public class PartnerController {
 	}
 	
 	@PostMapping("/partnerupdate")
-	public String statusUpdate(PartnerDto status, String location_name, HttpSession session) {
+	public String statusUpdate(PartnerDto status, String lname, HttpSession session) {
 		logger.info("파트너 정보 수정 보내기");
-		int lid = partnerService.locationname(location_name);
+		int lid = partnerService.locatioNname(lname);
 		int mid = (int) session.getAttribute("sessionMid");
 		
 		status.setMember_id(mid);

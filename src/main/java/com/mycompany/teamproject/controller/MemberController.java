@@ -180,23 +180,23 @@ public class MemberController {
 	
 	//회원정보 관리(수정, 탈퇴)
 	@GetMapping("/memberstatus")
-	public String memberstatus(String mstatus, HttpSession session) {
+	public String memberstatus(String mstatus, HttpSession session, Model model) {
 		logger.info("회원정보 관리");
 		mstatus = (String) session.getAttribute("loginStatus");
 		MemberDto status = memberService.loginstatus(mstatus);
 		logger.info("회원 이름 : "+status.getMember_id());
-		session.setAttribute("mstatus", status);
+		model.addAttribute("mstatus", status);
 		return "members/memberstatus";
 	}
 	
 	//회원정보 수정
 	@GetMapping("/memberupdate")
-	public String statusUpdate(String status, HttpSession session) {
+	public String statusUpdate(String status, HttpSession session, Model model) {
 		logger.info("회원정보 수정 요청");
 		status = (String) session.getAttribute("loginStatus");
 		MemberDto update = memberService.loginstatus(status);
 		logger.info("회원정보 수정 요청 : "+update.getMname()+" / "+update.getMember_id());
-		session.setAttribute("update", update);
+		model.addAttribute("update", update);
 		return "members/memberupdate";
 	}
 	
@@ -254,11 +254,14 @@ public class MemberController {
 	}
 	
 	@GetMapping("/maccountupdate")
-	public String maccountupdate(int member_id, int maccount) {
+	public String maccountupdate(int member_id, int maccount, Model model) {
 		MemberDto member = new MemberDto();
 		member.setMember_id(member_id);
 		member.setMaccount(maccount);
 		memberService.setMaccountP(member);
+		
+		int account = memberService.getMaccount(member);
+		model.addAttribute("account", account);
 		return "members/maccount";
 	}
 	

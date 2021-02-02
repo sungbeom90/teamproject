@@ -98,6 +98,11 @@ public class MemberDao {
 		int rows = sst.update("members.MaccountMupdate", member);
 		return rows;
 	}
+	public int getMaccount(MemberDto member) {
+		logger.info("최신 계좌 다오");
+		int account = sst.selectOne("members.getMaccount", member);
+		return account;
+	}
 	
 
 

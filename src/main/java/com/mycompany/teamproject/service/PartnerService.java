@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.mycompany.teamproject.dao.PartnerDao;
+import com.mycompany.teamproject.dto.LocationDto;
 import com.mycompany.teamproject.dto.PartnerDto;
 
 @Service
@@ -31,7 +32,7 @@ public class PartnerService {
 	}
 	
 	//입력 지역에 대한 지역 id값
-	public int locationname(String lname) {
+	public int locatioNname(String lname) {
 		logger.info("지역 이름 가져오기 서비스");
 		int locationid = partnerDao.locationName(lname);
 		return locationid;
@@ -81,11 +82,12 @@ public class PartnerService {
 		int rows = partnerDao.setPaccountM(partner);
 		return rows;
 	}
-	public String locationName(int lid) {
+	public String getLname(int lid) {
 		logger.info("지역이름 가져오기 서비스");
-		String name = partnerDao.locationName(lid);
+		String name = partnerDao.getLname(lid);
 		return name;
 	}
+
 	
 	
 	

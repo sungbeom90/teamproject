@@ -25,8 +25,8 @@
 </head>
 
 <body>
-	
-			<input type="number" value="${mstatus.maccount}" name="maccountnow" readonly/>
-		
+		<div id="maccountnow">잔여 금액
+			<input type="number" value="${account}" name="maccountnow" readonly/>
+		</div>
 </body>
 </html>

@@ -82,7 +82,13 @@
 		set maccount=maccount-#{maccount}
 		where member_id=#{member_id}
 	</update>
-
+	
+	<!-- 최신 남은돈 가져오기 -->
+	<select id="getMaccount" parameterType="memberDto" resultType="int">
+		select maccount
+		from members
+		where member_id=#{member_id}
+	</select>
 
 	
 </mapper>

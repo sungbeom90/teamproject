@@ -29,15 +29,15 @@
 						<h2>회원정보 수정</h2>					
 							<form name="memberupdateForm" method="post" action="memberupdate">
 							<!-- 아무것도변경 사항 없을때 처리하기 -->
-								<input type="hidden" name="member_id" value="${mstatus.member_id}"/>
+								<input type="hidden" name="member_id" value="${update.member_id}"/>
 									<ul>
 										<li>
 											<label for="mimage">바꾸실 사진 주세요.</label>
 											<c:if test="${mstatus.mimageoname != null}">
-												<img class="rounded" src="mimage?memail=${mstatus.memail}" width="200px;"/>
+												<img class="rounded" src="mimage?memail=${update.memail}" width="200px;"/>
 											</c:if>
 											<c:if test="${mstatus.mimageoname == null}">
-												<img class="rounded" src="mimage?memail=${mstatus.memail}" width="200px;"/>
+												<img class="rounded" src="mimage?memail=${update.memail}" width="200px;"/>
 											</c:if>
 											
 										</li>
