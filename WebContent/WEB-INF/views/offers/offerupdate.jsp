@@ -31,31 +31,85 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 		
 		<%-- 내용 --%>
-		<div class="mainCenter">
-			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
+		<div class="mainCenter mt-5">
 			<div class="content container">
 				<div class="sector">
 					<form method="post" enctype="multipart/form-data" action="offerupdate" >
 						<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${offer.offer_id}">
 						<input class="form-control" type="hidden" id="partner_id" name="partner_id" value="${offer.partner_id}">
-						<input class="form-control" type="text" id="otitle" name="otitle" value="${offer.otitle}"><br/>
-						<input class="form-control" type="text" id="osubtitle" name="osubtitle" value="${offer.osubtitle}"><br/>
-						<input class="form-control" type="number" id="oprice" name="oprice" value="${offer.oprice}"><br/>
-						<textarea  class="form-control" rows="10" cols="50" id="obody" name="obody">${offer.obody}</textarea><br/>
-						<input class="form-control" type="text" id="oinclude" name="oinclude" value="${offer.oinclude}"><br/>
-						<input class="form-control" type="text" id="ouninclude" name="ouninclude" value="${offer.ouninclude}"><br/>						
-						<input class="form-control" type="text" id="oplace_meet" name="oplace_meet" value="${offer.oplace_meet}"><br/>
-						<input class="form-control" type="text" id="otime_meet" name="otime_meet" value="${offer.otime_meet}"><br/>
-						<c:forEach var="image" items="${imageList}">
-							<div id="${image.iimageoname}" style="display:flex; align-items:center; margin-bottom:5px;">					
-								<img src="oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
-								<a href="javascript:oimagedelete('${image.iimageoname}')">삭제</a>
-							</div>			
-						</c:forEach>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">제목</span>
+							</div>
+							<input class="form-control" type="text" id="otitle" name="otitle" value="${offer.otitle}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">부제목</span>
+							</div>
+						<input class="form-control" type="text" id="osubtitle" name="osubtitle" value="${offer.osubtitle}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">가격</span>
+							</div>
+						<input class="form-control" type="number" id="oprice" name="oprice" value="${offer.oprice}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">본문</span>
+							</div>
+						<textarea  class="form-control" rows="10" cols="50" id="obody" name="obody">${offer.obody}</textarea>
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">포함사항</span>
+							</div>
+						<input class="form-control" type="text" id="oinclude" name="oinclude" value="${offer.oinclude}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">불포함사항</span>
+							</div>
+						<input class="form-control" type="text" id="ouninclude" name="ouninclude" value="${offer.ouninclude}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">만나는 장소</span>
+							</div>
+						<input class="form-control" type="text" id="oplace_meet" name="oplace_meet" value="${offer.oplace_meet}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">만나는 시간</span>
+							</div>
+						<input class="form-control" type="text" id="otime_meet" name="otime_meet" value="${offer.otime_meet}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">이미지</span>
+							</div>
+							<div class="d-flex align-items-center">
+								<c:forEach var="image" items="${imageList}">
+									<div class="flex-fill ml-2" id="${image.iimageoname}">					
+										<img src="oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}"
+										class="Thumbnail" style="width: 5rem; height: 5rem"/>
+										<a href="javascript:oimagedelete('${image.iimageoname}')">삭제</a>
+									</div>			
+								</c:forEach>
+							</div>
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">첨부파일</span>
+							</div>
 						<input class="form-control" type="file" id="offerImage" name="offerImage" placeholder="첨부파일" multiple><br/>
-						<input class="btn btn-info btn-sm" type="submit" value="입력"><br/>
-						<input class="btn btn-danger btn-sm" type="reset" value="취소"><br/>
+						</div>
+						<div class="d-flex">
+							<input class="btn btn-info btn-sm flex-fill" type="submit" value="수정"><br/>
+							<input class="btn btn-danger btn-sm flex-fill" type="reset" value="취소"><br/>
+						</div>
 					</form>
 					<script type="text/javascript">
 							function oimagedelete (iimageoname) {

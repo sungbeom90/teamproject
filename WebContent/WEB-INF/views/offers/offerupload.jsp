@@ -30,9 +30,7 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 		
 		<%-- 내용 --%>
-		<div class="mainCenter">
-			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
+		<div class="mainCenter mt-5">			
 			<div class="content container">
 				<div class="sector">
 					<form method="post" enctype="multipart/form-data" action="offerupload" >
