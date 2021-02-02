@@ -37,12 +37,12 @@
 			<div class="content container">
 				<div class="sector">
 					<p>wishlist</p>
-					<c:forEach var="nation" items="${list}">
+					<c:forEach var="wish" items="${list}">
 						<div class="card img-fluid nations">
-						    <img class="card-img-top img_center" src="../nations3/nimage?nation_id=${nation.nation_id}" alt="Card image">
+						    <img class="card-img-top img_center" src="../nations3/nimage?nation_id=${wish.offer_id}" alt="Card image">
 						    <div class="card-img-overlay" >
-						      <h2 class="card-title">${nation.nname}</h2>
-						      <a href="nationread?nation_id=${nation.nation_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+						      <h2 class="card-title">${wish.offer_id}</h2>
+						      <a href="nationread?nation_id=${wish.offer_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
 						    </div>
 						</div>					  		
 					</c:forEach>				

@@ -33,7 +33,7 @@
 										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerstatus">파트너 정보</a>
 									</c:if>
 									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/memberstest/memberstatus">회원정보</a>
-									<a class="dropdown-item" href="<%=application.getContextPath()%>/offer3/offerupload">상품등록</a>
+									<a class="dropdown-item" href="<%=application.getContextPath()%>/offer/offerupload">상품등록</a>
 								</div>
 							</li>
 						</c:if>

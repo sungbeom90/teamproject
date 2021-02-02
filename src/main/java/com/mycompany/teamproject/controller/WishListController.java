@@ -11,14 +11,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.teamproject.dto.NationDto;
 import com.mycompany.teamproject.dto.WishListDto;
 import com.mycompany.teamproject.service.WishListService;
 
 //지울예정
 
 @Controller
-@RequestMapping("/wishes")
+@RequestMapping("/wishlist")
 public class WishListController {
 	private static final Logger logger=
 			LoggerFactory.getLogger(WishListController.class);
@@ -32,6 +31,14 @@ public class WishListController {
 		List<WishListDto> list = wishlistService.getWishListList();
 		model.addAttribute("list",list);
 		return "wishes/wishlist";
+	}
+	
+	@GetMapping("/wishlistread")
+	public String wishlistread(int offer_id, Model model) {
+		logger.info("실행");
+		WishListDto wish = wishlistService.getWishListList(offer_id);
+		model.addAttribute("wish", wish);
+		return "";
 	}
 	
 }
