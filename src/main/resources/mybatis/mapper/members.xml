@@ -5,7 +5,7 @@
 	<!-- pk에 대한 모든 정보 -->
 	<select id="getMember" parameterType="int" resultType="memberDto">
 		select member_id, memail, mname, mpassword, mphone, mjoin, 
-					mgender, mimageoname, mimagetype
+					mgender, mimageoname, mimagetype, maccount
 		from members
 		where member_id=#{member_id}
 	</select>
@@ -21,7 +21,7 @@
 	<!-- 로그인용 -->
 	<select id="login" parameterType="string" resultType="memberDto">
 		select member_id, memail, mname, mpassword, mphone, mjoin, 
-				mgender, mimageoname, mimagetype
+				mgender, mimageoname, mimagetype, maccount
 		from members
 		where memail=#{memail}
 	
@@ -68,6 +68,20 @@
 		from members
 		where member_id=#{member_id}
 	</delete>
+	
+	<!-- 플러스 입금 방식 -->
+	<update id="MaccountPupdate" parameterType="memberDto">
+		update members
+		set maccount= maccount+#{maccount}
+		where member_id=#{member_id};
+	</update>
+	
+	<!-- 마이너스 입금 방식 -->
+	<update id="MaccountMupdate" parameterType="memberDto">
+		update members
+		set maccount= maccount-#{maccount}
+		where member_id=#{member_id};
+	</update>
 
 
 	

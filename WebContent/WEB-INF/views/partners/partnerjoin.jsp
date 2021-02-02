@@ -31,8 +31,8 @@
 								<label for="pname">별명주세요.</label>
 								<input type="text" id="pname" name="pname" placeholder="사용하실 닉네임을 주세요."><br/>
 								
-								<label for="location_name">지역주세요.</label>
-								<input type="text" id="location_name" name="location_name" placeholder="지역주세요.">
+								<label for="lname">지역주세요.</label>
+								<input type="text" id="lname" name="lname" placeholder="지역주세요.">
 								
 								<ul class="navbar-nav">
 									<li class="nav-item dropdown">

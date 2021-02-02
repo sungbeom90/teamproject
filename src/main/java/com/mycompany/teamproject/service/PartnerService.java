@@ -31,9 +31,9 @@ public class PartnerService {
 	}
 	
 	//입력 지역에 대한 지역 id값
-	public int locationname(String location_name) {
+	public int locationname(String lname) {
 		logger.info("지역 이름 가져오기 서비스");
-		int locationid = partnerDao.locationName(location_name);
+		int locationid = partnerDao.locationName(lname);
 		return locationid;
 
 	}
@@ -69,6 +69,17 @@ public class PartnerService {
 	public void partnerdelete(int partner_id) {
 		logger.info("파트너 취소 서비스");
 		partnerDao.partnerdelete(partner_id);
+	}
+	public int setPaccountP(PartnerDto partner) {
+		logger.info("파트너 플러스 확인 서비스");
+		int rows = partnerDao.setPaccountP(partner);
+		return rows;
+	}
+	
+	public int setPaccountM(PartnerDto partner) {
+		logger.info("파트너 마이너스 확인 서비스");
+		int rows = partnerDao.setPaccountM(partner);
+		return rows;
 	}
 	
 

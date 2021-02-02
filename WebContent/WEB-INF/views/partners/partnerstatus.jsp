@@ -27,8 +27,8 @@
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
 						<h2>파트너 정보</h2>					
-							<form name="partnerstatusForm" method="post" action="partnerstatus">
-								<input type="hidden" name="partner_id" value="${partner.partner_id}"/>
+							<form>
+								<input type="hidden" id="partner_id" name="partner_id" value="${partner.partner_id}"/>
 									<ul>
 										
 										<li>
@@ -37,15 +37,20 @@
 										</li>
 										
 										<li>
-											<label for="location_name">지역번호</label>
-											<input type="text" value="${partner.location_id}" id="location_name" name="location_name" readonly/>
+											<label for="lname">활동 지역</label>
+											<input type="text" value="${partner.lname}" id="lname" name="lname" readonly/>
 										</li>
 										
+										<li>
+											<label for="paccountnow">잔여 금액</label>
+											<input type="number" value="${partner.paccount}" name="paccountnow" readonly/>
+										</li>
 										
-										<li><label for="pjoin">가입 날짜</label>
-							   			 <input type="date" 
-												value='<fmt:formatDate value="${partner.pjoin}" pattern="yyyy-MM-dd"/>'
-												 readonly class="form-control" id="pjoin" name="pjoin"/>
+										<li>
+											<label for="pjoin">가입 날짜</label>
+								   			 <input type="date"
+													value='<fmt:formatDate value="${partner.pjoin}" pattern="yyyy-MM-dd"/>'
+													 readonly class="form-control" id="pjoin" name="pjoin"/>
 										 </li>
 										
 									</ul>

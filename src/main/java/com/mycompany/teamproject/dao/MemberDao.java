@@ -88,6 +88,16 @@ public class MemberDao {
 		int delete = sst.delete("members.memberdelete", member_id);
 		return delete;
 	}
+	public int MaccountPupdate(MemberDto member) {
+		logger.info("입급 플러스 다오");
+		int rows = sst.update("members.MaccountPupdate", member);
+		return rows;
+	}
+	public int MaccountMupdate(MemberDto member) {
+		logger.info("입금 마이너스 다오");
+		int rows = sst.update("members.MaccountMupdate", member);
+		return rows;
+	}
 	
 
 
