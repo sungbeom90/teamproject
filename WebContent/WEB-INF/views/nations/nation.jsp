@@ -41,7 +41,7 @@
 					</div>
 					<div class="card-deck">
 						<!-- 도시들을 보여주기 위함 -->
-						<p>nation3</p>
+<!-- 						<p>nation3</p> -->
 						<c:forEach var="location" items="${list}">
 							<div class="card img-fluid locations">
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/locations/limage?location_id=${location.location_id}" alt="Card image">

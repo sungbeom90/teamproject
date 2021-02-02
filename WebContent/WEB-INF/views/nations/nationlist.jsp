@@ -36,7 +36,7 @@
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
 				<div class="sector">
-					<p>nationlist3</p>
+					<!-- <p>nationlist3</p> -->
 					<c:forEach var="nation" items="${list}">
 						<div class="card img-fluid nations">
 						    <img class="card-img-top img_center" src="nimage?nation_id=${nation.nation_id}" alt="Card image">

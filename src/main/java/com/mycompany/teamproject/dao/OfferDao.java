@@ -99,4 +99,11 @@ public class OfferDao {
 		int rows = sst.delete("offers.deleteCourseImage", course);
 		return rows;
 	}
+	
+	public List<OfferDto> selectOfferRandomList() {
+		logger.info("실행");
+		List<OfferDto> list = sst.selectList("offers.selectOfferRandomList");
+		return list;
+	}
+	
 }
