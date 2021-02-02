@@ -62,15 +62,6 @@ public class MemberService {
 		
 	}
 	
-	//로그인 했을때, 프로필사진
-	/*
-	public MemberDtoTest loginimage(String memail) {
-		logger.info("회원사진 가져오기 서비스");
-		MemberDtoTest image = memberDao.loginimage(memail);
-		logger.info("회원사진 가져오기 서비스 : " + image.getMemail());
-		return image;
-	}
-*/
 	//이메일 중복확인
 	public String emailcheck(MemberDto memail) {
 		logger.info("이메일 중복 검사 서비스");
@@ -100,17 +91,27 @@ public class MemberService {
 		memberDao.statusUpdate(status);
 		
 	}
-
+	
+	//회원 탈퇴
 	public void memberdelete(int member_id) {
 		logger.info("회원 탈퇴 서비스");
 		memberDao.memberdelete(member_id);
 	}
 
-	public MemberDto loginemail(String memail) {
-		logger.info("이메일 중복용 정보 서비스");
-		MemberDto email = memberDao.login(memail);
-		return email;
+	public int setMaccountP(MemberDto member) {
+		logger.info("계좌입금 플러스 서비스");
+		int rows = memberDao.MaccountPupdate(member);
+		return rows;
 	}
+	
+	public int setMaccountM(MemberDto member) {
+		logger.info("계좌입금 마이너스 서비스");
+		int rows = memberDao.MaccountMupdate(member);
+		return rows;
+	}
+
+	
+	
 	
 	
 	

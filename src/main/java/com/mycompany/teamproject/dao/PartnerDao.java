@@ -32,9 +32,9 @@ public class PartnerDao {
 	}
 	
 	//지역 이름에 대한 지역id
-	public int locationName(String location_name) {
+	public int locationName(String lname) {
 		logger.info("지역 이름 가져오기 다오");
-		int locationId = sst.selectOne("partners.selectByName", location_name);
+		int locationId = sst.selectOne("partners.selectByName", lname);
 		return locationId;
 	}
 	
@@ -72,6 +72,18 @@ public class PartnerDao {
 		logger.info("파트너 취소 다오");
 		int delete = sst.delete("partners.partnerdelete", partner_id);
 		return delete;
+	}
+
+	public int setPaccountP(PartnerDto partner) {
+		logger.info("파트너 플러스 다오");
+		int rows = sst.update("partners.setPaccountP", partner);
+		return rows;
+	}
+
+	public int setPaccountM(PartnerDto partner) {
+		logger.info("파트너 마이너스 다오");
+		int rows = sst.update("partners.setPaccountM", partner);
+		return rows;
 	}
 
 

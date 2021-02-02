@@ -18,7 +18,7 @@
 	
 	<!-- 파트너 정보용 -->
 	<select id="partnerStatus" parameterType="int" resultType="partnerDto">
-		select partner_id, pname, pjoin, location_id
+		select partner_id, pname, pjoin, location_id, paccount
 		from partners
 		where member_id=#{member_id}
 	</select>
@@ -64,4 +64,20 @@
 		from partners
 		where partner_id=#{partner_id}	
 	</delete>
+	
+	<!-- 파트너 입금 플러스 -->
+	<update id="setPaccountP" parameterType="partnerDto">
+		update partners
+		set paccount=paccount+#{paccount}
+		where partner_id=#{partner_id};
+	</update>
+	
+	<!-- 파트너 입금 마이너스 -->
+	<update id="setPaccountM" parameterType="partnerDto">
+		update partners
+		set paccount=paccount-#{paccount}
+		where partner_id=#{partner_id};
+	</update>
+	
+	
 </mapper>

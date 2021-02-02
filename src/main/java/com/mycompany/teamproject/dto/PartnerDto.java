@@ -9,8 +9,10 @@ public class PartnerDto {
 	private Date pjoin;
 	private int member_id;
 	private int location_id;
-	private String location_name;
+	private String lname;
 	private String memail;
+	private int Paccount;
+	
 	
 	public int getPartner_id() {
 		return partner_id;
@@ -42,17 +44,24 @@ public class PartnerDto {
 	public void setLocation_id(int location_id) {
 		this.location_id = location_id;
 	}
-	public String getLocation_name() {
-		return location_name;
+	
+	public String getLname() {
+		return lname;
 	}
-	public void setLocation_name(String location_name) {
-		this.location_name = location_name;
+	public void setLname(String lname) {
+		this.lname = lname;
 	}
 	public String getMemail() {
 		return memail;
 	}
 	public void setMemail(String memail) {
 		this.memail = memail;
+	}
+	public int getPaccount() {
+		return Paccount;
+	}
+	public void setPaccount(int paccount) {
+		Paccount = paccount;
 	}
 	
 	

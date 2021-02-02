@@ -237,12 +237,7 @@ public class MemberController {
 	@PostMapping("/emailcheck")
 	public void emailcheck(MemberDto memail, Model model, HttpServletResponse response) throws Exception {
 		logger.info("이멜 확인 겟");
-		/*
-		MemberDtoTest loginemail = memberService. loginemail(memail.getMemail());
-		logger.info("이멜 정보 : "+memail.getMemail());
-		model.addAttribute("loginemail", loginemail);
-		logger.info("이멜 정보 : "+memail.getMemail());
-		*/
+		
 		String ckemail = memberService.emailcheck(memail);
 		logger.info("이멜 확인 겟 : "+ckemail);
 		
@@ -257,6 +252,17 @@ public class MemberController {
 		pw.flush();
 		pw.close();
 	}
+	
+	@GetMapping("/maccountupdate")
+	public String maccountupdate(int member_id, int maccount) {
+		MemberDto member = new MemberDto();
+		member.setMember_id(member_id);
+		member.setMaccount(maccount);
+		memberService.setMaccountP(member);
+		return null;
+	}
+	
+	
 	
 	
 	
