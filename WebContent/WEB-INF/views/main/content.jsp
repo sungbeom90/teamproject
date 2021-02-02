@@ -48,11 +48,11 @@
 							<c:forEach var="offer" items="${list}">
 								<div class="card-deck" style="margin-left: 10px; margin-top: 40px;">
 									<div class="card locationlists"
-										style="width: 20rem; height: 350px; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;">
+										style="width: 20rem; height: 400px; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;">
 										<img height="180px"
 											src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${offer.offer_id}"
 											class="card-img-top " alt="Card image">
-										<div class="card-body">
+										<div class="card-body" style="height: 165px">
 											<h5 class="card-title">${offer.otitle}</h5>
 											<p class="card-title">${offer.osubtitle}</p>
 										</div>
