@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="wishes">
 
-	<select id="selectAll" resultType="NationDto">
-		select nation_id, nname, nimagesname, nimageoname, nimagetype 
+	 <select id="selectAll" resultType="Wishes">
+		select offer_id 
 		from nations
+		where member_id=#{member_id}
 		order by nation_id desc
-	</select>
+	</select> 
 	
-	<select id="selectByPk" parameterType="int" resultType="NationDto">
+	<select id="selectByPk" parameterType="int" resultType="Wishes">
 		select nation_id, nname, nimagesname, nimageoname, nimagetype
 		from nations
 		where nation_id=#{nation_id}
 	</select>
-
 
 
 </mapper>

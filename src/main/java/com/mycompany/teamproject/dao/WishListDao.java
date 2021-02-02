@@ -26,9 +26,9 @@ public class WishListDao {
 		return wishlistList;
 	}
 	
-	/*	public NationDto selectNation(int nation_id) {
+		public WishListDto selectwish(int member_id) {
 			logger.info("실행");
-			NationDto nation = sst.selectOne("nations.selectByPk", nation_id);	
-			return nation;
-		}*/
+			WishListDto wish = sst.selectOne("wishes.selectByPk", member_id);	
+			return wish;
+		}
 }
