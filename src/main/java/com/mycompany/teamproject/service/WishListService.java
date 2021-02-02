@@ -20,11 +20,16 @@ public class WishListService {
 	@Resource
 	private WishListDao wishlistDao;
 	
-	//나라별 리스트 불러오기. dao로 요청
+	//위시리스트 불러오기. dao로 요청
 	public List<WishListDto> getWishListList() {
 		logger.info("실행");
-		List<WishListDto> nationList = wishlistDao.selectAll();		
-		return nationList;
+		List<WishListDto> list = wishlistDao.selectAll();		
+		return list;
+	}
+
+	public WishListDto getWishListList(int offer_id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	/*public NationDto getNation(int nation_id) {
