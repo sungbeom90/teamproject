@@ -48,10 +48,12 @@
 							<div class="card img-fluid locations">								
 							    <img class="card-img-top img_center" src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${offer.offer_id}" alt="Card image">
 							    <div class="card-img-overlay">
+							    	
 							      <h4 class="card-title">${offer.otitle}</h4>
 							      <h5 class="card-title">${offer.osubtitle}</h5>
 							      <p class="card-text">${offer.oprice}원</p>
 							      <a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${offer.offer_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+							      	
 							    </div>
 							  </div>
 						</c:forEach>	  
