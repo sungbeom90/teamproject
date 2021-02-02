@@ -33,7 +33,22 @@
 								
 								<label for="location_name">지역주세요.</label>
 								<input type="text" id="location_name" name="location_name" placeholder="지역주세요.">
-								
+								<ul class="navbar-nav">
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+										지역 고르기</a>
+										<div class="dropdown-menu">
+											<a class="dropdown-item" href="#">뉴욕</a>
+											<a class="dropdown-item" href="#">하와이</a>
+											<a class="dropdown-item" href="#">오키나와</a>
+											<a class="dropdown-item" href="#">후쿠오카</a>
+											<a class="dropdown-item" href="#">바르셀로나</a>
+											<a class="dropdown-item" href="#">세비야</a>
+											<a class="dropdown-item" href="#">부산</a>
+											<a class="dropdown-item" href="#">속초</a>
+										</div>
+									</li>
+								</ul>
 								<%-- <fmt:formatDate value="${pdate.pjoin}" pattern="yyyy-MM-dd"/><br/> --%>
 								
 								<button>등록하기</button>

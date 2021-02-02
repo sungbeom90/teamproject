@@ -57,6 +57,7 @@
 										
 										<li>
 											<label for="mphone">바꾸실 전화번호 주세요.</label>
+					
 											<input type="number" value="${update.mphone}" id="mphone" name="mphone"/>
 										</li>
 									</ul>

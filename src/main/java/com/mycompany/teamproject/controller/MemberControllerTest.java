@@ -59,13 +59,17 @@ public class MemberControllerTest {
 		
 		//로그인 실행
 		String login = memberService.login(member);
-		if (login.equals("loginSuccess")) {
+		if(login.equals("loginSuccess")) {
 			logger.info("로그인 성공");
 			session.setAttribute("loginStatus", member.getMemail());
 			/*
+			//파트너  id 유무로 등록/정보 나누기
+			partner.setMember_id(memberId);
 			PartnerDto partnerId = partnerService.partnerEmail(partner);
-			logger.info("파트너 id : "+partnerId.getPartner_id());
-			session.setAttribute("partnerId", partnerId);
+			if(partnerId.getPartner_id() != 0) {
+				logger.info("파트너 id : "+partnerId.getPartner_id());
+				session.setAttribute("partnerId", partnerId);
+			}
 			*/
 		}
 		
@@ -212,7 +216,7 @@ public class MemberControllerTest {
 	
 	
 	//이메일 중복체크 진행중, 입력값 다시 생각해보기
-	@GetMapping("/emailcheck")
+	@PostMapping("/emailcheck")
 	public void emailcheck(MemberDtoTest memail, Model model, HttpServletResponse response) throws Exception {
 		logger.info("이멜 확인 겟");
 		/*
@@ -223,6 +227,7 @@ public class MemberControllerTest {
 		*/
 		String ckemail = memberService.emailcheck(memail);
 		logger.info("이멜 확인 겟 : "+memail.getMemail());
+		
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
 		
