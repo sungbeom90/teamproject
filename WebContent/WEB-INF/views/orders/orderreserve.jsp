@@ -38,26 +38,9 @@
 			<div class="content container">
 			<p>order</p>
 				<div class="sector">
+					<img src="<%=application.getContextPath()%>/offer/oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
 				
-				
-					<%-- <div class="head" style="background-image:url('limage?location_id=${location.location_id}')">
-						${location.lname}
-					</div>
-					<div class="card-deck">
-					<!-- 상품을 나타내기 위함 -->
-					
-						<c:forEach var="offer" items="${list}">
-							<div class="card img-fluid locations">
-							    <img class="card-img-top img_center" src="../offer3/offerread?offer_id=${offer.offer_id}" alt="Card image">
-							    <div class="card-img-overlay">
-							      <h4 class="card-title">${offer.otitle}</h4>
-							      <p class="card-text"></p>
-							      <a href="../offer3/offerread?offer_id=${offer.offer_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
-							    </div>
-							  </div>
-						</c:forEach>	  
-							 
-					</div>	 --%>				
+							
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

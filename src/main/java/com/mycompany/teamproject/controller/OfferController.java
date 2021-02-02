@@ -142,7 +142,7 @@ public class OfferController {
 			model.addAttribute("offer", offer);
 			model.addAttribute("imageList", imageList);
 			model.addAttribute("courseList", courseList);
-			return "offers/content";
+			return "offers/offer";
 		}
 		@GetMapping("/oimage")
 		public void oimage(int offer_id, String iimageoname, HttpServletResponse response)  throws Exception {
