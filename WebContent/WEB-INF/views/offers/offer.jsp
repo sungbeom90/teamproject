@@ -51,7 +51,7 @@
 						class="rounded" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>											
 					</c:forEach>					
 					
-					<form method="post" action="<%=application.getContextPath()%>/order/orderreserve" >
+					<form method="get" action="<%=application.getContextPath()%>/order/orderreserve" >
 						<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${offer.offer_id}"><br/>
 						<input class="form-control" type="date" id="odate_meet" name="odate_meet"><br/>						
 						<input class="form-control" type="number" id="opeople" name="opeople" placeholder="인원수"><br/>

@@ -7,19 +7,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.teamproject.dto.AgreeDto;
+import com.mycompany.teamproject.dto.OrderDto;
+
+
+
 
 @Repository
-public class AgreeDao {
-	private static final Logger logger=LoggerFactory.getLogger(AgreeDao.class);
+public class OrderDao {
+	private static final Logger logger 
+			= LoggerFactory.getLogger(OrderDao.class);
 	
 	@Resource
 	private SqlSessionTemplate sst;
 
-	public int agreeInsert(AgreeDto agree) {
-		int rows = sst.insert("agrees.agreeInsert", agree);
+	public int insertOrder(OrderDto order) {
+		logger.info("실행");
+		int rows = sst.insert("offers.insertorder",order);
 		return rows;
+		
 	}
 
+	
 
 }

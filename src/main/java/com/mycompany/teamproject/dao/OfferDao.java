@@ -24,19 +24,19 @@ public class OfferDao {
 	@Resource
 	private SqlSessionTemplate sst;
 
-	public int insertoffer(OfferDto offer) {
+	public int insertOffer(OfferDto offer) {
 		logger.info("실행");
-		int rows = sst.insert("offers.insertoffer",offer);
+		int rows = sst.insert("offers.insertOffer",offer);
 		return rows;
 	}
 	
-	public int insertimage(ImageDto iamge) {
+	public int insertImage(ImageDto iamge) {
 		logger.info("실행");
-		int rows = sst.insert("offers.insertimage",iamge);
+		int rows = sst.insert("offers.insertImage",iamge);
 		return rows;
 	}
-	public int insertcourse(CourseDto course) {
-		int rows = sst.insert("offers.insertcourse",course);
+	public int insertCourse(CourseDto course) {
+		int rows = sst.insert("offers.insertCourse",course);
 		return rows;
 	}
 
@@ -45,6 +45,14 @@ public class OfferDao {
 		OfferDto offer = sst.selectOne("offers.selectOffer", offer_id);
 		return offer;
 	}
+	
+
+	public String selectOfferTitle(int offer_id) {
+		logger.info("실행");		
+		String otitle = sst.selectOne("offers.selectOfferTitle", offer_id);
+		return otitle;
+	}
+	
 
 	public List<ImageDto> selectImageList(int offer_id) {
 		logger.info("실행");	
@@ -99,6 +107,7 @@ public class OfferDao {
 		int rows = sst.delete("offers.deleteCourseImage", course);
 		return rows;
 	}
+
 	
 	public List<OfferDto> selectOfferRandomList() {
 		logger.info("실행");
@@ -106,4 +115,7 @@ public class OfferDao {
 		return list;
 	}
 	
+
+
+
 }

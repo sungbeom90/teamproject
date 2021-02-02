@@ -43,13 +43,13 @@
 				from dual
 		</selectKey>
 			insert into members
-			(member_id, memail, mname, mpassword, mphone, mjoin, mgender)
+			(member_id, memail, mname, mpassword, mphone, mjoin, mgender, maccount)
 			values
-			(#{member_id}, #{memail}, #{mname}, #{mpassword}, #{mphone}, sysdate, #{mgender})
+			(#{member_id}, #{memail}, #{mname}, #{mpassword}, #{mphone}, sysdate, #{mgender}, ${maccount})
 	</insert>
 	
 	<!-- 회원가입시 사진 추가 부분 -->
-	<update id="imageUpdate" parameterType="image">
+	<update id="imageUpdate" parameterType="memberDto">
 		update members
 		set mimageoname=#{mimageoname}, mimagetype=#{mimagetype}
 		where member_id=#{member_id}	

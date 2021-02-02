@@ -51,7 +51,6 @@
 									</li>
 								</ul>
 								
-								<%-- <fmt:formatDate value="${pdate.pjoin}" pattern="yyyy-MM-dd"/><br/> --%>
 								
 								<button>등록하기</button>
 							</form>

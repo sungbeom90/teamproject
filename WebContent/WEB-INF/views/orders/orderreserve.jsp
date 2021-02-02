@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <%@ page import="java.util.*"%>
@@ -36,11 +36,20 @@
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
-			<p>order</p>
+			<h2>결제하기</h2>
 				<div class="sector">
-					<img src="<%=application.getContextPath()%>/offer/oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
-				
-							
+					<img src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${order.offer_id}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
+					<form method="post" enctype="multipart/form-data" action="orderreserve" >
+						<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${order.offer_id}">
+						<input class="form-control" type="hidden" id="member_id" name="member_id" value="${order.member_id}">
+						<%-- <input class="form-control" type="hidden" id="partner_id" name="partner_id" value="${offer.partner_id}"> --%>
+						<a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${order.offer_id}">"${otitle}"</a><br/>
+						<input class="form-control" type="date" id=odate_meet name="odate_meet" value="<fmt:formatDate value="${order.odate_meet}" pattern="yyyy-MM-dd"/>" readonly="readonly"><br/>
+						<input class="form-control" type="number" id="opeople" name="opeople" value="${order.opeople}"readonly="readonly"><br/>
+						<input class="form-control" type="number" id="oprice" name="oprice" value="${order.oprice}" readonly="readonly"><br/>
+						<input class="form-control" type="number" id="ocost" name="ocost" value="${order.ocost}" readonly="readonly"><br/>
+						<input class="btn btn-info btn-sm" type="submit" value="결제하기"><br/>
+					</form>
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

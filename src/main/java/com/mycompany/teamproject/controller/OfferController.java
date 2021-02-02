@@ -38,11 +38,11 @@ public class OfferController {
 				LoggerFactory.getLogger(OfferController.class);
 		
 		@Resource
-		OfferService offerService;		
+		private OfferService offerService;		
 		@Resource
-		MemberService memberService;		
+		private MemberService memberService;		
 		@Resource
-		PartnerService partnerService;
+		private PartnerService partnerService;
 		
 		@Value("${database.offers}")
 		private String offerDirPath;
