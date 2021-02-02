@@ -94,6 +94,11 @@ public class OfferService {
 		logger.info("실행");
 		offerDao.deleteCourseImage(course);			
 	}
+	public int getPartnerId(int offer_id) {
+		logger.info("실행");
+		int partner_id = offerDao.selectPartnerId(offer_id);
+		return partner_id;
+	}
 	
 
 		

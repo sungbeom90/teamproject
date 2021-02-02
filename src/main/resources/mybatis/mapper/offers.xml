@@ -77,6 +77,12 @@
 		)
 		where rownum &lt;= 6		
 	</select>
+	
+	<select id="selectPartnerId" parameterType="int" resultType="int">
+		select partner_id
+		from offers
+		where offer_id=#{offer_id}	
+	</select>
 		
 	
 	<update id="updateOffer" parameterType="offerDto">

@@ -75,7 +75,7 @@
 					</script>
 					
 					<div class="space mb-3">${offer.osubtitle}</div>
-					<div>${offer.obody}</div>
+					<div style="white-space:pre;">${offer.obody}</div>
 					<hr/>
 					<h4>상품 정보</h4>
 					<h5>포함 사항</h5>

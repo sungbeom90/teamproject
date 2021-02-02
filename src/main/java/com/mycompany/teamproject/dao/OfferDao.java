@@ -114,6 +114,12 @@ public class OfferDao {
 		List<OfferDto> list = sst.selectList("offers.selectOfferRandomList");
 		return list;
 	}
+
+	public int selectPartnerId(int offer_id) {
+		logger.info("실행");
+		int partner_id = sst.selectOne("offers,selectPartnerId", offer_id);
+		return partner_id;
+	}
 	
 
 
