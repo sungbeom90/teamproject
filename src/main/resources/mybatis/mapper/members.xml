@@ -72,15 +72,15 @@
 	<!-- 플러스 입금 방식 -->
 	<update id="MaccountPupdate" parameterType="memberDto">
 		update members
-		set maccount= maccount+#{maccount}
-		where member_id=#{member_id};
+		set maccount=maccount+#{maccount}
+		where member_id=#{member_id}
 	</update>
 	
 	<!-- 마이너스 입금 방식 -->
 	<update id="MaccountMupdate" parameterType="memberDto">
 		update members
-		set maccount= maccount-#{maccount}
-		where member_id=#{member_id};
+		set maccount=maccount-#{maccount}
+		where member_id=#{member_id}
 	</update>
 
 
