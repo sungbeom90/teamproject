@@ -5,7 +5,7 @@
 		<li><a class="btn btn-info"	href="<%=application.getContextPath()%>/main/content">홈</a></li>
 		<li><a class="btn btn-info"	href="<%=application.getContextPath()%>/nations/nationlist">나라별</a></li>
 		<li><a class="btn btn-info"	href="<%=application.getContextPath()%>/locations/locationlist">도시별</a></li>
-		<li><a class="btn btn-info"	href="<%=application.getContextPath()%>/packages/content">추천상품</a></li>
+		
 	</ul>
 </div>
 

@@ -272,6 +272,4 @@ public class OfferController {
 			offerService.courseDeleteImage(course);			
 		}
 		
-		
-		
 }

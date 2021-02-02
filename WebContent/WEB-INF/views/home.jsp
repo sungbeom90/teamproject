@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -25,8 +26,36 @@
 				
 				<div class="content container">
 						<div class="sector">
-						<img src="<%=application.getContextPath()%>/resources/img/home_img.jpg" alt="logo" width="100%">
-						
+					<%-- <div class="head"
+						style="background-image:url('limage?location_id=${location.location_id}')">
+						${location.lname}</div> --%>
+					<div class="container-fluid">
+						<div class="card-deck">
+							<!-- 상품을 나타내기 위함 -->
+
+							<c:forEach var="offer" items="${list}">
+								<div class="card-deck" style="margin-left: 10px; margin-top: 40px;">
+									<div class="card locationlists"
+										style="width: 20rem; height: 350px; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;">
+										<img height="180px"
+											src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${offer.offer_id}"
+											class="card-img-top " alt="Card image">
+										<div class="card-body">
+											<h5 class="card-title">${offer.otitle}</h5>
+											<p class="card-title">${offer.osubtitle}</p>
+										</div>
+										<div class="card-footer" align="right">
+											<small class="text-muted">${offer.oprice}원</small> <a
+												href="<%=application.getContextPath()%>/offer/offerread?offer_id=${offer.offer_id}"
+												class="btn btn-outline-primary btn-sm"
+												style="margin-left: 10px;">바로가기</a>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+				</div>						
 				</div>			
 								
 				</div>

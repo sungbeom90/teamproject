@@ -69,6 +69,15 @@ public class OfferService {
 		List<OfferDto> list = offerDao.selectOfferList(location_id);
 		return list;
 	}
+	
+	
+	public List<OfferDto> getOfferRandomList() {
+		logger.info("실행");
+		List<OfferDto> list = offerDao.selectOfferRandomList();
+		return list;
+	}
+	
+	
 	public void offerUpdate(OfferDto offer) {
 		logger.info("실행");		
 		offerDao.updateOffer(offer);		
