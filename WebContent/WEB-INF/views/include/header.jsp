@@ -26,9 +26,12 @@
 									</a>
 								<div class="dropdown-menu">
 									<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/memberstest/logout">로그아웃</a>
+									<c:if test="${partnerId == null}">
 										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
+										</c:if>
+										<c:if test="${partnerId != null}">
 										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerstatus">파트너 정보</a>
-									
+									</c:if>
 									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/memberstest/memberstatus">회원정보</a>
 									<a class="dropdown-item" href="<%=application.getContextPath()%>/offer3/offerupload">상품등록</a>
 								</div>
