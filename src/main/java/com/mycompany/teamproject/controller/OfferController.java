@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -42,6 +43,11 @@ public class OfferController {
 		MemberService memberService;		
 		@Resource
 		PartnerService partnerService;
+		
+		@Value("${database.offers}")
+		private String offerDirPath;
+		
+		
 				
 		@GetMapping("/offerupload")
 		public String offerUploadForm() {
@@ -66,7 +72,7 @@ public class OfferController {
 					String oName = oimage.getOriginalFilename();
 					imageDto.setIimageoname(oName);
 					imageDto.setIimagetype(oimage.getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offer.getOffer_id()+"/"+oName); 
+					File saveFile = new File(offerDirPath+offer.getOffer_id()+"/"+oName); 
 					oimage.transferTo(saveFile);
 					logger.info(""+imageDto.getOffer_id());
 					offerService.imageRegister(imageDto);
@@ -100,7 +106,7 @@ public class OfferController {
 						String oName = cimage_array[i].getOriginalFilename();
 						course.setCimageoname(oName);
 						course.setCimagetype(cimage_array[i].getContentType());
-						File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
+						File saveFile = new File(offerDirPath+ course.getOffer_id()+"/courses/"+oName); 
 						cimage_array[i].transferTo(saveFile);
 						logger.info(""+course.getOffer_id());
 						offerService.courseRegister(course);
@@ -141,7 +147,7 @@ public class OfferController {
 		@GetMapping("/oimage")
 		public void oimage(int offer_id, String iimageoname, HttpServletResponse response)  throws Exception {
 			logger.info("실행");
-			String filePath = "D:/MyWorkspace/teamfiles/offers/" + offer_id + "/" + iimageoname;			
+			String filePath = offerDirPath + offer_id + "/" + iimageoname;			
 			OutputStream os= response.getOutputStream();
 			InputStream is = new FileInputStream(filePath);			
 			FileCopyUtils.copy(is, os);
@@ -153,7 +159,7 @@ public class OfferController {
 		public void oimagehead(int offer_id, HttpServletResponse response)  throws Exception {
 			logger.info("실행");
 			String iimageonameHead = offerService.getImageonameHead(offer_id);
-			String filePath = "D:/MyWorkspace/teamfiles/offers/" + offer_id + "/" + iimageonameHead;
+			String filePath = offerDirPath + offer_id + "/" + iimageonameHead;
 			OutputStream os= response.getOutputStream();
 			InputStream is = new FileInputStream(filePath);			
 			FileCopyUtils.copy(is, os);
@@ -164,7 +170,7 @@ public class OfferController {
 		@GetMapping("/cimage")
 		public void cimage(int offer_id, String cimageoname, HttpServletResponse response)  throws Exception {
 			logger.info("실행");
-			String filePath = "D:/MyWorkspace/teamfiles/offers/" + offer_id + "/courses/" + cimageoname;			
+			String filePath = offerDirPath + offer_id + "/courses/" + cimageoname;			
 			OutputStream os= response.getOutputStream();
 			InputStream is = new FileInputStream(filePath);			
 			FileCopyUtils.copy(is, os);
@@ -195,7 +201,7 @@ public class OfferController {
 					String oName = oimage.getOriginalFilename();
 					imageDto.setIimageoname(oName);
 					imageDto.setIimagetype(oimage.getContentType());
-					File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ offer.getOffer_id()+"/"+oName); 
+					File saveFile = new File(offerDirPath+ offer.getOffer_id()+"/"+oName); 
 					oimage.transferTo(saveFile);
 					logger.info(""+imageDto.getOffer_id());
 					offerService.imageRegister(imageDto);
@@ -245,7 +251,7 @@ public class OfferController {
 						String oName = cimage_array[i].getOriginalFilename();
 						course.setCimageoname(oName);
 						course.setCimagetype(cimage_array[i].getContentType());
-						File saveFile = new File("D:/MyWorkspace/teamfiles/offers/"+ course.getOffer_id()+"/courses/"+oName); 
+						File saveFile = new File(offerDirPath+ course.getOffer_id()+"/courses/"+oName); 
 						cimage_array[i].transferTo(saveFile);
 						logger.info(""+course.getOffer_id());
 						offerService.courseUpdateImage(course);
