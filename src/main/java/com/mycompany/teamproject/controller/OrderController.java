@@ -7,10 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.teamproject.dto.OrderDto;
+
 //지울예정
 
 @Controller
-@RequestMapping("/orders")
+@RequestMapping("/order")
 public class OrderController {
 	private static final Logger logger=
 			LoggerFactory.getLogger(OrderController.class);
@@ -19,6 +21,19 @@ public class OrderController {
 	public String rcmoffer(Model model) {
 		logger.info("실행");
 		return "locations/rcmofferlist";
+	}
+	
+	@GetMapping("/costcalcurater")
+	public String costcalcurater(int opeople, int oprice, Model model) {
+		OrderDto order = new OrderDto();
+		int ocost = oprice*opeople;
+		order.setOpeople(opeople);
+		order.setOprice(oprice);
+		order.setOcost(ocost);
+		
+		model.addAttribute("order", order);
+		logger.info("실행");
+		return "orders/estimate";
 	}
 	
 }

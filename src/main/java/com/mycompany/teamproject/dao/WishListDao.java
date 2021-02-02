@@ -9,8 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.teamproject.controller.RegisterController;
-import com.mycompany.teamproject.dto.NationDto;
 import com.mycompany.teamproject.dto.WishListDto;
 
 @Repository

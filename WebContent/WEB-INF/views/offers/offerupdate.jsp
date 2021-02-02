@@ -49,7 +49,7 @@
 						<input class="form-control" type="text" id="otime_meet" name="otime_meet" value="${offer.otime_meet}"><br/>
 						<c:forEach var="image" items="${imageList}">
 							<div id="${image.iimageoname}" style="display:flex; align-items:center; margin-bottom:5px;">					
-								<img src="../offer3/oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
+								<img src="../offer/oimage?offer_id=${offer.offer_id}&iimageoname=${image.iimageoname}" alt="${image.iimageoname}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
 								<a href="javascript:oimagedelete('${image.iimageoname}')">삭제</a>
 							</div>			
 						</c:forEach>

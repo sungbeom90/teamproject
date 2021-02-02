@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.*"%>
@@ -9,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>뉴욕</title>
+<title>${location.lname}</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script
@@ -34,31 +36,28 @@
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
 			<div class="content container">
+			<p>location3</p>
 				<div class="sector">
-				<div class="head" style="background-image:url('<%=application.getContextPath()%>${city.imgHead}')">
-				${city.name}
-				</div>
-						<h2>${city.recommend}</h2>		 				
-				<div class="card-deck">
-					<div class="card img-fluid locations">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${city.imgPackage1}" alt="Card image">
-						    <div class="card-img-overlay">
-						     	<h4 class="card-title">${city.big1}</h4>
-						      <p class="card-text">${city.big2}</p>
-						      <a href="<%=application.getContextPath()%>${city.btn1}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
-						    </div>
+					<div class="head" style="background-image:url('limage?location_id=${location.location_id}')">
+						${location.lname}
 					</div>
+					<div class="card-deck">
+					<!-- 상품을 나타내기 위함 -->
 					
-					<div class="card img-fluid locations">
-					    <img class="card-img-top img_center" src="<%=application.getContextPath()%>${city.imgPackage2}" alt="Card image">
-						    <div class="card-img-overlay">
-						      <h4 class="card-title">${city.sm1}</h4>
-						      <p class="card-text">${city.sm2}</p>
-						      <a href="<%=application.getContextPath()%>${city.btn2}" class="btn btn-outline-dark btn-sm stretched-link">바로가기</a>
-						    </div>
-					</div>
+						<c:forEach var="offer" items="${list}">
+							<div class="card img-fluid locations">								
+							    <img class="card-img-top img_center" src="../offer/oimagehead?offer_id=${offer.offer_id}" alt="Card image">
+							    <div class="card-img-overlay">
+							      <h4 class="card-title">${offer.otitle}</h4>
+							      <h5 class="card-title">${offer.osubtitle}</h5>
+							      <p class="card-text">${offer.oprice}원</p>
+							      <a href="../offer/offerread?offer_id=${offer.offer_id}" class="btn btn-outline-light btn-sm stretched-link">바로가기</a>
+							    </div>
+							  </div>
+						</c:forEach>	  
+							 
+					</div>					
 				</div>
-			  </div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 		</div>

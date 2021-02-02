@@ -58,15 +58,7 @@
 								});
 							};
 						</script>
-					</div>	
-			
-						<!-- <form method="post" enctype="multipart/form-data" onsubmit="fun1()" >
-						<h4 style="margin-left: 0.6em;">코스 소개</h4>
-						<input size="118px;" style=" border: none;" type="text" name="cplace" placeholder="코스  장소를 입력하세요"><br/>
-						<textarea class="form-control" rows="10" cols="50" name="cdetail" placeholder="코스  설명을 입력하세요" style="resize: none; border: none;"></textarea><br/>
-						<input style="margin-top: 20px;" type="file" name="offerPhoto"><br/>
-						<input style="margin-top: 20px;" class="btn btn-primary btn-sm" type="submit" value="저장"/>
-						</form>	 -->
+					</div>
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

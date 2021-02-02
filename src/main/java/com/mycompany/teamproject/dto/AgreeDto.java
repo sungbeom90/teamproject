@@ -7,6 +7,7 @@ public class AgreeDto {
 	private String aoption2;
 	private String apartner;
 	
+	private int member_id;
 	
 	public String getAessence1() {
 		return aessence1;
@@ -38,6 +39,13 @@ public class AgreeDto {
 	public void setApartner(String apartner) {
 		this.apartner = apartner;
 	}
+	public int getMember_id() {
+		return member_id;
+	}
+	public void setMember_id(int member_id) {
+		this.member_id = member_id;
+	}
+	
 	
 	
 }

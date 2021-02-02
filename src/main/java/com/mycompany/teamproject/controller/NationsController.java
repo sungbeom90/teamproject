@@ -1,102 +1,89 @@
 package com.mycompany.teamproject.controller;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.teamproject.dto.CountryDto;
+import com.mycompany.teamproject.dto.LocationDto;
+import com.mycompany.teamproject.dto.NationDto;
+import com.mycompany.teamproject.service.LocationService;
+import com.mycompany.teamproject.service.NationService;
+
+
 
 @Controller
 @RequestMapping("/nations")
 public class NationsController {
 		private static final Logger logger=
 				LoggerFactory.getLogger(NationsController.class);
+		
+		@Resource
+		private NationService nationService;
+		
+		@Resource
+		private LocationService locationService;
 
-
-		// http://.../teamproject/nations 생략됨
-		@RequestMapping("/content")
-		public String content() {
+		// 메인 -> 나라별 눌렀을때  리스트 나오는 화면. 서비스로 요청
+		@GetMapping("/nationlist")
+		public String nationlist(Model model) {
 			logger.info("실행");
-			return "nations/content";
+			List<NationDto> list = nationService.getNationList();			
+			model.addAttribute("list",list);
+			return "nations/nationlist";
 		}
 		
-		
-		
-		@GetMapping("/usa")
-		public String usa(HttpSession session){
-			logger.info("usa 실행");
-			CountryDto usadto = new CountryDto();
-			usadto.setImgHead("/resources/img/usa_head.jpg");
-			usadto.setImgCity1("/resources/img/newyork_head.jpg");
-			usadto.setImgCity2("/resources/img/hawaii_head.jpg");
-			usadto.setNameCity1("뉴 욕");
-			usadto.setNameCity2("하 와 이");
-			usadto.setNameCountry("미 국");
-			usadto.setRootCity1("/locations/newyork");
-			usadto.setRootCity2("/locations/hawaii");
-			
-			session.setAttribute("country", usadto);
-			
-			return "nations/nation"; 
+		@GetMapping("/nation")
+		public String nation(Model model, int nation_id) {
+			logger.info("실행");
+			NationDto nation = nationService.getNation(nation_id);
+			model.addAttribute("nation1", nation);
+			return "nations/nationlist";
 		}
 		
-		@GetMapping("/japan")
-		public String japan(HttpSession session){
-			logger.info("japan 실행");
-			CountryDto usadto = new CountryDto();
-			usadto.setImgHead("/resources/img/japan_head.jpg");
-			usadto.setImgCity1("/resources/img/okinawa_head.jpg");
-			usadto.setImgCity2("/resources/img/fukuoka_head.jpg");
-			usadto.setNameCity1("오 키 나 와");
-			usadto.setNameCity2("후 쿠 오 카");
-			usadto.setNameCountry("일 본");
-			usadto.setRootCity1("/locations/okinawa");
-			usadto.setRootCity2("/locations/fukuoka");
-			
-			session.setAttribute("country", usadto);
-			
-			return "nations/nation"; 
+		@GetMapping("/nationread")
+		public String nationread(int nation_id, Model model) {
+			logger.info("실행");
+			NationDto nation = nationService.getNation(nation_id);
+			List<LocationDto> list = locationService.getLocations(nation_id);
+			model.addAttribute("nation", nation);
+			model.addAttribute("list",list);
+			return "nations/nation";
 		}
 		
-		@GetMapping("/spain")
-		public String spain(HttpSession session){		
-			logger.info("spain 실행");
-			CountryDto usadto = new CountryDto();
-			usadto.setImgHead("/resources/img/spain_head.jpg");
-			usadto.setImgCity1("/resources/img/barcelona_head.jpg");
-			usadto.setImgCity2("/resources/img/seville_head.jpg");
-			usadto.setNameCity1("바 르 셀 로 나");
-			usadto.setNameCity2("세 비 야");
-			usadto.setNameCountry("스 페 인");
-			usadto.setRootCity1("/locations/barcelona");
-			usadto.setRootCity2("/locations/seville");
-			session.setAttribute("country", usadto);
-			return "nations/nation"; 
-		}
-		
-		@GetMapping("/korea")
-		public String korea(HttpSession session){
-			logger.info("korea 실행");
-			CountryDto usadto = new CountryDto();
-			usadto.setImgHead("/resources/img/korea_head.jpg");
-			usadto.setImgCity1("/resources/img/busan_head.jpg");
-			usadto.setImgCity2("/resources/img/sokcho_head.jpg");
-			usadto.setNameCity1("부 산");
-			usadto.setNameCity2("속 초");
-			usadto.setNameCountry("한 국");
-			usadto.setRootCity1("/locations/busan");
-			usadto.setRootCity2("/locations/sokcho");
+		@GetMapping("/nimage")
+		public void nimage(int nation_id, HttpSession session, HttpServletResponse response) throws Exception{
 			
-			session.setAttribute("country", usadto);
+			NationDto nation = nationService.getNation(nation_id);
+			String filePath=null;
+			if(nation.getNimagesname() !=null) {   ///첨부파일이 있을때
+				String nimagesname = nation.getNimagesname();
+				String nname = nation.getNname();
+				filePath = "D:/MyWorkspace/teamfiles/nations/" + nname + "/" + nimagesname; // 나라별 다른 폴더 이미지 가져오기.
+				
+			} else {							// 첨부파일이 없을때
+				filePath = "D:/MyWorkspace/teamfiles/nations/defaultnimage.jpg";
+			}
+			OutputStream os= response.getOutputStream();
+			InputStream is = new FileInputStream(filePath);
 			
-			return "nations/nation"; 
-		}
-	
-		
+			FileCopyUtils.copy(is, os);
+			os.flush();
+			os.close();
+			is.close();
+			}
 		
 
 }

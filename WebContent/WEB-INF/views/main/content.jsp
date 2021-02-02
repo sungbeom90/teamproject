@@ -61,41 +61,10 @@
 						</div>						
 				</div>
 				
-				<div class="sector">
-					<h5>봉 테스트</h5>
-					<ul class="navbar-nav">
-						<c:if test="${loginStatus == null}">
-								<div>
-									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/login">로그인 테스트</a>
-									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입 테스트</a>
-								</div>						
-						</c:if>
-						<c:if test="${loginStatus != null}">
-							<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-									<img src="<%=application.getContextPath()%>/memberstest/mimage" width="50px">
-									<span>프로필</span>
-									</a>
-								<div class="dropdown-menu">
-									<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/memberstest/logout">로그아웃</a>
-										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
-										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerstatus">파트너 정보</a>
-									
-									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/memberstest/memberstatus">회원정보</a>
-								</div>
-							</li>
-						</c:if>
-					</ul>
-				</div>
+				
 				
 				<div class="sector">
 					<h2>박성범 테스트</h2>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/nations3/nationlist">나라별보기</a>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/locations3/locationlist2">도시별보기</a>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/orders">결제하기</a>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/wishes/wishlist">위시리스트</a>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer3/offerupload">상품 등록</a>
-					<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="<%=application.getContextPath()%>/offer3/offerread?offer_id=36">상품 읽기(텍스트만)</a>
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

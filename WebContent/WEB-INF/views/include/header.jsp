@@ -10,24 +10,32 @@
 		</a>
 
 		<!-- Links -->
+		
 		<ul class="navbar-nav">
-			<c:if test="${loginStatus == null}">
-				<li class="nav-item"><a class="nav-link" href="<%=application.getContextPath()%>/members/sign_up">회원가입</a></li>
-				<li class="nav-item"><a class="nav-link" href="<%=application.getContextPath()%>/members/sign_in">로그인</a></li>
-			</c:if>
-			<c:if test="${loginStatus != null}">
-				<!-- Dropdown -->
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-						<img src="<%=application.getContextPath()%>/resources/img/myphoto.png" width="50px"/>
-					</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="<%=application.getContextPath()%>/members/logout">로그아웃</a>
-						<a class="dropdown-item" href="<%=application.getContextPath()%>/register/content">상품등록</a>
-					</div>
-				</li>
-			</c:if>
-		</ul>
+						<c:if test="${loginStatus == null}">
+								<div>
+									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/login">로그인</a>
+									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/memberstest/join">회원가입</a>
+								</div>						
+						</c:if>
+						<c:if test="${loginStatus != null}">
+							<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+									<img src="<%=application.getContextPath()%>/memberstest/mimage" width="50px">
+									<span>프로필</span>
+									</a>
+								<div class="dropdown-menu">
+									<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/memberstest/logout">로그아웃</a>
+										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
+										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerstatus">파트너 정보</a>
+									
+									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/memberstest/memberstatus">회원정보</a>
+									<a class="dropdown-item" href="<%=application.getContextPath()%>/offer3/offerupload">상품등록</a>
+								</div>
+							</li>
+						</c:if>
+					</ul>
+		
 	</nav>
 	<br /> <br /> <br />
 </header>

@@ -50,7 +50,7 @@
 				<div class="sector">
 				<c:forEach var="location" items="${list}" >
 					<div class="card locationlists" style="width: 20rem; height: 19.5rem; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;" >							
-						<img height="160px" src="../locations3/limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
+						<img height="160px" src="../locations/limage?location_id=${location.location_id}" class="card-img-top" alt="Card image" >
 						<!-- <div class="card-img-overlay" > -->
 							<div class="card-body">
 								<h5  class="card-title">${location.lname}</h5>
@@ -62,22 +62,22 @@
 				
 				</c:forEach>	
 					<div style="margin-left: 400px; margin-top: 30px;">
-						<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist2?pageNo=1">처음</a> 
+						<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=1">처음</a> 
 						<c:if test="${pager.groupNo > 1}">
-							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist2?pageNo=${pager.startPageNo-1}">이전</a>
+							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=${pager.startPageNo-1}">이전</a>
 						</c:if>
 						<c:forEach var="i" begin="${pager.startPageNo}" end="${pager.endPageNo}">
 							<c:if test="${i == pager.pageNo}">
-								<a class="btn btn-danger btn-sm mr-1" href="locationlist2?pageNo=${i}">${i}</a>
+								<a class="btn btn-danger btn-sm mr-1" href="locationlist?pageNo=${i}">${i}</a>
 							</c:if>
 							<c:if test="${i != pager.pageNo}">
-								<a class="btn btn-success btn-sm mr-1" href="locationlist2?pageNo=${i}">${i}</a>
+								<a class="btn btn-success btn-sm mr-1" href="locationlist?pageNo=${i}">${i}</a>
 							</c:if>
 						</c:forEach>
 						<c:if test="${pager.groupNo < pager.totalGroupNo}">
-							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist2?pageNo=${pager.endPageNo+1}">다음</a>
+							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=${pager.endPageNo+1}">다음</a>
 						</c:if>
-							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist2?pageNo=${pager.totalPageNo}">맨끝</a>
+							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=${pager.totalPageNo}">맨끝</a>
 					</div>		
 				</div>
 			</div>

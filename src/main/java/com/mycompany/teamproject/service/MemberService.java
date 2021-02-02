@@ -48,13 +48,16 @@ public class MemberService {
 	public String login(MemberDtoTest member) {
 		logger.info("로그인서비스");
 		MemberDtoTest dbmember = memberDao.login(member.getMemail());
+		logger.info(member.getMemail());
+		logger.info(member.getMpassword());
 		if(dbmember == null) {
-			return "failEmail";
+			return "emptyEmail";
 		}else if(dbmember.getMpassword().equals(member.getMpassword())){
 			return "loginSuccess";
 		}else {
 			return "wrongPassword";
 		}
+		
 	}
 	
 	//로그인 했을때, 프로필사진
@@ -67,11 +70,11 @@ public class MemberService {
 	}
 */
 	//이메일 중복확인
-	public String emailcheck(MemberDtoTest email) {
+	public String emailcheck(MemberDtoTest memail) {
 		logger.info("이메일 중복 검사 서비스");
-		MemberDtoTest dbemail = memberDao.emailcheck(email.getMemail());
-		logger.info("이메일 : "+ email.getMemail());
-		if(dbemail.getMemail().equals(email.getMemail())) {
+		MemberDtoTest dbemail = memberDao.emailcheck(memail.getMemail());
+		logger.info("이메일 : "+ memail.getMemail());
+		if(dbemail.getMemail().equals(memail.getMemail())) {
 			return "sameEmail";
 		}else {
 			return "passEmail";

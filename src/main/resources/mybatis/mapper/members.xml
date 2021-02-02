@@ -28,7 +28,7 @@
 	</select>
 	
 	<!-- 이메일 중복확인 -->
-	<select id="email" parameterType="string" resultType="string">
+	<select id="email" parameterType="string" resultType="memberDto">
 		select memail
 		from members
 		where memail=#{memail}
@@ -43,9 +43,9 @@
 				from dual
 		</selectKey>
 			insert into members
-			(member_id, memail, mname, mpassword, mphone, mjoin)
+			(member_id, memail, mname, mpassword, mphone, mjoin, mgender)
 			values
-			(#{member_id}, #{memail}, #{mname}, #{mpassword}, #{mphone}, sysdate)
+			(#{member_id}, #{memail}, #{mname}, #{mpassword}, #{mphone}, sysdate, #{mgender})
 	</insert>
 	
 	<!-- 회원가입시 사진 추가 부분 -->

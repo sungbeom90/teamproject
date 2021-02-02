@@ -10,6 +10,7 @@ public class PartnerDto {
 	private int member_id;
 	private int location_id;
 	private String location_name;
+	private String memail;
 	
 	public int getPartner_id() {
 		return partner_id;
@@ -47,6 +48,13 @@ public class PartnerDto {
 	public void setLocation_name(String location_name) {
 		this.location_name = location_name;
 	}
+	public String getMemail() {
+		return memail;
+	}
+	public void setMemail(String memail) {
+		this.memail = memail;
+	}
+	
 	
 	
 	

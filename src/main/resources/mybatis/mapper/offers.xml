@@ -6,12 +6,14 @@
 			select offer_id_seq.nextval from dual
 		</selectKey>
 		insert into offers (offer_id, otitle, osubtitle, oprice, obody, oinclude, ouninclude, oplace_meet, otime_meet, partner_id)
-		values (#{offer_id}, #{otitle}, #{osubtitle}, #{oprice}, #{obody}, #{oinclude}, #{ouninclude}, #{oplace_meet}, #{otime_meet}, #{partner_id} )
-	</insert>	
+		values (#{offer_id}, #{otitle}, #{osubtitle}, #{oprice}, #{obody}, #{oinclude}, #{ouninclude}, #{oplace_meet}, #{otime_meet}, #{partner_id})
+	</insert>
+	
 	<insert id="insertimage" parameterType="image"> <!-- 상품이미지 입력하기 -->
 		insert into images (offer_id, iimageoname, iimagetype)
 		values(#{offer_id}, #{iimageoname}, #{iimagetype})
 	</insert>
+	
 	<insert id="insertcourse" parameterType="course"> <!-- 상품코스 입력하기 -->
 		insert into courses (offer_id, course_no, cplace, cdetail, ctime, cimageoname, cimagetype)
 		values(#{offer_id}, #{course_no}, #{cplace}, #{cdetail}, #{ctime}, #{cimageoname}, #{cimagetype})

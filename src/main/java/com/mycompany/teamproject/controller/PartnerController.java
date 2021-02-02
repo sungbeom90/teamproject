@@ -74,6 +74,7 @@ public class PartnerController {
 	public String partnerupdate(PartnerDto pid, HttpSession session) {
 		logger.info("파트너 정보 수정 요청");
 		int mid = (int) session.getAttribute("sessionMid");
+		
 		pid.setMember_id(mid);
 		partnerService.partnerupdate(pid);
 		
@@ -81,18 +82,22 @@ public class PartnerController {
 	}
 	
 	@PostMapping("/partnerupdate")
-	public String statusUpdate(PartnerDto status) {
+	public String statusUpdate(PartnerDto status, String location_name, HttpSession session) {
 		logger.info("파트너 정보 수정 보내기");
+		int lid = partnerService.locationname(location_name);
+		int mid = (int) session.getAttribute("sessionMid");
+		
+		status.setMember_id(mid);
+		status.setLocation_id(lid);
 		partnerService.statusUpdate(status);
 		return "redirect:/partners/partnerstatus";
 	}
 	
 	//파트너 탈퇴
 	@GetMapping("/partnerdelete")
-	public String partnerdelete(int partner_id, HttpSession session) {
+	public String partnerdelete(int partner_id) {
 		logger.info("파트너 취소하기");
 		partnerService.partnerdelete(partner_id);
-		session.invalidate();
 		return "redirect:/partners/content";
 	}
 }
