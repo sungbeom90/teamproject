@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.mycompany.teamproject.dao.MemberDao;
-import com.mycompany.teamproject.dto.MemberDtoTest;
+import com.mycompany.teamproject.dto.MemberDto;
 
 @Service
 public class MemberService {
@@ -17,9 +17,9 @@ public class MemberService {
 	private MemberDao memberDao;
 	
 	//pk에 대한 정보 객체
-	public MemberDtoTest getMember(int mid) {
+	public MemberDto getMember(int mid) {
 		logger.info("mid 객체 받기 확인");
-		MemberDtoTest member = memberDao.getMember(mid);
+		MemberDto member = memberDao.getMember(mid);
 		return member;
 	}
 	
@@ -31,23 +31,25 @@ public class MemberService {
 	}
 	
 	//사진 없는 회원가입
-	public int joininsert(MemberDtoTest mdt) {
+	public int joininsert(MemberDto mdt) {
 		logger.info("회원가입 서비스");
 		int join = memberDao.joininsert(mdt);
 		return join;
 	}
 	
+	
+	
 	//회원가입시 사진 첨부
-	public int imageUpdate(MemberDtoTest mdt) {
+	public int imageUpdate(MemberDto mdt) {
 		logger.info("회원사진 서비스");
 		int join = memberDao.imageUpdate(mdt);
 		return join;
 	}
 	
 	// 성공, 이메일, 비번 다를때
-	public String login(MemberDtoTest member) {
+	public String login(MemberDto member) {
 		logger.info("로그인서비스");
-		MemberDtoTest dbmember = memberDao.login(member.getMemail());
+		MemberDto dbmember = memberDao.login(member.getMemail());
 		logger.info(member.getMemail());
 		logger.info(member.getMpassword());
 		if(dbmember == null) {
@@ -70,9 +72,9 @@ public class MemberService {
 	}
 */
 	//이메일 중복확인
-	public String emailcheck(MemberDtoTest memail) {
+	public String emailcheck(MemberDto memail) {
 		logger.info("이메일 중복 검사 서비스");
-		MemberDtoTest dbemail = memberDao.emailcheck(memail.getMemail());
+		MemberDto dbemail = memberDao.emailcheck(memail.getMemail());
 		logger.info("이메일 : "+ memail.getMemail());
 		if(dbemail.getMemail().equals(memail.getMemail())) {
 			return "sameEmail";
@@ -84,16 +86,16 @@ public class MemberService {
 	}
 	
 	//회원정보 관리
-	public MemberDtoTest loginstatus(String mstatus) {
+	public MemberDto loginstatus(String mstatus) {
 		logger.info("회원정보 관리 가져오기 서비스");
-		MemberDtoTest status = memberDao.loginstatus(mstatus);
+		MemberDto status = memberDao.loginstatus(mstatus);
 		logger.info("회원정보 관리 가져오기 서비스 : " + status.getMemail());
 		logger.info("회원정보 관리 가져오기 서비스 : " + status.getMname());
 		return status;
 	}
 	
 	//회원정보 수정
-	public void statusUpdate(MemberDtoTest status) {
+	public void statusUpdate(MemberDto status) {
 		logger.info("회원정보 수정 서비스");
 		memberDao.statusUpdate(status);
 		
@@ -104,9 +106,9 @@ public class MemberService {
 		memberDao.memberdelete(member_id);
 	}
 
-	public MemberDtoTest loginemail(String memail) {
+	public MemberDto loginemail(String memail) {
 		logger.info("이메일 중복용 정보 서비스");
-		MemberDtoTest email = memberDao.login(memail);
+		MemberDto email = memberDao.login(memail);
 		return email;
 	}
 	

@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.teamproject.dto.MemberDtoTest;
+import com.mycompany.teamproject.dto.MemberDto;
 
 @Repository
 public class MemberDao {
@@ -17,9 +17,9 @@ public class MemberDao {
 	private SqlSessionTemplate sst;
 	
 	//mid 객체
-	public MemberDtoTest getMember(int mid) {
+	public MemberDto getMember(int mid) {
 		logger.info("mid 객체 다오");
-		MemberDtoTest member = sst.selectOne("members.getMember", mid);
+		MemberDto member = sst.selectOne("members.getMember", mid);
 		return member;
 	}
 	//이메일에 대한 pk
@@ -30,23 +30,24 @@ public class MemberDao {
 	}
 	
 	//인설트로 행을 추가하여 리턴
-	public int joininsert(MemberDtoTest mdt) {
+	public int joininsert(MemberDto mdt) {
 		logger.info("회원가입 다오");
 		int rows = sst.insert("members.joininsert", mdt);
 		return rows;
 	}
 	
+	
 	//회원가입시, 사진을 추가하면 업데이트 방식으로 설정
-	public int imageUpdate(MemberDtoTest mdt) {
+	public int imageUpdate(MemberDto mdt) {
 		logger.info("회원가입 사진 추가 다오");
 		int rows = sst.update("members.imageUpdate", mdt);
 		return rows;
 	}
 	
 	//맴버_아이디 받아와서 리턴
-	public MemberDtoTest login(String memail) {
+	public MemberDto login(String memail) {
 		logger.info("회원정보 다오");
-		MemberDtoTest status = sst.selectOne("members.login", memail);
+		MemberDto status = sst.selectOne("members.login", memail);
 		logger.info("회원정보 다오 : " + status.getMemail());
 		return status;
 	}
@@ -62,22 +63,22 @@ public class MemberDao {
 	*/
 	
 	//이메일 중복 확인
-	public MemberDtoTest emailcheck(String memail) {
+	public MemberDto emailcheck(String memail) {
 		logger.info("이메일 확인 다오");
-		MemberDtoTest email = sst.selectOne("members.email", memail);
+		MemberDto email = sst.selectOne("members.email", memail);
 		logger.info("이메일 : "+ email.getMemail());
 		return email;
 	}
 	
 	//회원정보 관리
-	public MemberDtoTest loginstatus(String mstatus) {
+	public MemberDto loginstatus(String mstatus) {
 		logger.info("회원정보 관리 다오");
-		MemberDtoTest status = sst.selectOne("members.login", mstatus);
+		MemberDto status = sst.selectOne("members.login", mstatus);
 		logger.info("회원정보 관리 다오 : " + status.getMemail());
 		return status;
 	}
 	//회원정보 수정
-	public int statusUpdate(MemberDtoTest status) {
+	public int statusUpdate(MemberDto status) {
 		logger.info("회원정보 수정 다오");
 		int update = sst.update("members.statusUpdate", status);
 		return update;

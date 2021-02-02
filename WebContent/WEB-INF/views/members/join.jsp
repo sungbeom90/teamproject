@@ -44,7 +44,6 @@
 								<label for="mphone">전화번호</label>
 								<input type="number" id="mphone" name="mphone" placeholder="전화번호를 입력하세요."><br/>
 								
-								<fmt:formatDate value="${date.mjoin}" pattern="yyyy-MM-dd"/><br/>
 								
 								<label for="mimage">프로필 사진</label><br/>
 								<input type="file" id="mimage" name="mimage">
@@ -63,10 +62,10 @@
 								<!-- form 추가 -->
 					 			<h5>회원 가입 약관</h5>
 					 			<input type="checkbox" id="uagree_all" name="uagree_all" value="all" /> 전체 약관 동의<br/>
-								<input type="checkbox" id="aessence1" name="aessence1" value="essential1"/> 회원 가입 및 운영약관 동의 (필수)<br/>
-								<input type="checkbox" id="aessence2" name="aessence2" value="essential2"/> 개인정보 수집 및 이용 (필수)<br/>
-								<input type="checkbox" id="aoption1" name="aoption1" value="option1"> 위치정보 이용약관 (선택)<br/>
-								<input type="checkbox" id="aoption2" name="aoption2" value="option2"/> 특가 항공권 및 할인 혜택 안내 동의  (선택)<br/>
+								<input type="checkbox" id="aessence1" name="aessence_1" value="essential_1"/> 회원 가입 및 운영약관 동의 (필수)<br/>
+								<input type="checkbox" id="aessence2" name="aessence_2" value="essential_2"/> 개인정보 수집 및 이용 (필수)<br/>
+								<input type="checkbox" id="aoption1" name="aoption_1" value="option_1"> 위치정보 이용약관 (선택)<br/>
+								<input type="checkbox" id="aoption2" name="aoption_2" value="option_2"/> 특가 항공권 및 할인 혜택 안내 동의  (선택)<br/>
 								<input type="checkbox" id="apartner" name="apartner" value="apartner"/> 파트너 등록  (선택)<br/>
 								<br/>
 								<p>*선택 항목을 동의하지 않아도 서비스를 이용하실 수 있습니다.</p>
