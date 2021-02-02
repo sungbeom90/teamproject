@@ -81,6 +81,13 @@ public class PartnerService {
 		int rows = partnerDao.setPaccountM(partner);
 		return rows;
 	}
+	public String locationName(int lid) {
+		logger.info("지역이름 가져오기 서비스");
+		String name = partnerDao.locationName(lid);
+		return name;
+	}
+	
+	
 	
 
 }

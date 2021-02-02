@@ -39,29 +39,32 @@
 											</c:if>
 										</li>
 										
-										<li><label for="mname">이름</label>
-										<input type="text" value="${mstatus.mname}" id="mname" name="mname" readonly/>
-										</li>
-										
-										<li><label for="memail">이메일</label>
-				 						<input type="email" value="${mstatus.memail}" id="memail" name="memail" readonly/>
+										<li>
+											<label for="mname">이름</label>
+											<input type="text" value="${mstatus.mname}" id="mname" name="mname" readonly/>
 										</li>
 										
 										<li>
-										<label for="mphone">전화번호</label>
-										<input type="number" value="${mstatus.mphone}" id="mphone" name="mphone" readonly/>
+											<label for="memail">이메일</label>
+					 						<input type="email" value="${mstatus.memail}" id="memail" name="memail" readonly/>
 										</li>
 										
 										<li>
-										<div id="maccountnow">잔여 금액
-										<input type="number" value="${mstatus.maccount}" name="maccountnow" readonly/>
-										</div>
-										<input type="number"  id="maccount" name="maccount" placeholder="충전 할 금액을 입력해주세요." /><br/>
-										<a href="javascript:maccountupdate()">충전</a>
+											<label for="mphone">전화번호</label>
+											<input type="number" value="${mstatus.mphone}" id="mphone" name="mphone" readonly/>
 										</li>
 										
-										<li><label for="mdate">가입 날짜</label>
-							   			 <input type="date" 
+										<li>
+											<div id="maccountnow">잔여 금액
+											<input type="number" value="${mstatus.maccount}" name="maccountnow" readonly/>
+											</div>
+											<input type="number"  id="maccount" name="maccount" placeholder="충전 할 금액을 입력해주세요." /><br/>
+											<a href="javascript:maccountupdate()">충전</a>
+										</li>
+										
+										<li>
+											<label for="mdate">가입 날짜</label>
+								   			<input type="date" 
 												value='<fmt:formatDate value="${mstatus.mjoin}" pattern="yyyy-MM-dd"/>'
 												 readonly class="form-control" id="mdate" name="mdate"/>
 										 </li>

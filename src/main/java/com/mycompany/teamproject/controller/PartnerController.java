@@ -37,14 +37,13 @@ public class PartnerController {
 	}
 	
 	@PostMapping("/partnerjoin")
-	public String partnerjoin(PartnerDto pdt, String lname, HttpSession session, Model model) {
+	public String partnerjoin(PartnerDto pdt, String lname, HttpSession session) {
 		logger.info("파트너 등록 페이지");
 		
 		int lid = partnerService.locationname(lname);
 		int mid = (int) session.getAttribute("sessionMid");
 		logger.info("" + mid);
-		
-		
+		 
 		pdt.setMember_id(mid);
 		pdt.setLocation_id(lid);
 		partnerService.partnerinsert(pdt);
@@ -61,6 +60,10 @@ public class PartnerController {
 		logger.info("paccount : "+partner.getPaccount());
 		partner.setMember_id(mid);
 		
+		 /*
+		String lname = partnerService.locationName(lid);
+		partner.setLname(lname);
+		*/
 		
 		PartnerDto status = partnerService.partnerstatus(partner);
 		logger.info("지역 이름  : "+status.getLname());

@@ -86,6 +86,13 @@ public class PartnerDao {
 		return rows;
 	}
 
+	public String locationName(int lid) {
+		String name = sst.selectOne("partners.locationName", lid);
+		return name;
+	}
+
+
+
 
 	
 }

@@ -259,7 +259,7 @@ public class MemberController {
 		member.setMember_id(member_id);
 		member.setMaccount(maccount);
 		memberService.setMaccountP(member);
-		return null;
+		return "members/maccount";
 	}
 	
 	

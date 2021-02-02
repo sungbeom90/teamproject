@@ -39,11 +39,17 @@
 	</select>
 	
 	
-	<!-- 지역이름 가져오기 -->
+	<!-- 지역이름으로 id값 가져오기 -->
 	<select id="selectByName" parameterType="string" resultType="int">
 		select location_id
 		from locations
 		where lname=#{lname}
+	</select>
+	
+	<select id="locationName" parameterType="int" resultType="string">
+		select lname
+		from locations
+		where location_id=#{location_id}
 	</select>
 	
 	<!-- 파트너 등록 -->
@@ -78,6 +84,7 @@
 		set paccount=paccount-#{paccount}
 		where partner_id=#{partner_id};
 	</update>
+	
 	
 	
 </mapper>
