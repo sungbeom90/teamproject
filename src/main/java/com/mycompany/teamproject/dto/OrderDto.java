@@ -2,13 +2,18 @@ package com.mycompany.teamproject.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class OrderDto {
 	// 데이터베이스 컬럼 필드
 	private int order_id;
 	private int opeople;
 	private int ocost;
 	private Date odate_com;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date odate_meet;
+	
 	private String ostatus;
 	private int member_id;
 	private int offer_id;

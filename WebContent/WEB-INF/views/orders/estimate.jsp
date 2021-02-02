@@ -11,8 +11,7 @@
 	<hr/>
 	<span>${order.oprice}</span>
 	<hr/>
-	<span>${order.ocost}</span>
-	<hr/>
+	<input class="form-control" type="number" id="ocost" name="ocost" value="${order.ocost}" readonly="readonly"><br/>
 	<input class="btn btn-info btn-sm" type="submit" value="결제하기"><br/>
 </div>
 <!-- </form> -->
