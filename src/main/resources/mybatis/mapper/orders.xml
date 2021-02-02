@@ -9,6 +9,13 @@
 		values (#{order_id}, #{opeople}, #{ocost}, sysdate, #{odate_meet}, #{ostatus}, #{member_id}, #{offer_id})
 	</insert>
 	
+	<select id="selectOrderList" parameterType="int" resultType="OrderDto">
+		select order_id, opeople, ocost, odate_com, odate_meet, ostatus, member_id, offer_id
+		from orders
+		where member_id=#{member_id}
+		order by order_id desc
+	</select>
+	
 	
 	
 	

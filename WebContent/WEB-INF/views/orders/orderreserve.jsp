@@ -43,7 +43,7 @@
 						<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${order.offer_id}">
 						<input class="form-control" type="hidden" id="member_id" name="member_id" value="${order.member_id}">
 						<%-- <input class="form-control" type="hidden" id="partner_id" name="partner_id" value="${offer.partner_id}"> --%>
-						<a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${order.offer_id}">"${otitle}"</a><br/>
+						<a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${order.offer_id}">"${order.otitle}"</a><br/>
 						<input class="form-control" type="date" id=odate_meet name="odate_meet" value="<fmt:formatDate value="${order.odate_meet}" pattern="yyyy-MM-dd"/>" readonly="readonly"><br/>
 						<input class="form-control" type="number" id="opeople" name="opeople" value="${order.opeople}"readonly="readonly"><br/>
 						<input class="form-control" type="number" id="oprice" name="oprice" value="${order.oprice}" readonly="readonly"><br/>

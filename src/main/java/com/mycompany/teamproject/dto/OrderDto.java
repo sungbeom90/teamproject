@@ -22,6 +22,9 @@ public class OrderDto {
 	// 브라우저 -> form -> 컨트롤러 매개변수로 쓰이는 필드	
 	private int oprice;
 	
+	// 컨트롤러 -> 브라우저 매개변수로 쓰이는 필드
+	private String otitle;
+	
 	public int getOrder_id() {
 		return order_id;
 	}
@@ -75,6 +78,12 @@ public class OrderDto {
 	}
 	public void setOprice(int oprice) {
 		this.oprice = oprice;
+	}
+	public String getOtitle() {
+		return otitle;
+	}
+	public void setOtitle(String otitle) {
+		this.otitle = otitle;
 	}
 	
 	
