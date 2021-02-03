@@ -116,5 +116,11 @@
 		from courses
 		where offer_id=#{offer_id} and cimageoname=#{cimageoname}
 	</delete>
+	
+	<delete id="deleteOffer" parameterType="int">
+		delete
+		from offers
+		where offer_id=#{offer_id}
+	</delete>
 
 </mapper>

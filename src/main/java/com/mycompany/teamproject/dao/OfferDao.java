@@ -120,6 +120,12 @@ public class OfferDao {
 		int partner_id = sst.selectOne("offers,selectPartnerId", offer_id);
 		return partner_id;
 	}
+
+	public int deleteOffer(int offer_id) {
+		logger.info("실행");
+		int rows = sst.delete("offers.deleteOffer", offer_id);
+		return rows;		
+	}
 	
 
 

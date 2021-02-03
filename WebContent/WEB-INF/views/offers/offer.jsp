@@ -92,8 +92,12 @@
 							<a class="btn btn-danger btn-sm d-block" href="javascript:costcalcurater()">금액조회하기</a><br/>
 							<div id="estimate"></div>
 						</form>
-						<div class="d-inlineblock">작성자들어갈곳</div>
-						<a class="btn btn-sm btn-outline-warning ml-1 mr-1" href="offerupdate?offer_id=${offer.offer_id}">수정하기(텍스트만)</a>
+						<div class="d-inlineblock">가이드 : ${offer.pname}</div>
+						<c:if test="${sessionMid == offer.member_id}">
+							<a class="btn btn-sm btn-outline-warning d-block" href="offerupdate?offer_id=${offer.offer_id}">수정</a>
+							<a class="btn btn-sm btn-outline-warning d-block" href="offerdelete?offer_id=${offer.offer_id}">삭제</a>
+						</c:if>
+						
 					
 				</div>
 				<script type="text/javascript">
