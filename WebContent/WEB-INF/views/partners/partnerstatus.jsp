@@ -21,7 +21,7 @@
 			<jsp:include page="/WEB-INF/views/include/header.jsp"/> 
 			
 			<%-- 내용 --%>
-			<div class="mainCenter">
+			<div class="mainCenter mt-5">
 				<%-- 공통 메뉴 --%>
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">
@@ -49,7 +49,7 @@
 										</li>
 										
 										<li>
-											<label for="pjoin">가입 날짜*</label><br/>
+											<label for="pjoin">파트너 등록 날짜*</label><br/>
 								   			 <input type="date"
 													value='<fmt:formatDate value="${partner.pjoin}" pattern="yyyy-MM-dd"/>'
 													 readonly class="form-control" id="pjoin" name="pjoin"/>

@@ -30,7 +30,7 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 
 		<%-- 내용 --%>
-		<div class="mainCenter">
+		<div class="mainCenter mt-5">
 			<div class="content container">
 				<div class="sector container border rounded user_in mt-5 mb-5">
 					<h2>비밀번호 재 설정</h2>
