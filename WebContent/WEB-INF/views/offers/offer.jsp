@@ -56,15 +56,16 @@
 					<hr/>
 					<h4>코스 소개</h4>
 					<c:forEach var="course" items="${courseList}">
-						<div class="bg-secondary d-flex justify-content-between align-content-center pt-2 pb-2 pl-2 pr-2 ">
-							<div class="flex-fill">
-								<p>${course.cplace}</p>
-								<p>${course.cdetail}</p>
-								<p>${course.ctime}</p>							
-							</div>
-							<div class="flex-fill">											
-								<img src="cimage?offer_id=${offer.offer_id}&cimageoname=${course.cimageoname}" alt="${image.iimageoname}"
-								class="Thumbnail d-block" style="width:50%; height:100%"/>
+						<div class="p-2 border mb-2">
+							<div class="bg-secondary d-flex align-content-center pt-2 pb-2 pl-2 pr-2">
+								<div class="p-2 mr-auto">
+									<span>장소 : ${course.cplace}</span><span> 소요시간 : ${course.ctime}</span>
+									<p>${course.cdetail}</p>							
+								</div>
+								<div class="p-2 ml-auto">											
+									<img src="cimage?offer_id=${offer.offer_id}&cimageoname=${course.cimageoname}" alt="${image.iimageoname}"
+									class="Thumbnail d-block" style="width:50%; height:100%"/>
+								</div>
 							</div>
 							
 						</div>		

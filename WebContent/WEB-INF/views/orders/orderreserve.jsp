@@ -36,13 +36,13 @@
 		
 			<div class="content container">
 			<h2>결제하기</h2>
-				<div class="sector">
-					<img src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${order.offer_id}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
+				<div class="sector container border rounded user_in mt-5 mb-5">					
+					<img class="rounded"src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${order.offer_id}" width="100%"/>
 					<form method="post" action="orderreserve">
 						<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${order.offer_id}">
 						<input class="form-control" type="hidden" id="member_id" name="member_id" value="${order.member_id}">
 						<%-- <input class="form-control" type="hidden" id="partner_id" name="partner_id" value="${offer.partner_id}"> --%>
-						<a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${order.offer_id}">"${order.otitle}"</a><br/>
+						<a href="<%=application.getContextPath()%>/offer/offerread?offer_id=${order.offer_id}">"${order.otitle}"</a><br/><br/>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
 								<span class="input-group-text">예약날짜</span>
