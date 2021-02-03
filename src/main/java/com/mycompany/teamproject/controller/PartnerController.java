@@ -60,6 +60,7 @@ public class PartnerController {
 		int mid = (int) session.getAttribute("sessionMid");
 		logger.info("mid : " + mid);
 		partner.setMember_id(mid);
+	
 		
 		PartnerDto status = partnerService.partnerstatus(partner);
 		int lid = status.getLocation_id();
