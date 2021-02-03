@@ -36,7 +36,7 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 		
 		<%-- 내용 --%>
-		<div class="mainCenter">
+		<div class="mainCenter mt-5">
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp" />			
 			<div class="content container">
@@ -67,22 +67,22 @@
 				
 				</c:forEach>	
 					<div style="margin-left: 400px; margin-top: 30px;">
-						<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=1">처음</a> 
+						<a class="btn btn-outline-dark btn-sm mr-1" href="locationlist?pageNo=1">처음</a> 
 						<c:if test="${pager.groupNo > 1}">
-							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=${pager.startPageNo-1}">이전</a>
+							<a class="btn btn-outline-dark btn-sm mr-1" href="locationlist?pageNo=${pager.startPageNo-1}">이전</a>
 						</c:if>
 						<c:forEach var="i" begin="${pager.startPageNo}" end="${pager.endPageNo}">
 							<c:if test="${i == pager.pageNo}">
-								<a class="btn btn-danger btn-sm mr-1" href="locationlist?pageNo=${i}">${i}</a>
+								<a class="btn btn-link btn-sm mr-1" href="locationlist?pageNo=${i}">${i}</a>
 							</c:if>
 							<c:if test="${i != pager.pageNo}">
-								<a class="btn btn-success btn-sm mr-1" href="locationlist?pageNo=${i}">${i}</a>
+								<a class="btn btn-link btn-sm mr-1" href="locationlist?pageNo=${i}">${i}</a>
 							</c:if>
 						</c:forEach>
 						<c:if test="${pager.groupNo < pager.totalGroupNo}">
-							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=${pager.endPageNo+1}">다음</a>
+							<a class="btn btn-outline-dark btn-sm mr-1" href="locationlist?pageNo=${pager.endPageNo+1}">다음</a>
 						</c:if>
-							<a class="btn btn-outline-warning btn-sm mr-1" href="locationlist?pageNo=${pager.totalPageNo}">맨끝</a>
+							<a class="btn btn-outline-dark btn-sm mr-1" href="locationlist?pageNo=${pager.totalPageNo}">맨끝</a>
 					</div>		
 				</div>
 			</div>

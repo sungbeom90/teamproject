@@ -20,6 +20,9 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 <link rel="stylesheet"
 	href="<%=application.getContextPath()%>/resources/css/main.css">
 <script
@@ -32,21 +35,23 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 		
 		<%-- 내용 --%>
-		<div class="mainCenter">
+		<div class="mainCenter mt-5">
 			<%-- 공통 메뉴 --%>
 			<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 			<div class="content container">
 			
 				<div class="sector">
+				
 					<%-- <div class="head"
 						style="background-image:url('limage?location_id=${location.location_id}')">
 						${location.lname}</div> --%>
 					<div class="container-fluid">
+					<p style="font-size:30px; margin: 20px;">오늘의 추천상품<i class="fa fa-heart" style="font-size:30px; color: red;"></i></p>
 						<div class="card-deck">
 							<!-- 상품을 나타내기 위함 -->
 
 							<c:forEach var="offer" items="${list}">
-								<div class="card-deck" style="margin-left: 10px; margin-top: 40px;">
+								<div class="card-deck" style="margin-left: 10px; margin-top: 10px;">
 									<div class="card locationlists"
 										style="width: 20rem; height: 400px; display: inline-block; margin: 20px; color: black; text-shadow: 0.1rem 0.2rem 0.5rem gray; box-shadow: 0.1rem 0.2rem 0.5rem gray;">
 										<img height="180px"
