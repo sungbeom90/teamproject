@@ -87,6 +87,12 @@ public class PartnerService {
 		String name = partnerDao.getLname(lid);
 		return name;
 	}
+	
+	public int getMid(int pid) {
+		logger.info("mid로 pid가져오기 서비스");
+		int mid = partnerDao.getMid(pid);
+		return mid;
+	}
 
 	
 	

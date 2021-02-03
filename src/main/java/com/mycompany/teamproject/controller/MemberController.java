@@ -64,15 +64,15 @@ public class MemberController {
 		if(login.equals("loginSuccess")) {
 			logger.info("로그인 성공");
 			session.setAttribute("loginStatus", member.getMemail());
-			/*
+			
 			//파트너  id 유무로 등록/정보 나누기
 			partner.setMember_id(memberId);
-			PartnerDto partnerId = partnerService.partnerEmail(partner);
-			if(partnerId.getPartner_id() != 0) {
-				logger.info("파트너 id : "+partnerId.getPartner_id());
-				session.setAttribute("partnerId", partnerId);
+			PartnerDto partnerName = partnerService.partnerEmail(partner);
+			if(partnerName.getPname() != null) {
+				logger.info("파트너 이름 : "+partnerName.getPname());
+				session.setAttribute("partnerName", partnerName);
 			}
-			*/
+			
 		}
 		
 		//json으로 설정

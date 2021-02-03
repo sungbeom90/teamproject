@@ -28,9 +28,12 @@
 									<a class="btn btn-danger btn-sm" href="<%=application.getContextPath()%>/members/logout">로그아웃</a>
 									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/members/memberstatus">회원정보</a>
 									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/order/orderlist">주문내역</a>
-									
-									<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
-									<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerstatus">파트너 정보</a>
+									<c:if test="${partnerName == null}">
+										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerjoin">파트너 등록</a>
+									</c:if>
+									<c:if test="${partnerName != null}">
+										<a class="btn btn-primary btn-sm" href="<%=application.getContextPath()%>/partners/partnerstatus">파트너 정보</a>
+									</c:if>
 									<a class="btn btn-info btn-sm" href="<%=application.getContextPath()%>/offer/offerupload">상품등록</a>
 								</div>
 							</li>
