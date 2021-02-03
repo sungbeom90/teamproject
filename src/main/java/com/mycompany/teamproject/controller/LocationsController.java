@@ -87,7 +87,7 @@ public class LocationsController {
 		}
 		
 		@GetMapping("/limage")
-		public void limage(int location_id, HttpSession session, HttpServletResponse response) throws Exception{
+		public void limage(int location_id, HttpServletResponse response) throws Exception{
 			logger.info("실행");
 			
 			LocationDto location = locationService.getLocation(location_id);
