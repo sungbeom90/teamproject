@@ -99,6 +99,10 @@ public class OfferService {
 		int partner_id = offerDao.selectPartnerId(offer_id);
 		return partner_id;
 	}
+	public void setOfferDelete(int offer_id) {
+		logger.info("실행");	
+		offerDao.deleteOffer(offer_id);		
+	}
 	
 
 		
