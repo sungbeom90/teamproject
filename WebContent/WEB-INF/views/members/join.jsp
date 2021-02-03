@@ -26,41 +26,41 @@
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
-						<h2>회원가입</h2>					
+						<div class="alert alert-success" role="alert">
+							회원가입
+						</div>					
 							<form name="joinForm" method="post" enctype="multipart/form-data" action="join">
-								<label for="memail">이메일</label>
+								<label for="memail">이메일*</label><br/>
 				 				<input type="email" id="memail" name="memail" placeholder="ID@example.com"/>
-				 				<a href="javascript:emailcheck()">중복확인</a><br>
+				 				<a href="javascript:emailcheck()" class="btn btn-outline-warning btn-sm">중복확인</a><br>
 				 				
-				 				<label for="mpassword">비밀번호</label>
+				 				<label for="mpassword">비밀번호*</label><br/>
 				 				<input type="password" id="mpassword" name="mpassword" placeholder="비밀번호를 입력하세요."/><br/>
 				 				
-				 				<label for="mpassword_re">비밀번호 확인</label>				
+				 				<label for="mpassword_re">비밀번호 확인*</label>	<br/>			
 								<input type="password" id="mpassword_re" name="mpassword_re" placeholder="비밀번호를 다시 입력하세요."/> <br/>
 								
-								<label for="mname">이름</label>
+								<label for="mname">이름*</label><br/>
 								<input type="text" id="mname" name="mname" placeholder="이름 입력하세요."><br/>
 								
-								<label for="mphone">전화번호</label>
+								<label for="mphone">전화번호*</label><br/>
 								<input type="number" id="mphone" name="mphone" placeholder="전화번호를 입력하세요."><br/>
 								
 								
-								<label for="mimage">프로필 사진</label><br/>
-								<input type="file" id="mimage" name="mimage">
-								
-								
+								<label for="mimage">프로필 사진*</label><br/>
+								<input type="file" id="mimage" name="mimage"><br/>
 								<br/>
-								<br/>
-								<h5>선택 입력 사항</h5>								
 								<label for="mgender">성별</label>
 								<input type="radio" id="mmale" name="mgender" value="male"/> 남성
 								<input type="radio" id="mfemale" name="mgender" value="female"/> 여성
 								<br/>								
 								
-									
+								<br/>
+								<br/>
+								<div class="alert alert-success" role="alert">
+									회원 가입 약관							
+								</div>
 								
-								<!-- form 추가 -->
-					 			<h5>회원 가입 약관</h5>
 					 			<input type="checkbox" id="uagree_all" name="uagree_all" value="all" /> 전체 약관 동의<br/>
 								<input type="checkbox" id="aessence1" name="aessence_1" value="essential_1"/> 회원 가입 및 운영약관 동의 (필수)<br/>
 								<input type="checkbox" id="aessence2" name="aessence_2" value="essential_2"/> 개인정보 수집 및 이용 (필수)<br/>

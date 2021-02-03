@@ -38,7 +38,7 @@ public class MemberController {
 	private MemberService memberService;
 
 	@Value("${database.members}")
-	String memberDir;
+	private String memberDir;
 	
 	@RequestMapping("/content")
 	public String content() {
@@ -106,7 +106,7 @@ public class MemberController {
 			logger.info("사진정보 확인용 : " + mimage.getMimageoname() + mimage.getMimagetype());
 			//가져올 경로 설정
 			String imageName = mimage.getMimageoname();
-			filePath = "D:/MyWorkspace/teamfiles/members/" 
+			filePath = memberDir 
 								+ mimage.getMember_id() + "/" + imageName;
 			//응답 본문 내용의 데이터 종류를 응답 헤더에 추가
 			response.setContentType(mimage.getMimagetype());
@@ -172,7 +172,7 @@ public class MemberController {
 			mdt.setMimagetype(jphoto.getContentType());
 			
 			//파일 저장
-			File save = new File("D:/MyWorkspace/teamfiles/members/"
+			File save = new File(memberDir
 			+ mdt.getMember_id() + "/" + photo);
 			
 			jphoto.transferTo(save);
@@ -264,7 +264,7 @@ public class MemberController {
 		member.setMaccount(maccount);
 		memberService.setMaccountP(member);
 		
-		int account = memberService.getMaccount(member);
+		int account = memberService.getMaccount(member_id);
 		model.addAttribute("account", account);
 		return "members/maccount";
 	}
