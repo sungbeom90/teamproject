@@ -69,7 +69,7 @@ public class NationsController {
 		}
 		
 		@GetMapping("/nimage")
-		public void nimage(int nation_id, HttpSession session, HttpServletResponse response) throws Exception{
+		public void nimage(int nation_id, HttpServletResponse response) throws Exception{
 			
 			NationDto nation = nationService.getNation(nation_id);
 			String filePath=null;
