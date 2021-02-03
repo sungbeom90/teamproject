@@ -32,7 +32,7 @@
 	
 	<!-- 로그인 이메일에 대한 파트너 pk -->
 	<select id="partnerEmail" parameterType="string" resultType="partnerDto">
-		select partner_id
+		select pname
 		from partners , members
 		where partners.member_id=members.member_id
        		 and memail=#{memail}
@@ -50,6 +50,12 @@
 		select lname
 		from locations
 		where location_id=#{location_id}
+	</select>
+	
+	<select id="getMid" parameterType="int" resultType="int">
+		select member_id
+		from partners
+		where partner_id=#{partner_id}
 	</select>
 	
 	<!-- 파트너 등록 -->

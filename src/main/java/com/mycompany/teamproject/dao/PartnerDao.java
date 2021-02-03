@@ -93,6 +93,12 @@ public class PartnerDao {
 		return name;
 	}
 
+	public int getMid(int pid) {
+		logger.info("mid로 pid가져오기 다오");
+		int mid = sst.selectOne("partners.getMid", pid);
+		return mid;
+	}
+
 
 
 
