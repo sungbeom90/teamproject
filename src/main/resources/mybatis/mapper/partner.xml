@@ -88,14 +88,14 @@
 	<update id="setPaccountP" parameterType="partnerDto">
 		update partners
 		set paccount=paccount+#{paccount}
-		where partner_id=#{partner_id};
+		where partner_id=#{partner_id}
 	</update>
 	
 	<!-- 파트너 입금 마이너스 -->
 	<update id="setPaccountM" parameterType="partnerDto">
 		update partners
 		set paccount=paccount-#{paccount}
-		where partner_id=#{partner_id};
+		where partner_id=#{partner_id}
 	</update>
 	
 	
