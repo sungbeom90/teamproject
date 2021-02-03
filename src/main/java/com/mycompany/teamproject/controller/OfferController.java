@@ -136,13 +136,9 @@ public class OfferController {
 		public String offerread(int offer_id, Model model) {
 			logger.info("실행");
 			OfferDto offer = offerService.getOffer(offer_id);
-			
-			String obody = offer.getObody();
-			obody.replaceAll("\n","<br/>");
-			offer.setObody(obody);
-			
-			
-			
+			int partner_id = offer.getPartner_id();
+			int member_id = partnerService.getMId(partner_id);
+			offer.setMember_id(member_id);
 			List<ImageDto> imageList = offerService.getImageList(offer_id);
 			List<CourseDto> courseList = offerService.getCourseList(offer_id);
 			//PartnerDto pdto= partnerService.getPartner(offer_id);
@@ -277,6 +273,16 @@ public class OfferController {
 			course.setOffer_id(offer_id);
 			course.setCimageoname(cimageoname);			
 			offerService.courseDeleteImage(course);			
+		}
+		@GetMapping("/offerdelete")
+		public String offerdelete(int offer_id, Model model) {
+			logger.info("실행");
+			OfferDto offer = offerService.getOffer(offer_id);
+			List<ImageDto> imageList = offerService.getImageList(offer_id);
+			//PartnerDto pdto= partnerService.getPartner(offer_id);
+			model.addAttribute("offer", offer);
+			model.addAttribute("imageList", imageList);
+			return "offers/offerupdate";
 		}
 		
 }
