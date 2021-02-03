@@ -21,7 +21,7 @@
 						<c:if test="${loginStatus != null}">
 							<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-									<img class="rounded" src="<%=application.getContextPath()%>/members/mimage" width="75px;">
+									<img class="rounded" src="<%=application.getContextPath()%>/members/mimage" width="75px;" height="75px">
 									<span>프로필</span>
 									</a>
 								<div class="dropdown-menu">

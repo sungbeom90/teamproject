@@ -34,7 +34,7 @@
 		<%-- 내용 --%>
 		<div class="mainCenter">
 			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
+			<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 			<div class="content container">
 			
 				<div class="sector">

@@ -117,7 +117,7 @@ public class OfferDao {
 
 	public int selectPartnerId(int offer_id) {
 		logger.info("실행");
-		int partner_id = sst.selectOne("offers,selectPartnerId", offer_id);
+		int partner_id = sst.selectOne("offers.selectPartnerId", offer_id);
 		return partner_id;
 	}
 

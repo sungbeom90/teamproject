@@ -32,14 +32,13 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" />
 		
 		<%-- 내용 --%>
-		<div class="mainCenter">
-			<%-- 공통 메뉴 --%>
-			<jsp:include page="/WEB-INF/views/include/menu.jsp" />
+		<div class="mainCenter mt-5">
+		
 			<div class="content container">
 			<h2>결제하기</h2>
 				<div class="sector">
 					<img src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${order.offer_id}" width="40px" height="40px" class="rounded-circle" style="margin-left:30px; margin-right: 30px; margin-top:20px; margin-bottom: 30px;"/>
-					<form method="post" enctype="multipart/form-data" action="orderreserve" >
+					<form method="post" action="orderreserve">
 						<input class="form-control" type="hidden" id="offer_id" name="offer_id" value="${order.offer_id}">
 						<input class="form-control" type="hidden" id="member_id" name="member_id" value="${order.member_id}">
 						<%-- <input class="form-control" type="hidden" id="partner_id" name="partner_id" value="${offer.partner_id}"> --%>
@@ -76,9 +75,42 @@
 						</div>
 						<div class="d-flex">
 							<input class="btn btn-info btn-sm flex-fill" type="submit" value="결제하기"><br/>							
-						</div>					
-			
+						</div>			
 					</form>
+					
+					<script>
+								function orderreserve(){									
+									event.preventDefault();
+									
+									//입력값 받기
+									var offer_id = $("#offer_id").val();
+									var member_id = $("#member_id").val();
+									var odate_meet = $("#odate_meet").val();
+									var opeople = $("#opeople").val();
+									var oprice = $("#oprice").val();
+									var ocost = $("#ocost").val();
+									//AJAX 통신
+									$.ajax({
+										url: "orderreserve",
+										method: "post",										
+										data: {offer_id, member_id, odate_meet, opeople, oprice, ocost},
+										success: function(data){
+											//{"result":"success | noMoney "}
+											if(data.result ==="success") {
+												alert("예약이 처리되었습니다.");
+												location.href="orderlist";
+											} else if(data.result === "noMoney"){
+												alert("잔고가 부족합니다.");
+											}
+										}
+									});
+								}
+							
+							
+							</script>
+					
+					
+					
 				</div>
 			</div>
 			<jsp:include page="/WEB-INF/views/include/footer.jsp" />

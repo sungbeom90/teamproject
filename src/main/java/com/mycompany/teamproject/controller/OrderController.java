@@ -1,10 +1,14 @@
 package com.mycompany.teamproject.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.teamproject.Exception.AccountInsufficientException;
 import com.mycompany.teamproject.dto.MemberDto;
 import com.mycompany.teamproject.dto.OrderDto;
 import com.mycompany.teamproject.dto.PartnerDto;
@@ -69,25 +74,34 @@ public class OrderController {
 	}
 	@Transactional
 	@PostMapping("/orderreserve")
-	public String orderReserve(OrderDto order, HttpSession session){
+	public String orderReserve(OrderDto order, HttpSession session, HttpServletResponse response) throws Exception{
 		logger.info("실행");
-		order.setOstatus("ready");	
-		/*
+		order.setOstatus("ready");
+		String result;
+		
 		int member_id = order.getMember_id();
 		int offer_id = order.getOffer_id();
 		int partner_id = offerService.getPartnerId(offer_id);
 		int ocost = order.getOcost();		
-		MemberDto member = new MemberDto();
-		PartnerDto partner = new PartnerDto();
-		member.setMember_id(member_id);
-		partner.setPartner_id(partner_id);
-		member.setMaccount(ocost);
-		partner.setPaccount(ocost);
-		int result1 = memberService.setMaccountM(member);
-		int result2 = partnerService.setPaccountP(partner);
+		try {
+			orderService.setAccount(ocost, member_id, partner_id);
+			orderService.orderProcess(order);
+			result = "success";
+		} catch (AccountInsufficientException e) {
+			result = e.getMessage();			
+		}
+		return "redirect:/order/orderlist";
+		
+		/*
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter pw = response.getWriter();			
+		JSONObject root = new JSONObject();
+		root.put("result", result);
+		pw.println(root.toString());
+		pw.flush();
+		pw.close();
 		*/
-		orderService.orderProcess(order);		
-		return "redirect:/main/content";
+		
 	}
 
 	@GetMapping("/orderlist")
