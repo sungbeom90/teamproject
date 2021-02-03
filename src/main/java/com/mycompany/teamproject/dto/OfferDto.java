@@ -23,6 +23,7 @@ public class OfferDto {
 	
 	// 컨트롤러 -> 브라우저 매개변수로 쓰이는 필드
 	private int member_id;
+	private String pname;
 
 
 	public int getOffer_id() {
@@ -152,6 +153,16 @@ public class OfferDto {
 
 	public void setMember_id(int member_id) {
 		this.member_id = member_id;
+	}
+
+
+	public String getPname() {
+		return pname;
+	}
+
+
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
 	
 

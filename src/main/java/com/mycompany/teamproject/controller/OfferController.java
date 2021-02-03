@@ -138,10 +138,11 @@ public class OfferController {
 			OfferDto offer = offerService.getOffer(offer_id);
 			int partner_id = offer.getPartner_id();
 			int member_id = partnerService.getMid(partner_id);
+			String pname = partnerService.getPname(partner_id);
 			offer.setMember_id(member_id);
+			offer.setPname(pname);
 			List<ImageDto> imageList = offerService.getImageList(offer_id);
 			List<CourseDto> courseList = offerService.getCourseList(offer_id);
-			//PartnerDto pdto= partnerService.getPartner(offer_id);
 			model.addAttribute("offer", offer);
 			model.addAttribute("imageList", imageList);
 			model.addAttribute("courseList", courseList);

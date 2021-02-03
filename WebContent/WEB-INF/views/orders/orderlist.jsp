@@ -53,7 +53,7 @@
 					  		<c:forEach var="order" items="${list}">
 					  			<tr>
 									<td>${order.order_id}</td>
-									<td><img class="rounded-circle"src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${order.offer_id}" width="30px"/></td>
+									<td><img class="rounded"src="<%=application.getContextPath()%>/offer/oimagehead?offer_id=${order.offer_id}" width="50px"/></td>
 									<td><a class="text-warning text-decoration-none" href="<%=application.getContextPath()%>/offer/offerread?offer_id=${order.offer_id}">${order.otitle}</a></td>
 									<td><fmt:formatDate value="${order.odate_meet}" pattern="yyyy.MM.dd"/></td>
 									<td>${order.opeople}</td>

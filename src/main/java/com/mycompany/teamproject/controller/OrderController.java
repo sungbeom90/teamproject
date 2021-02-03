@@ -59,6 +59,7 @@ public class OrderController {
 			order.setMember_id(member_id);
 			String otitle= offerService.getOfferTitle(order.getOffer_id());
 			order.setOtitle(otitle);
+			int maccount = memberService.getMaccount(member_id);
 			model.addAttribute("order", order);
 			return "orders/orderreserve";
 		} else {
