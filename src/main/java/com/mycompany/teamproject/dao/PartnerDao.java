@@ -99,6 +99,12 @@ public class PartnerDao {
 		return mid;
 	}
 
+	public String getPname(int pid) {
+		logger.info("pid로 pname 가져오기 다오");
+		String pname = sst.selectOne("partners.getPname", pid);
+		return pname;
+	}
+
 
 
 

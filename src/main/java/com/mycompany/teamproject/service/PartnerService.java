@@ -93,6 +93,12 @@ public class PartnerService {
 		int mid = partnerDao.getMid(pid);
 		return mid;
 	}
+	
+	public String getPname(int pid) {
+		logger.info("pid로 pname 가져오기 서비스");
+		String pname = partnerDao.getPname(pid);
+		return pname;
+	}
 
 	
 	

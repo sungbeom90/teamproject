@@ -52,8 +52,15 @@
 		where location_id=#{location_id}
 	</select>
 	
+	<!-- pid로 mid가져오기 -->
 	<select id="getMid" parameterType="int" resultType="int">
 		select member_id
+		from partners
+		where partner_id=#{partner_id}
+	</select>
+	
+	<select id="getPname" parameterType="int" resultType="string">
+		select pname
 		from partners
 		where partner_id=#{partner_id}
 	</select>

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -36,6 +37,9 @@ public class MemberController {
 	@Resource
 	private MemberService memberService;
 
+	@Value("${database.members}")
+	String memberDir;
+	
 	@RequestMapping("/content")
 	public String content() {
 		logger.info("실행");
@@ -64,7 +68,7 @@ public class MemberController {
 		if(login.equals("loginSuccess")) {
 			logger.info("로그인 성공");
 			session.setAttribute("loginStatus", member.getMemail());
-			
+			/*
 			//파트너  id 유무로 등록/정보 나누기
 			partner.setMember_id(memberId);
 			PartnerDto partnerName = partnerService.partnerEmail(partner);
@@ -72,7 +76,7 @@ public class MemberController {
 				logger.info("파트너 이름 : "+partnerName.getPname());
 				session.setAttribute("partnerName", partnerName);
 			}
-			
+			*/
 		}
 		
 		//json으로 설정
