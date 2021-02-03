@@ -52,7 +52,7 @@
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-								<span class="input-group-text">인원수</span>
+								<span class="input-group-text">신청 인원수</span>
 							</div>
 						<input class="form-control" type="number" id="opeople" name="opeople" value="${order.opeople}"readonly="readonly">
 						</div>
@@ -67,6 +67,12 @@
 								<span class="input-group-text">총 금액</span>
 							</div>
 						<input class="form-control" type="number" id="ocost" name="ocost" value="${order.ocost}" readonly="readonly">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">계좌 잔여금액</span>
+							</div>
+							<input class="form-control" type="number" id="maccountnow" name="maccountnow" value="${maccount}" readonly/>
 						</div>
 						<div class="d-flex">
 							<input class="btn btn-info btn-sm flex-fill" type="submit" value="결제하기"><br/>							
