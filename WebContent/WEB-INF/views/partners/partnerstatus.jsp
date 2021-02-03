@@ -24,30 +24,32 @@
 			<div class="mainCenter">
 				<%-- 공통 메뉴 --%>
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
-				<div class="content container">					
-					<div class="sector container user_in border rounded">
-						<h2>파트너 정보</h2>					
+				<div class="content container">
+				<div class="sector container user_in border rounded">					
+					<div class="alert alert-success" role="alert">
+								파트너 정보
+							</div>					
 							<form>
 								<input type="hidden" id="partner_id" name="partner_id" value="${partner.partner_id}"/>
 									<ul>
 										
 										<li>
-											<label for="pname">닉네임</label>
+											<label for="pname">닉네임*</label><br/>
 											<input type="text" value="${partner.pname}" id="pname" name="pname" readonly/>
 										</li>
 										
 										<li>
-											<label for="lname">활동 지역</label>
+											<label for="lname">활동 지역*</label><br/>
 											<input type="text" value="${partner.lname}" id="lname" name="lname" readonly/>
 										</li>
 										
 										<li>
-											<label for="paccountnow">잔여 금액</label>
+											<label for="paccountnow">잔여 금액*</label><br/>
 											<input type="number" value="${partner.paccount}" name="paccountnow" readonly/>
 										</li>
 										
 										<li>
-											<label for="pjoin">가입 날짜</label>
+											<label for="pjoin">가입 날짜*</label><br/>
 								   			 <input type="date"
 													value='<fmt:formatDate value="${partner.pjoin}" pattern="yyyy-MM-dd"/>'
 													 readonly class="form-control" id="pjoin" name="pjoin"/>
@@ -60,6 +62,7 @@
 								
 							</form>
 							
+							</div>
 						</div>
 	
 					</div>

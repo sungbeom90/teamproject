@@ -57,21 +57,23 @@
 								
 								<br/>
 								<br/>
-								<div class="alert alert-success" role="alert">
-									회원 가입 약관							
-								</div>
-								
-					 			<input type="checkbox" id="uagree_all" name="uagree_all" value="all" /> 전체 약관 동의<br/>
-								<input type="checkbox" id="aessence1" name="aessence_1" value="essential_1"/> 회원 가입 및 운영약관 동의 (필수)<br/>
-								<input type="checkbox" id="aessence2" name="aessence_2" value="essential_2"/> 개인정보 수집 및 이용 (필수)<br/>
-								<input type="checkbox" id="aoption1" name="aoption_1" value="option_1"> 위치정보 이용약관 (선택)<br/>
-								<input type="checkbox" id="aoption2" name="aoption_2" value="option_2"/> 특가 항공권 및 할인 혜택 안내 동의  (선택)<br/>
-								<input type="checkbox" id="apartner" name="apartner" value="apartner"/> 파트너 등록  (선택)<br/>
-								<br/>
-								<p>*선택 항목을 동의하지 않아도 서비스를 이용하실 수 있습니다.</p>
-								<p>*회원 가입 시 본인이 만 14세 이상임에 동의하게 됩니다.</p>
+									<div class="alert alert-success" role="alert">
+										회원 가입 약관							
+									</div>
+									
+							 			<input type="checkbox" id="uagree_all" name="uagree_all" value="all" /> 전체 약관 동의<br/>
+										<input type="checkbox" id="aessence1" name="aessence_1" value="essential_1"/> 회원 가입 및 운영약관 동의 (필수)<br/>
+										<input type="checkbox" id="aessence2" name="aessence_2" value="essential_2"/> 개인정보 수집 및 이용 (필수)<br/>
+										<input type="checkbox" id="aoption1" name="aoption_1" value="option_1"> 위치정보 이용약관 (선택)<br/>
+										<input type="checkbox" id="aoption2" name="aoption_2" value="option_2"/> 특가 항공권 및 할인 혜택 안내 동의  (선택)<br/>
+										<input type="checkbox" id="apartner" name="apartner" value="apartner"/> 파트너 등록  (선택)<br/>
+										<br/>
+									<div class="alert alert-warning" role="alert">
+										<p>*선택 항목을 동의하지 않아도 서비스를 이용하실 수 있습니다.</p>
+										<p>*회원 가입 시 본인이 만 14세 이상임에 동의하게 됩니다.</p>
+									</div>
 								<div class="container justify-content-center">
-								<input type="submit" class="btn btn-primary d-block mb-1" id="join_btn" value="회원가입" style="width:100%;"/>
+									<input type="submit" class="btn btn-success d-block mb-1" id="join_btn" value="회원가입" style="width:100%;"/>
 								</div>
 							</form>
 							<script>

@@ -26,13 +26,15 @@
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
-						<h2>회원정보 수정</h2>					
+						<div class="alert alert-warning" role="alert">
+								회원정보 수정
+							</div>				
 							<form name="memberupdateForm" method="post" action="memberupdate">
 							<!-- 아무것도변경 사항 없을때 처리하기 -->
 								<input type="hidden" name="member_id" value="${update.member_id}"/>
 									<ul>
 										<li>
-											<label for="mimage">바꾸실 사진 주세요.</label>
+											<label for="mimage">바꾸실 사진 주세요.</label><br/>
 											<c:if test="${mstatus.mimageoname != null}">
 												<img class="rounded" src="mimage?memail=${update.memail}" width="200px;"/>
 											</c:if>
@@ -43,20 +45,20 @@
 										</li>
 										
 										<li>
-											<label for="mname">바꾸실 이름 주세요.</label>
+											<label for="mname">바꾸실 이름 주세요.</label><br/>
 											<input type="text" value="${update.mname}" id="mname" name="mname"/>
 										</li>
 										
 										<li>
-											<label for="mpassword">바꾸실 비밀번호 주세요.</label>
-							 				<input type="password" id="mpassword" name="mpassword"/>
+											<label for="mpassword">바꾸실 비밀번호 주세요.</label><br/>
+							 				<input type="password" id="mpassword" name="mpassword"/><br/>
 							 				
-							 				<label for="mpassword_re">바꾸실 비밀번호 다시 주세요.</label>				
+							 				<label for="mpassword_re">바꾸실 비밀번호 다시 주세요.</label>	<br/>			
 											<input type="password" id="mpassword_re" name="mpassword_re"/>
 										</li>
 										
 										<li>
-											<label for="mphone">바꾸실 전화번호 주세요.</label>
+											<label for="mphone">바꾸실 전화번호 주세요.</label><br/>
 					
 											<input type="number" value="${update.mphone}" id="mphone" name="mphone"/>
 										</li>

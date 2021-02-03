@@ -32,7 +32,9 @@
 			<div class="content container">
 				<div class="sector container border rounded user_in mt-5 mb-5">
 					
-							<h2>로그인</h2>					
+							<div class="alert alert-warning" role="alert">
+								로그인
+							</div>				
 								<form name="loginForm" onsubmit="login()" method="post"  class="was-validated">
 									<div class="form-group">
 										<input type="email" class="form-control" id="memail" name="memail" placeholder="ID@example.com"/>
@@ -43,13 +45,13 @@
 										<small id="errorPassword" class="text-danger"></small>
 									</div>
 									<div class="container justify-content-end">						
-									<button class="btn btn-info d-block mb-1">로그인</button>		
-									<a class="btn btn-warning d-block mb-1" href="content">취소</a>							
+									<button class="btn btn-info d-block mb-1" style="width:100%">로그인</button>		
+									<a class="btn btn-warning d-block mb-1" href="<%=application.getContextPath()%>/main/content">취소</a>							
 									</div>
 								</form>							
 								<div class="container justify-content-center">
-									<a class="btn btn-danger d-block mb-1" href="password">비밀번호 찾기</a>
-									<a class="btn btn-primary d-block mb-1" href="join">회원가입</a>
+									<a class="btn btn-danger d-block mb-1" href="#">비밀번호 찾기</a>
+									<a class="btn btn-success d-block mb-1" href="join">회원가입</a>
 								</div>
 					
 				

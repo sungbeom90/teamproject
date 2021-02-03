@@ -14,14 +14,14 @@
 		<ul class="navbar-nav">
 						<c:if test="${loginStatus == null}">
 								<div>
-									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/members/login">로그인</a>
-									<a class="btn btn-success btn-sm" href="<%=application.getContextPath()%>/members/join">회원가입</a>
+									<a class="btn btn-outline-success btn-sm" href="<%=application.getContextPath()%>/members/login">로그인</a>
+									<a class="btn btn-outline-success btn-sm" href="<%=application.getContextPath()%>/members/join">회원가입</a>
 								</div>						
 						</c:if>
 						<c:if test="${loginStatus != null}">
 							<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-									<img src="<%=application.getContextPath()%>/members/mimage" width="50px">
+									<img class="rounded" src="<%=application.getContextPath()%>/members/mimage" width="75px;">
 									<span>프로필</span>
 									</a>
 								<div class="dropdown-menu">

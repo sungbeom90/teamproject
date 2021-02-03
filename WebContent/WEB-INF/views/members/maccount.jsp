@@ -25,7 +25,7 @@
 </head>
 
 <body>
-		<div id="maccountnow">잔여 금액
+		<div id="maccountnow">잔여 금액*
 			<input type="number" value="${account}" name="maccountnow" readonly/>
 		</div>
 </body>

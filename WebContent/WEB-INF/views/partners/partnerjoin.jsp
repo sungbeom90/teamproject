@@ -26,33 +26,18 @@
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
-						<h2>파트너 등록</h2>					
+						<div class="alert alert-success" role="alert">
+							파트너 등록
+							</div>						
 							<form name="partnerJoinForm" method="post" action="partnerjoin">
-								<label for="pname">별명주세요.</label>
+								<label for="pname">별명주세요.</label><br/>
 								<input type="text" id="pname" name="pname" placeholder="사용하실 닉네임을 주세요."><br/>
 								
-								<label for="lname">지역주세요.</label>
-								<input type="text" id="lname" name="lname" placeholder="지역주세요.">
+								<label for="lname">지역주세요.</label><br/>
+								<input type="text" id="lname" name="lname" placeholder="지역주세요."><br/>
 								
-								<ul class="navbar-nav">
-									<li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-										지역 고르기</a>
-										<div class="dropdown-menu">
-											<a class="dropdown-item" href="#">뉴욕</a>
-											<a class="dropdown-item" href="#">하와이</a>
-											<a class="dropdown-item" href="#">오키나와</a>
-											<a class="dropdown-item" href="#">후쿠오카</a>
-											<a class="dropdown-item" href="#">바르셀로나</a>
-											<a class="dropdown-item" href="#">세비야</a>
-											<a class="dropdown-item" href="#">부산</a>
-											<a class="dropdown-item" href="#">속초</a>
-										</div>
-									</li>
-								</ul>
-								
-								
-								<button>등록하기</button>
+								<br/>
+								<button class="btn btn-outline-success btn-sm">등록하기</button>
 							</form>
 							
 						</div>

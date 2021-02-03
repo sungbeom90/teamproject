@@ -26,16 +26,18 @@
 				<jsp:include page="/WEB-INF/views/include/menu.jsp"/>
 				<div class="content container">					
 					<div class="sector container user_in border rounded">
-						<h2>파트너 정보 수정</h2>					
+						<div class="alert alert-success" role="alert">
+								파트너 정보 수정
+							</div>					
 							<form name="partnerupdateForm" method="post" action="partnerupdate">
 							<!-- 아무것도변경 사항 없을때 처리하기 -->
 									<ul>
 										<li>
-											<label for="pname">바꾸실 닉네임 주세요.</label>
+											<label for="pname">바꾸실 닉네임 주세요.</label><br/>
 											<input type="text" id="pname" name="pname"/>
 										</li>
 										<li>
-											<label for="lname">지역주세요.</label>
+											<label for="lname">지역주세요.</label><br/>
 											<input type="text" id="lname" name="lname">
 										</li>
 									</ul>
