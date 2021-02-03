@@ -84,7 +84,7 @@
 	</update>
 	
 	<!-- 최신 남은돈 가져오기 -->
-	<select id="getMaccount" parameterType="memberDto" resultType="int">
+	<select id="getMaccount" parameterType="int" resultType="int">
 		select maccount
 		from members
 		where member_id=#{member_id}

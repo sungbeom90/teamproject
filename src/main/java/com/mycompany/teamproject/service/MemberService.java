@@ -110,11 +110,13 @@ public class MemberService {
 		return rows;
 	}
 
-	public int getMaccount(MemberDto member) {
+	public int getMaccount(int mid) {
 		logger.info("최신계좌 서비스");
-		int account = memberDao.getMaccount(member);
+		int account = memberDao.getMaccount(mid);
 		return account;
 	}
+	
+	
 
 	
 	
